@@ -15,34 +15,38 @@ html[dir] [role="dialog"][data-type="object"] textarea[dir] { text-align: start;
 [role="dialog"][data-type="object"] {
   display: flex;
   flex-direction: column;
-  background-color: #2d2d2d;
+  background-color: var(--background, #fff);
   overflow: hidden;
   position: fixed;
   z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: #fff;
+  top: 4.5rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  color: var(--text-color-minus, #fff);
   font-size: 1.6rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2), 0 0 0 calc(100vw + 100vh) rgba(64,64,64,0.3);
+  max-height: calc(100% - 4.5rem);
 }
 
 [role="dialog"][data-type="object"] > header {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  height: 5rem;
-  color: #fff;
+  height: 4.8rem;
+  color: var(--text-color, #333);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   font-weight: normal;
   padding: 0 3rem;
-  border-bottom: 0.1rem solid #616262;
+  /* border-bottom: 0.1rem solid var(--background-theta, #e0e2e5); */
+  background: var(--background, #e7e9ec);
 }
 
 [role="dialog"][data-type="object"] > header h1 {
-  color: #fff;
+  color: var(--text-color-minus, #fff);
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
@@ -53,19 +57,20 @@ html[dir] [role="dialog"][data-type="object"] textarea[dir] { text-align: start;
 
 /* Specific component code */
 [role="dialog"][data-type="object"] > section {
-  color: #fff;
+  color: var(--text-color, #333);
   flex: 1;
   overflow: scroll;
 }
 
 /* subheaders */
 [role="dialog"][data-type="object"] h2 {
-  background-color: #242424;
-  color: #858585;
-  font-size: 1.4rem;
-  font-weight: 500;
+  background-color: var(--background, #e7e9ec);
+  color: var(--text-color, #333);
+  font-size: 1.6rem;
+  font-weight: bold;
   padding: 1rem 3rem;
   margin: 0;
+  text-transform: uppercase;
 }
 
 [role="dialog"][data-type="object"] ul {
@@ -79,13 +84,13 @@ html[dir] [role="dialog"][data-type="object"] textarea[dir] { text-align: start;
   justify-content: center;
   flex-direction: column;
   margin: 0 1.5rem;
-  padding: 1rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   min-height: 3.9rem;
   height: auto;
   list-style: none;
-  font-size: 1.8rem;
-  font-weight: 300;
-  color: #fff;
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: var(--text-color, #333);
   word-wrap: break-word;
   -moz-hyphens: auto;
   transition: background-color 0.2s ease;
@@ -112,7 +117,7 @@ html[dir] [role="dialog"][data-type="object"] textarea[dir] { text-align: start;
   top: 0;
   right: 0;
   left: 0;
-  background-color: #666;
+  background-color: rgba(0,0,0,0.125);
 }
 
 [role="dialog"][data-type="object"] ul li:first-child:after {
@@ -129,17 +134,17 @@ html[dir] [role="dialog"][data-type="object"] textarea[dir] { text-align: start;
 }
 
 [role="dialog"][data-type="object"] ul li a {
-  color: #fff;
+  color: var(--text-color, #333);
   text-decoration: none;
 }
 
 [role="dialog"][data-type="object"] ul li button {
   font-family: sans-serif;
-  color: #fff;
+  color: var(--text-color, #333);
   border: none;
   background-color: transparent;
-  font-size: 1.8rem;
-  font-weight: 300;
+  font-size: 1.6rem;
+  font-weight: normal;
   font-style: normal;
   padding: 0;
   margin: 0;
@@ -153,24 +158,31 @@ html[dir] [role="dialog"][data-type="object"] textarea[dir] { text-align: start;
   outline: none;
   display: block;
   margin: 0;
-  color: #fff;
-  font-size: 1.5rem;
+  color: var(--text-color, #333);
+  font-size: 1.4rem;
   line-height: 1.8rem;
   font-weight: normal;
+  opacity: 0.5;
 }
 
 [role="dialog"][data-type="object"] ul li p:first-child {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
+  opacity: 1;
 }
 
 [role="dialog"][data-type="object"] ul li p:empty {
   display: none;
 }
 
+/* Hovered status */
+[role="dialog"][data-type="object"] ul li:hover:before {
+  background-color: var(--translucent, rgba(0,0,0,0.05));
+}
+
 /* Pressed status */
 [role="dialog"][data-type="object"] ul li:active:before {
-  background-color: #00aacc;
+  background-color: var(--translucent, rgba(0,0,0,0.1));
 }
 
 [role="dialog"][data-type="object"] ul li:not(.input):active:after,
@@ -183,7 +195,7 @@ html[dir] [role="dialog"][data-type="object"] textarea[dir] { text-align: start;
   display: flex;
   margin: 0;
   padding: 1.5rem;
-  background-color: #4d4d4d;
+  background-color: var(--background, #e7e9ec);
 }
 
 [role="dialog"][data-type="object"] menu button::-moz-focus-inner {
@@ -194,24 +206,24 @@ html[dir] [role="dialog"][data-type="object"] textarea[dir] { text-align: start;
 
 [role="dialog"][data-type="object"] menu button {
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
   width: 100%;
   height: 4rem;
   margin: 0;
-  padding: 0 1.2rem;
+  padding: 0 1.5rem;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  background: #d8d8d8;
+  background: transparent;
   border: none;
   border-radius: 2rem;
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 4rem;
-  color: #333;
+  color: var(--text-color, #333);
   text-align: center;
   text-shadow: none;
   text-decoration: none;
@@ -220,35 +232,51 @@ html[dir] [role="dialog"][data-type="object"] textarea[dir] { text-align: start;
 
 /* Recommend */
 [role="dialog"][data-type="object"] menu button.recommend {
-  background-color: #00caf2;
-  color: #fff;
+  background-color: var(--accent-color, #0061e0);
+  color: var(--accent-color-text, rgba(255,255,255,0.75));
+}
+
+[role="dialog"][data-type="object"] menu button.recommend:hover {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.125), rgba(0,0,0,0.125));
+}
+
+[role="dialog"][data-type="object"] menu button.recommend:active {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25));
 }
 
 /* Danger */
 [role="dialog"][data-type="object"] menu button.danger {
-  background-color: #e51e1e;
-  color: #fff;
+  background-color: #c00040 !important;
+  color: rgba(255,255,255,0.75) !important;
+}
+
+[role="dialog"][data-type="object"] menu button.danger:hover {
+  background-color: #b00030 !important;
+}
+
+[role="dialog"][data-type="object"] menu button.danger:active {
+  background-color: #a00020 !important;
+}
+
+/* Hovered */
+[role="dialog"][data-type="object"] menu button:hover {
+  background: var(--translucent, rgba(0,0,0,0.05));
+}
+
+/* Focused */
+[role="dialog"][data-type="object"] menu button:focus-visible {
+  outline: var(--focus-outline);
 }
 
 /* Pressed */
 [role="dialog"][data-type="object"] menu button:active {
-  background: #00aacc;
-  color: #fff;
+  background: var(--translucent, rgba(0,0,0,0.1));
 }
 
 /* Disabled */
 [role="dialog"][data-type="object"] > menu > button[disabled] {
-  background-color: #565656;
-  color: rgba(255,255,255,0.4);
   pointer-events: none;
-}
-
-[role="dialog"][data-type="object"] > menu > button[disabled].recommend {
-  background-color: #006579;
-}
-
-[role="dialog"][data-type="object"] > menu > button[disabled].danger {
-  background-color: #730f0f;
+  opacity: 0.5;
 }
 
 button[disabled]::-moz-selection,
@@ -262,4 +290,14 @@ label span::-moz-selection {
 
 [role="dialog"][data-type="object"] menu button:first-child {
   margin-inline-start: 0;
+}
+
+@media screen and (min-width: 600px) and (min-height: 400px) {
+  /* Main dialog setup */
+  [role="dialog"][data-type="object"] {
+    top: 4.5rem;
+    left: calc(50% - 200px);
+    right: calc(50% - 200px);
+    bottom: 4.5rem;
+  }
 }

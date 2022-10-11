@@ -1,0 +1,79 @@
+{
+  "name": "Email",
+  "description": "Gaia Email",
+  "type": "certified",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
+  },
+  "messages": [
+    { "alarm": "/index.html" },
+    { "notification": "/index.html" },
+    { "request-sync": "/index.html" }
+  ],
+  "permissions": {
+    "alarms":{},
+    "themeable":{},
+    "browser": {},
+    "audio-channel-notification":{},
+    "contacts":{ "access": "readcreate" },
+    "desktop-notification":{},
+    "downloads":{},
+    "device-storage:sdcard":{ "access": "readcreate" },
+    "systemXHR":{},
+    "tcp-socket":{},
+    "settings":{ "access": "readonly" },
+    "moz-extremely-unstable-and-will-change-webcomponents":{}
+  },
+  "locales": {
+    "en-US": {
+      "name": "Email",
+      "description": "Gaia Email"
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "16": "/style/icons/email_16.png",
+    "32": "/style/icons/email_32.png",
+    "48": "/style/icons/email_48.png",
+    "64": "/style/icons/email_64.png",
+    "128": "/style/icons/email_128.png",
+    "256": "/style/icons/email_256.png"
+  },
+  "activities": {
+    "new": {
+      "filters": {
+        "type": "mail"
+      },
+      "disposition": "window",
+      "href": "/index.html",
+      "returnValue": true
+    },
+    "share": {
+      "filters": {
+        "type": ["audio/*", "image/*", "url", "application/vnd.moz-systemlog",
+                 "video/*", "application/*", "text/vcard"]
+      },
+      "disposition": "window",
+      "href": "/index.html",
+      "returnValue": true
+    },
+    "view": {
+      "filters": {
+        "type": "url",
+        "url": { "required":true, "pattern":"mailto:.{1,16384}" }
+      },
+      "disposition": "window",
+      "href": "/index.html",
+      "returnValue": true
+    }
+  },
+  "redirects": [
+    {
+      "from": "http://localhost",
+      "to": "/js/cards/oauth2/redirect.html"
+    }
+  ],
+  "orientation": "default"
+}

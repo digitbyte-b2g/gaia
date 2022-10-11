@@ -91,7 +91,7 @@ gaia-overflow-menu:-moz-dir(rtl) button {
 }
 
 gaia-overflow-menu button:active {
-  background-color: #e7e7e7;
+  background-color: #e7e9ec;
 }
 
 gaia-overflow-menu button:last-child {

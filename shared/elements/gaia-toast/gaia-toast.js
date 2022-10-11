@@ -82,12 +82,14 @@ module.exports = component.register('gaia-toast', {
 
     :host {
       position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      font-style: italic;
+      left: 1rem;
+      bottom: 1rem;
+      width: calc(100% - 2rem);
+      font-style: normal;
       text-align: center;
       z-index: 100;
+      pointer-events: none;
+      border-radius: 1.2rem;
 
       color:
         var(--highlight-color);

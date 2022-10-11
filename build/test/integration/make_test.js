@@ -13,7 +13,7 @@ var AdmZip = require('adm-zip');
 const MAX_PROFILE_SIZE_MB = 65;
 const MAX_PROFILE_SIZE = MAX_PROFILE_SIZE_MB * 1024 * 1024;
 const REBUILD_TEST_FILE = path.join(
-  process.cwd() + '/apps/system/rebuild_test.txt');
+  process.cwd() + '/webapps/system/rebuild_test.txt');
 const WEBAPPS_DIR = path.join(process.cwd() + '/profile/webapps');
 
 suite('Make and remake tests', function() {

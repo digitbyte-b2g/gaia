@@ -1,0 +1,55 @@
+{
+  "name": "Camera",
+  "description": "Gaia Camera",
+  "type": "certified",
+  "launch_path": "/index.html",
+  "orientation": "default",
+  "fullscreen": true,
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
+  },
+  "permissions": {
+    "themeable":{},
+    "device-storage:pictures":{ "access": "readwrite" },
+    "device-storage:videos":{ "access": "readwrite" },
+    "settings":{ "access": "readonly" },
+    "camera":{},
+    "geolocation":{},
+    "audio-channel-notification":{},
+    "audio-channel-content":{},
+    "feature-detection": {},
+    "moz-extremely-unstable-and-will-change-webcomponents":{}
+  },
+  "activities": {
+    "record": {
+      "filters": {
+        "type": ["photos", "videos"]
+       },
+      "disposition": "window"
+    },
+    "pick": {
+      "filters": {
+        "type": ["image/*", "image/jpeg", "video/*", "video/3gpp"]
+       },
+      "returnValue": true,
+      "disposition": "inline",
+      "href": "/index.html#pick"
+    }
+  },
+  "locales": {
+    "en-US": {
+      "name": "Camera",
+      "description": "Gaia Camera"
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "16": "/style/icons/camera_16.png",
+    "32": "/style/icons/camera_32.png",
+    "48": "/style/icons/camera_48.png",
+    "64": "/style/icons/camera_64.png",
+    "128": "/style/icons/camera_128.png",
+    "256": "/style/icons/camera_256.png"
+  }
+}

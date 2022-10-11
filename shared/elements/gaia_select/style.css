@@ -38,7 +38,7 @@ gaia-select:-moz-dir(rtl)::after {
 }
 
 select {
-  border: 0.1rem solid #C7C7C7;
+  border: 0.1rem solid #c7c9cc;
   border-radius: 0;
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0.05);
   overflow: hidden;

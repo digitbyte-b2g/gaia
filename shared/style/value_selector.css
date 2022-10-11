@@ -4,17 +4,19 @@
 
 /* Main dialog setup */
 [role="dialog"][data-type="value-selector"] {
-  background: #2d2d2d;
+  background: var(--background-plus, #fff);
   overflow: hidden;
   position: absolute;
   z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 4.5rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
   padding: 0 0 7rem;
-  color: #fff;
+  color: var(--text-color, #333);
   font-family: sans-serif;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2), 0 0 0 calc(100vw + 100vh) rgba(64,64,64,0.3);
 }
 
 [role="dialog"][data-type="value-selector"] > section {
@@ -28,9 +30,9 @@
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 4.8rem;
-  color: #fff;
-  border-bottom: 0.1rem solid #616262;
-  background-color: rgba(0, 0, 0, .2);
+  color: var(--text-color, #333);
+  border-bottom: 0.1rem solid var(--background-theta, #e0e2e5);
+  background-color: var(--background, #e7e9ec);
   margin: 0 -1.5rem;
   padding: 0 3rem 1rem;
   height: 4.8rem;
@@ -52,10 +54,10 @@
   height: auto;
   list-style: none;
   position: relative;
-  font-weight: 300;
-  font-size: 2.2rem;
+  font-weight: normal;
+  font-size: 1.6rem;
   line-height: 3.9rem;
-  color: #fff;
+  color: var(--text-color, #333);
   transition: background-color 0.2s ease;
 }
 
@@ -75,44 +77,52 @@ html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li 
 [role="dialog"][data-type="value-selector"] [role="listbox"] li label {
   outline: none;
   display: block;
-  color: #fff;
-  border-top: 0.1rem solid #666;
+  color: var(--text-color, #333);
+  border-top: 0.1rem solid #e7e9ec;
 }
 
 [role="dialog"][data-type="value-selector"] [role="listbox"] li label span {
   display: block;
   padding: 1rem 1.5rem;
-  line-height: 4rem;
+  line-height: 2.8rem;
   word-wrap: break-word;
+}
+
+/* Hovered status */
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:hover {
+  background-color: var(--translucent, rgba(0,0,0,0.05));
 }
 
 /* Pressed status */
 [role="dialog"][data-type="value-selector"] [role="listbox"] li:active {
-  background-color: #00ABCC;
+  background-color: var(--translucent, rgba(0,0,0,0.1));
 }
 
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:hover label,
 [role="dialog"][data-type="value-selector"] [role="listbox"] li:active label,
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:hover + li label,
 [role="dialog"][data-type="value-selector"] [role="listbox"] li:active + li label {
   border-top-color: transparent;
 }
 
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:hover label span,
 [role="dialog"][data-type="value-selector"] [role="listbox"] li:active label span {
-  color: #fff !important;
   background-image: none;
 }
 
 /* Subheaders */
 [role="dialog"][data-type="value-selector"] [role="listbox"] li[role="subheader"] {
   border: none;
-  background-color: #242424;
+  background-color: var(--background, #e7e9ec);
   pointer-events: none;
   -moz-user-select: none;
 }
 
 [role="dialog"][data-type="value-selector"] [role="listbox"] li[role="subheader"] label {
-  color: #f4f4f4;
-  font-size: 1.4rem;
-  font-weight: 500;
+  color: #4d4d4d;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 [role="dialog"][data-type="value-selector"] [role="listbox"] li[role="subheader"] label,
@@ -132,22 +142,22 @@ html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li 
   background-repeat: no-repeat;
 }
 html[dir="ltr"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] label {
-  background-position: right 1.2rem top 50%;
+  background-position: right 1.5rem top 50%;
 }
 html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] label {
-  background-position: left 1.2rem top 50%;
+  background-position: left 1.5rem top 50%;
 }
 
 [role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] span {
-  color: #00abcd;
+  color: var(--accent-color, #0061e0);
 }
 html[dir="ltr"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] span {
   padding-right: 2.6rem;
-  margin-right: 1.2rem;
+  margin-right: 1.5rem;
 }
 html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] span {
   padding-left: 2.6rem;
-  margin-left: 1.2rem;
+  margin-left: 1.5rem;
 }
 
 /* Menu & buttons setup */
@@ -155,13 +165,14 @@ html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[
   white-space: nowrap;
   margin: 0;
   padding: 1.5rem;
-  background: #4d4d4d;
-  display: block;
+  background: var(--background, #e7e9ec);
+  display: flex;
   overflow: hidden;
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
+  border-radius: 0.8rem;
 }
 
 .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button::-moz-focus-inner {
@@ -172,23 +183,23 @@ html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[
 .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button {
   width: calc((100% - 1rem) / 2);
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
   height: 4rem;
   margin: 0 0 1rem;
-  padding: 0 1.2rem;
+  padding: 0 1.5rem;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  background: #d8d8d8;
+  background: transparent;
   border: none;
   border-radius: 2rem;
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 4rem;
-  color: #333;
+  color: var(--text-color, #333);
   text-align: center;
   text-shadow: none;
   text-decoration: none;
@@ -198,25 +209,39 @@ html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[
 /* Affirmative */
 .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.affirmative,
 .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.recommend {
-  background-color: #00caf2;
-  color: #fff;
+  background-color: var(--accent-color, #0061e0);
+  color: var(--accent-color-text, rgba(255,255,255,0.75));
+}
+
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.affirmative:hover,
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.recommend:hover {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.125), rgba(0,0,0,0.125));
+}
+
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.affirmative:active,
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.recommend:active {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25));
+}
+
+/* Hovered */
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button:hover {
+  background: var(--translucent, rgba(0,0,0,0.05));
+}
+
+/* Focused */
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button:focus-visible {
+  outline: var(--focus-outline);
 }
 
 /* Pressed */
 .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button:active {
-  background: #00aacc;
-  color: #fff;
+  background: var(--translucent, rgba(0,0,0,0.1));
 }
 
 /* Disabled */
-[role="dialog"][data-type="value-selector"] > menu.value-selector-buttons > button[disabled] {
-  background-color: #565656;
-  color: rgba(255,255,255,0.4);
+.value-selector > [role="dialog"][data-type="value-selector"] > menu.value-selector-buttons > button[disabled] {
   pointer-events: none;
-}
-
-[role="dialog"][data-type="value-selector"] > menu.value-selector-buttons > button[disabled].recommend {
-  background-color: #006579;
+  opacity: 0.5;
 }
 
 button[disabled]::-moz-selection {
@@ -234,5 +259,15 @@ button[disabled]::-moz-selection {
 
 .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.full {
   width: 100%;
+}
+
+@media screen and (min-width: 600px) and (min-height: 400px) {
+  /* Main dialog setup */
+  [role="dialog"][data-type="value-selector"] {
+    top: 4.5rem;
+    left: calc(50% - 20rem);
+    right: calc(50% - 20rem);
+    bottom: 4.5rem;
+  }
 }
 

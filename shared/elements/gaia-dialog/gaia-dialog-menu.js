@@ -89,7 +89,7 @@ module.exports = component.register('gaia-dialog-menu', {
       left: 6px;
       right: 6px;
       top: 49px;
-      background: #E7E7E7;
+      background: #e7e9ec;
     }
 
     ::content > button:last-of-type:after {

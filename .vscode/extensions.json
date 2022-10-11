@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "zitup.classnametocss",
+    "streetsidesoftware.code-spell-checker",
+    "naumovs.color-highlight",
+    "tobermory.es6-string-html",
+    "pkief.material-icon-theme",
+    "esbenp.prettier-vscode",
+    "jock.svg",
+    "meganrogge.template-string-converter",
+    "wayou.vscode-todo-highlight",
+    "shardulm94.trailing-spaces"
+  ]
+}

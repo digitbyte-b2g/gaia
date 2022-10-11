@@ -10,28 +10,28 @@
 *~
 manifest.appcache
 
-/apps/calendar/js/common/presets.js
-/apps/camera/js/config.js
-/apps/gallery/js/config.js
-/apps/findmydevice/js/config.js
-/apps/homescreen/js/init.json
-/apps/homescreen/everything.me/config/local.json
-/apps/costcontrol/js/config.json
-/apps/sms/js/blacklist.json
-/apps/settings/resources/network.json
-/apps/settings/resources/support.json
-/apps/settings/resources/device-features.json
-/apps/settings/resources/findmydevice.json
-/apps/system/resources/icc.json
-/apps/system/resources/wapuaprof.json
+/webapps/calendar/js/common/presets.js
+/webapps/camera/js/config.js
+/webapps/gallery/js/config.js
+/webapps/findmydevice/js/config.js
+/webapps/homescreen/js/init.json
+/webapps/homescreen/everything.me/config/local.json
+/webapps/costcontrol/js/config.json
+/webapps/sms/js/blacklist.json
+/webapps/settings/resources/network.json
+/webapps/settings/resources/support.json
+/webapps/settings/resources/device-features.json
+/webapps/settings/resources/findmydevice.json
+/webapps/system/resources/icc.json
+/webapps/system/resources/wapuaprof.json
 
-/apps/*/test/unit/_sandbox.html
-/apps/*/test/unit/_proxy.html
-/apps/*/locales-obj
+/webapps/*/test/unit/_sandbox.html
+/webapps/*/test/unit/_proxy.html
+/webapps/*/locales-obj
 
-/dev_apps/*/test/unit/_sandbox.html
-/dev_apps/*/test/unit/_proxy.html
-/dev_apps/*/locales-obj
+/dev_webapps/*/test/unit/_sandbox.html
+/dev_webapps/*/test/unit/_proxy.html
+/dev_webapps/*/locales-obj
 
 /shared/test/integration/node_modules
 /shared/pages/import/js/parameters.js
@@ -47,7 +47,7 @@ manifest.appcache
 /profile-raptor/
 /profile.tar.gz
 /b2g_sdk/
-/tools/test-agent/node_modules
+/toolkit/test-agent/node_modules
 /test-output.xml
 /mocha-test-results.html
 /build/config/custom-extensions.json
@@ -58,12 +58,13 @@ manifest.appcache
 /coverage/
 /local.mk
 /npm-debug.log
+/os
 
 /raptor.log
 /metrics.ldjson
 /distros/raptor/outoftree_apps/
 
-/tools/xpcwindow/vendor/
+/toolkit/xpcwindow/vendor/
 
 /outoftree_apps/
 /distros/spark/outoftree_apps/

@@ -1,0 +1,40 @@
+{
+  "name": "Calendar",
+  "description": "Gaia Calendar",
+  "type": "certified",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
+  },
+  "messages": [
+     { "alarm": "/index.html" },
+     { "notification": "/index.html" }
+  ],
+  "permissions": {
+    "themeable":{},
+    "systemXHR":{},
+    "alarms":{},
+    "browser": {},
+    "settings":{ "access": "readonly" },
+    "desktop-notification":{},
+    "audio-channel-notification":{},
+    "moz-extremely-unstable-and-will-change-webcomponents":{}
+  },
+  "locales": {
+    "en-US": {
+      "name": "Calendar",
+      "description": "Gaia Calendar"
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "16": "/style/icons/calendar_16.png",
+    "32": "/style/icons/calendar_32.png",
+    "48": "/style/icons/calendar_48.png",
+    "64": "/style/icons/calendar_64.png",
+    "128": "/style/icons/calendar_128.png",
+    "256": "/style/icons/calendar_256.png"
+  },
+  "orientation": "default"
+}

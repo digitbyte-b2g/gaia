@@ -13,21 +13,23 @@ html[dir="rtl"] [role="dialog"][data-type="action"] button {
 
 /* Main dialog setup */
 [role="dialog"][data-type="action"] {
-  background: #2d2d2d;
+  background: var(--background-plus, #fff);
   overflow: hidden;
   position: fixed;
   z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 4.5rem;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
   padding: 0 0 7rem;
   /**
    * Using "font-size: 0" to avoid the unwanted visual space (about 3px) created
    * by white spaces and line breaks in the code between inline-block elements.
    */
   font-size: 0;
-  color: #fff;
+  color: var(--text-color, #333);
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0 0 calc(100vw + 100vh) rgba(64,64,64,0.3);
 }
 
 [role="dialog"][data-type="action"]:before {
@@ -49,14 +51,15 @@ html[dir="rtl"] [role="dialog"][data-type="action"] button {
   z-index: 10;
   height: 5rem;
   line-height: 4.9rem;
-  color: #fff;
+  color: var(--text-color, #333);
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
   overflow: hidden;
   font-weight: normal;
   padding: 0 3rem;
-  border-bottom: 0.1rem solid #616262;
+  border-bottom: 0.1rem solid var(--background-theta, #e0e2e5);
+  background: var(--background, #e7e9ec);
 }
 [role="dialog"][data-type="action"] > header * {
   overflow: hidden;
@@ -66,7 +69,7 @@ html[dir="rtl"] [role="dialog"][data-type="action"] button {
 [role="dialog"][data-type="action"] > header h1 {
   font-size: 1.6rem;
   line-height: 4.9rem;
-  color: #fff;
+  color: var(--text-color, #333);
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
@@ -91,16 +94,20 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header menu[type="toolbar"
   box-sizing: border-box;
   position: relative;
   width: auto;
-  min-width: 5rem;
-  height: 4.9rem;
+  min-width: 4rem;
+  height: 4rem;
   margin-bottom: 0;
   padding: 0 1rem;
-  border-radius: 0;
-  line-height: 4.9rem;
+  border-radius: 1rem;
+  line-height: 4rem;
   background: none;
   text-align: center;
   text-shadow: none;
   z-index: 5;
+  margin: 0.5rem;
+  margin-inline-start: 0;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 html[dir="ltr"] [role="dialog"][data-type="action"] > header menu[type="toolbar"] a,
 html[dir="ltr"] [role="dialog"][data-type="action"] > header menu[type="toolbar"] button {
@@ -119,7 +126,7 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header menu[type="toolbar"
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.1em;
-  color: #fff;
+  color: var(--text-color, #333);
   border-radius: 0;
   text-decoration: none;
 }
@@ -129,12 +136,20 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header menu[type="toolbar"
   border: none;
 }
 
+/* Hovered state */
+[role="dialog"][data-type="action"] > header a:hover .icon:after,
+[role="dialog"][data-type="action"] > header button:hover .icon:after,
+[role="dialog"][data-type="action"] > header menu[type="toolbar"] a:hover,
+[role="dialog"][data-type="action"] > header menu[type="toolbar"] button:hover  {
+  background: var(--translucent, rgba(0,0,0,0.05)) !important;
+}
+
 /* Pressed state */
 [role="dialog"][data-type="action"] > header a:active .icon:after,
 [role="dialog"][data-type="action"] > header button:active .icon:after,
 [role="dialog"][data-type="action"] > header menu[type="toolbar"] a:active,
 [role="dialog"][data-type="action"] > header menu[type="toolbar"] button:active  {
-  background: #008aaa !important;
+  background: var(--translucent, rgba(0,0,0,0.1)) !important;
 }
 
 /* Disabled state */
@@ -152,10 +167,15 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header menu[type="toolbar"
   vertical-align: top;
   width: 4rem;
   height: 4.9rem;
-  margin: 0 -1rem;
-  background: transparent no-repeat center center / 3rem auto;
+  background: transparent no-repeat center center / 2rem auto;
   font-size: 0;
   overflow: hidden;
+}
+html[dir="ltr"] [role="dialog"][data-type="action"] > header .icon {
+  margin: 0 0 0 -1.5rem;
+}
+html[dir="rtl"] [role="dialog"][data-type="action"] > header .icon {
+  margin: 0 -1.5rem 0 0;
 }
 
 [role="dialog"][data-type="action"] > header .icon.icon-close {
@@ -172,12 +192,13 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header .icon.icon-back {
 /* Navigation links (back, cancel, etc) */
 [role="dialog"][data-type="action"] > header > button,
 [role="dialog"][data-type="action"] > header > a {
-  width: 5rem;
-  height: 4.9rem;
+  width: 4rem;
+  height: 4rem;
   background: none;
   overflow: visible;
-  margin: 0 -1rem;
-  margin-inline-start: -3rem;
+  margin: 0.5rem;
+  margin-inline-start: -2.5rem;
+  margin-inline-end: 1rem;
   position: relative;
 }
 html[dir="ltr"] [role="dialog"][data-type="action"] > header > button,
@@ -198,9 +219,9 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header > a {
 [role="dialog"][data-type="action"] > header > a .icon {
   position: static;
   display: block;
-  width: 3rem;
-  height: 4.9rem;
-  margin: 0;
+  width: 4rem;
+  height: 4rem;
+  margin: 0 !important;
   overflow: visible;
   font-size: 0;
 }
@@ -212,15 +233,16 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header > a {
   offset-inline-start: 0;
   top: 0;
   z-index: -1;
-  width: 3rem;
-  height: 4.9rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
 }
 
 /* Content */
 [role="dialog"][data-type="action"] > section {
-  color: #fff;
+  color: var(--text-color, #333);
   position: absolute;
-  top: 7rem;
+  top: 5rem;
   left: 1.5rem;
   right: 1.5rem;
   bottom: 2rem;
@@ -234,7 +256,6 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header > a {
   padding: 0;
   max-height: calc(100% - 13.5rem); /*header(5rem) + footer(7rem) + padding(1.5rem)*/
   height: auto;
-  padding-top: 1.5rem;
   overflow: auto;
   width: auto;
   border: none;
@@ -242,50 +263,70 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header > a {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 7rem;
+  top: 5rem;
 }
 
 [role="dialog"][data-type="action"] > menu > button {
   width: calc(100% - 3rem);
-  height: 4rem;
+  height: 4.8rem;
   box-sizing: border-box;
   vertical-align: middle;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: visible;
   font-weight: normal;
-  line-height: 4rem;
+  line-height: 4.8rem;
   outline: none;
   font-size: 1.6rem;
   text-shadow: none;
-  padding: 0 1.2rem;
-  margin: 0 1.5rem 1rem;
-  background: rgba(87, 87, 87, 0.8);
+  padding: 0 1.5rem;
+  margin: -0.1rem 1.5rem 0;
+  background: transparent;
   border: none;
   border-radius: 0;
   position: relative;
-  color: #fff;
+  color: var(--text-color, #333);
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
+  border-top: 0.1rem solid #e7e9ec;
+}
+
+[role="dialog"][data-type="action"] > menu > button:first-child,
+[role="dialog"][data-type="action"] > menu > button:hover,
+[role="dialog"][data-type="action"] > menu > button:active,
+[role="dialog"][data-type="action"] > menu > button:hover + button,
+[role="dialog"][data-type="action"] > menu > button:active + button {
+  border-top-color: transparent;
+}
+
+[role="dialog"][data-type="action"] > menu > button:before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -1.5rem;
+  bottom: 0;
+  left: -1.5rem;
+  z-index: -1;
 }
 
 [role="dialog"][data-type="action"] > menu > .last-button-container {
   position: fixed;
   width: 100%;
-  background-color: #4d4d4d;
+  background-color: var(--background, #e7e9ec);
   height: 7rem;
-  offset-inline-start: 0;
+  offset-inline-start: 0.4rem;
   bottom: 0;
+  border-radius: 0 0 1.5rem 1.5rem;
 }
 
 [role="dialog"][data-type="action"] > menu > .last-button-container button {
-  width: calc(100% - 3rem);
+  width: calc(100% - 3.8rem);
   position: fixed;
-  bottom: 0;
+  bottom: 0.4rem;
   margin: 0 1.5rem 1.5rem;
-  offset-inline-start: 0;
-  color: #333;
-  background: #d8d8d8;
+  offset-inline-start: 0.4rem;
+  color: var(--text-color, #333);
+  background: transparent;
   text-align: center;
   border: none;
   border-radius: 2rem;
@@ -293,29 +334,89 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header > a {
   font-size: 1.6rem;
   height: 4rem;
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
+  padding: 0 1.5rem;
 }
 
 [role="dialog"][data-type="action"] > menu > button:nth-last-child(2) {
   margin-bottom: 1.5rem;
 }
 
+/* Hover state */
+[role="dialog"][data-type="action"] > menu > button:hover:before,
+[role="dialog"][data-type="action"] > menu > .last-button-container button:hover {
+  background: var(--translucent, rgba(0,0,0,0.05));
+}
+
+/* Focus state */
+[role="dialog"][data-type="action"] > menu button:focus-visible {
+  outline: var(--focus-outline);
+}
+
 /* Press state */
-[role="dialog"][data-type="action"] > menu button:active {
-  background: #00aacc;
-  color: #fff;
+[role="dialog"][data-type="action"] > menu > button:active:before,
+[role="dialog"][data-type="action"] > menu > .last-button-container button:active {
+  background: var(--translucent, rgba(0,0,0,0.1));
 }
 
 /* Disabled */
 [role="dialog"][data-type="action"] > menu > button[disabled] {
-  background-color: rgba(87, 87, 87, 0.8);
-  color: rgba(255, 255, 255, 0.4);
-  opacity: 0.5;
+  color: rgba(51, 51, 51, 0.5);
   pointer-events: none;
 }
 
 [role="dialog"][data-type="action"] > menu > .last-button-container button[disabled] {
-  background-color: #e7e7e7;
-  color: #a6a6a6;
+  background-color: var(--background, #e7e9ec);
+  color: #a6a8ab;
   opacity: 1;
+}
+
+@media screen and (min-width: 600px) and (min-height: 400px) {
+  /* Main dialog setup */
+  [role="dialog"][data-type="action"] {
+    top: 4.5rem;
+    left: calc(50% - 20rem);
+    right: calc(50% - 20rem);
+    bottom: 4.5rem;
+  }
+
+  [role="dialog"][data-type="action"] > menu > .last-button-container {
+    width: 40rem;
+    bottom: 0;
+    offset-inline-start: calc(50% - 20rem);
+  }
+
+  [role="dialog"][data-type="action"] > menu > .last-button-container button {
+    width: 36.2rem;
+    bottom: 0.4rem;
+    offset-inline-start: calc(50% - 19.6rem);
+  }
+
+  [data-theme="dark"] [role="dialog"][data-type="action"] {
+    background-color: rgba(48, 48, 56, 0.75);
+  }
+
+  [data-theme="dark"] [role="dialog"][data-type="action"] > header {
+    border-bottom: 0.1rem solid rgba(255,255,255,0.0625);
+  }
+
+  /* Menu & buttons setup */
+  [data-theme="dark"] [role="dialog"][data-type="action"] menu > .last-button-container {
+    background: rgba(255,255,255,0.125);
+  }
+}
+
+/* ----------------------------------
+* Dark mode
+* ---------------------------------- */
+
+[data-theme="dark"] [role="dialog"][data-type="action"] > header .icon.icon-close {
+  background-image: url(action_menu/images/icons/dark/close.png);
+}
+
+html[dir="ltr"][data-theme="dark"] [role="dialog"][data-type="action"] > header .icon.icon-back {
+  background-image: url(action_menu/images/icons/dark/left.png);
+}
+html[dir="rtl"][data-theme="dark"] [role="dialog"][data-type="action"] > header .icon.icon-back {
+  background-image: url(action_menu/images/icons/dark/right.png);
 }

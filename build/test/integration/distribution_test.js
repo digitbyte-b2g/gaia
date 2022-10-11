@@ -37,7 +37,7 @@ suite('Distribution mechanism', function() {
     // https://mobile.twitter.com/cache/twitter.webapp
     // to
     // http://localhost:9999/manifest.webapp
-    cusDir = path.join(process.cwd(), 'customization');
+    cusDir = path.join(process.cwd(), 'customize');
     variantPath = path.join(cusDir, 'variant.json');
     var port = 9999;
     originalVariant = fs.readFileSync(variantPath, { encoding: 'utf8' });
@@ -184,7 +184,7 @@ suite('Distribution mechanism', function() {
 
   function validateUuid() {
     var uuidMapping = JSON.parse(fs.readFileSync(
-      path.join(process.cwd(), 'customization','uuid.json')
+      path.join(process.cwd(), 'customize','uuid.json')
     ));
     var webappsPath = path.join(process.cwd(), 'profile', 'webapps');
 
@@ -277,7 +277,7 @@ suite('Distribution mechanism', function() {
 
     assert.isTrue(fs.existsSync(path.join(process.cwd(), 'profile',
       'svoperapps', 'Twitter')),
-      'profile/svoperapps/Twitter directory should exist');
+      'profile/svoperwebapps/Twitter directory should exist');
     assert.isTrue(fs.existsSync(path.join(process.cwd(), 'profile',
       'svoperapps', 'Twitter', 'manifest.webapp')),
       'manifest for Twitter should exist');
@@ -295,7 +295,7 @@ suite('Distribution mechanism', function() {
   }
 
   test('build with GAIA_DISTRIBUTION_DIR', function(done) {
-    cusDir = path.join(process.cwd(), 'customization');
+    cusDir = path.join(process.cwd(), 'customize');
     var cmd = 'GAIA_DISTRIBUTION_DIR=' + cusDir + ' make';
     helper.exec(cmd, function(error, stdout, stderr) {
       helper.checkError(error, stdout, stderr);

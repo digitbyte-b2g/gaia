@@ -1,47 +1,53 @@
 .fade-in {
-  animation: fade-in 0.2s forwards;
+  animation: fade-in 0.3s forwards cubic-bezier(0, 0, 0, 1);
 }
 
 .fade-out {
-  animation: fade-out 0.2s forwards;
+  animation: fade-out 0.3s forwards cubic-bezier(0, 0, 0, 1);
 }
 
 @keyframes fade-in {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+  0%   { opacity: 0; transform: translateY(32px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fade-out {
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
+  0%   { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(32px); }
 }
 
-html[dir="ltr"] .app-go-deeper-out {
-  animation: current-to-left var(--transition-duration) forwards;
-}
-html[dir="rtl"] .app-go-deeper-out {
-  animation: current-to-right var(--transition-duration) forwards;
+[role="dialog"].fade-in {
+  animation: dialog-fade-in 0.3s forwards cubic-bezier(0.2, 0.9, 0.1, 1.0);
 }
 
-html[dir="ltr"] .app-go-deeper-in {
-  animation: right-to-current var(--transition-duration) forwards;
-}
-html[dir="rtl"] .app-go-deeper-in {
-  animation: left-to-current var(--transition-duration) forwards;
+[role="dialog"].fade-out {
+  animation: dialog-fade-out 0.3s forwards cubic-bezier(0.2, 0.9, 0.1, 1.0);
 }
 
-html[dir="ltr"] .app-go-deeper-back-in {
-  animation: left-to-current var(--transition-duration) forwards;
-}
-html[dir="rtl"] .app-go-deeper-back-in {
-  animation: right-to-current var(--transition-duration) forwards;
+@keyframes dialog-fade-in {
+  0%   { opacity: 0; transform: translateY(32px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-html[dir="ltr"] .app-go-deeper-back-out {
-  animation: current-to-right var(--transition-duration) forwards;
+@keyframes dialog-fade-out {
+  0%   { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(32px) scale(0.95); }
 }
-html[dir="rtl"] .app-go-deeper-back-out {
-  animation: current-to-left var(--transition-duration) forwards;
+
+.app-go-deeper-out {
+  animation: current-to-left 0.4s forwards cubic-bezier(1, 0, 0, 1);
+}
+
+.app-go-deeper-in {
+  animation: right-to-current 0.4s forwards cubic-bezier(1, 0, 0, 1);
+}
+
+.app-go-deeper-back-in {
+  animation: left-to-current 0.4s forwards cubic-bezier(1, 0, 0, 1);
+}
+
+.app-go-deeper-back-out {
+  animation: current-to-right 0.4s forwards cubic-bezier(1, 0, 0, 1);
 }
 
 @keyframes show {
@@ -87,63 +93,55 @@ html[dir="rtl"] .app-go-deeper-back-out {
 }
 
 .app-go-up-in {
-  animation: app-go-up-in var(--transition-duration) forwards ease-in;
+  animation: app-go-up-in 0.5s forwards cubic-bezier(0.2, 0.9, 0.1, 1);
 }
 
 .app-go-up-back-out {
-  animation: app-go-up-back-out var(--transition-duration) forwards ease-in;
+  animation: app-go-up-back-out 0.5s forwards cubic-bezier(0.2, 0.9, 0.1, 1);
 }
 
 @keyframes app-go-up-in {
-  0% { transform: translateY(100%); }
-  100% { transform: translateY(0); }
+  0% { transform: translateY(128px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
 
 @keyframes app-go-up-back-out {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100%); }
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(128px); opacity: 0; }
 }
 
-html[dir="ltr"] .app-go-in {
-  animation: right-to-current var(--transition-duration) forwards ease-in;
-}
-html[dir="rtl"] .app-go-in {
-  animation: left-to-current var(--transition-duration) forwards ease-in;
+.app-go-left-in {
+  animation: app-go-left-in 0.5s forwards cubic-bezier(1, 0, 0, 1);
 }
 
-html[dir="ltr"] .app-go-back-out {
-  animation: current-to-right var(--transition-duration) forwards ease-in;
-}
-html[dir="rtl"] .app-go-back-out {
-  animation: current-to-left var(--transition-duration) forwards ease-in;
+.app-go-left-back-out {
+  animation: app-go-left-back-out 0.5s forwards cubic-bezier(1, 0, 0, 1);
 }
 
-html[dir="ltr"] .move-in-from-forward {
-  animation: move-left-in var(--transition-duration) forwards;
-}
-html[dir="rtl"] .move-in-from-forward {
-  animation: move-right-in var(--transition-duration) forwards;
+@keyframes app-go-left-in {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(0); }
 }
 
-html[dir="ltr"] .move-out-from-forward {
-  animation: move-left-out var(--transition-duration) forwards;
-}
-html[dir="rtl"] .move-out-from-forward {
-  animation: move-right-out var(--transition-duration) forwards;
+@keyframes app-go-left-back-out {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
 }
 
-html[dir="ltr"] .move-in-from-backward {
-  animation: move-right-in var(--transition-duration) forwards;
-}
-html[dir="rtl"] .move-in-from-backward {
-  animation: move-left-in var(--transition-duration) forwards;
+.move-left-in {
+  animation: move-left-in 0.4s forwards cubic-bezier(1, 0, 0, 1);
 }
 
-html[dir="ltr"] .move-out-from-backward {
-  animation: move-right-out var(--transition-duration) forwards;
+.move-left-out {
+  animation: move-left-out 0.4s forwards cubic-bezier(1, 0, 0, 1);
 }
-html[dir="rtl"] .move-out-from-backward {
-  animation: move-left-out var(--transition-duration) forwards;
+
+.move-right-in {
+  animation: move-right-in 0.4s forwards cubic-bezier(1, 0, 0, 1);
+}
+
+.move-right-out {
+  animation: move-right-out 0.4s forwards cubic-bezier(1, 0, 0, 1);
 }
 
 @keyframes move-left-in {
@@ -164,4 +162,43 @@ html[dir="rtl"] .move-out-from-backward {
 @keyframes move-right-out {
   0% { transform: translateX(0%);}
   100% { transform: translateX(100%);}
+}
+
+.wos-fade-in,
+.wos-fade-out {
+  mask-image: linear-gradient(to right, white calc(50% - 16px), transparent calc(50% + 16px));
+  mask-size: calc(200% + 32px);
+}
+
+.wos-fade-in {
+  animation: wos-fade-in 0.4s forwards ease;
+}
+
+.wos-fade-out {
+  animation: wos-fade-out 0.4s forwards ease;
+}
+
+@keyframes wos-fade-in {
+  0% { mask-position-x: 100%; }
+  100% { mask-position-x: 0%; }
+}
+
+@keyframes wos-fade-out {
+  0% { mask-position-x: 0%; }
+  100% { mask-position-x: 100%; }
+}
+
+.wos-dialog-show {
+  animation: wos-dialog-show 0.4s forwards cubic-bezier(0,0,0,1.5);
+}
+
+@keyframes wos-dialog-show {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

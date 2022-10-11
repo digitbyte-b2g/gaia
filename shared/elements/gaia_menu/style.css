@@ -281,7 +281,7 @@ span.gaia-menu-cancel button {
   bottom: 0;
   offset-inline-start: 0;
   color: #333;
-  background: #d8d8d8;
+  background: #d8dadd;
   text-align: center;
   border: none;
   margin-bottom: 1.5rem;
@@ -308,7 +308,7 @@ button[disabled] {
 }
 
 button[disabled]:last-child {
-  background-color: #e7e7e7;
-  color: #a6a6a6;
+  background-color: #e7e9ec;
+  color: #a6a8ab;
   opacity: 1;
 }

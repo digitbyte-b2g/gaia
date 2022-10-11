@@ -86,7 +86,7 @@ JSHint supports both overriding and extending configuration files. This means tw
 * that it is possible to inherit from the main .jshintrc to change only some configuration properties
 
 This is especially useful to change the list of predefined globals. See for
-example https://github.com/mozilla-b2g/gaia/blob/master/apps/sms/test/unit/.jshintrc
+example https://github.com/mozilla-b2g/gaia/blob/master/webapps/sms/test/unit/.jshintrc
 
 ## The trickier problems
 

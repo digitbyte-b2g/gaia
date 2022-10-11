@@ -2,7 +2,7 @@
   "homescreens": [
     [
       ["apps", "search"],
-      ["apps", "marketplace.firefox.com"],
+      ["apps", "marketplace"],
       ["apps", "camera"]
     ], [
       ["apps", "gallery"],

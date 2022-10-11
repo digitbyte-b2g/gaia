@@ -1,4 +1,5 @@
 {
+  "notifier_orchid.wav": {"l10nID": "notifier_orchid"},
   "notifier_bells.opus": {"l10nID": "notifier_bells"},
   "notifier_bloom.opus": {"l10nID": "notifier_bloom"},
   "notifier_chime.opus": {"l10nID": "notifier_chime"},

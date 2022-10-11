@@ -13,7 +13,7 @@ gaia-checkbox {
 }
 
 #checkbox span {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-weight: normal;
   color: var(--label-color);
   line-height: 3rem;
@@ -61,6 +61,10 @@ gaia-checkbox {
   background: url(images/default.png) no-repeat center top / 2.2rem auto;
 }
 
+#checkbox:not(.invisible):hover span:after {
+  background-image: url(images/default_hover.png);
+}
+
 #checkbox.checked span:after {
   background-position: center bottom;
 }
@@ -68,4 +72,29 @@ gaia-checkbox {
 /* 'Dangerous' checkboxes */
 #checkbox.danger span:after {
   background-image: url(images/danger.png);
+}
+
+#checkbox.danger:hover span:after {
+  background-image: url(images/danger_hover.png);
+}
+
+/* ----------------------------------
+* Dark mode
+* ---------------------------------- */
+
+[data-theme="dark"] #checkbox:not(.invisible) span:after {
+  background-image: url(images/dark/default.png);
+}
+
+[data-theme="dark"] #checkbox:not(.invisible):hover span:after {
+  background-image: url(images/dark/default_hover.png);
+}
+
+/* 'Dangerous' checkboxes */
+[data-theme="dark"] #checkbox.danger span:after {
+  background-image: url(images/dark/danger.png);
+}
+
+[data-theme="dark"] #checkbox.danger:hover span:after {
+  background-image: url(images/dark/danger_hover.png);
 }

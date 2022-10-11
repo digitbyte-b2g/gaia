@@ -46,7 +46,7 @@ suite('Integration tests', function() {
             path.join(process.cwd(), filePathInHtml));
         } else {
           fileInApps = fs.readFileSync(path.join(process.cwd(),
-            'apps', appName, filePathInHtml));
+            'webapps', appName, filePathInHtml));
         }
         assert.deepEqual(fileInZip, fileInApps, filePathInHtml);
       }
@@ -87,7 +87,7 @@ suite('Integration tests', function() {
       if (filePath.indexOf('shared/') === 0) {
         filePath = path.join(process.cwd(), filePath);
       } else {
-        filePath = path.join(process.cwd(), 'apps', appName, filePath);
+        filePath = path.join(process.cwd(), 'webapps', appName, filePath);
       }
 
       if (fs.existsSync(filePath)) {
@@ -126,7 +126,7 @@ suite('Integration tests', function() {
       'apps-engineering.list');
     fs.renameSync(appsListPath, appsListPath + '.bak');
     fs.writeFileSync(appsListPath,
-      'apps/*\nbuild/test/fixtures/custom-origin\n');
+      'webapps/*\nbuild/test/fixtures/custom-origin\n');
 
     var extConfigPath  = path.join('build', 'config',
       'additional-extensions.json');

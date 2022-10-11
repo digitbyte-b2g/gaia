@@ -42,7 +42,7 @@ var generatePerAppTasks = function(appFolder) {
   });
 };
 
-['apps', 'tv_apps'].forEach(function(appFolder) {
+['webapps', 'tv_webapps'].forEach(function(appFolder) {
   generatePerAppTasks(appFolder);
 });
 

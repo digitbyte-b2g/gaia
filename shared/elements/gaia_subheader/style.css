@@ -11,12 +11,15 @@ gaia-subheader[hidden] {
 
 gaia-subheader {
   display: block;
-  padding: 0.8rem 3rem;
+  padding: 0 3rem;
   border-bottom: solid 0.1rem #e6e6e6;
   color: #424242;
-  font-size: 1.5rem;
-  line-height: 1.8rem;
+  font-size: 1.6rem;
+  line-height: 3rem;
   text-align: start;
+  max-width: 788px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 /**
@@ -25,7 +28,7 @@ gaia-subheader {
 
 gaia-subheader[skin="organic"] {
   border: 0;
-  background-color: #e7e7e7;
+  background-color: #e7e9ec;
   color: #4d4d4d;
 }
 

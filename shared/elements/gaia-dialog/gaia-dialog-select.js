@@ -163,7 +163,7 @@ module.exports = component.register('gaia-dialog-select', {
       line-height: 26px;
       font-weight: 200;
       font-style: italic;
-      color: #858585;
+      color: #858789;
     }
 
     /** List
@@ -201,7 +201,7 @@ module.exports = component.register('gaia-dialog-select', {
       left: 16px;
       right: 16px;
       bottom: 1px;
-      background: #E7E7E7;
+      background: #e7e9ec;
     }
 
     ::content li:last-of-type:after {

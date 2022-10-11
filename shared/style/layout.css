@@ -14,8 +14,9 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 18px;
-  color: #333;
+  color: var(--text-color, #333);
   overflow: hidden;
+  background: var(--background, #e7e9ec);
 }
 
 ul {
@@ -87,7 +88,18 @@ p {
 
 /* Lists */
 .gaia-list {
-  font-size: 18px;
+  font-size: 16px;
+}
+
+ul.gaia-list,
+.gaia-list ul {
+  background: var(--background-plus, #fff);
+  margin: 1rem auto;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  max-width: 768px;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  width: calc(100% - 3rem);
 }
 
 .gaia-list li {
@@ -96,7 +108,7 @@ p {
   flex-direction: row;
   align-items: center;
   min-height: 40px;
-  padding: 10px 15px;
+  padding: 4px 15px;
 }
 
 .gaia-list li:after {
@@ -106,7 +118,7 @@ p {
   top: 0;
   bottom: 0;
   left: 15px;
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e9ec;
   pointer-events: none;
 }
 
@@ -114,9 +126,21 @@ p {
   display: none;
 }
 
+.gaia-list.active li:hover,
+.gaia-list li.active:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
 .gaia-list.active li:active,
 .gaia-list li.active:active {
-  background-color: rgba(0, 213, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.gaia-list.active li:hover:after,
+.gaia-list.active li:active:after,
+.gaia-list li.active:hover:after,
+.gaia-list li.active:active:after {
+  display: none;
 }
 
 
@@ -128,18 +152,22 @@ p {
 
 /* List header */
 .gaia-list header {
-  padding: 0 30px;
+  padding: 0 3rem;
   margin: 0;
   font-size: 16px;
   height: 30px;
-  line-height: 40px;
-  font-weight: normal;
-  color: #ff4e00;
+  line-height: 30px;
+  font-weight: bold;
+  color: var(--accent-color, #0061e0);
   text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  background: #fff;
+  background: var(--background, #e7e9ec);
+  margin: 1rem auto -1rem;
+  position: relative;
+  max-width: 788px;
+  box-sizing: border-box;
 }
 
 .gaia-list.sticky header {
@@ -148,6 +176,7 @@ p {
   right: 0;
   left: 0;
   z-index: 1;
+  overflow: visible;
 }
 
 /* List elements */
@@ -157,7 +186,7 @@ p {
 }
 
 .gaia-list li p:not(:first-of-type) {
-  color: #858585;
+  color: #858789;
   font-size: 15px;
   line-height: 20px;
 }
@@ -192,12 +221,12 @@ p {
 }
 
 .gaia-list label.pack-checkbox:not(.reverse) {
-  -moz-padding-start: 30px;
+  -moz-padding-start: 32px;
   -moz-margin-start: 0;
 }
 
 .gaia-list label.pack-checkbox span:after {
-  left: 10px;
+  left: 11px;
 }
 
 .gaia-list label.pack-checkbox.reverse span:after,
@@ -224,7 +253,7 @@ p {
 }
 
 .gaia-list label p {
-  color: #858585;
+  color: #858789;
   font-size: 15px;
   line-height: 20px;
   -moz-margin-start: 0;
@@ -244,15 +273,15 @@ p {
   width: 50px;
   height: 50px;
   border-radius: 25px;
-  margin-top: 5px;
+  margin-top: 0;
   box-sizing: border-box;
-  box-shadow: 0 0 0 1px #dedede;
   background: transparent center center / cover;
   position: relative;
 }
 
 .gaia-list li button,
-.gaia-list li .button {
+.gaia-list li .button,
+.gaia-list li input {
   margin: 0;
 }
 
@@ -268,8 +297,8 @@ p {
 
 /* Footer */
 .gaia-footer {
-  border-top: 1px solid #e7e7e7;
-  background-color: #fff;
+  border-top: 1px solid #e7e9ec;
+  background-color: var(--background, #fff);
   padding: 10px 15px;
   display: flex;
 }
@@ -278,7 +307,7 @@ p {
   margin: 0 15px 10px;
   word-break: break-all;
   text-align: center;
-  color: #858585;
+  color: #858789;
   font-size: 15px;
   line-height: 20px;
 }
@@ -302,11 +331,7 @@ p {
 }
 
 .skin-organic .gaia-list header {
-  background-color: #e7e7e7;
   color: #4d4d4d;
-  font-size: 15px;
-  line-height: 34px;
-  text-transform: none;
 }
 
 
@@ -326,5 +351,63 @@ p {
 
 .gaia-list:-moz-dir(rtl) li.icon {
   background-position: right 15px center;
+}
+
+/* ----------------------------------
+* Dark mode
+* ---------------------------------- */
+
+[data-theme="dark"] {
+  color: var(--text-color-minus, #fff);
+}
+
+[data-theme="dark"] [role="region"] > section {
+  background-color: #282c30;
+}
+
+[data-theme="dark"] ul.gaia-list,
+[data-theme="dark"] .gaia-list ul {
+  background-color: #303234;
+}
+
+[data-theme="dark"] ul.gaia-list header,
+[data-theme="dark"] .gaia-list ul header {
+  background-color: #303234;
+}
+
+[data-theme="dark"] .gaia-list li:after {
+  border-bottom-color: #282c30;
+}
+
+[data-theme="dark"] .gaia-list.active li:hover,
+[data-theme="dark"] .gaia-list li.active:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="dark"] .gaia-list.active li:active,
+[data-theme="dark"] .gaia-list li.active:active {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .gaia-list header {
+  background-color: #282c30;
+}
+
+/* List header */
+[data-theme="dark"] .gaia-list header {
+  color: var(--accent-color, #00ddff);
+}
+
+[data-theme="dark"] .gaia-list.sticky header:before {
+  box-shadow: -1.5rem -1.5rem 0 #e7e9ec;
+}
+
+[data-theme="dark"] .gaia-list.sticky header:after {
+  box-shadow: 1.5rem -1.5rem 0 #e7e9ec;
+}
+
+[data-theme="dark"].skin-organic .gaia-list header,
+[data-theme="dark"] .skin-organic .gaia-list header {
+  color: var(--background-epsilon, #c7c9cc);
 }
 

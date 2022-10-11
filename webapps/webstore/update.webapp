@@ -1,0 +1,18 @@
+{
+  "description": "Orchid Web Store",
+  "developer": {
+    "name": "MortCodesWeb",
+    "url": "http://www.github.com/mortada-killer0/"
+  },
+  "icons": {
+    "16": "/app-icons/16.png",
+    "32": "/app-icons/32.png",
+    "48": "/app-icons/48.png",
+    "64": "/app-icons/64.png",
+    "128": "/app-icons/128.png",
+    "256": "/app-icons/256.png"
+  },
+  "launch_path": "/index.html",
+  "name": "Web Store",
+  "package_path": "/application.zip"
+}

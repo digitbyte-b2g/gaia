@@ -82,6 +82,9 @@
   },
   "scripts": {
     "refresh": "npmr install",
-    "marionette": "gaia-marionette"
+    "marionette": "gaia-marionette",
+    "build": "make",
+    "clean": "make really-clean",
+    "start": "./bin/simulator/firefox/firefox-bin --profile ./profile --chrome chrome://b2g/content/shell.html --screen 1280x720"
   }
 }

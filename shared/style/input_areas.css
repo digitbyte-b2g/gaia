@@ -38,13 +38,15 @@ textarea {
   resize: none;
   padding: 0 1.5rem;
   font-size: 1.6rem;
-  border: 0.1rem solid #c7c7c7;
-  border-radius: 0;
+  border: none;
+  border-bottom: 0.2rem solid var(--input-clear-background, #9e9ea0);
+  border-radius: 0.2rem;
   box-shadow: none; /* override the box-shadow from the system (performance issue) */
-  color: #333;
-  background: #fff;
+  color: var(--text-color, #333);
+  background: var(--input-background, #f4f4f4);
   margin: 0 0 1rem;
   unicode-bidi: -moz-plaintext;
+  outline: none;
 }
 
 label:active {
@@ -78,8 +80,8 @@ textarea[disabled] {
 .skin-dark input[type="url"],
 .skin-dark input[type="number"],
 .skin-dark textarea  {
-  color: #fff;
-  background-color: transparent;
+  color: var(--text-color-minus, #fff);
+  background-color: #101214;
   border-color: #454545;
 }
 
@@ -99,15 +101,15 @@ form p textarea + button[type="reset"] {
   font-size: 0;
   opacity: 0;
   pointer-events: none;
-  background: url(input_areas/images/clear.png) no-repeat 50% 50% / 2.4rem auto;
+  background: url(input_areas/images/clear.png) no-repeat 50% 50% / 2rem auto;
 }
 html[dir="ltr"] form p input + button[type="reset"],
 html[dir="ltr"] form p textarea + button[type="reset"] {
-  right: -0.3rem;
+  right: 0;
 }
 html[dir="rtl"] form p input + button[type="reset"],
 html[dir="rtl"] form p textarea + button[type="reset"] {
-  left: -0.3rem;
+  left: 0;
 }
 
 .skin-dark p input + button[type="reset"],
@@ -122,7 +124,7 @@ li textarea + button[type="reset"]:after {
 }
 
 textarea {
-  padding: 1.2rem;
+  padding: 1.5rem;
 }
 
 html[dir="ltr"] form p input:focus { padding-right: 3rem; }
@@ -151,11 +153,11 @@ input[type="date"],
 input[type="time"],
 input[type="datetime"],
 input[type="datetime-local"] {
-  border: 0.1rem solid #c7c7c7;
+  border: 0.1rem solid #9e9ea0;
   width: 100%;
   box-sizing: border-box;
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
   font-size: 1.6rem;
   margin: 0 0 1.5rem;
   padding: 0 1.5rem;
@@ -163,9 +165,9 @@ input[type="datetime-local"] {
   white-space: nowrap;
   overflow: hidden;
   height: 4rem;
-  color: #333;
-  border-radius: 0;
-  background-color: #fff;
+  color: var(--text-color, #333);
+  border-radius: 0.4rem;
+  background-color: var(--background, #fff);
   background-repeat: no-repeat;
 }
 html[dir="ltr"] fieldset legend,
@@ -201,8 +203,8 @@ fieldset[disabled] {
 .skin-dark input[type="time"],
 .skin-dark input[type="datetime"],
 .skin-dark input[type="datetime-local"] {
-  color: #fff;
-  background-color: transparent;
+  color: var(--text-color-minus, #fff);
+  background-color: #101214;
   border-color: #454545;
 }
 
@@ -233,7 +235,7 @@ input[type="time"]:focus,
 input[type="datetime"]:focus,
 input[type="datetime-local"]:focus {
   box-shadow: none;
-  border-bottom-color: #c7c7c7;
+  border-bottom-color: var(--background-epsilon, #c7c9cc);
 }
 
 .skin-dark input[type="date"]:focus,
@@ -249,7 +251,7 @@ input[type="time"]:active,
 input[type="datetime"]:active,
 input[type="datetime-local"]:active {
   background-color: #b2f2ff;
-  color: #fff;
+  color: var(--text-color-minus, #fff);
 }
 
 .skin-dark input[type="date"]:active,
@@ -272,16 +274,16 @@ input:focus,
 textarea:focus,
 .skin-dark input:focus,
 .skin-dark textarea:focus {
-  box-shadow: inset 0 -0.1rem 0 #00caf2;
-  border-bottom-color: #00caf2;
+  box-shadow: inset 0 -0.1rem 0 var(--accent-color, #0061e0);
+  border-bottom-color: var(--accent-color, #0061e0);
 }
 
 input:invalid:focus,
 textarea:invalid:focus,
 .skin-dark input:invalid:focus,
 .skin-dark textarea:invalid:focus {
-  box-shadow: inset 0 -0.1rem 0 #820000;
-  border-bottom-color: #820000;
+  box-shadow: inset 0 -0.1rem 0 #c00040;
+  border-bottom-color: #c00040;
 }
 
 input[type="range"]:focus,
@@ -294,15 +296,15 @@ input[type="range"]:focus,
 form[role="search"] {
   position: relative;
   height: 3.7rem;
-  background: #f4f4f4;
+  background: #f4f6f8;
 }
 
 form[role="search"].skin-dark {
-  background: #202020;
+  background: #202224;
 }
 
 form[role="search"] p {
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   padding-inline-start: 3rem;
   overflow: hidden;
   position: relative;
@@ -325,13 +327,13 @@ form[role="search"] p textarea {
 form[role="search"] p input::-moz-placeholder {
   background-image: url(input_areas/images/search.svg);
   background-repeat: no-repeat;
-  background-size: 3rem;
+  background-size: 2rem;
 }
 html[dir="ltr"] form[role="search"] p input::-moz-placeholder {
-  background-position: right -0.5rem center;
+  background-position: right 0 center;
 }
 html[dir="rtl"] form[role="search"] p input::-moz-placeholder {
-  background-position: left -0.5rem center;
+  background-position: left 0 center;
 }
 
 form[role="search"].skin-dark p input::-moz-placeholder {
@@ -352,7 +354,7 @@ form[role="search"] p textarea:focus {
 
 form[role="search"].skin-dark p input,
 form[role="search"].skin-dark p textarea {
-  color: #fff;
+  color: var(--text-color-minus, #fff);
   background: none;
   box-shadow: none;
 }
@@ -362,7 +364,7 @@ form[role="search"] button[type="submit"] {
   height: 3.7rem;
   padding: 0 1.5rem;
   border: none;
-  color: #00aac5;
+  color: var(--accent-color, #0061e0);
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 3.7rem;
@@ -372,8 +374,10 @@ form[role="search"] button[type="submit"] {
   position: relative;
   background-image: none;
   background-color: unset;
-  font-style: italic;
+  font-style: normal;
   overflow: visible;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 html[dir="ltr"] form[role="search"] button[type="submit"] { float: right; }
 html[dir="rtl"] form[role="search"] button[type="submit"] { float: left; }
@@ -385,14 +389,18 @@ form[role="search"] button[type="submit"]:after {
   top: 0.7rem;
   bottom: 0.7rem;
   width: 0.1rem;
-  background: #c7c7c7;
+  background: var(--background-epsilon, #c7c9cc);
 }
 
 form[role="search"] button[type="submit"].icon {
   font-size: 0;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 3rem;
+  background-size: 2rem;
+}
+
+form[role="search"] button[type="submit"].icon:before {
+  font-size: 2rem;
 }
 
 form[role="search"] p input + button[type="reset"]{
@@ -417,15 +425,24 @@ form[role="search"].full button[type="submit"] {
   display: none;
 }
 
+form[role="search"] button.icon:hover,
+form[role="search"] button[type="submit"]:hover {
+  background-color: var(--translucent, rgba(0,0,0,0.05));
+}
+
 form[role="search"] button.icon:active,
 form[role="search"] button[type="submit"]:active {
-  background-color: #b2f2ff;
-  color: #fff;
+  background-color: var(--translucent, rgba(0,0,0,0.1));
+}
+
+form[role="search"].skin-dark button.icon:hover,
+form[role="search"].skin-dark button[type="submit"]:hover {
+  background-color: rgba(255,255,255,0.05);
 }
 
 form[role="search"].skin-dark button.icon:active,
 form[role="search"].skin-dark button[type="submit"]:active {
-  background: #00aacc;
+  background-color: rgba(255,255,255,0.1);
 }
 
 form[role="search"] button[type="submit"][disabled] {
@@ -439,6 +456,11 @@ form button::-moz-focus-inner {
 }
 
 /* .bb-editable - e.g email & SMS recipients */
+.bb-editable {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .bb-editable [contenteditable] {
   display: inline-block;
   box-sizing: border-box;
@@ -446,15 +468,21 @@ form button::-moz-focus-inner {
   max-width: calc(100% - 1.4rem);
   overflow: hidden;
   padding: 0 1.5rem;
-  margin: 0 0 0.6rem;
+  margin: 0 0 1rem;
   line-height: 2.8rem;
   border-radius: 1.4rem;
   text-overflow: ellipsis;
   font-size: 1.6rem;
-  font-style: italic;
+  font-style: normal;
   white-space: nowrap;
-  color: #333;
-  background: #fff;
+  color: var(--text-color, #333);
+  background: var(--background-plus, #fff);
+}
+html[dir="ltr"] .bb-editable [contenteditable] {
+  margin-left: 0.5rem;
+}
+html[dir="rtl"] .bb-editable [contenteditable] {
+  margin-right: 0.5rem;
 }
 
 html[dir="ltr"] .bb-editable [contenteditable].icon {
@@ -465,11 +493,10 @@ html[dir="rtl"] .bb-editable [contenteditable].icon {
 }
 
 .bb-editable [contenteditable="false"].invalid {
-  background-color: #fedcdc;
-  padding: 0 1.5rem;
+  background-color: #c00040;
+  padding-left: 3.3rem;
+  color: rgba(255,255,255,0.75);
 }
-html[dir="ltr"] .bb-editable [contenteditable="false"].invalid { padding-left: 3.3rem; }
-html[dir="rtl"] .bb-editable [contenteditable="false"].invalid { padding-right: 3.3rem; }
 
 .bb-editable [contenteditable="false"].invalid:before {
     content: "!";
@@ -481,29 +508,31 @@ html[dir="rtl"] .bb-editable [contenteditable="false"].invalid { padding-right: 
     padding: 0;
     border-radius: 50%;
     line-height: 1.6rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
-    text-indent: -0.1rem;
+    text-indent: 0;
     font-style: normal;
     font-weight: 600;
-    color: #fff;
-    background-color: #b80404;
+    color: #c00040;
+    background-color: var(--background, #fff);
 }
 html[dir="ltr"] .bb-editable [contenteditable="false"].invalid:before { left: 0.8rem; }
 html[dir="rtl"] .bb-editable [contenteditable="false"].invalid:before { right: 0.8rem; }
 
-.bb-editable [contenteditable="false"].invalid:hover:before,
-.bb-editable [contenteditable="false"].invalid:active:before {
-  color: #b2f2ff;
-  background-color: #fff;
+.bb-editable [contenteditable="false"]:hover {
+  background-color: var(--background-theta, #e0e2e5);
 }
 
-.bb-editable [contenteditable]:hover,
-.bb-editable [contenteditable]:active,
-.bb-editable [contenteditable].invalid:hover,
-.bb-editable [contenteditable].invalid:active {
-  color: #fff;
-  background-color: #b2f2ff;
+.bb-editable [contenteditable="false"]:active {
+  background-color: var(--background-zeta, #d0d2d5);
+}
+
+.bb-editable [contenteditable="false"].invalid:hover {
+  background-color: #b00030;
+}
+
+.bb-editable [contenteditable="false"].invalid:active {
+  background-color: #a00020;
 }
 
 .bb-editable [contenteditable].icon:after {
@@ -524,15 +553,6 @@ html[dir="rtl"] .bb-editable [contenteditable].icon:after {
   background-position: 0.7rem -3.8rem;
 }
 
-html[dir="ltr"] .bb-editable [contenteditable].icon:hover:after,
-html[dir="ltr"] .bb-editable [contenteditable].icon:active:after {
-  background-position: -0.7rem -0.8rem;
-}
-html[dir="rtl"] .bb-editable [contenteditable].icon:hover:after,
-html[dir="rtl"] .bb-editable [contenteditable].icon:active:after {
-  background-position: 0.7rem -0.8rem;
-}
-
 html[dir="ltr"] .bb-editable [contenteditable].invalid.icon {
   padding-right: 3.7rem;
 }
@@ -547,15 +567,6 @@ html[dir="rtl"] .bb-editable [contenteditable].invalid.icon:after {
   background-position: 0.7rem -6.8rem;
 }
 
-html[dir="ltr"] .bb-editable [contenteditable].invalid.icon:hover:after,
-html[dir="ltr"] .bb-editable [contenteditable].invalid.icon:active:after {
-  background-position: -0.7rem -0.8rem;
-}
-html[dir="rtl"] .bb-editable [contenteditable].invalid.icon:hover:after,
-html[dir="rtl"] .bb-editable [contenteditable].invalid.icon:active:after {
-  background-position: 0.7rem -0.8rem;
-}
-
 .bb-editable [contenteditable="true"],
 .bb-editable [contenteditable="true"]:hover,
 .skin-comms .bb-editable [contenteditable="true"]:hover {
@@ -565,11 +576,5 @@ html[dir="rtl"] .bb-editable [contenteditable].invalid.icon:active:after {
     font-style: normal;
     color: #000;
     background: none repeat scroll 0 0 transparent;
-}
-
-.skin-comms .bb-editable [contenteditable]:hover,
-.skin-comms .bb-editable [contenteditable]:active {
-  color: #fff;
-  background-color: #29bbb5;
 }
 

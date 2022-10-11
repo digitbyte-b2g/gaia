@@ -67,20 +67,20 @@ suite('settings.js', function() {
         jpgLink);
     });
 
-    test('setWallpaper, when GAIA_DEV_PIXELS_PER_PX is 1 and use wallpaper.jpg',
+    test('setWallpaper, when GAIA_DEV_PIXELS_PER_PX is 1 and use wallpaper.png',
       function () {
       config.GAIA_DEV_PIXELS_PER_PX = '1';
-      jpgLink = 'build/config/wallpaper.jpg';
+      jpgLink = 'build/config/wallpaper.png';
 
       app.setWallpaper(settings, config);
       assert.equal(settings['wallpaper.image'], config.GAIA_DIR + '/' +
         jpgLink);
     });
 
-    test('setWallpaper, GAIA_DEV_PIXELS_PER_PX is null and use wallpaper.jpg',
+    test('setWallpaper, GAIA_DEV_PIXELS_PER_PX is null and use wallpaper.png',
       function () {
       config.GAIA_DEV_PIXELS_PER_PX = '';
-      jpgLink = 'build/config/wallpaper.jpg';
+      jpgLink = 'build/config/wallpaper.png';
 
       app.setWallpaper(settings, config);
       assert.equal(settings['wallpaper.image'], config.GAIA_DIR + '/' +
@@ -90,7 +90,7 @@ suite('settings.js', function() {
     test('setMediatone', function () {
       var mediatoneLink =
         'shared/resources/media/notifications/' +
-        'notifier_firefox.opus';
+        'notifier_orchid.wav';
       app.setMediatone(settings, config);
       assert.equal(settings['media.ringtone'], config.GAIA_DIR + '/' +
         mediatoneLink);
@@ -108,7 +108,7 @@ suite('settings.js', function() {
     test('setRingtone', function () {
       var ringtoneLink =
         'shared/resources/media/ringtones/' +
-        'ringer_firefox.opus';
+        'ringer_orchid.wav';
       app.setRingtone(settings, config);
       assert.equal(settings['dialer.ringtone'], config.GAIA_DIR + '/' +
         ringtoneLink);
@@ -123,7 +123,7 @@ suite('settings.js', function() {
     test('setNotification', function () {
       var notificationLink =
         'shared/resources/media/notifications/' +
-        'notifier_firefox.opus';
+        'notifier_orchid.wav';
       mockUtils.resolve = function(file, baseLink) {
         return {
           path: baseLink + '/' + file

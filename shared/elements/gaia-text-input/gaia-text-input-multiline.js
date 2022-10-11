@@ -123,7 +123,7 @@ module.exports = component.register('gaia-text-input-multiline', {
         var(--input-border-color,
         var(--border-color,
         var(--background-plus,
-        #e7e7e7)));
+        #e7e9ec)));
 
       border-color:
         var(--gi-border-color);

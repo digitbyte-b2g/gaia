@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-gpu-capable="true">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Context Menu</title>
+  <link rel="stylesheet" href="../../../../shared/elements/gaia-icons/gaia-icons.css">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-size: 10px;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      --blur-radius: 32px;
+      --blur-opacity: 0.2;
+    }
+    #screen-backdrop {
+      background-image: url(https://source.unsplash.com/random/);
+    }
+  </style>
+  <script defer src="../script.js"></script>
+  <script defer>
+    window.addEventListener('load', () => {
+      document.oncontextmenu = (evt) => {
+        evt.preventDefault();
+        contextMenu(evt, [
+          {
+            type: 'button',
+            label: 'Back',
+            icon: 'back',
+            onclick: () => {
+              alert('Back');
+            }
+          },
+          {
+            type: 'button',
+            label: 'Forward',
+            icon: 'forward',
+            disabled: true,
+            onclick: () => {
+              alert('Forward');
+            }
+          },
+          {
+            type: 'button',
+            label: 'Refresh',
+            icon: 'reload',
+            onclick: () => {
+              alert('Refresh');
+            }
+          },
+          { type: 'seperator' },
+          {
+            type: 'button',
+            label: 'Search',
+            icon: 'search',
+            onclick: () => {
+              alert('Search');
+            }
+          },
+          {
+            type: 'button',
+            label: 'Inspect Element',
+            icon: 'web',
+            onclick: () => {
+              alert('Inspect Element');
+            }
+          },
+          {
+            type: 'button',
+            label: 'Nomedia',
+            onclick: () => {
+              alert('Nomedia');
+            }
+          }
+        ]);
+      };
+    });
+  </script>
+</head>
+<body>
+  <div id="screen-backdrop"></div>
+  <div id="context-menu">
+    <div id="context-menu-content">
+      <div class="gfx-background-acrylic"></div>
+      <div id="context-menu-content-items"></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -34,13 +34,13 @@ textarea:invalid {
 
 input::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #858585;
+  color: #858789;
   opacity: 1;
 }
 
 input:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #858585;
+  color: #858789;
   opacity: 1;
 }
 

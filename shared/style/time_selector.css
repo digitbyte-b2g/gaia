@@ -4,26 +4,28 @@
 
 /* Main dialog setup */
 [role="dialog"][data-type="time-selector"] {
-  background: #2d2d2d;
+  background: var(--background-plus, #fff);
   overflow: hidden;
   position: absolute;
   z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
   padding: 0 0 7rem;
-  color: #fff;
+  color: var(--text-color, #333);
   font-family: sans-serif;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2), 0 0 0 calc(100vw + 100vh) rgba(64,64,64,0.3);
+  max-height: calc(100% - 12.3rem);
 }
 
 [role="dialog"][data-type="time-selector"] h1 {
   font-weight: 400;
   font-size: 1.9rem;
   line-height: 4.8rem;
-  color: #fff;
-  border-bottom: 0.1rem solid #616262;
-  background-color: rgba(0, 0, 0, .2);
+  color: var(--text-color, #333);
+  border-bottom: 0.1rem solid var(--background-theta, #e0e2e5);
+  background-color: var(--background, #e7e9ec);
   margin: 0;
   padding: 0 3rem 1rem;
   height: 4.8rem;
@@ -36,11 +38,11 @@
   position: relative;
   width: calc(100% - 5rem);
   height: 22.5rem;
-  margin: 5.4rem auto 0;
+  margin: 2.7rem auto;
   padding-top: 8.8rem;
-  border-left:  0.1rem solid #111;
-  border-right: 0.1rem solid #111;
-  overflow: hidden;
+  overflow: visible;
+  background: transparent;
+  border-radius: 1rem;
 }
 
 [role="dialog"][data-type="time-selector"] .picker-container:before {
@@ -49,12 +51,13 @@
   top: 0;
   right: 0;
   left: 0;
-  border-top: solid 0.7rem;
+  border-top: solid 1rem;
   -moz-border-top-colors:
-    rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.3)
-    rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.1)
-    rgba(0, 0, 0, 0.05);
+    rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.1)
+    rgba(255, 255, 255, 0.05);
   z-index: 10;
+  border-radius: 1rem 1rem 0 0;
 }
 
 [role="dialog"][data-type="time-selector"] .picker-container:after {
@@ -63,12 +66,13 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border-bottom: solid 0.7rem;
+  border-bottom: solid 1rem;
   -moz-border-bottom-colors:
-    rgba(0, 0, 0, 0.5) rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0.3)
-    rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.1)
-    rgba(0, 0, 0, 0.05);
+    rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.2) rgba(255, 255, 255, 0.15) rgba(255, 255, 255, 0.1)
+    rgba(255, 255, 255, 0.05);
   z-index: 10;
+  border-radius: 0 0 1rem 1rem;
 }
 
 /**
@@ -82,7 +86,8 @@
   top: 0;
   width: calc(100% / 3);
   height: 100%;
-  background: #4d4d4d;
+  background: transparent;
+  border-radius: 1rem;
 }
 html[dir="ltr"] [role="dialog"][data-type="time-selector"] .format12h .picker-bar-background,
 html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12hrev .picker-bar-background {
@@ -102,8 +107,8 @@ html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12h .picker-ba
   width: calc(100% / 3);
   height: 100%;
   padding-top: 8.3rem;
-  border-right: solid 0.2rem;
-  -moz-border-right-colors: #1d1d1d #4a4a4a;
+  border-right: solid 0.2rem rgba(0,0,0,0.125);
+  overflow: hidden;
 }
 
 /* hours */
@@ -176,12 +181,13 @@ html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12h .value-pic
 
 [role="dialog"][data-type="time-selector"] .value-indicator {
   position: absolute;
-  width: 100%;
+  width: calc(100% + 2rem);
   height: 4.6rem;
-  background-color: #00A5C5;
-  box-shadow: 0 0 0.7rem rgba(0,0,0, .4);
+  background-color: transparent;
   opacity: .99;
   pointer-events: none;
+  margin: 0 -1rem;
+  border-radius: 1rem;
 }
 
 [role="dialog"][data-type="time-selector"] .value-indicator > .value-indicator-colon {
@@ -190,8 +196,10 @@ html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12h .value-pic
   height: 100%;
   font: 2.2rem/4.4rem Sans-serif;
   text-align: center;
-  background-color: #00A5C5;
+  background: linear-gradient(to right, transparent calc(100% / 3), #fff calc(100% / 3), #fff calc((100% / 3) * 2), transparent calc((100% / 3) * 2));
   pointer-events: none;
+  border-radius: 1rem;
+  color: var(--text-color, #333);
 }
 
 html[dir="ltr"] [role="dialog"][data-type="time-selector"] .format12h .value-indicator > .value-indicator-colon,
@@ -211,7 +219,7 @@ html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12h .value-ind
 [role="dialog"][data-type="time-selector"] .picker-unit {
   position: relative;
   font: 2.2rem/5.6rem Sans-serif;
-  color: #fff;
+  color: var(--text-color, #333);
   text-align: center;
   vertical-align: middle;
   width: 100%;
@@ -222,8 +230,10 @@ html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12h .value-ind
 }
 
 [role="dialog"][data-type="time-selector"] .picker-unit.selected {
-  transform: scale(1);
+  color: var(--accent-color, #0061e0);
   opacity: 1;
+  transform: scale(1);
+  font-weight: bold;
 }
 
 /* Menu & buttons setup */
@@ -231,7 +241,7 @@ html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12h .value-ind
   white-space: nowrap;
   margin: 0;
   padding: 1.5rem;
-  background: #4d4d4d;
+  background: var(--background, #e7e9ec);
   display: block;
   overflow: hidden;
   position: absolute;
@@ -239,6 +249,7 @@ html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12h .value-ind
   right: 0;
   bottom: 0;
   font-size: 0; /* collapse the whitespaces around menu buttons */
+  border-radius: 0.8rem;
 }
 
 [role="dialog"][data-type="time-selector"] menu button::-moz-focus-inner {
@@ -249,23 +260,23 @@ html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12h .value-ind
 [role="dialog"][data-type="time-selector"] menu button {
   width: calc((100% - 1rem) / 2);
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
   height: 4rem;
   margin: 0 0 1rem;
-  padding: 0 1.2rem;
+  padding: 0 1.5rem;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  background: #d8d8d8;
+  background: transparent;
   border: none;
   border-radius: 2rem;
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 4rem;
-  color: #333;
+  color: var(--text-color, #333);
   text-align: center;
   text-shadow: none;
   text-decoration: none;
@@ -275,25 +286,39 @@ html[dir="rtl"] [role="dialog"][data-type="time-selector"] .format12h .value-ind
 /* Affirmative */
 [role="dialog"][data-type="time-selector"] menu button.affirmative,
 [role="dialog"][data-type="time-selector"] menu button.recommend {
-  background-color: #00caf2;
-  color: #fff;
+  background-color: var(--accent-color, #0061e0);
+  color: var(--accent-color-text, rgba(255,255,255,0.75));
+}
+
+[role="dialog"][data-type="time-selector"] menu button.affirmative:hover,
+[role="dialog"][data-type="time-selector"] menu button.recommend:hover {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.125), rgba(0,0,0,0.125));
+}
+
+[role="dialog"][data-type="time-selector"] menu button.affirmative:active,
+[role="dialog"][data-type="time-selector"] menu button.recommend:active {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25));
+}
+
+/* Hovered */
+[role="dialog"][data-type="time-selector"] menu button:hover {
+  background: var(--translucent, rgba(0,0,0,0.05));
+}
+
+/* Focused */
+[role="dialog"][data-type="time-selector"] menu > button:focus-visible {
+  outline: var(--focus-outline);
 }
 
 /* Pressed */
 [role="dialog"][data-type="time-selector"] menu button:active {
-  background: #00aacc;
-  color: #fff;
+  background: var(--translucent, rgba(0,0,0,0.1));
 }
 
 /* Disabled */
 [role="dialog"][data-type="time-selector"] > menu > button[disabled] {
-  background-color: #565656;
-  color: rgba(255,255,255,0.4);
   pointer-events: none;
-}
-
-[role="dialog"][data-type="time-selector"] > menu > button[disabled].recommend {
-  background-color: #006579;
+  opacity: 0.5;
 }
 
 button[disabled]::-moz-selection {
@@ -311,5 +336,17 @@ button[disabled]::-moz-selection {
 
 [role="dialog"][data-type="time-selector"] menu button.full {
   width: 100%;
+}
+
+@media screen and (min-width: 600px) and (min-height: 400px) {
+  /* Main dialog setup */
+  [role="dialog"][data-type="time-selector"] {
+    top: 50%;
+    left: calc(50% - 200px);
+    right: calc(50% - 200px);
+    bottom: unset;
+    transform: translateY(-50%);
+    max-height: calc(100% - 16rem);
+  }
 }
 

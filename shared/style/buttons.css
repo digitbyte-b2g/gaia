@@ -13,24 +13,24 @@ button,
 .bb-button,
 .button {
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
   width: 100%;
   height: 4rem;
   margin: 0 0 1rem;
-  padding: 0 1.2rem;
+  padding: 0 1.5rem;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  background: #d8d8d8;
+  background: var(--button-background, #fff);
   border: none;
   border-radius: 2rem;
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 4rem;
-  color: #333;
+  color: var(--text-color, #333);
   text-align: center;
   text-decoration: none;
   outline: none;
@@ -39,23 +39,66 @@ button,
 /* Recommend */
 button.recommend,
 .bb-button.recommend {
-  background-color: #00caf2;
-  color: #fff;
+  background-color: var(--accent-color, #0061e0);
+  color: var(--accent-text-color, rgba(255,255,255,0.75));
+}
+
+button.recommend:hover,
+.bb-button.recommend:hover {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(255,255,255,0.125), rgba(255,255,255,0.125));
+}
+
+button.recommend:active,
+.bb-button.recommend:active {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(255,255,255,0.25), rgba(255,255,255,0.25));
+}
+
+[data-accent-scheme="light"] button.recommend:hover,
+[data-accent-scheme="light"] .bb-button.recommend:hover {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.125), rgba(0,0,0,0.125));
+}
+
+[data-accent-scheme="light"] button.recommend:active,
+[data-accent-scheme="light"] .bb-button.recommend:active {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25));
 }
 
 /* Danger */
 button.danger,
 .danger.bb-button {
-  background-color: #e51e1e;
-  color: #fff;
+  background-color: #c00040 !important;
+  color: rgba(255,255,255,0.75) !important;
+}
+
+button.danger:hover,
+.danger.bb-button:hover {
+  background-color: #b00030 !important;
+}
+
+button.danger:active,
+.danger.bb-button:active {
+  background-color: #a00020 !important;
+}
+
+/* Pressed */
+button:hover,
+.bb-button:hover,
+.button:hover {
+  background-color: var(--button-background-plus, #d8dadd);
+}
+
+/* Focused */
+button:focus-visible,
+.bb-button:focus-visible,
+.button:focus-visible {
+  outline: var(--focus-outline);
 }
 
 /* Pressed */
 button:active,
 .bb-button:active,
 .button:active {
-  background-color: #b2f2ff;
-  color: #fff;
+  background-color: var(--button-background-minus, #c8cacd);
 }
 
 /* Icons */
@@ -65,26 +108,34 @@ button[data-icon],
   position: relative;
 }
 
+html[dir="ltr"] button[data-icon]:not([data-icon="expand"]),
+html[dir="ltr"] .bb-button[data-icon]:not([data-icon="expand"]),
+html[dir="ltr"] .button[data-icon]:not([data-icon="expand"]) {
+  padding-left: 4rem;
+}
+html[dir="rtl"] button[data-icon]:not([data-icon="expand"]),
+html[dir="rtl"] .bb-button[data-icon]:not([data-icon="expand"]),
+html[dir="rtl"] .button[data-icon]:not([data-icon="expand"]) {
+  padding-right: 4rem;
+}
+
 button[data-icon]:before,
 .bb-button[data-icon]:before,
 .button[data-icon]:before {
   position: absolute;
   top: 50%;
   margin-top: -1.5rem;
-  offset-inline-end: 1.5rem;
+  offset-inline-start: 0.5rem;
   line-height: 3rem;
-}
-
-button[data-icon]:active:before,
-.bb-button[data-icon]:active:before,
-.button[data-icon]:active:before {
-  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  width: 3rem;
 }
 
 /* Pressed with dark skin */
-.skin-dark button:active,
-.skin-dark .bb-button:active,
-.skin-dark .button:active {
+.skin-dark li button:active,
+.skin-dark li .bb-button:active,
+.skin-dark li .button:active {
   background-color: #00aacc;
 }
 
@@ -92,49 +143,8 @@ button[data-icon]:active:before,
 button[disabled],
 .bb-button[aria-disabled="true"],
 .button[aria-disabled="true"] {
-  background-color: rgba(0,0,0,0.05);
-  color: #c7c7c7;
   pointer-events: none;
-}
-
-button[disabled].recommend,
-.bb-button[aria-disabled="true"].recommend,
-.button[aria-disabled="true"].recommend {
-  background-color: #97cbd5;
-  color: rgba(255,255,255,0.5);
-}
-
-button[disabled].danger,
-.bb-button[aria-disabled="true"].danger,
-.button[aria-disabled="true"].danger {
-  background-color: #eb7474;
-  color: rgba(255,255,255,0.5);
-}
-
-/* Disabled with dark background */
-.skin-dark button[disabled],
-.skin-dark .button[aria-disabled="true"],
-.skin-dark .bb-button[aria-disabled="true"] {
-  background-color: #565656;
-  color: rgba(255,255,255,0.4);
-}
-
-.skin-dark button[disabled].recommend,
-.skin-dark .button[aria-disabled="true"].recommend,
-.skin-dark .bb-button[aria-disabled="true"].recommend {
-  background-color: #006579;
-}
-
-.skin-dark button[disabled].danger,
-.skin-dark .button[aria-disabled="true"].danger,
-.skin-dark .bb-button[aria-disabled="true"].danger {
-  background-color: #730f0f;
-}
-
-button[disabled]::-moz-selection,
-.button[aria-disabled="true"]::-moz-selection,
-.bb-button[aria-disabled="true"]::-moz-selection {
-  -moz-user-select: none;
+  opacity: 0.5;
 }
 
 /* ----------------------------------
@@ -145,18 +155,18 @@ li button,
 li .bb-button,
 li .button {
   position: relative;
-  border: 0.1rem solid #c7c7c7;
-  background: rgba(0,0,0,0.05);
+  /* border: 0.1rem solid #9e9ea0; */
   margin: 0 0 1rem;
   overflow: hidden;
-  border-radius: 0;
+  border-radius: 0.8rem;
   display: flex;
   height: auto;
   min-height: 4rem;
   text-overflow: initial;
   white-space: normal;
   line-height: 2rem;
-  padding: 1rem 1.2rem;
+  padding: 1rem 1.5rem;
+  background: var(--background, #e7e9ec);
 }
 html[dir="ltr"] li button,
 html[dir="ltr"] li .bb-button,
@@ -207,33 +217,27 @@ li .button.icon:before {
 li button[data-icon]:before,
 li .bb-button[data-icon]:before,
 li .button[data-icon]:before {
-  offset-inline-end: 1rem;
-}
-
-li button.icon-view:active,
-li .bb-button.icon-view:active,
-li .button.icon-view:active {
-  background-color: #b2f2ff;
+  offset-inline-start: 0.5rem;
 }
 
 li button[data-icon="expand"]:before,
 li .bb-button[data-icon="expand"]:before,
 li .button[data-icon="expand"]:before {
-  color: #00aac5;
+  color: var(--accent-color, #0061e0);
   top: unset;
-  bottom: 0;
+  bottom: -0.4rem;
 }
-
-li button[data-icon="expand"][disabled]:before,
-li .bb-button[data-icon="expand"][aria-disabled="true"]:before,
-li .button[data-icon="expand"][aria-disabled="true"]:before {
-  color: #A9A9A9;
+html[dir="ltr"] li button[data-icon="expand"]:before,
+html[dir="ltr"] li .bb-button[data-icon="expand"]:before,
+html[dir="ltr"] li .button[data-icon="expand"]:before {
+  right: -0.4rem;
+  left: unset;
 }
-
-li button[data-icon="forward"]:before,
-li .bb-button[data-icon="forward"]:before,
-li .button[data-icon="forward"]:before {
-  color: #686f72;
+html[dir="rtl"] li button[data-icon="expand"]:before,
+html[dir="rtl"] li .bb-button[data-icon="expand"]:before,
+html[dir="rtl"] li .button[data-icon="expand"]:before {
+  left: -0.4rem;
+  right: unset;
 }
 
 /* Getting more space for text, as icon is shorter */
@@ -249,11 +253,11 @@ li .button.icon-dialog:before {
   width: 0;
   height: 0;
   top: auto;
-  offset-inline-end: 0.8rem;
-  bottom: 0.5rem;
+  offset-inline-end: 0.4rem;
+  bottom: 0.1rem;
   border-top: 0.7rem solid transparent;
   border-bottom: 0.7rem solid transparent;
-  border-inline-start: 0.7rem solid #00aac5;
+  border-left: 0.7rem solid var(--accent-color, #0061e0);
   z-index: 1;
 }
 html[dir="ltr"] li button.icon-dialog:before,
@@ -282,20 +286,8 @@ li .button[aria-disabled="true"].icon-dialog:before {
 .skin-dark li .button {
   background-color: #454545;
   border: none;
-  color: #fff;
+  color: var(--text-color-minus, #fff);
   font-weight: normal;
-}
-
-.skin-dark li button:active,
-.skin-dark li .button:active,
-.skin-dark li .bb-button:active {
-  background-color: #00aacc;
-}
-
-.skin-dark li button.icon-view:active,
-.skin-dark li .button.icon-view:active,
-.skin-dark li .bb-button.icon-view:active {
-  background-color: #00aacc;
 }
 
 .skin-dark li button.icon-dialog:active:before,
@@ -324,9 +316,9 @@ select {
   width: 100%;
   box-sizing: border-box;
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
   font-size: 1.6rem;
-  color: #333;
+  color: var(--text-color, #333);
   margin: 0 0 1rem;
   padding: 0;
   padding-inline-start: 1.1rem;
@@ -334,20 +326,21 @@ select {
   white-space: nowrap;
   overflow: hidden;
   height: 4rem;
-  border: 0.1rem solid #c7c7c7;
-  background: rgba(0,0,0,0.05);
+  border: none;
+  background: var(--background, #e7e9ec);
+  border-radius: 0.8rem;
 }
 
 .skin-dark select {
   background-color: rgba(87, 87, 87, 0.8);
   border: none;
-  color: #fff;
+  color: var(--text-color-minus, #fff);
 }
 
 /* remove dotted outline */
 select:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 #333;
+  text-shadow: 0 0 0 var(--text-color, #333);
 }
 
 .skin-dark select:-moz-focusring {
@@ -384,7 +377,7 @@ html[dir="ltr"] .bb-button[data-icon] select,
 html[dir="ltr"] .button[data-icon] select,
 html[dir="ltr"] .bb-button.icon-dialog select,
 html[dir="ltr"] .button.icon-dialog select {
-  text-shadow: 1rem 0.5rem 0 #333;
+  text-shadow: 1rem 0.5rem 0 var(--text-color, #333);
 }
 html[dir="rtl"] .bb-button.icon select,
 html[dir="rtl"] .button.icon select,
@@ -392,7 +385,7 @@ html[dir="rtl"] .bb-button[data-icon] select,
 html[dir="rtl"] .button[data-icon] select,
 html[dir="rtl"] .bb-button.icon-dialog select,
 html[dir="rtl"] .button.icon-dialog select {
-  text-shadow: -1rem 0.5rem 0 #333;
+  text-shadow: -1rem 0.5rem 0 var(--text-color, #333);
 }
 
 .bb-button.icon select option,

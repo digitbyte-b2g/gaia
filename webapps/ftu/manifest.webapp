@@ -1,0 +1,71 @@
+{
+  "name": "FTU",
+  "description": "First Time Experience",
+  "type": "certified",
+  "launch_path": "/index.html",
+  "role": "system",
+  "fullscreen": true,
+
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
+  },
+
+  "locales": {
+    "en-US": {
+      "name": "FTU",
+      "description": "First Time Experience"
+    }
+  },
+
+  "default_locale": "en-US",
+
+  "permissions": {
+    "themeable":{},
+    "telephony":{},
+    "contacts":{ "access": "readwrite" },
+    "mobileconnection":{},
+    "settings":{ "access": "readwrite" },
+    "systemXHR": {},
+    "wifi-manage":{},
+    "time": {},
+    "device-storage:sdcard": { "access": "readcreate" },
+    "phonenumberservice": {},
+    "webapps-manage":{},
+    "moz-extremely-unstable-and-will-change-webcomponents":{}
+  },
+
+  "orientation": "default",
+
+  "redirects": [
+    {"from": "live",
+    "to": "/shared/pages/import/redirects/redirect.html"},
+    {"from": "gmail",
+    "to": "/shared/pages/import/redirects/redirect.html"}
+  ],
+
+  "datastores-owned": {
+    "Basket_Newsletter": {
+      "description": "Email address for sending newsletter"
+    }
+  },
+  "datastores-access": {
+    "Import_Status_Data": {
+      "readonly": false,
+      "description": "Import status data shared between FTU and Contacts"
+    },
+    "icons": {
+      "readonly": true,
+      "description": "Retrieve cached website icons."
+    }
+  },
+
+  "icons": {
+    "16": "/style/icons/ftu_16.png",
+    "32": "/style/icons/ftu_32.png",
+    "48": "/style/icons/ftu_48.png",
+    "64": "/style/icons/ftu_64.png",
+    "128": "/style/icons/ftu_128.png",
+    "256": "/style/icons/ftu_256.png"
+  }
+}

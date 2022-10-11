@@ -15,7 +15,7 @@ gaia-tabs {
   padding: 0;
   z-index: 0;
   background: #fff;
-  border-top: 0.1rem solid #e7e7e7;
+  border-top: 0.1rem solid #e7e9ec;
 }
 
 /**
@@ -27,7 +27,7 @@ gaia-tabs[position="top"] {
   bottom: auto;
   height: 4rem;
   border-top: none;
-  border-bottom: 0.1rem solid #e7e7e7;
+  border-bottom: 0.1rem solid #e7e9ec;
 }
 
 /**

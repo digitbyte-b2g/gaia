@@ -15,6 +15,7 @@ WebappShared.prototype.setOptions = function(options) {
   this.webapp = options.webapp;
   this.used = {
     js: [],              // List of JS file paths to copy
+    lib: [],             // List of library file paths to copy
     locales: [],         // List of locale names to copy
     resources: [],       // List of resources to copy
     styles: [],          // List of stable style names to copy
@@ -111,6 +112,16 @@ WebappShared.prototype.pushJS = function(path) {
                     this.webapp.domain);
   }
   var pathInStage = 'shared/js/' + path;
+  this.moveToBuildDir(file, pathInStage);
+};
+
+WebappShared.prototype.pushLibrary = function(path) {
+  var file = utils.getFile(this.gaia.sharedFolder.path, 'lib', path);
+  if (!file.exists()) {
+    throw new Error('Using inexistent shared library file: ' + path + ' from: ' +
+                    this.webapp.domain);
+  }
+  var pathInStage = 'shared/lib/' + path;
   this.moveToBuildDir(file, pathInStage);
 };
 
@@ -270,6 +281,12 @@ WebappShared.prototype.pushFileByType = function(kind, path) {
       if (this.used.js.indexOf(path) === -1) {
         this.used.js.push(path);
         this.pushJS(path);
+      }
+      break;
+    case 'lib':
+      if (this.used.lib.indexOf(path) === -1) {
+        this.used.lib.push(path);
+        this.pushLibrary(path);
       }
       break;
     case 'resources':

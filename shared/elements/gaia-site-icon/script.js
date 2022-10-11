@@ -362,8 +362,6 @@ window.GaiaAppIcon = (function(exports) {
           if (this._image.width <= size / 2) {
             // Draw filled background circle
             ctx.beginPath();
-            ctx.arc(size / 2, size / 2,
-                    size / 2 - CANVAS_PADDING, 0, 2 * Math.PI);
             ctx.fillStyle = DEFAULT_BACKGROUND_COLOR;
             ctx.fill();
 
@@ -386,8 +384,6 @@ window.GaiaAppIcon = (function(exports) {
             var clipCtx =
               clipCanvas.getContext('2d', { willReadFrequently: true });
             clipCtx.beginPath();
-            clipCtx.arc(size / 2, size / 2,
-                        size / 2 - CANVAS_PADDING, 0, 2 * Math.PI);
             clipCtx.clip();
 
             clipCtx.drawImage(this._image,

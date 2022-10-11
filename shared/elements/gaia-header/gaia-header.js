@@ -35,7 +35,7 @@ const KNOWN_ACTIONS = {
  *
  * @type {String}
  */
-const TITLE_FONT = 'italic 300 24px FiraSans';
+const TITLE_FONT = 'normal normal 24px sans-serif';
 
 /**
  * The padding (start/end) used if
@@ -310,15 +310,6 @@ module.exports = component.register('gaia-header', {
   setTitleStyle: function(el, style) {
     debug('set title style', style);
     this.observerStop();
-    if (this.ignoreDir) {
-      el.style.marginLeft = style.marginStart + 'px';
-      el.style.paddingLeft = style.padding.start + 'px';
-      el.style.paddingRight = style.padding.end + 'px';
-    } else {
-      el.style.marginInlineStart = style.marginStart + 'px';
-      el.style.paddingInlineStart = style.padding.start + 'px';
-      el.style.paddingInlineEnd = style.padding.end + 'px';
-    }
     el.style.fontSize = style.fontSize + 'px';
     setStyleId(el, style.id);
     this.observerStart();
@@ -731,7 +722,7 @@ module.exports = component.register('gaia-header', {
     width: 50px;
     font-size: 30px;
     margin: 0;
-    padding: 0;
+    padding: 0 1rem;
     border: 0;
     outline: 0;
 
@@ -765,7 +756,7 @@ module.exports = component.register('gaia-header', {
 
   .action-button:active {
     transition: none;
-    opacity: 0.2;
+    opacity: 0.5;
   }
 
   /** Action Button Icon
@@ -776,6 +767,9 @@ module.exports = component.register('gaia-header', {
     font-style: normal;
     text-rendering: optimizeLegibility;
     font-weight: 500;
+    font-size: 2rem;
+    text-align: center;
+    width: 3rem;
   }
 
   [action=close] .action-button:before { content: 'close' }
@@ -842,8 +836,9 @@ module.exports = component.register('gaia-header', {
     text-align: center;
     line-height: 50px; /* 1 */
     font-weight: 300;
-    font-style: italic;
+    font-style: normal;
     font-size: 24px;
+    padding: 0 1rem;
 
     color:
       var(--header-title-color,
@@ -851,6 +846,12 @@ module.exports = component.register('gaia-header', {
       var(--title-color,
       var(--text-color,
       inherit))));
+  }
+  :host:-moz-dir(ltr) h1 {
+    text-align: left;
+  }
+  :host:-moz-dir(rtl) h1 {
+    text-align: right;
   }
 
   /**
@@ -899,7 +900,9 @@ module.exports = component.register('gaia-header', {
     text-align: center;
     background: none;
     border-radius: 0;
-    font-style: italic;
+    font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
     cursor: pointer;
     transition: opacity 200ms 280ms;
     color: var(--gaia-header-button-color);
@@ -976,6 +979,10 @@ module.exports = component.register('gaia-header', {
 
   ::content [data-icon]:empty {
     width: 50px;
+  }
+
+  ::content [data-icon]:before {
+    font-size: 2rem;
   }
 
   </style>`,

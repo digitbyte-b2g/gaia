@@ -21,11 +21,12 @@ nav[data-type="scrollbar"] p {
   font-weight: 300;
   font-size: 7rem;
   line-height: 12rem;
-  color: #fff;
-  background: rgba(51,204,204,0.8);
+  color: var(--accent-color-text, rgba(255,255,255,0.75));
+  background: var(--accent-color, #0061e0);
   pointer-events: none;
   text-align: center;
   transition: opacity;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
 }
 
 nav[data-type="scrollbar"] p img {
@@ -66,11 +67,11 @@ nav[data-type="scrollbar"] li a {
 /* Top action icons */
 nav[data-type="scrollbar"] li .pack-icon-search,
 nav[data-type="scrollbar"] li .pack-icon-favorites {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.5rem;
+  height: 1.5rem;
   font-size: 0;
   vertical-align: middle;
-  background: transparent no-repeat center center / 1.2rem;
+  background: transparent no-repeat center center / 1.5rem;
 }
 
 nav[data-type="scrollbar"] li span:not([hidden]) {
@@ -87,7 +88,7 @@ nav[data-type="scrollbar"] li .pack-icon-favorites {
 }
 
 /* Themes */
-/*.skin-comms*/ nav[data-type="scrollbar"] p {
-  background-color: rgba(80, 80, 80, 0.8);
+.skin-comms nav[data-type="scrollbar"] p {
+  background-color: #40a060;
 }
 

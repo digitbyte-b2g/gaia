@@ -4,19 +4,21 @@
 
 /* Main dialog setup */
 form[role="dialog"][data-type="confirm"] {
-  background: #2d2d2d;
+  background: var(--background-plus, #fff);
   overflow: hidden;
   position: absolute;
   z-index: 100;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
   padding-bottom: 7rem;
   font-size: 0;
   /* Using font-size: 0; we avoid the unwanted visual space (about 3px)
   created by white-spaces and break lines in the code betewen inline-block elements */
-  color: #fff;
+  color: var(--text-color, #333);
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2), 0 0 0 calc(100vw + 100vh) rgba(64,64,64,0.3);
+  max-height: calc(100% - 12.3rem);
 }
 html[dir="ltr"] form[role="dialog"][data-type="confirm"] { text-align: left; }
 html[dir="rtl"] form[role="dialog"][data-type="confirm"] { text-align: right; }
@@ -32,10 +34,10 @@ form[role="dialog"][data-type="confirm"]:before {
 
 form[role="dialog"][data-type="confirm"] > section {
   font-weight: 300;
-  font-size: 2.2rem;
-  color: #FAFAFA;
+  font-size: 1.6rem;
+  color: var(--text-color, #333);
   padding: 0 1.5rem;
-  box-sizing: padding-box;
+  box-sizing: border-box;
   width: 100%;
   display: inline-block;
   overflow-y: scroll;
@@ -48,10 +50,11 @@ form[role="dialog"][data-type="confirm"] h1 {
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 1.5em;
-  color: #fff;
+  color: var(--text-color, #333);
   margin: 0;
   padding: 1rem 1.5rem 0;
   word-wrap: break-word;
+  font-weight: bold;
 }
 
 /* Menu & buttons setup */
@@ -59,7 +62,7 @@ form[role="dialog"][data-type="confirm"] menu {
   white-space: nowrap;
   margin: 0;
   padding: 1.5rem;
-  background: #4d4d4d;
+  background: var(--background, #e7e9ec);
   display: flex;
   overflow: hidden;
   position: absolute;
@@ -76,7 +79,7 @@ form[role="dialog"][data-type="confirm"] menu button::-moz-focus-inner {
 
 form[role="dialog"][data-type="confirm"] menu button {
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
   width: 100%;
   height: 4rem;
   margin: 0 0 1rem;
@@ -87,13 +90,13 @@ form[role="dialog"][data-type="confirm"] menu button {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  background: #d8d8d8;
+  background: transparent;
   border: none;
   border-radius: 2rem;
   font-weight: normal;
   font-size: 1.6rem;
   line-height: 4rem;
-  color: #333;
+  color: var(--text-color, #333);
   text-align: center;
   text-shadow: none;
   text-decoration: none;
@@ -102,35 +105,51 @@ form[role="dialog"][data-type="confirm"] menu button {
 
 /* Recommend */
 form[role="dialog"][data-type="confirm"] menu button.recommend {
-  background-color: #00caf2;
-  color: #fff;
+  background-color: var(--accent-color, #0061e0);
+  color: var(--accent-color-text, rgba(255,255,255,0.75));
+}
+
+form[role="dialog"][data-type="confirm"] menu button.recommend:hover {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.125), rgba(0,0,0,0.125));
+}
+
+form[role="dialog"][data-type="confirm"] menu button.recommend:active {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25));
 }
 
 /* Danger */
 form[role="dialog"][data-type="confirm"] menu button.danger {
-  background-color: #e51e1e;
-  color: #fff;
+  background-color: #c00040 !important;
+  color: rgba(255,255,255,0.75) !important;
+}
+
+form[role="dialog"][data-type="confirm"] menu button.danger:hover {
+  background-color: #b00030 !important;
+}
+
+form[role="dialog"][data-type="confirm"] menu button.danger:active {
+  background-color: #a00020 !important;
+}
+
+/* Hovered */
+form[role="dialog"][data-type="confirm"] menu button:hover {
+  background: var(--translucent, rgba(0,0,0,0.05));
+}
+
+/* Focused */
+form[role="dialog"][data-type="confirm"] menu button:focus-visible {
+  outline: var(--focus-outline);
 }
 
 /* Pressed */
 form[role="dialog"][data-type="confirm"] menu button:active {
-  background: #00aacc;
-  color: #fff;
+  background: var(--translucent, rgba(0,0,0,0.1));
 }
 
 /* Disabled */
 form[role="dialog"][data-type="confirm"] > menu > button[disabled] {
-  background-color: #565656;
-  color: rgba(255,255,255,0.4);
   pointer-events: none;
-}
-
-form[role="dialog"][data-type="confirm"] > menu > button[disabled].recommend {
-  background-color: #006579;
-}
-
-form[role="dialog"][data-type="confirm"] > menu > button[disabled].danger {
-  background-color: #730f0f;
+  opacity: 0.5;
 }
 
 button[disabled]::-moz-selection {
@@ -160,8 +179,8 @@ form[role="dialog"][data-type="confirm"] p {
   word-wrap: break-word;
   margin: 0;
   padding: 1rem 1.5rem;
-  border-top: 0.1rem solid #686868;
-  line-height: 3rem;
+  border-top: 0.1rem solid #e7e9ec;
+  line-height: 2.5rem;
   -moz-user-select: none; /* 1 */
 }
 
@@ -181,18 +200,18 @@ html[dir="rtl"] form[role="dialog"][data-type="confirm"] p img { float: right; }
 form[role="dialog"][data-type="confirm"] p strong {
   display: block;
   margin-top: 0.2rem;
-  font-weight: 300;
+  font-weight: bold;
 }
 
 form[role="dialog"][data-type="confirm"] p small {
   font-size: 1.4rem;
   font-weight: normal;
-  color: #cbcbcb;
+  color: #858789;
   display: block;
 }
 
 form[role="dialog"][data-type="confirm"] dl {
-  border-top: 0.1rem solid #686868;
+  border-top: 0.1rem solid #e7e9ec;
   margin: 1rem 0 0;
   overflow: hidden;
   padding-top: 1rem;
@@ -230,19 +249,20 @@ form[role="dialog"][data-type="confirm"] figure {
 }
 
 form[role="dialog"][data-type="confirm"] figure img {
-  padding-inline-end: 1.5rem;
+  margin-inline-end: 1.5rem;
   flex-shrink: 0;
+  border-radius: 50%;
 }
 
 form[role="dialog"][data-type="confirm"] figure figcaption {
   font-size: 2.1rem;
-  font-weight: 300;
+  font-weight: bold;
 }
 
 form[role="dialog"][data-type="confirm"] ul {
   margin: 0;
   padding: 2rem 1.5rem;
-  border-top: 0.1rem solid #686868;
+  border-top: 0.1rem solid #e7e9ec;
   list-style: none;
   font-size: 1.6rem;
   font-weight: normal;
@@ -262,4 +282,38 @@ form[role="dialog"][data-type="confirm"] ul li ul {
   border: none;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (min-width: 600px) and (min-height: 400px) {
+  /* Main dialog setup */
+  form[role="dialog"][data-type="confirm"] {
+    top: 50%;
+    left: calc(50% - 200px);
+    right: calc(50% - 200px);
+    bottom: unset;
+    transform: translateY(-50%);
+    max-height: calc(100% - 16rem);
+  }
+
+  form[role="dialog"][data-type="confirm"] > section {
+    padding: 0 1.5rem;
+    max-height: calc(100vh - 15.9rem);
+  }
+
+  form[role="dialog"][data-type="confirm"][data-category] section h1 {
+    -moz-padding-start: 4.5rem;
+    background: transparent no-repeat left 1rem center / 2.4rem;
+  }
+
+  form[role="dialog"][data-type="confirm"][data-category="error"] section h1 {
+    background-image: url(confirm/images/icons/error.png);
+  }
+
+  form[role="dialog"][data-type="confirm"][data-category="exclamation"] section h1 {
+    background-image: url(confirm/images/icons/exclamation.png);
+  }
+
+  form[role="dialog"][data-type="confirm"][data-category="info"] section h1 {
+    background-image: url(confirm/images/icons/info.png);
+  }
 }

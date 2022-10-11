@@ -456,15 +456,15 @@ function L10nManager(gaiaDir,
    * @returns {Object} res    - Manifest l10n resource
    */
   function getManifestProperties(webapp, locale) {
-    var parent = utils.getFile(webapp.sourceDirectoryFilePath, '..');
-    var propFile = utils.getFile(self.localeBasedir, locale, parent.leafName,
-      webapp.sourceDirectoryName, 'manifest.properties');
-    if (!propFile.exists()) {
-      return null;
-    }
+    // var parent = utils.getFile(webapp.sourceDirectoryFilePath, '..');
+    // var propFile = utils.getFile(self.localeBasedir, locale, parent.leafName,
+    //   webapp.sourceDirectoryName, 'manifest.properties');
+    // if (!propFile.exists()) {
+    //   return null;
+    // }
 
-    var content = utils.getFileContent(propFile);
-    return parseManifestProperties(content);
+    // var content = utils.getFileContent(propFile);
+    // return parseManifestProperties(content);
   }
 
   /**

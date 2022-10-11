@@ -1,4 +1,6 @@
 {
+  "ringer_orchid.wav": {"l10nID": "ringer_orchid"},
+  "ringer_orchidloop.wav": {"l10nID": "ringer_orchidLoop"},
   "ringer_bubble.opus": {"l10nID": "ringer_bubble"},
   "ringer_chimer.opus": {"l10nID": "ringer_chimer"},
   "ringer_cunning.opus": {"l10nID": "ringer_cunning"},

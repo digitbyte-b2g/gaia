@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html data-theme="dark">
 <head>
   <meta charset="utf-8">
 
@@ -15,7 +16,7 @@
       margin: 0;
       padding: 0;
       font-size: 10px;
-      background-color: #fff;
+      background-color: var(--background, #fff);
     }
 
     body {
@@ -46,7 +47,7 @@
     <!-- if your tabs are at the top, remove class="bottom" -->
     <ul role="tablist" class="bb-tablist">
       <li id="panel1" role="presentation">
-        <a id="tab1" href="#panel1" data-icon="recent-calls" aria-label="recent calls" role="tab" aria-controls="tabpanel1">comms</a>
+        <a id="tab1" href="#panel1" data-icon="recent-calls" aria-label="recent calls" role="tab" aria-controls="tabpanel1" aria-selected="true">comms</a>
         <div id="tabpanel1" class="bb-tabpanel" role="tabpanel" aria-labelledby="tab1">Tab Panel 1</div>
       </li>
       <li id="panel2" role="presentation">

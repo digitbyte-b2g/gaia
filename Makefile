@@ -107,9 +107,10 @@ NODE_MODULES_CACHEDIR=modules_tar_cachedir
 
 # GAIA_DEVICE_TYPE customization
 # phone - default
+# desktop
 # tablet
 # tv
-GAIA_DEVICE_TYPE?=phone
+GAIA_DEVICE_TYPE?=desktop
 -include build/config/$(GAIA_DEVICE_TYPE)/device.mk
 
 TEST_AGENT_PORT?=8789
@@ -342,7 +343,7 @@ endif
 XPCSHELLSDK := $(abspath $(XULRUNNER_DIRECTORY)/b2g/xpcshell)
 endif
 
-B2G_SDK_URL_BASE := http://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/$(B2G_SDK_DATE)-mozilla-central
+B2G_SDK_URL_BASE := http://web.archive.org/web/20160406033553/http://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/$(B2G_SDK_DATE)-mozilla-central
 B2G_SDK_FILE_NAME := b2g-$(B2G_SDK_VERSION).multi.$(B2G_SDK_OS).$(B2G_SDK_EXT)
 B2G_SDK_URL := $(B2G_SDK_URL_BASE)/$(B2G_SDK_FILE_NAME)
 B2G_SDK_URL_FILE := $(XULRUNNER_DIRECTORY)/.b2g.url
@@ -442,7 +443,7 @@ GAIA_APP_CONFIG := /tmp/gaia-apps-temp.list
 $(warning GAIA_APP_SRCDIRS is deprecated, please use GAIA_APP_CONFIG)
 endif
 
-GAIA_ALLAPPDIRS=$(shell find -L $(GAIA_DIR)$(SEP)apps $(GAIA_DIR)$(SEP)dev_apps $(GAIA_DIR)$(SEP)tv_apps -maxdepth 1 -mindepth 1 -type d  | sed 's@[/\\]@$(SEP_FOR_SED)@g')
+GAIA_ALLAPPDIRS=$(shell find -L $(GAIA_DIR)$(SEP)webapps $(GAIA_DIR)$(SEP)dev_webapps $(GAIA_DIR)$(SEP)tv_webapps -maxdepth 1 -mindepth 1 -type d  | sed 's@[/\\]@$(SEP_FOR_SED)@g')
 
 # XXX: Using run-node-command would cause a circular reference error, but
 # attempts to move the scan-appdir action to js (app.js) caused a strange issue
@@ -506,7 +507,7 @@ TAR_WILDCARDS = tar --wildcards
 endif
 
 # Test agent setup
-TEST_COMMON=dev_apps/test-agent/common
+TEST_COMMON=dev_webapps/test-agent/common
 ifeq ($(strip $(NODEJS)),)
   NODEJS := $(shell which node)
 endif
@@ -518,7 +519,7 @@ ifeq ($(strip $(NPM)),)
   NPM := $(shell which npm)
 endif
 
-TEST_AGENT_CONFIG="./dev_apps/test-agent/config.json"
+TEST_AGENT_CONFIG="./dev_webapps/test-agent/config.json"
 TEST_AGENT_COVERAGE="./build/config/test-agent-coverage.json"
 
 CAPABILITIES=$(GAIA_DIR)$(SEP)tests$(SEP)jsmarionette$(SEP)capabilities.json
@@ -758,7 +759,7 @@ ifeq ($(DESKTOP),1)
 	cp -r $(STAGE_DIR)/additional-extensions/* $(EXT_DIR)/
 endif
 ifeq ($(DEBUG),1)
-	cp -r tools/extensions/{httpd,httpd@gaiamobile.org} $(EXT_DIR)/
+	cp -r toolkit/extensions/{httpd,httpd@gaiamobile.org} $(EXT_DIR)/
 endif
 	@echo "Finished: Generating extensions"
 endif
@@ -838,7 +839,7 @@ ifndef APPS
   ifdef APP
     APPS=$(APP)
   else
-    APPS=template $(shell find apps -type d -name 'test' | sed -e 's|^apps/||' -e 's|/test$$||' | sort )
+    APPS=template $(shell find apps -type d -name 'test' | sed -e 's|^webapps/||' -e 's|/test$$||' | sort )
   endif
 endif
 
@@ -991,7 +992,7 @@ endif
 # Lint apps
 ifndef LINTED_FILES
 ifdef APP
-  JSHINTED_PATH = apps/$(APP)
+  JSHINTED_PATH = webapps/$(APP)
 else
   JSHINTED_PATH = apps shared build tests tv_apps
 endif
@@ -1082,11 +1083,11 @@ install-test-media:
 	$(ADB) push test_media/Music $(MSYS_FIX)/sdcard/Music
 
 dialer-demo:
-	@cp -R apps/contacts apps/dialer
-	@rm apps/dialer/contacts/manifest*
-	@mv apps/dialer/contacts/index.html apps/dialer/contacts/contacts.html
-	@sed -i.bak 's/manifest.appcache/..\/manifest.appcache/g' apps/dialer/contacts/contacts.html
-	@find apps/dialer/ -name '*.bak' -exec rm {} \;
+	@cp -R webapps/contacts webapps/dialer
+	@rm webapps/dialer/contacts/manifest*
+	@mv webapps/dialer/contacts/index.html webapps/dialer/contacts/contacts.html
+	@sed -i.bak 's/manifest.appcache/..\/manifest.appcache/g' webapps/dialer/contacts/contacts.html
+	@find webapps/dialer/ -name '*.bak' -exec rm {} \;
 
 demo: install-media-samples install-gaia
 
@@ -1130,8 +1131,8 @@ clean:
 really-clean: clean
 	rm -rf b2g-* .b2g-* b2g_sdk node_modules mulet firefox/ modules.tar js-marionette-env "$(NODE_MODULES_CACHEDIR)"
 
-.git/hooks/pre-commit: tools/pre-commit
-	test -d .git && cp tools/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit || true
+.git/hooks/pre-commit: toolkit/pre-commit
+	test -d .git && cp toolkit/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit || true
 
 build-test-unit: b2g_sdk $(NPM_INSTALLED_PROGRAMS)
 	@$(call run-node-command,build-test,TEST_TYPE=unit REPORTER=$(REPORTER) TRY_ENV=$(TRY_ENV) TEST_FILES="$(TEST_FILES)")

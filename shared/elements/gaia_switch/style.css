@@ -12,9 +12,9 @@ gaia-switch {
 }
 
 #switch span {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   color: var(--label-color);
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   line-height: 3rem;
   box-sizing: border-box;
   display: block;
@@ -48,7 +48,7 @@ gaia-switch {
   content: '';
   position: absolute;
   offset-inline-end: 0;
-  top: 2.5rem;
+  top: 2rem;
   width: 6rem;
   margin: -1.4rem 0 0;
   height: 2.7rem;
@@ -63,6 +63,10 @@ gaia-switch {
 #switch input ~ span:-moz-dir(ltr)::after { background-position: -3.2rem 0; }
 #switch input ~ span:-moz-dir(rtl)::after { background-position: 0 0; }
 
+#switch:hover input ~ span::after {
+  background-image: url(images/background_off_hover.png);
+}
+
 /* switch: 'ON' state */
 #switch input:checked ~ span:-moz-dir(ltr)::after {
   background-image: url(images/background.png);
@@ -71,6 +75,13 @@ gaia-switch {
 #switch input:checked ~ span:-moz-dir(rtl)::after {
   background-image: url(images/background_rtl.png);
   background-position: -3.2rem 0;
+}
+
+#switch:hover input:checked ~ span:-moz-dir(ltr)::after {
+  background-image: url(images/background_hover.png);
+}
+#switch:hover input:checked ~ span:-moz-dir(rtl)::after {
+  background-image: url(images/background_rtl_hover.png);
 }
 
 /* switch: disabled state */
@@ -102,6 +113,10 @@ gaia-switch {
   white-space: normal;
 }
 
+#switch div.details:empty {
+  display: none;
+}
+
 /**
  * A <a> link slow may be specified in addition to the <label> and <details>.
  * When provided, it will appear under the <details> section.
@@ -113,4 +128,31 @@ gaia-switch a {
   line-height: 2.4rem;
   font-weight: 400;
   color: #35679a;
+}
+
+/* ----------------------------------
+* Dark mode
+* ---------------------------------- */
+
+[data-theme="dark"] #switch input ~ span::after {
+  background-image: url(images/dark/background_off.png);
+}
+
+[data-theme="dark"] #switch:hover input ~ span::after {
+  background-image: url(images/dark/background_off_hover.png);
+}
+
+/* switch: 'ON' state */
+[data-theme="dark"] #switch input:checked ~ span:-moz-dir(ltr)::after {
+  background-image: url(images/dark/background.png);
+}
+[data-theme="dark"] #switch input:checked ~ span:-moz-dir(rtl)::after {
+  background-image: url(images/dark/background_rtl.png);
+}
+
+[data-theme="dark"] #switch:hover input:checked ~ span:-moz-dir(ltr)::after {
+  background-image: url(images/dark/background_hover.png);
+}
+[data-theme="dark"] #switch:hover input:checked ~ span:-moz-dir(rtl)::after {
+  background-image: url(images/dark/background_rtl_hover.png);
 }

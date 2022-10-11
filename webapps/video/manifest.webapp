@@ -1,0 +1,61 @@
+{
+  "name": "Video",
+  "description": "Gaia Video",
+  "type": "certified",
+  "launch_path": "/index.html",
+  "developer": {
+    "name": "The Gaia Team",
+    "url": "https://github.com/mozilla-b2g/gaia"
+  },
+  "permissions": {
+    "themeable":{},
+    "device-storage:pictures":{ "access": "readwrite" },
+    "device-storage:videos":{ "access": "readwrite" },
+    "device-storage:sdcard":{ "access": "readonly" },
+    "audio-channel-content":{},
+    "nfc-share": {},
+    "settings":{ "access": "readonly" },
+    "moz-extremely-unstable-and-will-change-webcomponents":{}
+  },
+  "locales": {
+    "en-US": {
+      "name": "Video",
+      "description": "Gaia Video"
+    }
+  },
+  "default_locale": "en-US",
+  "icons": {
+    "16": "/style/icons/video_16.png",
+    "32": "/style/icons/video_32.png",
+    "48": "/style/icons/video_48.png",
+    "64": "/style/icons/video_64.png",
+    "128": "/style/icons/video_128.png",
+    "256": "/style/icons/video_256.png"
+  },
+  "activities": {
+    "pick": {
+      "filters": {
+        "type": ["video/*", "video/webm", "video/mp4", "video/3gpp", "video/3gpp2", "video/ogg"]
+       },
+      "disposition": "inline",
+      "returnValue": true,
+      "href": "/index.html#pick"
+    },
+    "view" : {
+      "filters": {
+        "type": ["video/webm", "video/mp4", "video/3gpp", "video/3gpp2", "video/ogg"]
+      },
+      "href": "view.html",
+      "disposition": "inline",
+      "returnValue": true
+    },
+    "open" : {
+      "filters": {
+        "type": ["video/webm", "video/mp4", "video/3gpp", "video/3gpp2", "video/ogg"]
+      },
+      "href": "view.html",
+      "disposition": "inline",
+      "returnValue": true
+    }
+  }
+}

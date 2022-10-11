@@ -14,6 +14,7 @@ var ConfirmDialog = (function() {
   var action2Node = screen.querySelector('button:nth-of-type(2)');
   var action2Callback;
   var oldzIndex;
+  var dialogSound = new Audio('/shared/style/exclamation.wav');
 
   var callBackAndPreventDefault = function callBackAndPreventDefault(ev) {
     if (ev.target === action1Node) {
@@ -151,6 +152,9 @@ var ConfirmDialog = (function() {
       screen.classList.remove('no-opacity');
       isShown = true;
     });
+
+    dialogSound.currentTime = 0;
+    dialogSound.play();
   };
 
   return {

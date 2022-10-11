@@ -237,7 +237,7 @@ module.exports = component.register('gaia-text-input', {
           var(--input-border-color,
           var(--border-color,
           var(--background-plus,
-          #e7e7e7)));
+          #e7e9ec)));
       }
 
       .inner {

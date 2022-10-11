@@ -1,0 +1,342 @@
+/**
+ * BiDi note: the software home button should not be mirrored for RTL.
+ */
+
+#software-buttons,
+#software-buttons-fullscreen-layout {
+  display: block;
+  right: var(--panel-margin);
+  bottom: var(--panel-margin);
+  left: var(--panel-margin);
+  position: absolute;
+  height: var(--panel-height);
+  visibility: hidden;
+  background: var(--background, #e7e7e7);
+  border-radius: var(--panel-border-radius);
+}
+
+#software-buttons-dead-space {
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.5rem;
+  width: 100%;
+}
+
+#screen.locked #software-buttons,
+#software-buttons.no-transition {
+  transition: none;
+}
+
+#screen:not(.locked):not(:-moz-full-screen-ancestor) #software-buttons:not(.hidden),
+#screen:not(.locked).permission-prompt:-moz-full-screen-ancestor #software-buttons:not(.hidden),
+#screen.locked.attention #software-buttons:not(.hidden),
+#screen.locked.secure-app #software-buttons:not(.hidden) {
+  visibility: visible;
+}
+
+#screen.utility-tray #software-buttons:not(.hidden) {
+  pointer-events: none;
+}
+
+#screen.locked.attention #software-buttons:not(.hidden).attention-lockscreen {
+  visibility: hidden;
+}
+
+#software-buttons-fullscreen-layout {
+  bottom: 0;
+}
+
+#screen.software-button-enabled.fullscreen-layout-app:not(.locked) #software-buttons-fullscreen-layout,
+#screen.software-button-enabled.fullscreen-layout-app.locked.secure-app #software-buttons-fullscreen-layout {
+  visibility: visible;
+}
+
+#screen.fullscreen-layout-app #software-buttons {
+  visibility: hidden;
+}
+
+#screen.fullscreen-layout-app #software-buttons-fullscreen-layout.hidden {
+  opacity: 0;
+}
+
+#software-home-button,
+#fullscreen-software-home-button,
+#fullscreen-layout-software-home-button {
+  --button-width: 7rem;
+  --button-height: 5rem;
+  --ring-height-width: 5rem;
+  width: 7rem;
+  height: 5rem;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  pointer-events: all;
+  display: none;
+}
+
+#software-home-ring {
+  width: var(--ring-height-width);
+  height: var(--ring-height-width);
+  outline-width: 0.25rem;
+  outline-style: solid;
+  outline-color: var(--text-color);
+  outline-offset: -1.75rem;
+  -moz-outline-radius: 50%;
+  margin: 0 1.2rem;
+}
+
+#fullscreen-software-home-button,
+#fullscreen-layout-software-home-button {
+  opacity: 0.8;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.45), inset 0 1px 5px 0 rgba(0, 0, 0, 0.45);
+}
+
+#software-home-button.active #software-home-ring,
+#fullscreen-software-home-button.active #software-home-ring,
+#fullscreen-layout-software-home-button.active #software-home-ring {
+  outline-color: #00caf2;
+}
+
+#fullscreen-software-home-button {
+  position: absolute;
+  bottom: 0.5rem;
+  left: calc(50% - var(--button-width) / 2);
+  opacity: 0.5;
+  visibility: hidden;
+}
+
+#screen.software-button-enabled:not(.fullscreen-layout-app):not(.locked):not(.permission-prompt):-moz-full-screen-ancestor #fullscreen-software-home-button,
+#screen.software-button-enabled.locked.secure-app:not(.fullscreen-layout-app):not(.permission-prompt):-moz-full-screen-ancestor #fullscreen-software-home-button {
+  visibility: visible;
+}
+
+#screen:not(.fullscreen-layout-app) #software-buttons-fullscreen-layout {
+  visibility: hidden;
+}
+
+/* Taskbar */
+#software-buttons .container {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  transition: left 0.5s cubic-bezier(1, 0, 0, 1), right 0.5s cubic-bezier(1, 0, 0, 1), transform 0.5s cubic-bezier(1, 0, 0, 1);
+}
+html[dir="ltr"] #software-buttons .container {
+  left: 0;
+}
+html[dir="rtl"] #software-buttons .container {
+  right: 0;
+}
+
+html[dir="ltr"] #software-buttons.centered .container {
+  left: 50%;
+  transform: translateX(-50%);
+}
+html[dir="rtl"] #software-buttons.centered .container {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+#software-buttons .container button {
+  background: no-repeat center / calc(var(--panel-height) - 2rem);
+  border-radius: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  width: var(--panel-height);
+  height: var(--panel-height);
+  position: relative;
+}
+html[dir="ltr"] #software-buttons .container button {
+  float: left;
+}
+html[dir="rtl"] #software-buttons .container button {
+  float: right;
+}
+
+#software-buttons .container button:hover {
+  background-color: var(--translucent, rgba(0,0,0,0.05));
+}
+
+#software-buttons .container button:active {
+  background-color: var(--translucent-plus, rgba(0,0,0,0.1));
+}
+
+#software-buttons #panel-launcher {
+  background-image: url(images/icons/launcher.png);
+}
+#software-buttons #panel-search {
+  background-image: url(images/icons/search.png);
+}
+#software-buttons #panel-cards-view {
+  background-image: url(images/icons/cards_view.png);
+}
+#software-buttons #panel-widgets {
+  background-image: url(images/icons/widgets.png);
+}
+#software-buttons #panel-chat {
+  background-image: url(images/icons/orchid_chat.png);
+}
+
+#software-buttons #panel-launcher:hover {
+  background-image: url(images/icons/launcher_hover.png);
+}
+#software-buttons #panel-search:hover {
+  background-image: url(images/icons/search_hover.png);
+}
+#software-buttons #panel-cards-view:hover {
+  background-image: url(images/icons/cards_view_hover.png);
+}
+#software-buttons #panel-widgets:hover {
+  background-image: url(images/icons/widgets_hover.png);
+}
+#software-buttons #panel-chat:hover {
+  background-image: url(images/icons/orchid_chat_hover.png);
+}
+
+/* Taskbar Icons */
+#panel-tasks {
+  height: var(--panel-height);
+  margin: 0;
+  padding: 0;
+}
+
+#panel-tasks .task {
+  border-radius: 0;
+  position: relative;
+  width: var(--panel-height);
+  height: var(--panel-height);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: url(../icons/Default.png) no-repeat center / calc(var(--panel-height) - 2rem);
+  display: flex;
+  transition: background-position 0.3s cubic-bezier(0.2, 0.9, 0.1, 2);
+}
+html[dir="ltr"] #panel-tasks .task {
+  float: left;
+}
+html[dir="rtl"] #panel-tasks .task {
+  float: right;
+}
+
+#panel-tasks .task:hover,
+#panel-tasks .task.active {
+  background-color: var(--translucent, rgba(0,0,0,0.125));
+}
+
+#panel-tasks .task:active {
+  background-color: var(--translucent-plus, rgba(0,0,0,0.25));
+  background-position: top 0.8rem center;
+}
+
+#panel-tasks .task.active::after {
+  content: '';
+  position: absolute;
+  left: 33.333%;
+  right: 33.333%;
+  bottom: 0.1rem;
+  height: 0.3rem;
+  border-radius: 0.15rem;
+  background: var(--accent-color, #0061e0);
+}
+
+#panel-tasks .task.minimized {
+  filter: saturate(0);
+}
+
+#panel-tasks .task .task-preview {
+  height: calc(180px + 3rem);
+  width: 240px;
+  background: var(--background-plus, #fff);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2);
+  position: absolute;
+  bottom: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.1, 1), opacity 0.3s cubic-bezier(0.2, 0.9, 0.1, 1), visibility 0.3s ease;
+  transform: translateY(32px);
+  opacity: 0;
+  visibility: hidden;
+}
+html[dir="ltr"] #panel-tasks .task .task-preview {
+  left: calc(50% - 120px);
+}
+html[dir="rtl"] #panel-tasks .task .task-preview {
+  right: calc(50% - 120px);
+}
+
+#panel-tasks .task:hover .task-preview {
+  transition-delay: 0.5s;
+
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+#panel-tasks .task .task-preview header {
+  display: inline-flex;
+  width: 100%;
+  height: 4rem;
+}
+html[dir="ltr"] #panel-tasks .task .task-preview header {
+  background: url(../icons/Default.png) no-repeat left 4.4rem center / 2.4rem;
+}
+html[dir="rtl"] #panel-tasks .task .task-preview header {
+  background: url(../icons/Default.png) no-repeat right 4.4rem center / 2.4rem;
+}
+
+#panel-tasks .task .task-preview header a {
+  width: 4rem;
+  height: 4rem;
+  margin: 0;
+  text-decoration: none;
+}
+
+#panel-tasks .task .task-preview header a:before {
+  width: 4rem;
+  height: 4rem;
+  font-size: 2rem;
+  color: var(--text-color, #333);
+  left: 0;
+  top: 0;
+  text-align: center;
+  line-height: 4rem;
+}
+
+#panel-tasks .task .task-preview a:hover {
+  background-color: var(--translucent, rgba(0,0,0,0.05));
+}
+
+#panel-tasks .task .task-preview a:active {
+  background-color: var(--translucent-plus, rgba(0,0,0,0.1));
+}
+
+#panel-tasks .task .task-preview header h1 {
+  flex: 1;
+  padding: 0 1rem;
+  font-size: 1.4rem;
+  line-height: 4rem;
+  height: 4rem;
+  margin: 0;
+  color: var(--text-color, #333);
+  text-align: left;
+  font-weight: normal;
+  background: none no-repeat left 0.8rem center / 2.4rem;
+  -moz-padding-start: 4rem;
+}
+
+#panel-tasks .task .task-preview .screenshot {
+  width: 100%;
+  background: #000 no-repeat top left / cover;
+  border-radius: 0 0 1rem 1rem;
+  flex: 1;
+}
+

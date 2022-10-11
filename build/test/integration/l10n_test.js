@@ -10,7 +10,7 @@ suite('L10n logic tests', function() {
   var appsListPath  = path.join(
     'build', 'config', 'phone', 'apps-engineering.list');
   var apps = [
-    'apps/*',
+    'webapps/*',
     'build/test/fixtures/test-l10n-optimize-entries',
     'build/test/fixtures/test-l10n-optimize-legacy',
     'build/test/fixtures/test-l10n-optimize-no-fetch',

@@ -1,0 +1,9 @@
+body {
+  background: var(--music-accent-color, var(--background, #e7e7e7));
+}
+
+music-artwork {
+  display: block;
+  width: 100%;
+  height: calc(100% - 13.3rem);
+}

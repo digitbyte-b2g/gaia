@@ -11,7 +11,7 @@ user_pref('b2g.neterror.url',
 
 // Collaborate with meta-viewport to fulfill more complete web experience
 user_pref('apz.allow_zooming', true);
-// Larger value to provide better experience for apps/pages which targets on
+// Larger value to provide better experience for webapps/pages which targets on
 // TV but uses embed tag with hard-coded width/height
 user_pref('browser.viewport.desktopWidth', 1280);
 

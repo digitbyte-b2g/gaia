@@ -19,9 +19,9 @@ gaia-buttons:not(.inline) {
   right: 0;
   bottom: 0;
   z-index: 10;
-  border-top: 0.1rem solid #e7e7e7;
+  border-top: 0.1rem solid #e7e9ec;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #e0e2e5;
 }
 /* this 'end' padding must match the buttons 'start' margin */
 gaia-buttons:not(.inline):-moz-dir(ltr) { padding-right: 1.5rem; }
@@ -41,7 +41,7 @@ a,
 button {
   position: relative;
   font-family: sans-serif;
-  font-style: italic;
+  font-style: normal;
   width: 100%;
   height: 4rem;
   margin: 0;
@@ -52,7 +52,7 @@ button {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  background: #d8d8d8;
+  background: #fff;
   border: none;
   border-radius: 2rem;
   font-weight: normal;
@@ -75,22 +75,47 @@ button {
 /* Recommend */
 a.recommend,
 button.recommend {
-  background-color: #00caf2;
+  background-color: var(--accent-color, #0061e0);
   color: #fff;
+}
+
+a.recommend:hover,
+button.recommend:hover {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.125), rgba(0,0,0,0.125));
+}
+
+a.recommend:active,
+button.recommend:active {
+  background: var(--accent-color, #0061e0) linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25));
 }
 
 /* Danger */
 a.danger,
 button.danger {
-  background-color: #e51e1e;
+  background-color: #c00040;
   color: #fff;
+}
+
+a.danger:hover,
+button.danger:hover {
+  background-color: #b00030;
+}
+
+a.danger:active,
+button.danger:active {
+  background-color: #a00020;
+}
+
+/* Hovered */
+a:hover,
+button:hover {
+  background-color: #d0d2d5;
 }
 
 /* Pressed */
 a:active,
 button:active {
-  background-color: #b2f2ff;
-  color: #fff;
+  background-color: #c0c2c5;
 }
 
 a::-moz-selection,
@@ -101,15 +126,8 @@ button::-moz-selection {
 /* Disabled */
 a[aria-disabled="true"],
 button[disabled] {
-  background-color: rgba(0,0,0,0.05);
-  color: #c7c7c7;
   pointer-events: auto;
-}
-
-a[aria-disabled="true"].recommend,
-button[disabled].recommend {
-  background-color: #97cbd5;
-  color: rgba(255,255,255,0.5);
+  opacity: 0.5;
 }
 
 a[aria-disabled="true"].danger,
@@ -187,12 +205,6 @@ gaia-buttons[skin="dark"] {
   border: none;
 }
 
-/* Pressed */
-[skin="dark"] a:active,
-[skin="dark"] button:active {
-  background-color: #00aacc;
-}
-
 /* Disabled */
 [skin="dark"] a[aria-disabled="true"],
 [skin="dark"] button[disabled] {
@@ -243,39 +255,50 @@ gaia-buttons[skin="dark"] {
   opacity: 0;
 }
 
-/* -----------------------------------------------------------------
-  RESPONSIVE: tablet
------------------------------------------------------------------ */
-
-@media (min-width: 768px) {
-
-  gaia-buttons {
-    height: 10rem;
-  }
-
+@media screen and (prefers-color-scheme: dark) {
   gaia-buttons:not(.inline) {
-    border-top-width: 0.2rem;
+    border-top-color: #484c50;
+    background-color: #404448;
   }
-  /* this 'end' padding must match the buttons 'start' margin */
-  gaia-buttons:not(.inline):-moz-dir(ltr) { padding-right: 3rem; }
-  gaia-buttons:not(.inline):-moz-dir(rtl) { padding-left: 3rem; }
 
   a,
   button {
-    font-size: 2rem;
-    height: 5rem;
-    line-height: 5rem;
-    border-radius: 2.5rem;
-    max-width: 40rem;
-  }
-  :-moz-dir(ltr) a,
-  :-moz-dir(ltr) button {
-    margin-left: 3rem;
-  }
-  :-moz-dir(rtl) a,
-  :-moz-dir(rtl) button {
-    margin-right: 3rem;
+    background-color: #303438;
+    color: #fff;
   }
 
+  /* Recommend */
+  a.recommend,
+  button.recommend {
+    background-color: var(--accent-color, #00ddff);
+    color: #000;
+  }
+
+  a.recommend:hover,
+  button.recommend:hover {
+    background: var(--accent-color, #00ddff) linear-gradient(0deg, rgba(0,0,0,0.125), rgba(0,0,0,0.125));
+  }
+
+  a.recommend:active,
+  button.recommend:active {
+    background: var(--accent-color, #00ddff) linear-gradient(0deg, rgba(0,0,0,0.25), rgba(0,0,0,0.25));
+  }
+
+  a.recommend.icon:before,
+  button.recommend.icon:before {
+    filter: none !important;
+  }
+
+  /* Hovered */
+  a:hover,
+  button:hover {
+    background-color: #202428;
+  }
+
+  /* Pressed */
+  a:active,
+  button:active {
+    background-color: #101218;
+  }
 }
 
