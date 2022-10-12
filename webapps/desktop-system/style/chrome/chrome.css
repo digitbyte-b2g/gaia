@@ -623,7 +623,8 @@ html[dir="rtl"] .private > .chrome-combined.maximized .chrome-has-ssl-indicator 
 
 
 /* Buttons */
-.controls button {
+.controls button,
+.header > button {
   -moz-appearance: none;
   border: none;
   margin: 0;
@@ -631,23 +632,35 @@ html[dir="rtl"] .private > .chrome-combined.maximized .chrome-has-ssl-indicator 
   min-width: 4rem;
   width: 4rem;
   height: calc(var(--browser-navbar-height) - 0.8rem);
-  line-height: 4rem;
+  line-height: calc(var(--browser-navbar-height) - 0.8rem);
   background-position: center;
   background-repeat: no-repeat;
   background-color: transparent;
   background-size: 2rem;
   opacity: 1;
-  border-radius: 1rem;
+  border-radius: 0.4rem;
 }
 html[dir="ltr"] .controls button { float: left; }
 html[dir="rtl"] .controls button { float: right; }
 
-.controls button:hover {
+.controls button:hover,
+.header > button:hover {
   background-color: rgba(0,0,0,0.05);
 }
 
-.controls button:active {
+.controls button:active,
+.header > button:active {
   background-color: rgba(0,0,0,0.1);
+}
+
+.controls button[disabled],
+.header > button[disabled] {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.header > button {
+  margin: 0.4rem 0;
 }
 
 .controls.dark button:hover {
@@ -668,22 +681,9 @@ html[dir="rtl"] .controls button { float: right; }
   background-size: 2rem auto;
   background-position: center center;
   background-repeat: no-repeat;
-  position: absolute;
-  bottom: 0;
-  offset-inline-end: 0;
   padding: 0;
   width: 4rem;
   height: calc(var(--browser-navbar-height) - 0.8rem);
-}
-
-.controls .reload-button::before,
-.controls .stop-button::before {
-  content: '';
-  position: relative;
-  offset-inline-end: 0.2rem;
-  display: block;
-  height: 2.4rem;
-  border-inline-start: .1rem solid rgba(0,0,0,0.05);
 }
 
 /* Vertically align butons outside of urlbar. */
@@ -697,25 +697,31 @@ html[dir="rtl"] .controls button { float: right; }
   offset-inline-end: 0.4rem;
 }
 
-.controls .reload-button[disabled],
+.controls > button.profile-button {
+  position: absolute;
+  offset-inline-end: 4.4rem;
+}
+
+.controls > button.library-button {
+  position: absolute;
+  offset-inline-end: 8.4rem;
+}
+
+.controls > button.downloads-button {
+  position: absolute;
+  offset-inline-end: 12.4rem;
+}
+
 .loading .controls .reload-button {
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 
 .controls .stop-button {
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 
 .loading .controls .stop-button {
-  visibility: visible;
-  pointer-events: auto;
-}
-
-.controls .back-button[disabled],
-.controls .forward-button[disabled] {
-  display: none;
+  display: block;
 }
 
 .chrome.maximized .controls .menu-button[disabled] {
@@ -755,6 +761,18 @@ html[dir="rtl"] .controls .forward-button { background-image: url("images/dark/l
 
 .controls .windows-button {
   background-image: url('images/dark/windows.png');
+}
+
+.controls .profile-button {
+  background-image: url('images/dark/profile.png');
+}
+
+.controls .library-button {
+  background-image: url('images/dark/library.png');
+}
+
+.controls .downloads-button {
+  background-image: url('images/dark/downloads.png');
 }
 
 /* Light theme button styles */
@@ -819,7 +837,7 @@ gaia-overflow-menu button#share {
   width: calc(100%);
 }
 
-.chrome .tab-list {
+.chrome {
   position: absolute;
   top: 0;
   width: calc(100% - 2rem);
@@ -828,8 +846,6 @@ gaia-overflow-menu button#share {
   padding: var(--grippy-padding) 1rem 0;
   display: flex;
   flex-wrap: wrap;
-  overflow-x: scroll;
-  overflow-y: hidden;
   background: rgba(0,0,0,0.125);
 
   transition: transform 0.3s ease, visibility 0.3s ease;
@@ -837,7 +853,7 @@ gaia-overflow-menu button#share {
   visibility: hidden;
 }
 
-.chrome.maximized .tab-list {
+.chrome.maximized .header {
   transform: translateY(0);
   visibility: visible;
 }

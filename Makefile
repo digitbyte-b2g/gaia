@@ -304,7 +304,7 @@ XPCSHELL_GUESS = $(firstword $(wildcard \
     $(XULRUNNER_DIRECTORY)/B2G.app/Contents/MacOS/xpcshell \
     $(XULRUNNER_DIRECTORY)/bin/XUL.framework/Versions/Current/xpcshell \
     $(XULRUNNER_DIRECTORY)/bin/xpcshell* \
-    $(XULRUNNER_DIRECTORY)/b2g/xpcshell* \
+    $(XULRUNNER_DIRECTORY)/graphene/xpcshell* \
   ))
 ifneq (,$(XPCSHELL_GUESS))
 XPCSHELLSDK := $(abspath $(XPCSHELL_GUESS))
@@ -315,7 +315,7 @@ endif
 else
 
 # Determine the host-dependent bundle to download
-B2G_SDK_VERSION := 39.0a1
+B2G_SDK_VERSION := 48.0a1
 B2G_SDK_DATE := 2015/03/2015-03-05-16-02-02
 
 XULRUNNER_BASE_DIR ?= b2g_sdk
@@ -330,7 +330,7 @@ XPCSHELLSDK := $(abspath $(XULRUNNER_DIRECTORY)/B2G.app/Contents/MacOS/xpcshell)
 else ifeq ($(findstring MINGW32,$(SYS)), MINGW32)
 B2G_SDK_EXT := zip
 B2G_SDK_OS := win32
-XPCSHELLSDK := $(abspath $(XULRUNNER_DIRECTORY)/b2g/xpcshell.exe)
+XPCSHELLSDK := $(abspath $(XULRUNNER_DIRECTORY)/graphene/xpcshell.exe)
 
 # Otherwise, assume linux
 else
@@ -340,11 +340,11 @@ B2G_SDK_OS := linux-x86_64
 else
 B2G_SDK_OS := linux-i686
 endif
-XPCSHELLSDK := $(abspath $(XULRUNNER_DIRECTORY)/b2g/xpcshell)
+XPCSHELLSDK := $(abspath $(XULRUNNER_DIRECTORY)/graphene/xpcshell)
 endif
 
-B2G_SDK_URL_BASE := http://web.archive.org/web/20160406033553/http://ftp.mozilla.org/pub/mozilla.org/b2g/nightly/$(B2G_SDK_DATE)-mozilla-central
-B2G_SDK_FILE_NAME := b2g-$(B2G_SDK_VERSION).multi.$(B2G_SDK_OS).$(B2G_SDK_EXT)
+B2G_SDK_URL_BASE := http://ftp.mozilla.org/pub/b2g/nightly/latest-mozilla-central
+B2G_SDK_FILE_NAME := graphene-$(B2G_SDK_VERSION).en-US.$(B2G_SDK_OS).$(B2G_SDK_EXT)
 B2G_SDK_URL := $(B2G_SDK_URL_BASE)/$(B2G_SDK_FILE_NAME)
 B2G_SDK_URL_FILE := $(XULRUNNER_DIRECTORY)/.b2g.url
 

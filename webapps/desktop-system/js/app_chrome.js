@@ -160,15 +160,15 @@
                     <span class="title" dir="auto"></span>
                   </div>
                 </div>
-                <button type="button" class="downloads-button"
-                        data-l10n-id="downloads-button"></button>
-                <button type="button" class="library-button"
-                        data-l10n-id="library-button"></button>
-                <button type="button" class="profile-button"
-                        data-l10n-id="profile-button"></button>
                 <button type="button" class="menu-button" alt="Menu"></button>
                 <button type="button" class="windows-button"
                         data-l10n-id="windows-button"></button>
+                <button type="button" class="profile-button"
+                        data-l10n-id="profile-button"></button>
+                <button type="button" class="library-button"
+                        data-l10n-id="library-button"></button>
+                <button type="button" class="downloads-button"
+                        data-l10n-id="downloads-button"></button>
               </div>
               <div class="header">
                 <button type="button" class="side-tabs-button"
