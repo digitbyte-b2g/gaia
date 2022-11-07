@@ -330,7 +330,7 @@ var CallLog = {
     if (sectionExists) {
       // We found a section to place the group, so just insert it
       // in the right position.
-      var section = sectionExists.getElementsByTagName('ol')[0];
+      var section = sectionExists.getElementsByTagName('ul')[0];
       this.insertInSection(logGroupDOM, section);
       return logGroupDOM;
     }
@@ -569,7 +569,7 @@ var CallLog = {
     header.dataset.timestamp = referenceTimestamp;
     header.id = 'header-' + referenceTimestamp;
     header.dataset.update = true;
-    var ol = document.createElement('ol');
+    var ol = document.createElement('ul');
     ol.classList.add('log-group');
     ol.setAttribute('role', 'listbox');
     ol.setAttribute('aria-multiselectable', true);

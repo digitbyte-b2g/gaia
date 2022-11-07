@@ -124,7 +124,7 @@ exports.execute = function(options) {
         var webapp = utils.getWebapp(appDir, options);
         if (!webapp) {
           // Some leftover folders may still be in source tree,
-          // without any valid app, like webapps/browser that has been removed.
+          // without any valid app, like apps/browser that has been removed.
           return;
         }
 

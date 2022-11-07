@@ -33,13 +33,13 @@ function setWallpaper(settings, config) {
 
   if (!wallpaper.exists()) {
     wallpaper = utils.resolve(
-      utils.joinPath('build', 'config', 'wallpaper' + devpixels + '.png'),
+      utils.joinPath('build', 'config', 'wallpaper' + devpixels + '.jpg'),
       config.GAIA_DIR);
   }
 
   if (!wallpaper.exists()) {
     wallpaper = utils.resolve(
-      utils.joinPath('build', 'config', 'wallpaper.png'),
+      utils.joinPath('build', 'config', 'wallpaper.jpg'),
       config.GAIA_DIR);
   }
   settings['wallpaper.image'] = utils.getFileAsDataURI(wallpaper);
@@ -69,9 +69,9 @@ function setTone(settings, config, toneType, name, l10nID) {
 }
 
 function setMediatone(settings, config) {
-  // Grab notifier_orchid.wav and convert it into a base64 string
+  // Grab notifier_firefox.opus and convert it into a base64 string
   let mediatone_name = 'shared/resources/media/notifications/' +
-    'notifier_orchid.wav';
+    'notifier_firefox.opus';
   let mediatone = utils.resolve(mediatone_name,
     config.GAIA_DIR);
 
@@ -81,7 +81,7 @@ function setMediatone(settings, config) {
 function setAlarmtone(settings, config) {
   // Grab ac_awake.opus and convert it into a base64 string
   let alarmtone_name = 'shared/resources/media/alarms/' +
-    'ac_orchid.wav';
+    'ac_awake.opus';
   let alarmtone = utils.resolve(alarmtone_name,
     config.GAIA_DIR);
 
@@ -89,16 +89,16 @@ function setAlarmtone(settings, config) {
 }
 
 function setRingtone(settings, config) {
-  // Grab ringer_orchid.wav and convert it into a base64 string
-  let ringtone_name = 'ringer_orchid.wav';
-  let ringtone_l10nID = 'ringer_orchid';
+  // Grab ringer_firefox.opus and convert it into a base64 string
+  let ringtone_name = 'ringer_firefox.opus';
+  let ringtone_l10nID = 'ringer_firefox2';
   setTone(settings, config, 'ringtone', ringtone_name, ringtone_l10nID);
 }
 
 function setNotification(settings, config) {
-  // Grab notifier_orchid.wav and convert it into a base64 string
-  let notification_name = 'notifier_orchid.wav';
-  let notification_l10nID = 'notifier_orchid';
+  // Grab notifier_firefox.opus and convert it into a base64 string
+  let notification_name = 'notifier_firefox.opus';
+  let notification_l10nID = 'notifier_firefox2';
   setTone(settings, config, 'alerttone', notification_name,
           notification_l10nID);
 }

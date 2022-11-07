@@ -53,17 +53,19 @@ html[dir="rtl"] .appWindow .titlebar .statusbar-shadow { background-position: bo
   width: 100%;
 }
 
-/* Window Titlebar */
-
+/*
+ * Window Titlebar
+ */
 .appWindow > .titlebar-buttons {
   position: absolute;
   top: 0 !important;
-  z-index: 10;
+  z-index: 100;
   height: var(--statusbar-height) !important;
   display: flex;
   flex-direction: row-reverse;
   width: unset !important;
   left: unset !important;
+  overflow: visible !important;
 }
 html[dir="ltr"] .appWindow > .titlebar-buttons {
   right: 0;
@@ -77,51 +79,62 @@ html[dir="rtl"] .appWindow > .titlebar-buttons {
   height: var(--statusbar-height);
   border: none;
   border-radius: 0;
-  background: transparent no-repeat center / 1.6rem;
+  background: transparent;
   margin: 0;
   padding: 0 1rem;
   box-sizing: border-box;
-  color: #fff;
+  color: var(--text-color, #333);
   font-size: 1.6rem;
   font-weight: 300;
   text-transform: uppercase;
+  position: relative;
 }
 
-.appWindow.light > .titlebar-buttons button {
+.appWindow > .titlebar-buttons button:before {
+  content: '';
+  width: 100%;
+  height: var(--statusbar-height);
+  background: transparent no-repeat center / 1.6rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.appWindow.light > .titlebar-buttons button:before {
   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='invert'><feColorMatrix in='SourceGraphic' color-interpolation-filters='sRGB' type='matrix' values='1 -1 0.3019 0 0 0 0.3019 0 0 0 0 0 0.3019 0 0 0 0 0 1 0'/></filter></svg>#invert");
 }
 
-.appWindow > .titlebar-buttons button:hover {
+.appWindow > .titlebar-buttons button:hover:before {
   background-color: rgba(255, 255, 255, 0.05);
 }
 
-.appWindow > .titlebar-buttons button:active {
+.appWindow > .titlebar-buttons button:active:before {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.appWindow > .titlebar-buttons .close-button {
+.appWindow > .titlebar-buttons .close-button:before {
   background-image: url(app_titlebar/images/icons/close.png);
 }
 
-.appWindow > .titlebar-buttons .close-button:hover {
+.appWindow > .titlebar-buttons .close-button:hover:before {
   filter: none;
   background-color: #c00040;
 }
 
-.appWindow > .titlebar-buttons .close-button:active {
+.appWindow > .titlebar-buttons .close-button:active:before {
   filter: none;
   background-color: rgba(192, 0, 64, 0.5);
 }
 
-.appWindow > .titlebar-buttons .resize-button {
+.appWindow > .titlebar-buttons .resize-button:before {
   background-image: url(app_titlebar/images/icons/maximize.png);
 }
 
-.appWindow.maximized-app > .titlebar-buttons .resize-button {
+.appWindow.maximized-app > .titlebar-buttons .resize-button:before {
   background-image: url(app_titlebar/images/icons/restore.png);
 }
 
-.appWindow > .titlebar-buttons .minimize-button {
+.appWindow > .titlebar-buttons .minimize-button:before {
   background-image: url(app_titlebar/images/icons/minimize.png);
 }
 

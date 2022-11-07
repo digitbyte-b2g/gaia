@@ -542,7 +542,6 @@ section[role="region"] ul header h2 {
   section[role="region"] {
     width: calc(100% - 256px);
     box-sizing: border-box;
-    -moz-border-start: solid 0.1rem rgba(0,0,0,0.125);
   }
   html[dir="ltr"] section[role="region"] {
     left: 256px;

@@ -235,6 +235,7 @@
 
       if (this.enabled) {
         this.element.addEventListener('mousedown', this._preventFocus);
+        this.element.addEventListener('contextmenu', this);
         this.homeButtons.forEach(function sbm_addTouchListeners(b) {
           b.addEventListener('touchstart', this);
           b.addEventListener('mousedown', this);
@@ -341,6 +342,22 @@
               Service.query('getTopMostWindow').CLASS_NAME ===
               'LockScreenWindow');
           }
+          break;
+        case 'contextmenu':
+          contextMenu(evt, [
+            { type: 'button', l10nId: 'panel-terminal', icon: 'link', onclick: () => {
+              applications.getByManifestURL(
+                'app://terminal.gaiamobile.org/manifest.webapp').launch();
+            } },
+            { type: 'button', l10nId: 'panel-taskMonitor', icon: 'link', onclick: () => {
+              applications.getByManifestURL(
+                'app://taskmonitor.gaiamobile.org/manifest.webapp').launch();
+            } },
+            { type: 'button', l10nId: 'panel-settings', icon: 'settings', onclick: () => {
+              applications.getByManifestURL(
+                'app://settings.gaiamobile.org/manifest.webapp').launch();
+            } }
+          ]);
           break;
       }
     },

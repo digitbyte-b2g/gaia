@@ -4,13 +4,13 @@
   bottom: calc(var(--panel-height) + var(--panel-margin));
   width: 320px;
   height: 5.2rem;
-  background-color: var(--background-plus, #fff);
+  background-color: var(--background, #e7e7e7);
   border-radius: 1.5rem;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2), 0 0.2rem 0.4rem rgba(0,0,0,0.3);
   visibility: hidden;
 
   /* This transition is used when hiding the toaster. */
-  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1), visibility 1s ease;
+  transition: transform 0.5s cubic-bezier(0.8, 0.1, 0.9, 0), visibility 1s ease;
 }
 html[dir="ltr"] #notification-toaster {
   right: 0;
@@ -80,6 +80,7 @@ html[dir="rtl"] #notification-container > div {
 #notification-toaster.displayed {
   transform: translateX(0) !important;
   /* We keep the visibility transition to make Marionette tests easier to write. */
+  transition: transform 1s cubic-bezier(0.2, 0.9, 0.1, 1), visibility 1s ease;
   visibility: visible;
 }
 

@@ -1,0 +1,27 @@
+{
+  "version": "1.1",
+  "name": "TV FTU",
+  "short_name": "tv-ftu",
+  "description": "TV First Time Usage",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/Blank.png",
+      "type": "image/png",
+      "sizes": "336x336"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "settings": {
+        "access": "readwrite"
+      },
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    }
+  }
+}

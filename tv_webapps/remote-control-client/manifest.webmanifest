@@ -1,0 +1,23 @@
+{
+  "version": "1.1",
+  "name": "Remote Control Client Page",
+  "short_name": "remote-control-client",
+  "description": "Remote Control Client Page",
+  "orientation": "landscape",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/blank.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "system",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    }
+  }
+}

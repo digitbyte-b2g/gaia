@@ -11,9 +11,11 @@ exports.AppLauncher = {
 
   element: document.getElementById('launcher'),
   motionElement: document.getElementById('launcher-motion'),
+  searchbar: document.getElementById('launcher-search'),
   grid: document.getElementById('launcher-grid'),
   settingsButton: document.getElementById('launcher-settings'),
   launcherButton: document.getElementById('panel-launcher'),
+  searchButton: document.getElementById('panel-search'),
 
   profileButton: document.getElementById('launcher-profile'),
   profileAvatar: document.getElementById('launcher-profile-avatar'),
@@ -86,11 +88,24 @@ exports.AppLauncher = {
     switch (evt.target) {
       case this.launcherButton:
         if (this.isActive()) {
-          this.motionElement.scrollTop = this.motionElement.offsetHeight;
+          this.element.classList.add('transition-opening');
+          this.element.addEventListener('animationend', () => {
+            this.element.classList.remove('transition-opening');
+            this.motionElement.scrollTop = this.motionElement.offsetHeight;
+          });
         } else {
-          this.motionElement.scrollTop = 0;
+          this.element.classList.add('transition-closing');
+          this.element.addEventListener('animationend', () => {
+            this.element.classList.remove('transition-closing');
+            this.motionElement.scrollTop = 0;
+          });
         }
         this.shown = !this.shown;
+        break;
+
+      case this.searchbar:
+      case this.searchButton:
+        window.dispatchEvent(new CustomEvent('global-search-request'));
         break;
 
       case this.profileButton:

@@ -6,7 +6,7 @@
   width: 100%;
   height: calc(100% - (var(--panel-height) + (var(--panel-margin) * 2)));
   -moz-user-select: none;
-  background-color: rgba(51, 51, 51, .85);
+  background-color: rgb(51, 51, 51);
 }
 
 #cards-view {
@@ -286,7 +286,7 @@ html[dir="rtl"] #cards-view .card-tray .favorite-button { left: 0; }
 }
 
 #cards-view .card-tray > button.appIcon {
-  top: calc(-50vh - 4rem);
+  top: calc(-50vh - 1rem);
   left: 0;
   width: 4rem;
   height: 4rem;

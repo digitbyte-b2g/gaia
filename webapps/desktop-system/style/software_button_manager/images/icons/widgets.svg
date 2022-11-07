@@ -214,79 +214,19 @@
      inkscape:window-maximized="0"
      inkscape:current-layer="svg25"
      inkscape:pagecheckerboard="0" />
-  <linearGradient
-     id="g0"
-     x1="0%"
-     y1="0%"
-     x2="100%"
-     y2="100%">
-    <stop
-       offset="0%"
-       style="stop-color:#c0e0ff;stop-opacity:1"
-       id="stop2" />
-    <stop
-       offset="100%"
-       style="stop-color:#60c0ff;stop-opacity:1"
-       id="stop4" />
-  </linearGradient>
-  <linearGradient
-     id="g1"
-     x1="0%"
-     y1="0%"
-     x2="100%"
-     y2="100%">
-    <stop
-       offset="0%"
-       style="stop-color:#70c0ff;stop-opacity:1"
-       id="stop7" />
-    <stop
-       offset="100%"
-       style="stop-color:#3880e0;stop-opacity:1"
-       id="stop9" />
-  </linearGradient>
-  <linearGradient
-     id="g2"
-     x1="0%"
-     y1="0%"
-     x2="100%"
-     y2="100%">
-    <stop
-       offset="0%"
-       style="stop-color:#00a0e8;stop-opacity:1"
-       id="stop12" />
-    <stop
-       offset="100%"
-       style="stop-color:#0061e0;stop-opacity:1"
-       id="stop14" />
-  </linearGradient>
-  <linearGradient
-     id="g3"
-     x1="0%"
-     y1="0%"
-     x2="100%"
-     y2="100%">
-    <stop
-       offset="0%"
-       style="stop-color:#e7e9ec;stop-opacity:1"
-       id="stop12" />
-    <stop
-       offset="100%"
-       style="stop-color:#b0d0ff;stop-opacity:1"
-       id="stop14" />
-  </linearGradient>
   <style
      id="style17">
     .ac-color {
-      fill: url(#g0);
+      fill: #a0d0ff;
     }
     .ac-color1 {
-      fill: url(#g1);
+      fill: #0061e0;
     }
     .ac-color2 {
-      fill: url(#g2);
+      fill: #00a0e8;
     }
     .ac-color3 {
-      fill: url(#g3);
+      fill: #fff;
     }
   </style>
   <path

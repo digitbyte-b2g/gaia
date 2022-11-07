@@ -1,5 +1,6 @@
 .appWindow[transition-state="closed"]:not(.fadeout):not(.homescreen):not(.attentionWindow):not(.lockScreenInputWindow) {
   opacity: 0;
+  transform: translateX(0);
 }
 
 #screen.utility-tray #windows > .appWindow {
@@ -57,10 +58,6 @@
   background-color: #fff;
 }
 
-.gpu-capable .appWindow:not(.homescreen):not(.searchWindow):not(.globalOverlayWindow).render > div.browser-container {
-  background-color: transparent !important;
-}
-
 .appWindow:not(.homescreen):not(.searchWindow):not(.globalOverlayWindow).light.render > div.browser-container {
   background-color: #f2f2f2;
 }
@@ -111,8 +108,8 @@
 }
 
 @keyframes openAppFromCardView {
-  0%   { transform: scale(0.5); }
-  100% { transform: scale(1.0); }
+  0%   { transform: scale(0.5); border-radius: calc(var(--screen-border-radius) * 2); }
+  100% { transform: scale(1.0); border-radius: var(--screen-border-radius); }
 }
 
 /* Invoking app moves out */
@@ -187,8 +184,8 @@ html[dir="rtl"] .appWindow.invoked {
 }
 
 .appWindow.reduce {
-  animation: closeApp var(--transition-duration) cubic-bezier(0.2, 0.9, 0.1, 1.0);
-  transform: translateY(-100vh);
+  animation: closeApp var(--transition-duration) forwards
+             cubic-bezier(0.2, 0.9, 0.1, 1.0);
 }
 
 .appWindow.transition-opening.perpendicular {
@@ -205,7 +202,7 @@ html[dir="rtl"] .appWindow.invoked {
  */
 .appWindow.zoom-out {
   transform: scale(2);
-  animation: zoom-out var(--transition-duration) forwards
+  animation: zoom-out 1s forwards
              cubic-bezier(0.2, 0.9, 0.1, 1.0);
 }
 
@@ -224,8 +221,8 @@ html[dir="rtl"] .appWindow.invoked {
 }
 
 @keyframes closeAppTowardsCardView {
-  0%   { transform: scale(1.0); }
-  100% { transform: scale(0.5); }
+  0%   { transform: scale(1.0); border-radius: var(--screen-border-radius); }
+  100% { transform: scale(0.5); border-radius: calc(var(--screen-border-radius) * 2); }
 }
 
 .appWindow.home-from-cardview {
@@ -237,13 +234,13 @@ html[dir="rtl"] .appWindow.invoked {
 }
 
 @keyframes home-from-cardview {
-  0%   { opacity: 0; transform: translateX(100%); }
-  100% { opacity: 1; transform: translateX(0); }
+  0%   { opacity: 0; transform: scale(0.75); }
+  100% { opacity: 1; transform: scale(1.0); }
 }
 
 @keyframes home-to-cardview {
-  0%   { opacity: 1; transform: translateX(0); }
-  100% { opacity: 0; transform: translateX(100%); }
+  0%   { opacity: 1; transform: scale(1.0); }
+  100% { opacity: 0; transform: scale(0.75); }
 }
 
 .appWindow.back {
@@ -252,6 +249,7 @@ html[dir="rtl"] .appWindow.invoked {
 }
 
 .appWindow.restored {
+  transform: translateX(0);
   transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.1, 1.0);
 }
 
@@ -260,7 +258,7 @@ html[dir="rtl"] .appWindow.invoked {
 }
 
 .appWindow > .fade-overlay {
-  background-color: transparent;
+  background-color: black;
   visibility: hidden;
   opacity: 0.8;
 }
@@ -621,14 +619,17 @@ html[dir="rtl"] .appWindow.invoked {
 #screen #windows > .appWindow.will-become-active,
 #screen #windows > .appWindow.inside-edges {
   opacity: 1;
+  transform: translateX(0);
 }
 
 #screen #windows > .appWindow.outside-edges-left {
   opacity: 1;
+  transform: translateX(calc(-100% - 2rem));
 }
 
 #screen #windows > .appWindow.outside-edges-right {
   opacity: 1;
+  transform: translateX(calc(100% + 2rem));
 }
 
 #screen #windows > .appWindow.will-become-active,
@@ -636,6 +637,13 @@ html[dir="rtl"] .appWindow.invoked {
 #screen #windows > .appWindow.outside-edges-left,
 #screen #windows > .appWindow.outside-edges-right {
   will-change: transform;
+}
+
+@media (orientation: landscape) {
+  #screen.software-button-enabled:not(.fullscreen-layout-app) #windows > .appWindow.outside-edges-right {
+    /* BiDi note: the software home button should not be mirrored in RTL. */
+    transform: translateX(calc(100% + var(--software-home-button-height)));
+  }
 }
 
 #windows .appWindow.active iframe {
@@ -665,38 +673,4 @@ html[dir="rtl"] .appWindow.invoked {
 .appWindow.lockScreenInputWindow {
   background: none;
   pointer-events: none;
-}
-
-.appWindow.homescreen,
-.appWindow.lockScreenWindow {
-  position: absolute;
-  left: 0 !important;
-  top: 0 !important;
-  width: 100% !important;
-  height: calc(100% - (var(--panel-height) + (var(--panel-margin) * 2))) !important;
-  border-radius: 0;
-  box-shadow: none;
-  animation: none !important;
-  visibility: visible !important;
-  transform: none !important;
-  opacity: 1 !important;
-  display: block !important;
-  --statusbar-height: 0px;
-  --rocketbar-scale: 0;
-}
-
-.appWindow.lockScreenWindow {
-  height: 100% !important;
-  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1.0);
-}
-
-.appWindow.lockScreenWindow:not(.active) {
-  transform: translateY(-100vh) !important;
-}
-
-.appWindow.lockScreenWindow > .titlebar-buttons,
-.appWindow.lockScreenInputWindow > .titlebar-buttons,
-.appWindow.homescreen > .titlebar-buttons,
-.appWindow.fullscreen-app > .titlebar-buttons {
-  display: none;
 }

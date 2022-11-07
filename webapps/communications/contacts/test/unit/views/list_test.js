@@ -1113,7 +1113,7 @@ suite('Render contacts list', function() {
     var mockNavigationStack;
 
     suiteSetup(function(done) {
-      searchList = document.createElement('ol');
+      searchList = document.createElement('ul');
       searchList.id = 'search-list';
       document.body.appendChild(searchList);
 

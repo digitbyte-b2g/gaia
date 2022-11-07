@@ -1,0 +1,21 @@
+{
+  "version": "1.1",
+  "name": "uPnP Test",
+  "short_name": "upnp-test",
+  "description": "uPnP Test App",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/default_126.png",
+      "type": "image/png",
+      "sizes": "126x126"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "permissions": {
+      "systemXHR": {},
+      "udp-socket": {}
+    }
+  }
+}

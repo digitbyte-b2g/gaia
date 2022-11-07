@@ -35,7 +35,6 @@ html[dir="rtl"] #launcher-motion {
   width: calc(100% - var(--scrollbar-width));
   height: 100%;
   direction: initial;
-  overflow: hidden;
 }
 
 #launcher {
@@ -43,7 +42,7 @@ html[dir="rtl"] #launcher-motion {
   width: calc(100% - 2rem);
   height: calc(100% - 2rem);
   background: var(--background, #e7e7e7);
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
   border-radius: 1.5rem;
   position: relative;
   pointer-events: all;
@@ -70,10 +69,10 @@ html[dir="rtl"] #launcher-motion {
 
 @keyframes launcher-close {
   from {
-    transform: translateY(calc(-100% - 2rem));
+    transform: translateY(0);
   }
   to {
-    transform: translateY(0);
+    transform: translateY(calc(100% - 2rem));
   }
 }
 

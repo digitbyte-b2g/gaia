@@ -658,7 +658,7 @@ Icon.prototype = {
 
     var draggableElem = this.draggableElem;
     var style = draggableElem.style;
-    style.transition = 'transform .4s';
+    style.transition = 'transform .5s cubic-bezier(0.2, 0.9, 0.1, 2.5)';
     style.transform = 'translate(' + x + 'px,' + y + 'px)';
 
     var finishDrag = function() {

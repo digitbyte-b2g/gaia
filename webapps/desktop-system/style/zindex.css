@@ -316,6 +316,7 @@
 #screen > [data-z-index-level="app"] > .appWindow:not(.homescreen):not(.lockScreenWindow):not(.attentionWindow):not(.lockScreenInputWindow),
 #screen > [data-z-index-level="app"] > .appWindow.will-become-active {
   z-index: 6;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.5);
 }
 
 #screen > [data-z-index-level="app"] > .appWindow.in-from-left {

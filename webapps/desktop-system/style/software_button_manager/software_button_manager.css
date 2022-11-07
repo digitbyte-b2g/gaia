@@ -147,7 +147,7 @@ html[dir="rtl"] #software-buttons.centered .container {
   margin: 0;
   border: none;
   outline: none;
-  width: var(--panel-height);
+  width: calc(var(--panel-height) * 1.25);
   height: var(--panel-height);
   position: relative;
 }
@@ -179,23 +179,7 @@ html[dir="rtl"] #software-buttons .container button {
   background-image: url(images/icons/widgets.png);
 }
 #software-buttons #panel-chat {
-  background-image: url(images/icons/orchid_chat.png);
-}
-
-#software-buttons #panel-launcher:hover {
-  background-image: url(images/icons/launcher_hover.png);
-}
-#software-buttons #panel-search:hover {
-  background-image: url(images/icons/search_hover.png);
-}
-#software-buttons #panel-cards-view:hover {
-  background-image: url(images/icons/cards_view_hover.png);
-}
-#software-buttons #panel-widgets:hover {
-  background-image: url(images/icons/widgets_hover.png);
-}
-#software-buttons #panel-chat:hover {
-  background-image: url(images/icons/orchid_chat_hover.png);
+  background-image: url(images/icons/chat.png);
 }
 
 /* Taskbar Icons */
@@ -208,7 +192,7 @@ html[dir="rtl"] #software-buttons .container button {
 #panel-tasks .task {
   border-radius: 0;
   position: relative;
-  width: var(--panel-height);
+  width: calc(var(--panel-height) * 1.25);
   height: var(--panel-height);
   margin: 0;
   padding: 0;
@@ -234,15 +218,21 @@ html[dir="rtl"] #panel-tasks .task {
   background-position: top 0.8rem center;
 }
 
-#panel-tasks .task.active::after {
+#panel-tasks .task::after {
   content: '';
   position: absolute;
-  left: 33.333%;
-  right: 33.333%;
-  bottom: 0.1rem;
-  height: 0.3rem;
-  border-radius: 0.15rem;
+  left: 50%;
+  width: 0;
+  bottom: 0.2rem;
+  height: 0.4rem;
+  border-radius: 0.2rem;
   background: var(--accent-color, #0061e0);
+  transition: all 0.3s ease;
+}
+
+#panel-tasks .task.active::after {
+  left: 25%;
+  width: 50%;
 }
 
 #panel-tasks .task.minimized {
@@ -252,7 +242,7 @@ html[dir="rtl"] #panel-tasks .task {
 #panel-tasks .task .task-preview {
   height: calc(180px + 3rem);
   width: 240px;
-  background: var(--background-plus, #fff);
+  background: var(--background, #e7e7e7);
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2);
   position: absolute;
@@ -285,12 +275,6 @@ html[dir="rtl"] #panel-tasks .task .task-preview {
   display: inline-flex;
   width: 100%;
   height: 4rem;
-}
-html[dir="ltr"] #panel-tasks .task .task-preview header {
-  background: url(../icons/Default.png) no-repeat left 4.4rem center / 2.4rem;
-}
-html[dir="rtl"] #panel-tasks .task .task-preview header {
-  background: url(../icons/Default.png) no-repeat right 4.4rem center / 2.4rem;
 }
 
 #panel-tasks .task .task-preview header a {
@@ -329,14 +313,23 @@ html[dir="rtl"] #panel-tasks .task .task-preview header {
   color: var(--text-color, #333);
   text-align: left;
   font-weight: normal;
-  background: none no-repeat left 0.8rem center / 2.4rem;
-  -moz-padding-start: 4rem;
+  -moz-padding-start: 3rem;
+}
+html[dir="ltr"] #panel-tasks .task .task-preview header h1 {
+  background: url(../icons/Default.png) no-repeat left center / 2.4rem;
+}
+html[dir="rtl"] #panel-tasks .task .task-preview header h1 {
+  background: url(../icons/Default.png) no-repeat right center / 2.4rem;
 }
 
 #panel-tasks .task .task-preview .screenshot {
   width: 100%;
-  background: #000 no-repeat top left / cover;
+  background: #858585 no-repeat top left / cover;
   border-radius: 0 0 1rem 1rem;
   flex: 1;
+}
+
+#software-buttons .background {
+  border-radius: var(--panel-border-radius);
 }
 

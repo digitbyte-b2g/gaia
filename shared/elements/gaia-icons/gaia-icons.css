@@ -5,7 +5,7 @@
 @font-face {
   font-family: 'gaia-icons';
   src:  url('fonts/gaia-icons.eot');
-  src:  url('fonts/gaia-icons.eot#iefix') format('embedded-opentype'),
+  src:  url('fonts/gaia-icons.eot#dxuvms') format('embedded-opentype'),
     url('fonts/gaia-icons.ttf') format('truetype'),
     url('fonts/gaia-icons.woff') format('woff'),
     url('fonts/gaia-icons.svg#gaia-icons') format('svg');

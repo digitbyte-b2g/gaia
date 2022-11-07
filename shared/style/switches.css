@@ -223,7 +223,6 @@ label.pack-switch input:focus-visible ~ span:after {
 
 [data-theme="dark"] label.pack-switch input ~ span:after {
   background-image: url(switches/images/switch/dark/background_off.png);
-  background-color: #2b2a33;
 }
 
 [data-theme="dark"] label.pack-switch:hover input ~ span:after {

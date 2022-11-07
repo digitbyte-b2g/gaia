@@ -98,7 +98,7 @@ define(function() {
       }
       sw.totalElapsed = Date.now() - sw.startTime;
       this.setState(Stopwatch.PAUSED);
-      this.stopwatchSound.pause();
+      this.stopwatchSound.stop();
     },
 
     /**

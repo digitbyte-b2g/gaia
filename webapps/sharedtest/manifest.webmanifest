@@ -1,0 +1,24 @@
+{
+  "version": "1.1",
+  "name": "Shared Tests",
+  "short_name": "sharedtest",
+  "description": "Runs shared tests.",
+  "orientation": "portrait-primary",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/Blank.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "core": false,
+    "role": "system",
+    "developer": {
+      "url": "https://github.com/mozilla-b2g/gaia",
+      "name": "The Gaia Team"
+    },
+    "permissions": {}
+  }
+}

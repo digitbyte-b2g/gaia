@@ -17,7 +17,7 @@
 }
 
 [role="dialog"].fade-in {
-  animation: dialog-fade-in 0.3s forwards cubic-bezier(0.2, 0.9, 0.1, 1.0);
+  animation: dialog-fade-in 0.3s forwards cubic-bezier(0.2, 0.9, 0.1, 1.125);
 }
 
 [role="dialog"].fade-out {
@@ -25,13 +25,13 @@
 }
 
 @keyframes dialog-fade-in {
-  0%   { opacity: 0; transform: translateY(32px) scale(0.95); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+  0%   { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes dialog-fade-out {
-  0%   { opacity: 1; transform: translateY(0) scale(1); }
-  100% { opacity: 0; transform: translateY(32px) scale(0.95); }
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.95); }
 }
 
 .app-go-deeper-out {
@@ -164,35 +164,35 @@
   100% { transform: translateX(100%);}
 }
 
-.wos-fade-in,
-.wos-fade-out {
+.orchid-fade-in,
+.orchid-fade-out {
   mask-image: linear-gradient(to right, white calc(50% - 16px), transparent calc(50% + 16px));
   mask-size: calc(200% + 32px);
 }
 
-.wos-fade-in {
-  animation: wos-fade-in 0.4s forwards ease;
+.orchid-fade-in {
+  animation: orchid-fade-in 0.4s forwards ease;
 }
 
-.wos-fade-out {
-  animation: wos-fade-out 0.4s forwards ease;
+.orchid-fade-out {
+  animation: orchid-fade-out 0.4s forwards ease;
 }
 
-@keyframes wos-fade-in {
+@keyframes orchid-fade-in {
   0% { mask-position-x: 100%; }
   100% { mask-position-x: 0%; }
 }
 
-@keyframes wos-fade-out {
+@keyframes orchid-fade-out {
   0% { mask-position-x: 0%; }
   100% { mask-position-x: 100%; }
 }
 
-.wos-dialog-show {
-  animation: wos-dialog-show 0.4s forwards cubic-bezier(0,0,0,1.5);
+.orchid-dialog-show {
+  animation: orchid-dialog-show 0.4s forwards cubic-bezier(0,0,0,1.5);
 }
 
-@keyframes wos-dialog-show {
+@keyframes orchid-dialog-show {
   0% {
     opacity: 0;
     transform: translateY(32px) scale(0.75);
@@ -200,5 +200,29 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  [role="dialog"][data-type="confirm"].fade-in,
+  [role="dialog"][data-type="date-selector"].fade-in,
+  [role="dialog"][data-type="time-selector"].fade-in {
+    animation: dialog-centered-fade-in 0.3s forwards cubic-bezier(0.2, 0.9, 0.1, 1.125);
+  }
+
+  [role="dialog"][data-type="confirm"].fade-out,
+  [role="dialog"][data-type="date-selector"].fade-out,
+  [role="dialog"][data-type="time-selector"].fade-out {
+    animation: dialog-centered-fade-out 0.3s forwards cubic-bezier(0.2, 0.9, 0.1, 1.0);
+  }
+
+  @keyframes dialog-centered-fade-in {
+    0%   { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes dialog-centered-fade-out {
+    0%   { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
   }
 }

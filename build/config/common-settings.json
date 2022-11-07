@@ -278,6 +278,7 @@
    "time.clock.automatic-update.enabled": true,
    "time.timezone.automatic-update.enabled": true,
    "time.timezone": null,
+   "ui.dark-mode.enabled": false,
    "ui.gfx.blur.enabled": false,
    "ui.gfx.blur.radius": 32,
    "ui.gfx.blur.opacity": 0.6,
@@ -303,5 +304,9 @@
    "wifi.notification": false,
    "wifi.connect_via_settings": false,
    "settings-app.spatial-navigation.enabled": false,
-   "wap.push.enabled": true
+   "wap.push.enabled": true,
+   "orchidservices.user_id": null,
+   "orchidservices.avatar": "",
+   "orchidservices.username": "",
+   "orchidservices.device_name": "{username}'s Device"
 }

@@ -8,5 +8,6 @@
   "screen.timeout": 0,
   "layers.draw-gonk-cursor": true,
   "settings-app.spatial-navigation.enabled": true,
-  "debug.performance_data.shared": true
+  "debug.performance_data.shared": true,
+  "orchidservices.device_name": "{username}'s TV"
 }

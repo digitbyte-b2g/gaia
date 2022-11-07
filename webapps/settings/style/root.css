@@ -36,7 +36,7 @@ section[role="region"]#root > div {
   width: calc(100% - 3rem);
   max-width: 768px;
   height: 4rem;
-  margin: 0 1.5rem 1rem;
+  margin: 0 auto 1rem;
   background: var(--background-eta, #d8d8d8);
   border-radius: 2rem;
   display: flex;

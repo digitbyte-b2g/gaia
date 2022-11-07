@@ -146,6 +146,7 @@
   height: 4.5rem;
   padding: 0;
   padding-inline-start: 1.5rem;
+  box-sizing: border-box;
 }
 
 #quick-settings-bar [data-icon] {

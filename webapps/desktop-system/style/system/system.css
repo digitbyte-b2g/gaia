@@ -334,10 +334,10 @@ gaia-dialog > .dialog-content {
 }
 
 #window-snap-indicator {
-  background: rgba(204,204,204,0.3);
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1), 0 0.2rem 0.4rem rgba(0,0,0,0.1);
+  background: var(--background, #e7e7e7);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2), 0 0.2rem 0.4rem rgba(0,0,0,0.3);
   border-radius: 0.8rem;
-  margin: 0.4rem;
+  margin: 1rem;
   position: fixed;
   left: 0;
   right: 0;

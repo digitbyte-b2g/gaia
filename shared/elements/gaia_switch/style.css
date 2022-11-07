@@ -48,7 +48,7 @@ gaia-switch {
   content: '';
   position: absolute;
   offset-inline-end: 0;
-  top: 2rem;
+  top: 2.2rem;
   width: 6rem;
   margin: -1.4rem 0 0;
   height: 2.7rem;
@@ -58,7 +58,7 @@ gaia-switch {
   background-image: url(images/background_off.png);
   background-repeat: no-repeat;
   background-size: 9.2rem 2.7rem;
-  transition: background 0.2s ease;
+  transition: background 0.4s cubic-bezier(0.2, 0.9, 0.1, 1);
 }
 #switch input ~ span:-moz-dir(ltr)::after { background-position: -3.2rem 0; }
 #switch input ~ span:-moz-dir(rtl)::after { background-position: 0 0; }
@@ -68,6 +68,9 @@ gaia-switch {
 }
 
 /* switch: 'ON' state */
+#switch input:checked ~ span::after {
+  background-color: var(--accent-color, #0061e0);
+}
 #switch input:checked ~ span:-moz-dir(ltr)::after {
   background-image: url(images/background.png);
   background-position: 0 0;
@@ -82,6 +85,20 @@ gaia-switch {
 }
 #switch:hover input:checked ~ span:-moz-dir(rtl)::after {
   background-image: url(images/background_rtl_hover.png);
+}
+
+[data-accent-scheme="light"] #switch input:checked ~ span:-moz-dir(ltr)::after {
+  background-image: url(images/light/background.png);
+}
+[data-accent-scheme="light"] #switch input:checked ~ span:-moz-dir(rtl)::after {
+  background-image: url(images/light/background_rtl.png);
+}
+
+[data-accent-scheme="light"] #switch:hover input:checked ~ span:-moz-dir(ltr)::after {
+  background-image: url(images/light/background_hover.png);
+}
+[data-accent-scheme="light"] #switch:hover input:checked ~ span:-moz-dir(rtl)::after {
+  background-image: url(images/light/background_rtl_hover.png);
 }
 
 /* switch: disabled state */
@@ -127,7 +144,7 @@ gaia-switch a {
   font-size: 1.7rem;
   line-height: 2.4rem;
   font-weight: 400;
-  color: #35679a;
+  color: var(--accent-color, #0061e0);
 }
 
 /* ----------------------------------

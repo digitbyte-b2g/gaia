@@ -1,0 +1,18 @@
+{
+  "version": "1.1",
+  "name": "TestPermissions",
+  "short_name": "testpermission",
+  "description": "Permissions Test",
+  "orientation": "portrait-primary",
+  "start_url": "/index.html",
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "amac"
+    },
+    "permissions": {
+      "webapps-manage": {},
+      "permissions": {}
+    }
+  }
+}

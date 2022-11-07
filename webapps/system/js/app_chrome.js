@@ -1265,7 +1265,7 @@
         // We compare the original icon URL, otherwise there is a flickering
         // effect because a different object url is created each time.
         if (this._currentIconUrl !== iconObject.originalUrl) {
-          this.siteIcon.style.backgroundImage = iconObject.url;
+          this.siteIcon.style.backgroundImage = 'url(' + iconObject.originalUrl + ')';
           this._currentIconUrl = iconObject.originalUrl;
         }
       })

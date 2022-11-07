@@ -1,9 +1,11 @@
-/* Blur effects */
+/*
+ * Blur effects
+ */
 #screen-background,
 #screen-backdrop {
   position: absolute;
   left: 0;
-  top: calc(100% + var(--blur-radius));
+  top: calc(120% + var(--backdrop-blur-radius));
   width: 100%;
   height: 100%;
   background: no-repeat center / cover;
@@ -11,7 +13,8 @@
 
 [data-gpu-capable="true"] #screen-background,
 [data-gpu-capable="true"] #screen-backdrop {
-  filter: blur(var(--blur-radius));
+  filter: var(--backdrop-filter);
+  transform: scale(1.1);
 }
 
 .gfx-background-mica {
@@ -36,7 +39,7 @@
 
 [data-gpu-capable="true"] .gfx-background-mica,
 [data-gpu-capable="true"] .gfx-background-acrylic {
-  opacity: var(--blur-opacity);
+  opacity: var(--backdrop-opacity);
 }
 
 .gfx-background-mica ~ *,
@@ -44,7 +47,9 @@
   z-index: 1;
 }
 
-/* Context menu */
+/*
+ * Context menu
+ */
 #context-menu {
   position: absolute;
   left: 0;
@@ -74,8 +79,12 @@
   visibility: hidden;
 }
 
+#context-menu.bottom > #context-menu-content {
+  transform: translateY(100%);
+}
+
 #context-menu.visible > #context-menu-content {
-  transform: translateY(0);
+  transform: translateY(0) !important;
   visibility: visible;
 }
 

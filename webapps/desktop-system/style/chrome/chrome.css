@@ -1,4 +1,5 @@
-.appWindow.browser {
+.appWindow.browser,
+.appWindow.search-app {
   --statusbar-height: var(--browser-tab-list-height);
 }
 
@@ -7,13 +8,13 @@
   top: 0;
   height: calc(var(--browser-tab-list-height) + var(--rocketbar-urlbar-height) + var(--grippy-padding) + 0.2rem);
   transform: scaleY(var(--rocketbar-scale)) translateY(calc(var(--browser-tab-list-height) * -1));
-  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1.0),
+  transition: transform 1s cubic-bezier(0.2, 0.9, 0.1, 1.0),
               background-color var(--transition-duration) ease;
 
   background-color: var(--background-plus, #fff);
   color: var(--text-color, #333);
   z-index: 9;
-  --grippy-padding: 0.4rem;
+  --grippy-padding: 0rem;
 }
 html[dir="ltr"] .appWindow:not(.bar) > .chrome { transform-origin: top left; }
 html[dir="rtl"] .appWindow:not(.bar) > .chrome { transform-origin: top right; }
@@ -40,6 +41,7 @@ html[dir="rtl"] .appWindow:not(.bar) > .chrome { transform-origin: top right; }
 
 .appWindow:not(.bar) > .chrome.maximized {
   transform: scaleY(1) translateY(0);
+  --grippy-padding: 0.4rem;
 }
 
 .appWindow.fullscreen-app:not(.bar) > .chrome:not(.maximized) {
@@ -109,7 +111,7 @@ html[dir="rtl"] .appWindow:not(.bar) > .chrome { transform-origin: top right; }
 /* Maximized rocketbar size when the 'Windows' button is not displayed */
 .appWindow.fullscreen-app:not(.browser) .chrome.maximized .controls .urlbar,
 .appWindow:not(.browser):not(.search-app) .chrome.maximized .controls .urlbar {
-  width: calc(100% - 0.8rem);
+  width: calc(100% - 20.8rem);
 }
 
 /* Special cases for rocketbar on the Top Sites view and homescreens */
@@ -141,15 +143,16 @@ html[dir="rtl"] .appWindow:not(.bar) > .chrome { transform-origin: top right; }
 
 /* URL bar */
 .chrome .controls .urlbar {
-  width: calc(100% - 4.8rem);
+  width: calc(100% - 28.8rem);
   height: calc(var(--browser-navbar-height) - 0.8rem);
   line-height: calc(var(--browser-navbar-height) - 0.8rem);
   margin: 0 0 0.4rem;
-  border-radius: 1rem;
+  border-radius: 0.4rem;
   color: inherit;
   overflow: visible;
   background-color: transparent;
   position: absolute;
+  offset-inline-start: 12.4rem;
 }
 html[dir="ltr"] .chrome .controls .urlbar { text-align: left; }
 html[dir="rtl"] .chrome .controls .urlbar { text-align: right; }
@@ -183,7 +186,8 @@ html[dir="rtl"] .chrome .controls .urlbar { text-align: right; }
   overflow: hidden;
   float: none;
   background-color: transparent;
-  border-radius: 1rem;
+  border-radius: 0.4rem;
+  height: 100%;
 }
 .chrome-combined.private .chrome-title-container {
   padding-inline-start: 1.45rem;
@@ -197,6 +201,8 @@ html[dir="rtl"] .chrome .controls .urlbar { text-align: right; }
   font-style: normal;
   text-overflow: ellipsis;
   display: block;
+  height: 100%;
+  line-height: -moz-block-height;
 }
 
 .chrome-combined.maximized .title {
@@ -209,7 +215,6 @@ html[dir="rtl"] .chrome .controls .urlbar { text-align: right; }
   white-space: nowrap;
   text-overflow: ellipsis;
   display: block;
-  line-height: calc(var(--browser-navbar-height) - 0.8rem);
 }
 
 .search-app .chrome.maximized .controls .urlbar:after {
@@ -234,58 +239,17 @@ html[dir="rtl"] .chrome .controls .urlbar { text-align: right; }
   padding-inline-start: 2rem;
 }
 
-.chrome.maximized .controls .forward-button:not([disabled]) + .urlbar,
-.chrome.maximized .controls .back-button:not([disabled]) + .forward-button[disabled] + .urlbar {
-  width: calc(100% - 8.8rem);
-}
-html[dir="ltr"] .chrome.maximized .controls .forward-button:not([disabled]) + .urlbar,
-html[dir="ltr"] .chrome.maximized .controls .back-button:not([disabled]) + .forward-button[disabled] + .urlbar {
-  transform: translateX(4rem);
-}
-html[dir="rtl"] .chrome.maximized .controls .forward-button:not([disabled]) + .urlbar,
-html[dir="rtl"] .chrome.maximized .controls .back-button:not([disabled]) + .forward-button[disabled] + .urlbar {
-  transform: translateX(-4rem);
-}
-
-.chrome.maximized .controls .back-button:not([disabled]) + .forward-button:not([disabled]) + .urlbar {
-  width: calc(100% - 12.8rem);
-}
-html[dir="ltr"] .chrome.maximized .controls .back-button:not([disabled]) + .forward-button:not([disabled]) + .urlbar {
-  transform: translateX(8rem);
-}
-html[dir="rtl"] .chrome.maximized .controls .back-button:not([disabled]) + .forward-button:not([disabled]) + .urlbar {
-  transform: translateX(-8rem);
-}
-
-.appWindow:not(.browser) .chrome.maximized .controls .forward-button:not([disabled]) + .urlbar,
-.appWindow:not(.browser) .chrome.maximized .controls .back-button:not([disabled]) + .forward-button[disabled] + .urlbar {
-  width: calc(100% - 4.9rem);
-}
-html[dir="ltr"] .appWindow:not(.browser) .chrome.maximized .controls .forward-button:not([disabled]) + .urlbar,
-html[dir="ltr"] .appWindow:not(.browser) .chrome.maximized .controls .back-button:not([disabled]) + .forward-button[disabled] + .urlbar {
-  transform: translateX(3.5rem);
-}
-html[dir="rtl"] .appWindow:not(.browser) .chrome.maximized .controls .forward-button:not([disabled]) + .urlbar,
-html[dir="rtl"] .appWindow:not(.browser) .chrome.maximized .controls .back-button:not([disabled]) + .forward-button[disabled] + .urlbar {
-  transform: translateX(-3.5rem);
-}
-
-.appWindow:not(.browser) .chrome.maximized .controls .back-button:not([disabled]) + .forward-button:not([disabled]) + .urlbar {
-  width: calc(100% - 8.9rem);
-}
-html[dir="ltr"] .appWindow:not(.browser) .chrome.maximized .controls .back-button:not([disabled]) + .forward-button:not([disabled]) + .urlbar {
-  transform: translateX(7.5rem);
-}
-html[dir="rtl"] .appWindow:not(.browser) .chrome.maximized .controls .back-button:not([disabled]) + .forward-button:not([disabled]) + .urlbar {
-  transform: translateX(-7.5rem);
-}
-
 .controls .urlbar {
-  transform: scaleX(var(--rocketbar-scale)) translateY(0.1rem);
-  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1.0);
+  transition: transform 1s cubic-bezier(0.2, 0.9, 0.1, 1.0);
 }
-html[dir="ltr"] .controls .urlbar { transform-origin: top left; }
-html[dir="rtl"] .controls .urlbar { transform-origin: top right; }
+html[dir="ltr"] .controls .urlbar {
+  transform-origin: top left;
+  transform: scaleX(var(--rocketbar-scale)) translateY(0.1rem) translateX(-15rem);
+}
+html[dir="rtl"] .controls .urlbar {
+  transform-origin: top right;
+  transform: scaleX(var(--rocketbar-scale)) translateY(0.1rem) translateX(15rem);
+}
 
 .appWindow.fullscreen-app .chrome.dragged,
 .appWindow.fullscreen-app .chrome.dragging {
@@ -308,7 +272,7 @@ html[dir="ltr"] .appWindow.fullscreen-app .chrome:not(.maximized) .controls .url
 html[dir="rtl"] .appWindow.fullscreen-app .chrome:not(.maximized) .controls .urlbar { transform-origin: bottom right; }
 
 .maximized .controls .urlbar {
-  transform: scaleX(1);
+  transform: scaleX(1) !important;
 }
 
 /* Pinning the web */
@@ -611,20 +575,10 @@ html[dir="rtl"] .private > .chrome-combined.maximized .chrome-has-ssl-indicator 
   display: none;
 }
 
-/* Handle urlbar sizing when back or forward buttons are disabled */
-.collapsible .chrome:not(.maximized) .back-button:not([disabled]) + .forward-button[disabled] + .urlbar,
-.collapsible .chrome:not(.maximized) .forward-button:not([disabled]) + .urlbar {
-  transform: scaleX(var(--rocketbar-scale));
-}
-
-.collapsible .chrome:not(.maximized) .back-button:not([disabled]) + .forward-button:not([disabled]) + .urlbar {
-  transform: scaleX(var(--rocketbar-scale));
-}
-
 
 /* Buttons */
 .controls button,
-.header > button {
+.chrome-header > button {
   -moz-appearance: none;
   border: none;
   margin: 0;
@@ -639,27 +593,28 @@ html[dir="rtl"] .private > .chrome-combined.maximized .chrome-has-ssl-indicator 
   background-size: 2rem;
   opacity: 1;
   border-radius: 0.4rem;
+  position: relative;
 }
 html[dir="ltr"] .controls button { float: left; }
 html[dir="rtl"] .controls button { float: right; }
 
 .controls button:hover,
-.header > button:hover {
+.chrome-header > button:hover {
   background-color: rgba(0,0,0,0.05);
 }
 
 .controls button:active,
-.header > button:active {
+.chrome-header > button:active {
   background-color: rgba(0,0,0,0.1);
 }
 
 .controls button[disabled],
-.header > button[disabled] {
+.chrome-header > button[disabled] {
   opacity: 0.3;
   pointer-events: none;
 }
 
-.header > button {
+.chrome-header > button {
   margin: 0.4rem 0;
 }
 
@@ -775,6 +730,18 @@ html[dir="rtl"] .controls .forward-button { background-image: url("images/dark/l
   background-image: url('images/dark/downloads.png');
 }
 
+.chrome-header .side-tabs-button {
+  background-image: url('images/dark/side_tabs.png');
+}
+
+.chrome-header .toggle-previews-button {
+  background-image: url('images/dark/tab_previews.png');
+}
+
+.chrome-header .add-button {
+  background-image: url('images/dark/add.png');
+}
+
 /* Light theme button styles */
 html[dir="ltr"] .light .controls .back-button { background-image: url("images/light/left.png"); }
 html[dir="rtl"] .light .controls .back-button { background-image: url("images/light/right.png"); }
@@ -796,6 +763,30 @@ html[dir="rtl"] .light .controls .forward-button { background-image: url("images
 
 .light .controls .windows-button {
   background-image: url('images/light/windows.png');
+}
+
+.light .controls .profile-button {
+  background-image: url('images/light/profile.png');
+}
+
+.light .controls .library-button {
+  background-image: url('images/light/library.png');
+}
+
+.light .controls .downloads-button {
+  background-image: url('images/light/downloads.png');
+}
+
+.light .chrome-header .side-tabs-button {
+  background-image: url('images/light/side_tabs.png');
+}
+
+.light .chrome-header .toggle-previews-button {
+  background-image: url('images/light/tab_previews.png');
+}
+
+.light .chrome-header .add-button {
+  background-image: url('images/light/add.png');
 }
 
 /* Overflow menu */
@@ -837,7 +828,7 @@ gaia-overflow-menu button#share {
   width: calc(100%);
 }
 
-.chrome {
+.chrome .chrome-header {
   position: absolute;
   top: 0;
   width: calc(100% - 2rem);
@@ -853,9 +844,14 @@ gaia-overflow-menu button#share {
   visibility: hidden;
 }
 
-.chrome.maximized .header {
+.chrome.maximized .chrome-header {
   transform: translateY(0);
   visibility: visible;
+}
+
+.chrome .tab-list {
+  margin: 0;
+  padding: 0 0.8rem;
 }
 
 .chrome .tab-list .tab {
@@ -866,7 +862,9 @@ gaia-overflow-menu button#share {
   padding: 0 1rem;
   box-sizing: border-box;
   align-items: center;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: 0.8rem 0.8rem 0 0;
+  overflow-x: auto;
+  overflow-y: hidden;
   transition: background-color 0.2s;
 }
 
@@ -890,14 +888,47 @@ gaia-overflow-menu button#share {
 .chrome .tab-list .tab .favicon {
   width: 1.6rem;
   height: 1.6rem;
+  margin-inline-end: 0.6rem;
 }
 
 .chrome .tab-list .tab .title {
   width: 100%;
   height: 100%;
-  line-height: 100%;
+  line-height: -moz-block-height;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   flex: 1;
+}
+
+.chrome .tab-list .tab button {
+  width: 3.2rem;
+  height: 3.2rem;
+  background: transparent no-repeat center / 1.6rem;
+  border: none;
+  border-radius: 0.4rem;
+}
+
+.chrome .tab-list .tab button:hover {
+  background-color: var(--transparent, rgba(0,0,0,0.05));
+}
+
+.chrome .tab-list .tab button:active {
+  background-color: var(--transparent-plus, rgba(0,0,0,0.1));
+}
+
+.chrome .tab-list .tab .close-button {
+  background-image: url(images/dark/stop.png);
+}
+
+.chrome.light .tab-list .tab .close-button {
+  background-image: url(images/light/stop.png);
+}
+
+.chrome .tab-list .tab[aria-selected="true"] .close-button {
+  background-image: url(images/light/stop.png);
+}
+
+[data-theme="dark"] .chrome .tab-list .tab[aria-selected="true"] .close-button {
+  background-image: url(images/dark/stop.png);
 }

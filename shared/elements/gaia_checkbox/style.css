@@ -42,6 +42,7 @@ gaia-checkbox {
   margin-inline-start: -1.2rem;
   width: 2.2rem;
   height: 2.2rem;
+  border-radius: 0.5rem;
 }
 
 #checkbox.inline span {
@@ -58,19 +59,30 @@ gaia-checkbox {
 }
 
 #checkbox:not(.invisible) span:after {
-  background: url(images/default.png) no-repeat center top / 2.2rem auto;
+  background: var(--background-theta, #e0e2e5) url(images/default.png) no-repeat center top / 2.2rem auto;
 }
 
 #checkbox:not(.invisible):hover span:after {
   background-image: url(images/default_hover.png);
 }
 
+/* Light */
+[data-accent-scheme="light"] #checkbox:not(.invisible) input ~ span:after {
+  background-image: url(images/light/default.png);
+}
+
+[data-accent-scheme="light"] #checkbox:not(.invisible):hover input ~ span:after {
+  background-image: url(images/light/default_hover.png);
+}
+
 #checkbox.checked span:after {
+  background-color: var(--accent-color, #0061e0);
   background-position: center bottom;
 }
 
 /* 'Dangerous' checkboxes */
 #checkbox.danger span:after {
+  background-color: #c00040;
   background-image: url(images/danger.png);
 }
 

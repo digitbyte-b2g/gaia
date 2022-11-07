@@ -5,7 +5,7 @@ var RE_JSON = /\.json$/;
 
 exports.execute = function(options) {
   var jsons = [];
-  var dirs = ['webapps', 'dev_webapps', 'build', 'customize', 'dev_webapps',
+  var dirs = ['apps', 'dev_apps', 'build', 'customization', 'dev_apps',
     'locales', 'shared'];
 
   dirs.forEach(function(dir) {

@@ -63,7 +63,7 @@ form[role="dialog"][data-type="object"] {
   position: absolute;
 
   visibility: hidden;
-  transform: translateY(32px) scale(0.95);
+  transform: scale(0.95);
   opacity: 0;
   transition: transform cubic-bezier(0.2, 0.9, 0.1, 1) .3s, opacity cubic-bezier(0.2, 0.9, 0.1, 1) .3s, visibility .3s;
   pointer-events: none;
@@ -73,8 +73,9 @@ form[role="dialog"][data-type="action"].visible,
 form[role="dialog"][data-type="object"].visible {
   position: fixed;
   visibility: visible;
-  transform: translateY(0) scale(1);
+  transform: scale(1);
   opacity: 1;
+  transition: transform cubic-bezier(0.2, 0.9, 0.1, 1.125) .3s, opacity cubic-bezier(0.2, 0.9, 0.1, 1.125) .3s, visibility .3s;
   pointer-events: auto;
 }
 

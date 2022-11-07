@@ -758,6 +758,7 @@
 
       <!-- cards view -->
       <div id="task-manager" data-z-index-level="cards-view">
+        <div class="gfx-background-mica"></div>
         <div id="cards-view">
           <ul id="cards-list"></ul>
           <span id="cards-no-recent-windows" class="no-recent-apps" data-l10n-id="no-recent-app-windows"></span>
@@ -887,7 +888,7 @@
       <div id="text-selection-dialog-root" data-z-index-level="text-selection-dialog"></div>
 
       <div id="software-buttons" data-z-index-level="software-buttons">
-        <div class="gfx-background-acrylic"></div>
+        <div class="gfx-background-mica"></div>
         <div id="software-buttons-dead-space" class="dead-space-portrait"></div>
         <button id="software-home-button" data-l10n-id="softwareHomeButton">
           <div id="software-home-ring"></div>
@@ -895,11 +896,21 @@
 
         <!-- Taskbar -->
         <div class="container">
-          <button id="panel-launcher"></button>
-          <button id="panel-search"></button>
-          <button id="panel-cards-view"></button>
-          <button id="panel-widgets"></button>
-          <button id="panel-chat"></button>
+          <button id="panel-launcher">
+            <div role="title" class="top" data-l10n-id="panel-launcher"></div>
+          </button>
+          <button id="panel-search">
+            <div role="title" class="top" data-l10n-id="panel-search"></div>
+          </button>
+          <button id="panel-cards-view">
+            <div role="title" class="top" data-l10n-id="panel-cardsView"></div>
+          </button>
+          <button id="panel-widgets">
+            <div role="title" class="top" data-l10n-id="panel-widgets"></div>
+          </button>
+          <button id="panel-chat">
+            <div role="title" class="top" data-l10n-id="panel-chat"></div>
+          </button>
           <ul id="panel-tasks"></ul>
         </div>
 

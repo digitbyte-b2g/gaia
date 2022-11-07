@@ -14,10 +14,10 @@ var ModalDialog = {
   elements: {},
 
   // Sounds
-  alertDialogSound: new Audio('/shared/style/exclamation.wav'),
-  confirmDialogSound: new Audio('/shared/style/exclamation.wav'),
-  promptDialogSound: new Audio('/shared/style/exclamation.wav'),
-  selectOneDialogSound: new Audio('/shared/style/exclamation.wav'),
+  alertDialogSound: new Audio('/resources/sound/exclamation.wav'),
+  confirmDialogSound: new Audio('/resources/sound/exclamation.wav'),
+  promptDialogSound: new Audio('/resources/sound/exclamation.wav'),
+  selectOneDialogSound: new Audio('/resources/sound/exclamation.wav'),
 
   // Get all elements when inited.
   getAllElements: function md_getAllElements() {

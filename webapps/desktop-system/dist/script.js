@@ -1,7 +1,5 @@
 window.contextMenu = (evt, array) => {
   var overlay = document.getElementById('context-menu');
-  overlay.style.left = evt.pageX + 'px';
-  overlay.style.top = evt.pageY + 'px';
   overlay.classList.add('visible');
 
   var containerElement = document.getElementById('context-menu-content-items');
@@ -34,5 +32,18 @@ window.contextMenu = (evt, array) => {
     }
 
     element.onclick = obj.onclick;
+
+    if (evt.pageX >= (window.innerWidth - overlay.getBoundingClientRect().width)) {
+      overlay.style.left = (evt.pageX - overlay.getBoundingClientRect().width) + 'px';
+    } else {
+      overlay.style.left = evt.pageX + 'px';
+    }
+    if (evt.pageY >= (window.innerHeight - overlay.getBoundingClientRect().height)) {
+      overlay.style.top = (evt.pageY - overlay.getBoundingClientRect().height) + 'px';
+      overlay.classList.add('bottom');
+    } else {
+      overlay.style.top = evt.pageY + 'px';
+      overlay.classList.remove('bottom');
+    }
   });
 };

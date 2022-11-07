@@ -41,7 +41,7 @@ a {
   right: 0;
   bottom: 0;
   overflow-x: auto;
-  background-color: #f4f4f4;
+  background-color: var(--background, #e7e7e7);
  }
 
 [role=region].show {
@@ -166,7 +166,7 @@ gaia-buttons.forward-only .icon-previous {
   margin-bottom: 0.5rem;
   padding-top: 1rem;
   font-size: 1.6rem;
-  color: #333333;
+  color: var(--text-color, #333);
 }
 .sim-info.locked .sim-title {
   padding-top: 1.6rem;
@@ -197,7 +197,7 @@ gaia-buttons.forward-only .icon-previous {
 }
 #sim-default-message {
   margin: 0;
-  color: #333333;
+  color: var(--text-color, #333333);
 }
 #sim-settings-message {
   margin: 0.5rem 0;
@@ -221,7 +221,7 @@ gaia-buttons.forward-only .icon-previous {
   padding-bottom: 1.4rem;
   padding-inline-start: 3rem;
   padding-inline-end: 0;
-  color: black;
+  color: var(--text-color, #333333);
   font-size: 1.8rem;
   width: auto;
   pointer-events: none;
@@ -246,11 +246,11 @@ gaia-buttons.forward-only .icon-previous {
   padding: 1.4rem;
   font-size: 1.5rem;
   line-height: 1.9rem;
-  color: red;
+  color: #c00040;
 }
 
 #unlock-sim-screen .onerror {
-  border: 0.1rem solid red;
+  border: 0.1rem solid #c00040;
 }
 
 #unlock-sim-screen .input-wrapper input {
@@ -1101,4 +1101,16 @@ i.hack-first-child {
   padding: 1rem 1rem 0;
   font-size: 1.5rem;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  [role=region] {
+    top: calc(50% - 230px);
+    left: calc(50% - 290px);
+    right: calc(50% - 290px);
+    bottom: calc(50% - 230px);
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  }
 }

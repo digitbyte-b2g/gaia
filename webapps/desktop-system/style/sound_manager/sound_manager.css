@@ -12,21 +12,21 @@
   left: 3rem;
   right: unset;
   height: 18rem;
-  -moz-transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.0), opacity 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.0), visibility 0.3s;
+  -moz-transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
   visibility: hidden;
   background: var(--background-plus, #fff);
   pointer-events: auto;
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2), 0 0.2rem 0.4rem rgba(0,0,0,0.3);
-  transform: scale(0.95);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+  transform: translateX(calc(-100% - 2rem));
   opacity: 0;
   width: 4rem;
 }
 
 #volume.visible {
   visibility: visible;
-  transform: scale(1.0);
+  transform: translateX(0);
   opacity: 1;
 }
 
@@ -87,7 +87,7 @@
 
 /* Icon states */
 #volume span.channel-type {
-  background-size: 3rem auto;
+  background-size: 2.4rem auto;
   filter: var(--statusbar-filter, url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'invert\'><feColorMatrix in=\'SourceGraphic\' color-interpolation-filters=\'sRGB\' type=\'matrix\' values=\'1 -1 0.3019 0 0 0 0.3019 0 0 0 0 0 0.3019 0 0 0 0 0 1 0\'/></filter></svg>#invert"));
 }
 

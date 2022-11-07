@@ -145,13 +145,21 @@
               <div class="pin-scrim"></div>
               <div class="controls">
                 <button type="button" class="back-button"
-                        data-l10n-id="back-button" disabled></button>
+                        data-l10n-id="back-button" disabled>
+                  <div role="title" class="bottom" data-l10n-id="back-button-tooltip"></div>
+                </button>
                 <button type="button" class="forward-button"
-                        data-l10n-id="forward-button" disabled></button>
+                        data-l10n-id="forward-button" disabled>
+                  <div role="title" class="bottom" data-l10n-id="forward-button-tooltip"></div>
+                </button>
                 <button type="button" class="reload-button"
-                        data-l10n-id="reload-button" disabled></button>
+                        data-l10n-id="reload-button" disabled>
+                  <div role="title" class="bottom" data-l10n-id="reload-button-tooltip"></div>
+                </button>
                 <button type="button" class="stop-button"
-                        data-l10n-id="stop-button"></button>
+                        data-l10n-id="stop-button">
+                  <div role="title" class="bottom" data-l10n-id="stop-button-tooltip"></div>
+                </button>
                 <div class="urlbar js-chrome-ssl-information">
                   <div class="urlbar-hit-area"></div>
                   <span class="pb-icon"></span>
@@ -160,24 +168,40 @@
                     <span class="title" dir="auto"></span>
                   </div>
                 </div>
-                <button type="button" class="menu-button" alt="Menu"></button>
+                <button type="button" class="menu-button" alt="Menu">
+                  <div role="title" class="bottom" data-l10n-id="menu-button-tooltip"></div>
+                </button>
                 <button type="button" class="windows-button"
-                        data-l10n-id="windows-button"></button>
+                        data-l10n-id="windows-button">
+                  <div role="title" class="bottom" data-l10n-id="windows-button-tooltip"></div>
+                </button>
                 <button type="button" class="profile-button"
-                        data-l10n-id="profile-button"></button>
+                        data-l10n-id="profile-button">
+                  <div role="title" class="bottom" data-l10n-id="profile-button-tooltip"></div>
+                </button>
                 <button type="button" class="library-button"
-                        data-l10n-id="library-button"></button>
+                        data-l10n-id="library-button">
+                  <div role="title" class="bottom" data-l10n-id="library-button-tooltip"></div>
+                </button>
                 <button type="button" class="downloads-button"
-                        data-l10n-id="downloads-button"></button>
+                        data-l10n-id="downloads-button">
+                  <div role="title" class="bottom" data-l10n-id="downloads-button-tooltip"></div>
+                </button>
               </div>
-              <div class="header">
+              <div class="chrome-header">
                 <button type="button" class="side-tabs-button"
-                        data-l10n-id="side-tabs-button"></button>
+                        data-l10n-id="side-tabs-button">
+                  <div role="title" class="bottom" data-l10n-id="side-tabs-button-tooltip"></div>
+                </button>
                 <button type="button" class="toggle-previews-button"
-                        data-l10n-id="toggle-previews-button"></button>
+                        data-l10n-id="toggle-previews-button">
+                  <div role="title" class="bottom" data-l10n-id="toggle-previews-button-tooltip"></div>
+                </button>
                 <ul class="tab-list"></ul>
                 <button type="button" class="add-button"
-                        data-l10n-id="add-button"></button>
+                        data-l10n-id="add-button">
+                  <div role="title" class="bottom" data-l10n-id="add-button-tooltip"></div>
+                </button>
               </div>
             </div>`;
   };
@@ -268,6 +292,16 @@
     if (this.reloadButton) {
       this.reloadButton.disabled = !this.hasNavigation();
     }
+
+    this.tabContainer = this.element.querySelector('.tab-list');
+    this.profileButton = this.element.querySelector('.profile-button');
+    this.libraryButton = this.element.querySelector('.library-button');
+    this.downloadsButton = this.element.querySelector('.downloads-button');
+    this.sideTabsButton = this.element.querySelector('.side-tabs-button');
+    this.togglePreviewsButton = this.element.querySelector('.toggle-previews-button');
+    this.addButton = this.element.querySelector('.add-button');
+
+    this.openNewTab({ app: this.app });
   };
 
   AppChrome.prototype.handleEvent = function ac_handleEvent(evt) {
@@ -411,6 +445,27 @@
 
       case this.pinScrim:
         this.hidePinDialogCard();
+        break;
+
+      case this.profileButton:
+        break;
+
+      case this.libraryButton:
+        break;
+
+      case this.downloadsButton:
+        break;
+
+      case this.sideTabsButton:
+        this.app.element.classList.add('side-tabs-enabled');
+        break;
+
+      case this.togglePreviewsButton:
+        this.app.element.classList.add('tab-previews-enabled');
+        break;
+
+      case this.addButton:
+        this.openNewTab();
         break;
     }
   };
@@ -727,6 +782,13 @@
       this.windowsButton.addEventListener('click', this);
       this.pinButton.addEventListener('click', this);
 
+      this.profileButton.addEventListener('click', this);
+      this.libraryButton.addEventListener('click', this);
+      this.downloadsButton.addEventListener('click', this);
+      this.sideTabsButton.addEventListener('click', this);
+      this.togglePreviewsButton.addEventListener('click', this);
+      this.addButton.addEventListener('click', this);
+
       // Adding or removing the click listener, depending on
       // the 'Pinning the Web' setting enabled or disabled
       this._boundPinningObserver =
@@ -789,6 +851,13 @@
       if (this.shareButton) {
         this.shareButton.removeEventListener('click', this);
       }
+
+      this.profileButton.removeEventListener('click', this);
+      this.libraryButton.removeEventListener('click', this);
+      this.downloadsButton.removeEventListener('click', this);
+      this.sideTabsButton.removeEventListener('click', this);
+      this.togglePreviewsButton.removeEventListener('click', this);
+      this.addButton.removeEventListener('click', this);
     } else {
       this.header.removeEventListener('action', this);
     }
@@ -1280,7 +1349,7 @@
         // We compare the original icon URL, otherwise there is a flickering
         // effect because a different object url is created each time.
         if (this._currentIconUrl !== iconObject.originalUrl) {
-          this.siteIcon.style.backgroundImage = iconObject.url;
+          this.siteIcon.style.backgroundImage = 'url(' + iconObject.originalUrl + ')';
           this._currentIconUrl = iconObject.originalUrl;
         }
       })
@@ -1303,6 +1372,126 @@
       this.app.debug('setPinPreviewIcon, error from getSiteIcon: %s', err);
       this.pinSiteIcon.style.backgroundImage = '';
     });
+  };
+
+  /**
+   * Creates and opens a new browser tab instance.
+   */
+  AppChrome.prototype.openNewTab = function ac_openNewTab({ url, isPrivate, app } = { url: '', isPrivate: false, app: null }) {
+    var browser;
+    if (app) {
+      browser = app.browser.element;
+    } else {
+      browser = document.createElement('iframe');
+      browser.id = 'browser' + _id + '-tab' + parseInt(Math.random() * 32767);
+      browser.setAttribute('mozbrowser', true);
+      browser.setAttribute('mozallowfullscreen', true);
+      browser.setAttribute('remote', true);
+      if (url) {
+        browser.setAttribute('origin', url);
+        browser.src = url;
+      } else {
+        browser.setAttribute('origin', 'app://search.gaiamobile.org/newtab.html');
+        browser.src = 'app://search.gaiamobile.org/newtab.html';
+      }
+
+      browser.addEventListener('mozbrowserloadstart', this);
+      browser.addEventListener('mozbrowserloadend', this);
+      browser.addEventListener('mozbrowsererror', this);
+      browser.addEventListener('mozbrowsermetachange', this);
+      browser.addEventListener('_locationchange', this);
+      browser.addEventListener('_namechanged', this);
+      browser.addEventListener('_loading', this);
+      browser.addEventListener('_loaded', this);
+
+      if (isPrivate) {
+        browser.setAttribute('mozprivatebrowsing', 'true');
+      }
+      this.app.browserContainer.appendChild(browser);
+    }
+
+    var selectedWebview = this.app.browserContainer.querySelector('.visible');
+    if (selectedWebview) {
+      selectedWebview.classList.remove('visible');
+    }
+    browser.classList.add('visible');
+
+    var element = document.createElement('li');
+    element.classList.add('tab');
+    element.addEventListener('click', () => {
+      var selectedTab = this.tabContainer.querySelector('[aria-selected="true"]');
+      if (selectedTab) {
+        selectedTab.setAttribute('aria-selected', false);
+      }
+      var selectedWebview = this.app.browserContainer.querySelector('.visible');
+      if (selectedWebview) {
+        selectedWebview.classList.remove('visible');
+      }
+      element.setAttribute('aria-selected', true);
+      browser.classList.add('visible');
+    });
+    this.tabContainer.appendChild(element);
+
+    var favicon = document.createElement('img');
+    favicon.classList.add('favicon');
+    browser.addEventListener('_locationchanged', () => {
+      var origin = new URL(browser.src).origin;
+      if (this._currentOrigin !== origin) {
+        this.app.getSiteIconUrl(ICON_SIZE)
+          .then(iconObject => {
+            // We compare the original icon URL, otherwise there is a flickering
+            // effect because a different object url is created each time.
+            if (this._currentIconUrl !== iconObject.originalUrl) {
+              favicon.src = iconObject.originalUrl;
+            }
+          })
+          .catch((err) => {
+            favicon.src = '';
+            this.app.debug('setSiteIcon, error from getSiteIcon: %s', err);
+          });
+
+        this._currentOrigin = origin;
+      }
+    });
+    element.appendChild(favicon);
+
+    var title = document.createElement('div');
+    title.classList.add('title');
+    if (app) {
+      title.textContent = app.name;
+    } else {
+      browser.addEventListener('_namechanged', (evt) => {
+        title.textContent = evt.target.result;
+      });
+    }
+    element.appendChild(title);
+
+    var closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.addEventListener('click', () => {
+      browser.removeEventListener('mozbrowserloadstart', this);
+      browser.removeEventListener('mozbrowserloadend', this);
+      browser.removeEventListener('mozbrowsererror', this);
+      browser.removeEventListener('mozbrowsermetachange', this);
+      browser.removeEventListener('_locationchange', this);
+      browser.removeEventListener('_namechanged', this);
+      browser.removeEventListener('_loading', this);
+      browser.removeEventListener('_loaded', this);
+      browser.remove();
+
+      element.remove();
+
+      element =- null;
+      browser = null;
+
+      if (app) {
+        this.app.browser.element = this.app.browserContainer.children[0];
+      }
+
+      this.tabContainer.children[0].setAttribute('aria-selected', true);
+      this.app.browserContainer.children[0].classList.add('visible');
+    });
+    element.appendChild(closeButton);
   };
 
   exports.AppChrome = AppChrome;

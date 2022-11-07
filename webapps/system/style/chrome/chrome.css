@@ -3,7 +3,7 @@
   top: 0;
   height: calc(var(--statusbar-height) + var(--rocketbar-urlbar-height));
   transform: translateY(calc(-100% + var(--statusbar-height)));
-  transition: transform 0.5s cubic-bezier(1.0, 0.0, 0.0, 1.0),
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1.0),
               background-color var(--transition-duration) ease;
 
   background-color: var(--background-plus, #fff);
@@ -56,12 +56,15 @@ html[dir="rtl"] .appWindow:not(.bar) > .chrome { transform-origin: top right; }
   padding: 0 0.4rem 0.4rem;
   box-sizing: border-box;
   bottom: 0;
+  transition: opacity 0.5s ease, visibility 0.5s;
   opacity: 0;
+  visibility: hidden;
 }
 
 .chrome.maximized .controls {
   box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.1);
   opacity: 1;
+  visibility: visible;
 }
 
 .chrome .controls .windows-button {
@@ -271,7 +274,7 @@ html[dir="rtl"] .appWindow:not(.browser) .chrome.maximized .controls .back-butto
 
 .controls .urlbar {
   transform: scaleX(var(--rocketbar-scale)) translateY(0.1rem);
-  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.0);
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1.0);
 }
 html[dir="ltr"] .controls .urlbar { transform-origin: top left; }
 html[dir="rtl"] .controls .urlbar { transform-origin: top right; }

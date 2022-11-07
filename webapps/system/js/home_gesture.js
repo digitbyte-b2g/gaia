@@ -130,14 +130,15 @@
           break;
         case 'touchmove':
           if (this._moving) {
-            this._startY1 = evt.changedTouches[0].pageY;
-            var y = this._startY1 / window.innerHeight;
+            var x = (evt.pageX * -1) / window.innerWidth;
+            var y = (this._startY1 * -1) / window.innerHeight;
 
             var focusedWindow = document.querySelector('#windows .appWindow.active');
             if (focusedWindow) {
-              focusedWindow.style.transform = 'translateY('
+              focusedWindow.style.transform = 'translate('
+                  + -x + '%) scale(' + (0.75 + (x * 0.25)) + ','
                   + -y + '%) scale(' + (0.75 + (y * 0.25)) + ')';
-              focusedWindow.style.opacity = y;
+              focusedWindow.style.opacity = (y * -1);
 
 
               if (!this._moving) {
@@ -164,6 +165,10 @@
           }
           this._multiTouch = false;
           this._moving = false;
+
+          var focusedWindow = document.querySelector('#windows .appWindow.active');
+          focusedWindow.style.transform = '';
+          focusedWindow.style.opacity = '';
           break;
         // hide gesture function when utilitytray/lockscreen display
         case 'lockscreen-appopened':

@@ -433,7 +433,7 @@ contacts.List = (function() {
     title.setAttribute('aria-labelledby', letterAbbrId);
     title.appendChild(letterAbbr);
 
-    var contactsContainer = document.createElement('ol');
+    var contactsContainer = document.createElement('ul');
     contactsContainer.setAttribute('role', 'listbox');
     contactsContainer.setAttribute('aria-labelledby', letterAbbrId);
     contactsContainer.id = 'contacts-list-' + group;
@@ -973,7 +973,7 @@ contacts.List = (function() {
     iceGroup.classList.add('group-section');
     iceGroup.id = 'section-group-ice';
     iceGroup.dataset.nonsearchable = true;
-    var list = document.createElement('ol');
+    var list = document.createElement('ul');
     list.dataset.group = 'ice';
     list.id = 'contact-list-ice';
     list.role = 'listbox';

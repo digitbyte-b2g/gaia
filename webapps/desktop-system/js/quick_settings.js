@@ -449,7 +449,7 @@
           button.dataset.initializing !== undefined) {
         label += '-initializing';
       }
-      document.l10n.setAttributes(button, label, { type: type || '' });
+      document.l10n.setAttributes(button.querySelector('span'), label, { type: type || '' });
       button.setAttribute('aria-pressed', button.dataset.enabled !== undefined);
     },
 

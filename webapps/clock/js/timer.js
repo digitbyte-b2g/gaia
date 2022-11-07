@@ -220,7 +220,7 @@ Timer.prototype.pause = function timerPause() {
     window.dispatchEvent(new CustomEvent('timer-pause', {
       detail: { remaining: this.remaining }
     }));
-    clockSound.pause();
+    clockSound.stop();
   }
 };
 

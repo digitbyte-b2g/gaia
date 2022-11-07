@@ -1,0 +1,55 @@
+{
+  "version": "1.1",
+  "name": "Settings",
+  "short_name": "smart-settings",
+  "description": "Smart Screen Settings App",
+  "orientation": "landscape",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/settings_84.png",
+      "type": "image/png",
+      "sizes": "84x84"
+    },
+    {
+      "src": "/style/icons/settings_126.png",
+      "type": "image/png",
+      "sizes": "126x126"
+    },
+    {
+      "src": "/style/icons/settings_142.png",
+      "type": "image/png",
+      "sizes": "142x142"
+    },
+    {
+      "src": "/style/icons/settings_189.png",
+      "type": "image/png",
+      "sizes": "189x189"
+    },
+    {
+      "src": "/style/icons/settings_284.png",
+      "type": "image/png",
+      "sizes": "284x284"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "settings": {
+        "access": "readwrite"
+      },
+      "systemXHR": {},
+      "webapps-manage": {}
+    },
+    "activities": {
+      "configure": {
+        "disposition": "inline",
+        "href": "/index.html"
+      }
+    }
+  }
+}

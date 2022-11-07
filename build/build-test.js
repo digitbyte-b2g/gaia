@@ -42,7 +42,7 @@ exports.execute = function(options) {
     pattern = new RegExp(TEST_FILES.trim().replace(' ', '|'));
   } else {
     pattern = new RegExp('^' + options.GAIA_DIR +
-      '(/build/test/|/webapps/\\S+/test/build/)' + TEST_TYPE + '/\\S+_test\\.js$');
+      '(/build/test/|/apps/\\S+/test/build/)' + TEST_TYPE + '/\\S+_test\\.js$');
   }
 
   utils.ls(testDir, true).forEach(function(file) {

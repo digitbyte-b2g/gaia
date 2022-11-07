@@ -60,7 +60,7 @@ html[dir="rtl"] .tray-content-container {
   overflow: hidden;
   margin: 1rem;
   border-radius: 1.5rem;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
   bottom: 0;
 }
 
@@ -243,36 +243,8 @@ html[dir="rtl"] #statusbar-tray { background-position: left center; }
   background: transparent;
 }
 
-@keyframes tray-footer-in {
-  0% { transform: scaleY(0.9); opacity: 0; }
-  15% { transform: scaleY(1.08); opacity: 1; }
-  30% { transform: scaleY(0.94); }
-  65% { transform: scaleY(1.03); }
-  100% { transform: scaleY(1); }
-}
-
-/* NOTE: We cannot modify transform() on the way out, because the user may be
-   dragging from on top of the footer; changing the transform mid-scroll
-   interrupts the scroll gesture. Fortunately, opacity is fine. */
-@keyframes tray-footer-out {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
 #utility-tray-footer {
   transform-origin: bottom left;
-}
-
-#utility-tray-footer.animate-in {
-  animation: tray-footer-in 200ms;
-  animation-timing-function: ease-in-out;
-  transform: scaleY(1);
-  opacity: 1;
-}
-
-#utility-tray-footer.animate-out {
-  animation: tray-footer-out 50ms;
-  animation-timing-function: ease-out;
 }
 
 /* The _visible_ grippy at the bottom of the utility tray. */

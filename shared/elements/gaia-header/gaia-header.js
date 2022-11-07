@@ -705,7 +705,7 @@ module.exports = component.register('gaia-header', {
     background:
       var(--header-background,
       var(--background,
-      #fff));
+      #e7e7e7));
   }
 
   /** Action Button
@@ -835,7 +835,7 @@ module.exports = component.register('gaia-header', {
     text-overflow: ellipsis;
     text-align: center;
     line-height: 50px; /* 1 */
-    font-weight: 300;
+    font-weight: normal;
     font-style: normal;
     font-size: 24px;
     padding: 0 1rem;

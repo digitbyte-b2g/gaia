@@ -976,9 +976,8 @@
           posX1 = evt.clientX;
           posY1 = evt.clientY;
           // set the element's new position:
-          if (!this.element.classList.contains('maximized') ||
-            !this.element.classList.contains('transitioning') ||
-            (!this.element.classList.contains('maximized') && this.element.classList.contains('transitioning'))) {
+          if (!this.element.classList.contains('maximized-app') ||
+              !this.element.classList.contains('transitioning')) {
             this.element.style.left = (this.element.offsetLeft - posX) + 'px';
             this.element.style.top = (this.element.offsetTop - posY) + 'px';
           }
@@ -1432,6 +1431,10 @@
       this.identificationTitle.textContent = this.name;
     }
 
+    if (this.panelIconTitle) {
+      this.panelIconTitle.textContent = this.name;
+    }
+
     // For uitest.
     this.element.dataset.localizedName = this.name;
     this.publish('namechanged');
@@ -1543,6 +1546,11 @@
         (!this.isPrivateBrowser() || this.config.url.startsWith('app:'))) {
         this.identificationTitle.textContent = this.title;
       }
+
+      if (this.panelIconTitle && !this.manifest &&
+        (!this.isPrivateBrowser() || this.config.url.startsWith('app:'))) {
+        this.panelIconTitle.textContent = this.title;
+      }
     };
 
   AppWindow.prototype._handle_mozbrowserloadend =
@@ -1624,6 +1632,16 @@
 
       if (this.identificationIcon && !this.isPrivateBrowser()) {
         this.identificationIcon.style.backgroundImage =
+          'url("' + evt.detail.href + '")';
+      }
+
+      if (this.panelIcon && !this.isPrivateBrowser()) {
+        this.panelIcon.style.backgroundImage =
+          'url("' + evt.detail.href + '")';
+      }
+
+      if (this.panelIconTitle && !this.isPrivateBrowser()) {
+        this.panelIconTitle.style.backgroundImage =
           'url("' + evt.detail.href + '")';
       }
       this.publish('iconchange');
@@ -2448,10 +2466,24 @@
             this.identificationIcon.style.backgroundImage =
               'url("' + this._splash + '")';
           }
+
+          if (this.panelIcon) {
+            this.panelIcon.style.backgroundImage =
+              'url("' + this._splash + '")';
+          }
+
+          if (this.panelIconTitle) {
+            this.panelIconTitle.style.backgroundImage =
+              'url("' + this._splash + '")';
+          }
         }
 
         if (this.identificationTitle) {
           this.identificationTitle.textContent = this.name;
+        }
+
+        if (this.panelIconTitle) {
+          this.panelIconTitle.textContent = this.name;
         }
       }
     };

@@ -1,0 +1,25 @@
+{
+  "version": "1.1",
+  "name": "Send to TV",
+  "short_name": "fling-tutorial",
+  "description": "Send video and tab to TV tutorial",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/fling-tutorial_336.png",
+      "type": "image/png",
+      "sizes": "336x336"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "browser": {},
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    }
+  }
+}

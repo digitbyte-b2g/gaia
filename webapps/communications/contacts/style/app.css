@@ -216,6 +216,11 @@ li button.activity > b em {
   font-style: normal;
 }
 
+[data-type="list"] ul {
+  -moz-margin-end: 3rem;
+  width: calc(100% - 1rem);
+}
+
 [data-type="list"] li p {
   margin-inline-start: 1.5rem;
 }
@@ -240,10 +245,6 @@ li button.activity > b em {
   top: -1.5rem;
   background: var(--background, #e7e7e7);
   z-index: 2;
-}
-
-[data-type="list"].active li:after {
-  offset-inline-end: 0;
 }
 
 /* JS helper */

@@ -147,7 +147,7 @@ suite('Image Loader Test Suite >', function() {
         '<ol>' +
           '<li><span data-type="img" data-src="http://www.a.com"></span></li>' +
         '</ol>';
-      imgLoader = new ImageLoader('ol', 'li');
+      imgLoader = new ImageLoader('ul', 'li');
     });
 
     suiteTeardown(function() {

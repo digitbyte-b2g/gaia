@@ -272,7 +272,7 @@ suite('dialer/call_log', function() {
       var i, groupDOM, doms;
       if (date) {
         assert.equal(sections.length, 1);
-        groupDOM = sections[0].getElementsByTagName('ol')[0];
+        groupDOM = sections[0].getElementsByTagName('ul')[0];
         doms = groupDOM.getElementsByTagName('li');
         for (i = 0; i < count; i++) {
           checkGroupDOM(doms[i], groups[i], null);
@@ -280,7 +280,7 @@ suite('dialer/call_log', function() {
       } else {
         assert.equal(sections.length, count);
         for (i = 0; i < count; i++) {
-          groupDOM = sections[i].getElementsByTagName('ol')[0];
+          groupDOM = sections[i].getElementsByTagName('ul')[0];
           doms = groupDOM.getElementsByTagName('li');
           checkGroupDOM(doms[0], groups[i], null);
         }

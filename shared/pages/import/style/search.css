@@ -20,6 +20,9 @@ form.search {
 
 #search-container {
   padding-right: 2.5rem; /* XXX BiDi alert */
+  margin: 0 1rem;
+  width: calc(100% - 5.5rem);
+  border-radius: 2rem;
 }
 
 #search-view:not(.insearchmode) form.search * {

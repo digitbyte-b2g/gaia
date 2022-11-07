@@ -70,10 +70,10 @@
   margin-top: 0.1rem;
   /* We need this rule in order not to hide the drop shadow */
   padding: 0 0.2rem 1rem;
-  text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.3),
-               0.2rem 0.4rem 1rem rgba(0, 0, 0, 0.4);
+  text-shadow: 0.0rem 0.1rem 0.0rem #333,
+               0.0rem 0.3rem 0.6rem #333;
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--text-color, #333);
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;

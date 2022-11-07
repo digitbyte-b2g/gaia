@@ -32,10 +32,7 @@ html[dir="rtl"] #widgets-motion {
   overflow: hidden;
   margin: 1rem;
   border-radius: 1.5rem;
-  box-shadow:
-    0 0.5rem 1rem rgba(0,0,0,0.2),
-    0 0.3rem 0.6rem rgba(0,0,0,0.3),
-    0 0.1rem 0.2rem rgba(0,0,0,0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
 }
 
 #widgets > #widgets-online,

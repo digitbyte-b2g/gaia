@@ -1,0 +1,32 @@
+{
+  "version": "1.1",
+  "name": "Dashboard",
+  "short_name": "dashboard",
+  "description": "Smart Screen Dashboard ",
+  "orientation": "landscape",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/dashboard_336.png",
+      "type": "image/png",
+      "sizes": "336x336"
+    },
+    {
+      "src": "/style/icons/dashboard_672.png",
+      "type": "image/png",
+      "sizes": "672x672"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "browser": {},
+      "embed-apps": {},
+      "webapps-manage": {}
+    }
+  }
+}

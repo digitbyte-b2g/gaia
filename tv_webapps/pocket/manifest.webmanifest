@@ -1,0 +1,17 @@
+{
+  "version": "1.1",
+  "name": "Pocket",
+  "short_name": "pocket",
+  "description": "Pocket",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/pocket_336.png",
+      "type": "image/png",
+      "sizes": "336x336"
+    }
+  ],
+  "b2g_features": {
+    "core": true
+  }
+}

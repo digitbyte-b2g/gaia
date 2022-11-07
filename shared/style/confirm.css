@@ -17,7 +17,7 @@ form[role="dialog"][data-type="confirm"] {
   created by white-spaces and break lines in the code betewen inline-block elements */
   color: var(--text-color, #333);
   border-radius: 1.5rem;
-  box-shadow: 0 1rem 2rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2), 0 0 0 calc(100vw + 100vh) rgba(64,64,64,0.3);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.25), 0 0 0 calc(100vw + 100vh) var(--backdrop-color, rgba(0,0,0,0.5));
   max-height: calc(100% - 12.3rem);
 }
 html[dir="ltr"] form[role="dialog"][data-type="confirm"] { text-align: left; }
@@ -37,7 +37,7 @@ form[role="dialog"][data-type="confirm"] > section {
   font-size: 1.6rem;
   color: var(--text-color, #333);
   padding: 0 1.5rem;
-  box-sizing: border-box;
+  -moz-box-sizing: border-box;
   width: 100%;
   display: inline-block;
   overflow-y: scroll;

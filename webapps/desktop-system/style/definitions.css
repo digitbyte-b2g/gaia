@@ -5,12 +5,13 @@
   --statusbar-height: 3.2rem;
   --statusbar-safezone-left: 0;
   --statusbar-safezone-right: 0;
-  --blur-radius: 10px;
-  --blur-opacity: 0.6;
+  --backdrop-blur-radius: 20px;
+  --backdrop-filter: saturate(180%) blur(20px);
+  --backdrop-opacity: 0.6;
 
   /* The scale factor for the shrinking rocketbar */
-  /* 0.682 = --statusbar-height (3rem) / rocketbar height (3.8rem) */
-  --rocketbar-scale: 0.790;
+  /* 0.682 = --statusbar-height (3.2rem) / rocketbar height (3.8rem) */
+  --rocketbar-scale: 0.8;
   --rocketbar-urlbar-height: 3.8rem;
 
   /* To avoid statusbar getting cut-off on rounded screen devies */
