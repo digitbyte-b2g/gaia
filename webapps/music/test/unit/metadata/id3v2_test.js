@@ -1,6 +1,5 @@
 /* global ID3v2Metadata, fetchBlobView, fetchBuffer, makeBlobView,
-          MockLazyLoader, readBlob, readPicSlice, assertBuffersEqual,
-          pass, fail, suite, setup, teardown, test, assert */
+   MockLazyLoader, readBlob, readPicSlice, assertBuffersEqual, pass, fail */
 'use strict';
 
 require('/test/unit/metadata/utils.js');
@@ -142,31 +141,6 @@ suite('id3v2 tags', function() {
           })
           .then(pass(done), fail(done));
       });
-    });
-
-    test('id3v2.4 with utf-16 and odd size', function(done) {
-      var blob, filename = '/test-data/id3v2.4-picture-utf16-odd-size.mp3';
-      fetchBuffer(filename)
-        .then(function(buffer) {
-          return (blob = new Blob([buffer]));
-        })
-        .then(makeBlobView)
-        .then(ID3v2Metadata.parse)
-        .then(function(metadata) {
-          assert.strictEqual(metadata.artist, 'AC/DC');
-          assert.strictEqual(metadata.album, 'Dirty Deeds Done Dirt Cheap');
-          assert.strictEqual(metadata.title, 'Problem Child');
-          assert.strictEqual(metadata.tracknum, 5);
-          assert.strictEqual(metadata.picture.flavor, 'embedded');
-          assert.strictEqual(metadata.picture.type, 'image/jpeg');
-
-          return readPicSlice(blob, metadata.picture);
-        })
-        .then(function(buffer) {
-          var pic = new TextEncoder('utf-8').encode('odd number of bytes');
-          assertBuffersEqual(buffer, pic);
-        })
-        .then(pass(done), fail(done));
     });
 
   });
@@ -346,26 +320,6 @@ suite('id3v2 tags', function() {
             })
             .then(pass(done), fail(done));
         });
-
-        if (version === 4) {
-          test('invalid utf8', function(done) {
-            var filename = '/test-data/id3v2.4-invalid-utf8.mp3';
-            fetchBlobView(filename)
-              .then(ID3v2Metadata.parse)
-              .then(function(metadata) {
-                assert.strictEqual(metadata.tag_format, 'id3v2.4.0');
-                assert.strictEqual(metadata.artist, 'AC/DC\uFFFD');
-                assert.strictEqual(metadata.album,
-                                   'Dirty Deeds Done Dirt Cheap');
-                assert.strictEqual(metadata.title, 'Problem Child');
-                assert.strictEqual(metadata.tracknum, 5);
-                assert.strictEqual(metadata.trackcount, 9);
-                assert.strictEqual(metadata.discnum, undefined);
-                assert.strictEqual(metadata.disccount, undefined);
-              })
-              .then(pass(done), fail(done));
-          });
-        }
       });
     });
 

@@ -43,7 +43,3 @@ html[dir="rtl"] #brightness-slider .pack-checkbox {
   margin-right: 1rem;
   border-right: solid 0.1rem rgba(0,0,0,0.125);
 }
-
-#audio-slider {
-  margin: 0 1.5rem 1.5rem;
-}

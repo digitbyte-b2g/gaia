@@ -20,10 +20,9 @@ Statusbar.prototype = {
   },
 
   waitForPlayingIndicatorShown: function(shouldBeShown) {
-    if (shouldBeShown) {
-      this.client.helper.waitForElement(this.playingIndicator);
-    } else {
-      this.client.helper.waitForElementToDisappear(this.playingIndicator);
-    }
+    this.client.waitFor(function() {
+      var shown = this.playingIndicator.displayed();
+      return shown === shouldBeShown;
+    }.bind(this));
   }
 };

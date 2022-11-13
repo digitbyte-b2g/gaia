@@ -7,13 +7,12 @@
   display: block;
   pointer-events: none;
   opacity: 0;
-  transform: scale(1) translateY(calc(var(--statusbar-height) - 32px));
-  transition: opacity 0.25s linear, transform 0.3s ease;
+  transform: scale(1) translateY(var(--statusbar-height));
+  transition: opacity 0.25s linear;
 }
 
 #rocketbar.active {
   opacity: 1;
-  transform: scale(1) translateY(var(--statusbar-height));
   pointer-events: auto;
 }
 

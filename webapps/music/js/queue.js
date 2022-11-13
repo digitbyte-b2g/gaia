@@ -1,4 +1,4 @@
-/* global asyncStorage, Database, LazyLoader */
+/* global asyncStorage, Database */
 /* exported PlaybackQueue */
 'use strict';
 
@@ -276,18 +276,16 @@ var PlaybackQueue = (function() {
    */
   function loadSettings() {
     return new Promise((resolve, reject) => {
-      LazyLoader.load('/shared/js/async_storage.js').then(() => {
-        asyncStorage.getItem(SETTINGS_OPTION_KEY, (settings) => {
-          if (settings) {
-            playbackSettings = settings;
-          } else {
-            playbackSettings = {
-              repeat: Repeat.OFF,
-              shuffle: false
-            };
-          }
-          resolve();
-        });
+      asyncStorage.getItem(SETTINGS_OPTION_KEY, (settings) => {
+        if (settings) {
+          playbackSettings = settings;
+        } else {
+          playbackSettings = {
+            repeat: Repeat.OFF,
+            shuffle: false
+          };
+        }
+        resolve();
       });
     });
   }
@@ -299,10 +297,8 @@ var PlaybackQueue = (function() {
    */
   function saveSettings() {
     return new Promise((resolve, reject) => {
-      LazyLoader.load('/shared/js/async_storage.js').then(() => {
-        asyncStorage.setItem(SETTINGS_OPTION_KEY, playbackSettings, () => {
-          resolve();
-        });
+      asyncStorage.setItem(SETTINGS_OPTION_KEY, playbackSettings, () => {
+        resolve();
       });
     });
   }

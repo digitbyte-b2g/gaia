@@ -1,59 +1,40 @@
 {
-  "version": "0.0.1",
   "name": "Music",
   "description": "Gaia Music",
+  "type": "certified",
   "launch_path": "/index.html",
-  "icons": {
-    "16": "/img/icons/music_16.png",
-    "32": "/img/icons/music_32.png",
-    "48": "/img/icons/music_48.png",
-    "64": "/img/icons/music_64.png",
-    "128": "/img/icons/music_128.png",
-    "256": "/img/icons/music_256.png"
-  },
   "developer": {
     "name": "The Gaia Team",
     "url": "https://github.com/mozilla-b2g/gaia"
   },
-  "type": "certified",
   "permissions": {
-    "audio-channel-content": {},
-    "bluetooth": {},
-    "device-storage:music":    { "access": "readwrite" },
-    "device-storage:pictures": { "access": "readwrite" },
-    "nfc-share": {},
-    "settings": { "access": "readonly" },
-    "themeable": {},
-    "moz-extremely-unstable-and-will-change-webcomponents": {}
+    "themeable":{},
+    "device-storage:music":{ "access": "readwrite" },
+    "device-storage:pictures":{ "access": "readwrite" },
+    "settings":{ "access": "readonly" },
+    "bluetooth":{},
+    "audio-channel-content":{},
+    "nfc-share":{},
+    "moz-extremely-unstable-and-will-change-webcomponents":{}
   },
   "activities": {
+    "pick": {
+      "filters": {
+        "type": ["audio/*", "audio/mpeg", "audio/ogg", "audio/mp4",
+                 "audio/flac"]
+       },
+      "disposition": "inline",
+      "returnValue": true,
+      "href": "/index.html#pick"
+    },
     "open": {
       "filters": {
-        "type": [
-          "audio/mpeg",
-          "audio/ogg",
-          "audio/mp4",
-          "audio/amr",
-          "audio/flac"
-        ]
-      },
+        "type": ["audio/mpeg", "audio/ogg", "audio/mp4", "audio/amr",
+                 "audio/flac"]
+       },
       "disposition": "inline",
       "returnValue": true,
       "href": "/open.html"
-    },
-    "pick": {
-      "filters": {
-        "type": [
-          "audio/*",
-          "audio/mpeg",
-          "audio/ogg",
-          "audio/mp4",
-          "audio/flac"
-        ]
-      },
-      "disposition": "inline",
-      "returnValue": true,
-      "href": "/pick.html"
     }
   },
   "locales": {
@@ -62,9 +43,17 @@
       "description": "Gaia Music"
     }
   },
-  "default_locale": "en",
+  "default_locale": "en-US",
+  "icons": {
+    "16": "/img/icons/music_16.png",
+    "32": "/img/icons/music_32.png",
+    "48": "/img/icons/music_48.png",
+    "64": "/img/icons/music_64.png",
+    "128": "/img/icons/music_128.png",
+    "256": "/img/icons/music_256.png"
+  },
   "orientation": "default",
   "messages": [
-    { "media-button": "/index.html" }
+     { "media-button": "/index.html" }
   ]
 }

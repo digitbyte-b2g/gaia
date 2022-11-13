@@ -9,11 +9,6 @@ define(function() {
     this.totalElapsed = 0;
     this.state = Stopwatch.RESET;
     this.laps = [];
-    this.stopwatchSound = new Audio('resources/sounds/stopwatch.wav');
-    this.stopwatchSound.onended = () => {
-      this.stopwatchSound.play();
-    };
-    this.lapSound = new Audio('resources/sounds/lap.wav');
   }
 
   /**
@@ -69,7 +64,6 @@ define(function() {
       var now = Date.now() - sw.totalElapsed;
       sw.startTime = now;
       this.setState(Stopwatch.RUNNING);
-      this.stopwatchSound.play();
     },
 
     /**
@@ -98,7 +92,6 @@ define(function() {
       }
       sw.totalElapsed = Date.now() - sw.startTime;
       this.setState(Stopwatch.PAUSED);
-      this.stopwatchSound.stop();
     },
 
     /**
@@ -144,7 +137,6 @@ define(function() {
       }
       var nl = this.nextLap();
       sw.laps.push(nl);
-      this.lapSound.play();
       return nl;
     },
 

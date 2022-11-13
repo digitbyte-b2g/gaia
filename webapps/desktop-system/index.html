@@ -105,7 +105,6 @@
     <link rel="stylesheet" type="text/css" href="style/trusted_ui/trusted_ui.css">
     <link rel="stylesheet" type="text/css" href="style/permission_manager/permission_manager.css">
     <link rel="stylesheet" type="text/css" href="style/app_install_manager/app_install_manager.css">
-    <link rel="stylesheet" type="text/css" href="style/cost_control/cost_control.css">
     <link rel="stylesheet" type="text/css" href="style/quick_settings/quick_settings.css">
     <link rel="stylesheet" type="text/css" href="style/media_playback/media_playback.css">
     <link rel="stylesheet" type="text/css" href="style/notifications/notifications.css">
@@ -342,9 +341,30 @@
                   </div>
                 </div>
 
-                <!-- Credit module -->
-                <div id="cost-control-widget">
-                  <div id="cost-control-touch-overlay"></div>
+                <!-- Brightness slider -->
+                <div id="brightness-slider">
+                  <section role="slider">
+                    <label class="icon" data-icon="moon">0</label>
+                    <label class="icon" data-icon="brightness">100</label>
+                    <div>
+                      <input type="range" class="slider">
+                    </div>
+                  </section>
+                  <label class="pack-checkbox">
+                    <input type="checkbox" class="auto">
+                    <span></span>
+                  </label>
+                </div>
+
+                <!-- Audio slider -->
+                <div id="audio-slider">
+                  <section role="slider">
+                    <label class="icon" data-icon="sound-min">0</label>
+                    <label class="icon" data-icon="sound-max">100</label>
+                    <div>
+                      <input type="range" class="slider">
+                    </div>
+                  </section>
                 </div>
 
                 <!-- Quick settings -->
@@ -383,32 +403,6 @@
                     </a></li>
                   </ul>
                 </div>
-              </div>
-
-              <!-- Brightness slider -->
-              <div id="brightness-slider">
-                <section role="slider">
-                  <label class="icon" data-icon="moon">0</label>
-                  <label class="icon" data-icon="brightness">100</label>
-                  <div>
-                    <input type="range" class="slider">
-                  </div>
-                </section>
-                <label class="pack-checkbox">
-                  <input type="checkbox" class="auto">
-                  <span></span>
-                </label>
-              </div>
-
-              <!-- Audio slider -->
-              <div id="audio-slider">
-                <section role="slider">
-                  <label class="icon" data-icon="sound-min">0</label>
-                  <label class="icon" data-icon="sound-max">100</label>
-                  <div>
-                    <input type="range" class="slider">
-                  </div>
-                </section>
               </div>
               <div id="utility-tray-grippy"></div>
             </div>

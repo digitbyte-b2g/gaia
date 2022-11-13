@@ -20,7 +20,6 @@
     'SimLockManager',
     'TelephonySettings',
     'OperatorVariantManager',
-    'CostControl',
     'InternetSharing',
     'IccCore' // Because it's bind to mobileConnection
   ];

@@ -435,11 +435,9 @@ var ID3v2Metadata = (function() {
     case 0:
       return view.readNullTerminatedLatin1Text(size);
     case 1:
-      // Round down to the nearest 16 bits.
-      return view.readNullTerminatedUTF16Text(size - (size % 2), undefined);
+      return view.readNullTerminatedUTF16Text(size, undefined);
     case 2:
-      // Round down to the nearest 16 bits.
-      return view.readNullTerminatedUTF16Text(size - (size % 2), false);
+      return view.readNullTerminatedUTF16Text(size, false);
     case 3:
       return view.readNullTerminatedUTF8Text(size);
     default:

@@ -114,7 +114,7 @@ exports.UtilityTray = {
     this.motion.el.addEventListener('tray-motion-footer-position', this);
     this.motion.el.classList.remove('utility-tray-loading');
 
-    // The footer size (containing the media player and cost-control-widget)
+    // The footer size (containing the media player)
     // is variable and difficult to compute with CSS in a maintainable way,
     // especially when we account for future addons or other modifications to
     // the tray. Instead, we calculate the desired height on-the-fly, by
@@ -130,12 +130,6 @@ exports.UtilityTray = {
     observer.observe(document.getElementById('media-playback-container'), {
       attributes: true,
       attributeFilter: ['hidden']
-    });
-    // It's not clear that the cost control widget ever changes or hides
-    // (much of its behavior happens in an iframe), but for completeness:
-    observer.observe(document.getElementById('cost-control-widget'), {
-      subtree: true,
-      childList: true
     });
     // If the notifications container becomes scrollable, we may conditionally
     // update the behavior of this.nestedScrollInterceptor. (We can't just
@@ -359,8 +353,8 @@ exports.UtilityTray = {
             this.motionElement.scrollLeft = 0;
           });
         }
-        this.statusbar.classList.toggle('tray-open');
-        this.shown = !this.shown;
+        this.statusbar.classList.toggle('active', this.isActive());
+        this.shown = !this.isActive();
         break;
       case 'resize':
         this.recalculateNotificationsContainerHeight();

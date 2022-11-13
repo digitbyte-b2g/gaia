@@ -17,7 +17,7 @@
   var panelBorderRadius;
   var panelIconPosition;
 
-  var root = document.querySelector(':root');
+  var screen = document.getElementById('screen');
 
   setInterval(function() {
     blurEnabled = settings.createLock().get(UI_GFX_BLUR_ENABLED);
@@ -30,36 +30,45 @@
 
     blurEnabled.onsuccess = function() {
       var result = blurEnabled.result[UI_GFX_BLUR_ENABLED];
-      root.dataset.gpuCapable = result;
+      screen.dataset.gpuCapable = result;
     };
+
     blurRadius.onsuccess = function() {
       var result = blurRadius.result[UI_GFX_BLUR_RADIUS];
-      root.style.setProperty('--blur-radius', result + 'px');
+      screen.style.setProperty('--blur-radius', result + 'px');
     };
+
     blurOpacity.onsuccess = function() {
       var result = blurOpacity.result[UI_GFX_BLUR_OPACITY];
-      root.style.setProperty('--blur-opacity', result);
+      screen.style.setProperty('--blur-opacity', result);
     };
+
     layoutThickness.onsuccess = function() {
       var result = layoutThickness.result[UI_LAYOUT_THICKNESS];
-      root.dataset.thickness = result;
+      screen.dataset.thickness = result;
     };
+
     panelMargin.onsuccess = function() {
       var result = panelMargin.result[UI_PANEL_MARGIN];
-      root.style.setProperty('--panel-margin', result + 'px');
+      screen.style.setProperty('--panel-margin', result + 'px');
 
       panelBorderRadius.onsuccess = function() {
         var result1 = panelBorderRadius.result[UI_PANEL_BORDER_RADIUS];
         if (result !== 0) {
-          root.style.setProperty('--panel-border-radius', result + 'px');
+          screen.style.setProperty('--panel-border-radius', result1 + 'px');
         } else {
-          root.style.setProperty('--panel-border-radius', '0');
+          screen.style.setProperty('--panel-border-radius', '0');
         }
       };
     };
+
     panelIconPosition.onsuccess = function() {
-      var result = layoutThickness.result[UI_PANEL_ICON_POSITION];
-      document.getElementById('software-buttons').classList.toggle('centered', result === 'center');
+      var result = panelIconPosition.result[UI_PANEL_ICON_POSITION];
+      if (result === 'center') {
+        screen.classList.add('centered-alignment');
+      } else {
+        screen.classList.remove('centered-alignment');
+      }
     };
   }, 1000);
 })(window);

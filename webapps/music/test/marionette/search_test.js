@@ -1,11 +1,12 @@
-/* global require, marionette, setup, suite, test, __dirname,
-marionetteScriptFinished */
+/* global require, marionette, setup, suite, test, __dirname */
 'use strict';
 
 var assert = require('assert');
 var Music = require('./lib/music.js');
 var FakeRingtones = require('./lib/fakeringtones.js');
 var FakeControls = require('./lib/fakecontrols.js');
+var SearchHelper = require('./lib/searchhelper.js');
+/*var Statusbar = require('./lib/statusbar.js');*/
 
 marionette('Music player search', function() {
   var apps = {};
@@ -21,7 +22,8 @@ marionette('Music player search', function() {
       },
 
       apps: apps
-    }
+    },
+    desiredCapabilities: { raisesAccessibilityExceptions: false }
   });
 
   var music;
@@ -70,41 +72,30 @@ marionette('Music player search', function() {
     ]);
   });
 
-  function testSearchResults(expectedCount) {
-    client.switchToFrame(music.activeViewFrame);
-
-    var search = client.findElement('music-search-results');
-    assert.ok(search);
-
-    var results = client.helper.waitForElement('#list');
-    assert.ok(results);
+  function testSearchResults(viewSelector, expectedCount) {
+    var view = client.helper.waitForElement(viewSelector);
+    assert.ok(view);
 
     // wait for the results to be displayed.
     // XXX this mostly assume we populate before showing the div.
     client.waitFor(function() {
-      return results.displayed();
+      return view.displayed();
     });
 
-    // XXX fix me when this is true
     // since we display the count, just get it.
-    //var count = results.findElement('.search-result-count').text();
+    var count = view.findElement('.search-result-count').text();
+    var results = view.findElement('.search-results');
+    assert.ok(results);
 
-
-    // XXX when the count is back
-    // check what we expect.
-    //    assert.equal(count, expectedCount);
-
-    var resultsData = client.executeScript(
-      'var parse = ' + music.parseListItemsData.toString() + '\n' +
-      'var search = document.querySelector(\'music-search-results\');\n' +
-      'var elements = search.querySelectorAll(\'a\');\n' +
-      'return parse(elements);\n'
-    );
+    var resultsList = results.findElements('li.list-item', 'css selector');
+    assert.ok(resultsList);
 
     // detect inconsistency.
-    assert.equal(resultsData.length, expectedCount);
-    music.switchToMe();
-    return resultsData;
+    assert.equal(resultsList.length, count);
+    // check what we expect.
+    assert.equal(count, expectedCount);
+
+    return resultsList;
   }
 
   suite('Search tests', function () {
@@ -115,50 +106,48 @@ marionette('Music player search', function() {
 
       // Here we wait 1.5 seconds for the search input hides completely.
       // it will re-show after we scroll the target view.
+      client.helper.wait(1500);
       music.showSearchInput(Music.Selector.tilesView);
     });
 
     test('Check simple search results in artists.', function() {
       music.searchTiles('the');
       // check for the results in "artists"
-      var resultsList = testSearchResults(3);
+      var resultsList = testSearchResults(Music.Selector.searchArtists, 2);
 
-      assert.equal(resultsList[1].title, 'The NSA');
-      assert.equal(resultsList[1].section, 'artists');
-      // XXX fixme when we have the search highlights
-      // https://bugzilla.mozilla.org/show_bug.cgi?id=1209432
-      // assert.equal(resultsList[1].highlight, 'The');
-      assert.equal(resultsList[2].title, 'The Ecuadorian Embassy');
-      assert.equal(resultsList[2].section, 'songs');
+      assert.equal(SearchHelper.singleTitle(resultsList[1]), 'The NSA');
+      assert.equal(SearchHelper.highlight(resultsList[1]), 'The');
 
-      music.searchTiles(' n');
-      resultsList = testSearchResults(1);
+      var noResult = client.findElement(Music.Selector.searchNoResult);
+      assert.ok(noResult);
+      assert.ok(!noResult.displayed());
+    });
+
+    test('Check simple search results in tracks.', function() {
+      music.searchTiles('the');
+      // check for the results in "artists"
+      var resultsList = testSearchResults(Music.Selector.searchTitles, 1);
+
+      assert.equal(SearchHelper.mainTitle(resultsList[0]),
+                   'The Ecuadorian Embassy');
+      assert.equal(SearchHelper.highlight(resultsList[0]), 'The');
+      var noResult = client.findElement(Music.Selector.searchNoResult);
+      assert.ok(noResult);
+      assert.ok(!noResult.displayed());
     });
 
     test('Check empty results', function() {
       music.searchTiles('qwerty');
 
-      // current implement of empty result is ONE line
-      // with a string indicating nothing was found.
-      var resultsList = testSearchResults(1);
-      assert.equal(resultsList.length, 1);
+      var view = client.findElement(Music.Selector.searchNoResult);
 
-      client.switchToFrame(music.activeViewFrame);
+      assert.ok(view);
 
-      var search = client.findElement('music-search-results');
-      assert.ok(search);
-
-      // ensure that we get the properly localized string.
-      var noResultString = client.executeAsyncScript(function () {
-        window.wrappedJSObject.document.l10n.formatValue('search-no-result').
-          then(function(noResult) {
-            marionetteScriptFinished(noResult);
-          });
+      client.waitFor(function() {
+        return view.displayed();
       });
 
-      music.switchToMe();
-
-      assert.equal(resultsList[0].title, noResultString);
+      assert.ok(view.displayed());
     });
   });
 
@@ -169,20 +158,19 @@ marionette('Music player search', function() {
       music.waitForFirstTile();
     });
 
-    // Test contextual search
-    // XXX fixme: currently make the app *crash*
+    // Tiles mode is already tested above.
+
     test('Check the context for artists', function() {
       music.switchToArtistsView();
+      music.waitForListView();
 
-      music.showSearchInput('#list');
+      music.showSearchInput(Music.Selector.listView);
       music.searchArtists('the');
 
-      var resultsList = testSearchResults(2);
+      var resultsList = testSearchResults(Music.Selector.searchArtists, 2);
 
-      assert.equal(resultsList[1].title, 'The NSA');
-      // XXX fix when we have highlights
-      // https://bugzilla.mozilla.org/show_bug.cgi?id=1209432
-      // assert.equal(resultsList[1].highlight, 'The');
+      assert.equal(SearchHelper.singleTitle(resultsList[1]), 'The NSA');
+      assert.equal(SearchHelper.highlight(resultsList[1]), 'The');
     });
 
   });

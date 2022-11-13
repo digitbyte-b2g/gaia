@@ -45,8 +45,9 @@
   border: 0;
   margin: 0;
   padding: 0;
-  border-radius: 0.8rem;
+  border-radius: var(--browser-border-radius);
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.5);
+  transition: box-shadow 0.3s ease;
 
   background-repeat: no-repeat;
   background-position: center center;
@@ -284,7 +285,7 @@
 }
 
 .appWindow.transitioning {
-  transition: left 0.5s cubic-bezier(1, 0, 0, 1), top 0.5s cubic-bezier(1, 0, 0, 1), width 0.5s cubic-bezier(1, 0, 0, 1), height 0.5s cubic-bezier(1, 0, 0, 1), transform 0.5s cubic-bezier(1, 0, 0, 1), transform-origin 0.5s cubic-bezier(1, 0, 0, 1), opacity 0.5s cubic-bezier(1, 0, 0, 1);
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
 }
 
 .appWindow.maximized-app {
@@ -308,6 +309,7 @@
 .appWindow.minimized-app {
   transform: scale(0.25) !important;
   opacity: 0 !important;
+  border-radius: 9999px;
 }
 
 .appWindow.maximized-app .ui-resizable-handle,
@@ -321,10 +323,16 @@
   transition: opacity 0.3s ease;
 }
 
-.appWindow.inactive iframe,
-.appWindow.inactive .titlebar-buttons,
-.appWindow.inactive .chrome > * {
+.appWindow.inactive:not(.will-become-active) iframe,
+.appWindow.inactive:not(.will-become-active) .titlebar-buttons,
+.appWindow.inactive:not(.will-become-active) .chrome > * {
   opacity: 0.5;
+}
+
+#screen #windows > .appWindow.active:not(.will-become-inactive):not(.back),
+#screen #windows > .appWindow.will-become-active {
+  z-index: 100;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.5);
 }
 
 .appWindow.dragging {

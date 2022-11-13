@@ -53,7 +53,15 @@
     } else {
       timeText = this.timeFormatter.format(now);
     }
-    this.element.innerHTML = timeText;
+
+    var date = new Date();
+    var dateLang = document.dir == 'rtl' ? 'ar-SA' : 'en-US';
+    var formatted = date.toLocaleDateString(dateLang, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    });
+    this.element.innerHTML = timeText + '<br>' + formatted;
 
     Service.request('OperatorIcon:update', now);
     this.publish('changed');

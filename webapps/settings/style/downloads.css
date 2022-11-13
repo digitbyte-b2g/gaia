@@ -12,7 +12,7 @@
 
 #dle-text {
   font-size: 1.8rem;
-  color: #1CABCB;
+  color: var(--accent-color, #0061e0);
 }
 
 #downloadList {

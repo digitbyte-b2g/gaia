@@ -62,7 +62,6 @@ html[dir="rtl"] .appWindow:not(.bar) > .chrome { transform-origin: top right; }
 }
 
 .chrome.maximized .controls {
-  box-shadow: 0 0.2rem 0.4rem rgba(0,0,0,0.1);
   opacity: 1;
   visibility: visible;
 }

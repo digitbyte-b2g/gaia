@@ -54,22 +54,24 @@ marionette('Music files loading', function() {
     });
 
     test('Check the mp4 video isn\'t loaded. moztrap:8456', function() {
+
       music.launch();
       music.waitForFirstTile();
       music.waitFinishedScanning();
 
       music.switchToSongsView();
 
-      music.waitForListEnumerate(Music.Selector.songsViewFrame);
+      music.waitForListEnumerate();
 
-      var songs = music.songsListItemsData;
+      var songs = music.listItems;
       assert.equal(songs.length, 2, 'Wrong number of songs');
-      var songNames = [];
 
-      songs.forEach(function(song) {
-        songNames.push(song.filePath);
+      var songNames = client.executeScript(function() {
+        var w = window.wrappedJSObject;
+        return w.ListView.dataSource.map(function(record) {
+          return record.name;
+        }).sort();
       });
-      songNames.sort();
 
       assert.equal(songNames.length, 2,
                    'Data source have wrong number of songs');

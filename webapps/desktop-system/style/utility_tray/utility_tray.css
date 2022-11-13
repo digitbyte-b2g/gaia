@@ -12,7 +12,7 @@
   --software-buttons-height-adjustment: 0px;
 
   position: absolute;
-  width: 340px;
+  width: 380px;
   height: calc(100% + var(--scrollbar-width));
   overflow-x: scroll;
   overflow-y: hidden;
@@ -150,16 +150,11 @@ html[dir="rtl"] #tray-invisible-gripper {
   background-repeat: no-repeat;
   width: 100%;
   top: 0;
-  height: calc(var(--statusbar-height) + 1rem);
+  height: var(--statusbar-height);
+  background-image: -moz-element(#statusbar-icons);
 }
 html[dir="ltr"] #statusbar-tray { background-position: right center; }
 html[dir="rtl"] #statusbar-tray { background-position: left center; }
-
-#screen.utility-tray-in-transition #statusbar-tray,
-#screen:-moz-full-screen-ancestor #statusbar-tray,
-#screen.utility-tray-in-transition #utility-tray #statusbar-tray {
-  background-image: -moz-element(#statusbar-icons);
-}
 
 #statusbar-tray > .sb-start-upper {
   position: absolute;

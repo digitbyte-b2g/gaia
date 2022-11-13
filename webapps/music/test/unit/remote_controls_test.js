@@ -1,7 +1,6 @@
 /* global MediaRemoteControls, REMOTE_CONTROLS, AVRCP, IAC,
           MockBluetoothHelper, MockBluetoothHelperInstance,
-          MockNavigatormozSetMessageHandler, suite, setup,
-          teardown, test, assert */
+          MockNavigatormozSetMessageHandler */
 'use strict';
 
 require('/shared/js/media/remote_controls.js');

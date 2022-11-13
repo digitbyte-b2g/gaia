@@ -43,7 +43,7 @@ html[dir="rtl"] .appWindow .titlebar .statusbar-shadow { background-position: bo
 #screen.utility-tray-in-transition .appWindow > .titlebar,
 /* Statusbar shadow visible on fullscreen dragging */
 #screen:not(.minimized-tray) .appWindow > .chrome.dragging + .titlebar > .titlebar-icons {
-  visibility: visible;
+  /* visibility: visible; */
 }
 
 .appWindow > .titlebar .titlebar-icons {

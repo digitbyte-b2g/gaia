@@ -58,7 +58,7 @@ FakeActivityCaller.prototype = {
 
     var list = this.actionMenu.findElements('button');
     for (var i = 0; i < list.length; i++) {
-      if (list[i].text() === 'Music') {
+      if (list[i].text() === 'Music OGA') {
         this.client.helper.waitForElement(list[i]);
         list[i].tap();
         return;

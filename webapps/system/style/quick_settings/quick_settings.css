@@ -27,7 +27,7 @@
 
 #quick-settings a {
   display: flex;
-  height: 70px;
+  height: 6rem;
   margin: 0;
   color: var(--text-color, #333);
   text-decoration: none;
@@ -39,6 +39,7 @@
   background: var(--background-plus, #fff);
   box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
   width: 100%;
+  padding: 0 0.5rem;
   -moz-padding-start: 5rem;
   box-sizing: border-box;
   font-size: 1.6rem;
@@ -62,12 +63,13 @@
 
 #quick-settings a:hover {
   box-shadow: 0 1rem 2rem rgba(0,0,0,0.25);
+  transform: translateY(-0.2rem);
   z-index: 1;
 }
 
 #quick-settings a:active {
-  transition: none;
-  transform: scale(0.95);
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 #quick-settings > *[data-initializing] {

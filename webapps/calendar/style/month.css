@@ -71,21 +71,6 @@ section.month li:last-child {
   height: auto;
 }
 
-section.month {
-  animation: months-showing 0.3s ease;
-}
-
-@keyframes months-showing {
-  from {
-    transform: translateY(32px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
 section.month ol {
   height: 4.4rem;
   margin-bottom: 0.1rem;
@@ -113,7 +98,7 @@ section.month > ol > li {
   text-align: center;
   border-radius: 9999px;
   color: var(--text-color, #333);
-  width: 5rem;
+  width: 100%;
   flex-grow: unset;
   flex-basis: unset;
   margin: 0 auto;
@@ -126,6 +111,7 @@ section.month .present {
 section.month .selected {
   color: var(--accent-text-color, rgba(255,255,255,0.75));
   background-color: var(--accent-color, #0061e0);
+  font-weight: bold;
 }
 
 section.month .other-month {

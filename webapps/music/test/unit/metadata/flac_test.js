@@ -1,6 +1,5 @@
-/* global FLACMetadata, fetchBuffer, makeBlobView, MockLazyLoader,
-          readPicSlice, assertBuffersEqual, pass, fail, suite, setup,
-          teardown, test, assert */
+/* global FLACMetadata, fetchBuffer, makeBlobView, MockLazyLoader, readPicSlice,
+   assertBuffersEqual, pass, fail */
 'use strict';
 
 require('/test/unit/metadata/utils.js');

@@ -27,11 +27,18 @@
   /* Browser configuration values */
   --browser-tab-list-height: 4rem;
   --browser-navbar-height: 4rem;
+  --browser-titlebar-padding: 0.4rem;
+  --browser-titlebar-button: 2.4rem;
+  --browser-border-radius: 1.6rem;
 }
 
 [data-thickness="compact"] {
   --software-home-button-height: 3.6rem;
   --statusbar-height: 2.8rem;
+
+  /* The scale factor for the shrinking rocketbar */
+  /* 0.682 = --statusbar-height (3.2rem) / rocketbar height (3.8rem) */
+  --rocketbar-scale: 0.737;
 
   /* Panel configuration values */
   /* Might get handy to make the taskbar customizable */
@@ -42,11 +49,18 @@
   /* Browser configuration values */
   --browser-tab-list-height: 3.6rem;
   --browser-navbar-height: 3.6rem;
+  --browser-titlebar-padding: 0.35rem;
+  --browser-titlebar-button: 2.1rem;
+  --browser-border-radius: 1.4rem;
 }
 
 [data-thickness="touch"] {
   --software-home-button-height: 4.4rem;
   --statusbar-height: 3.6rem;
+
+  /* The scale factor for the shrinking rocketbar */
+  /* 0.682 = --statusbar-height (3.2rem) / rocketbar height (3.8rem) */
+  --rocketbar-scale: 0.888;
 
   /* Panel configuration values */
   /* Might get handy to make the taskbar customizable */
@@ -57,4 +71,7 @@
   /* Browser configuration values */
   --browser-tab-list-height: 4.4rem;
   --browser-navbar-height: 4.4rem;
+  --browser-titlebar-padding: 0.45rem;
+  --browser-titlebar-button: 2.7rem;
+  --browser-border-radius: 1.8rem;
 }

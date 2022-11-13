@@ -4,11 +4,7 @@
     "dictionaries": ["jsdoc"]
   },
   "source": {
-    "include": [
-      "apps/music/js/**/*.js",
-      "apps/music/elements/**/*.js",
-      "apps/music/views/**/*.js"
-    ]
+    "include": ["apps/music/js"]
   },
   "plugins": [
     "plugins/markdown",
@@ -17,6 +13,6 @@
   "opts": {
     "private": true,
     "recurse": true,
-    "destination": "docs/keyboard"
+    "destination": "docs/music"
   }
 }

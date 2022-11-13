@@ -218,10 +218,10 @@ html[dir="rtl"] #ambient-indicator {
 .tray #utility-tray-notifications,
 .tray #quick-settings-bar,
 .tray #utility-tray-footer {
-  max-width: 320px;
+  max-width: 600px;
   margin: 0 auto;
 
-  transform: scale(0.9);
+  transform: translateY(-32px);
   opacity: 0;
   transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.0), opacity 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.0), visibility 0.3s;
 }
@@ -230,7 +230,7 @@ html[dir="rtl"] #ambient-indicator {
 .tray.opening #utility-tray-notifications,
 .tray.opening #quick-settings-bar,
 .tray.opening #utility-tray-footer {
-  transform: scale(1.0);
+  transform: translateY(0);
   opacity: 1;
-  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.125) 0.2s, opacity 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.0) 0.2s, visibility 0.3s 0.2s;
+  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.125) 0.3s, opacity 0.3s cubic-bezier(0.2, 0.9, 0.1, 1.0) 0.3s, visibility 0.3s 0.3s;
 }

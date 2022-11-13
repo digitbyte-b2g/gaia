@@ -1,6 +1,5 @@
-/* global OggMetadata, fetchBlobView, fetchBuffer, MockLazyLoader,
-          readBlob, assertBuffersEqual, pass, fail, suite, setup,
-          teardown, test, assert */
+/* global OggMetadata, fetchBlobView, fetchBuffer, MockLazyLoader, readBlob,
+   assertBuffersEqual, pass, fail */
 'use strict';
 
 require('/test/unit/metadata/utils.js');

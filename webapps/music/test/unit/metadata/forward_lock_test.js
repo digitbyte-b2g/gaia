@@ -1,6 +1,6 @@
 /* global ForwardLockMetadata, fetchBuffer, ForwardLock, makeBlobView,
-          MockGetDeviceStorage, MockLazyLoader, readBlob, assertBuffersEqual,
-          pass, fail, suite, setup, teardown, test, assert */
+   MockGetDeviceStorage, MockLazyLoader, readBlob, assertBuffersEqual, pass,
+   fail */
 'use strict';
 
 require('/test/unit/metadata/utils.js');

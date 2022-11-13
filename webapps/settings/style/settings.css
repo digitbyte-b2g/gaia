@@ -434,9 +434,9 @@ body.spatial-navigation .current li gaia-switch:focus {
   position: relative;
   overflow: hidden;
   height: 17rem;
-  border-radius: 1.5rem;
+  border-radius: 0.8rem;
   margin: 1rem;
-  border: solid 0.4rem var(--background-plus, #fff);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
 }
 
 .wallpaper .wallpaper-button {

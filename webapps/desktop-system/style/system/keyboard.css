@@ -36,26 +36,6 @@
   display: block;
 }
 
-@media not all and (-moz-physical-home-button) {
-  #screen:not(.software-button-disabled) #keyboards {
-    bottom: calc(var(--panel-height) + (var(--panel-margin) * 2));
-  }
-}
-
-#screen.software-button-enabled #keyboards {
-  bottom: calc(var(--panel-height) + (var(--panel-margin) * 2));
-}
-
-@media (orientation: landscape) {
-  #screen.software-button-enabled #keyboards {
-    /* BiDi note: the software home button should not be mirrored in RTL. */
-    right: calc(var(--panel-height) + (var(--panel-margin) * 2));
-    bottom: 0;
-    left: 0;
-    width: auto;
-  }
-}
-
 .inputWindow.slide-from-bottom {
   animation: kbShow var(--transition-duration) both ease;
 }

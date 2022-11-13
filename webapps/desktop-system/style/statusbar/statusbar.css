@@ -11,9 +11,10 @@
   bottom: var(--panel-margin);
   transform: translateY(0);
   offset-inline-end: var(--panel-margin);
-  -moz-padding-start: var(--panel-height);
+  -moz-padding-start: calc((var(--panel-height) + 1.6rem) / 2);
   transition: none;
 }
+
 
 #statusbar:before {
   content: '';
@@ -27,7 +28,7 @@
   transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1.0);
 }
 
-#statusbar.tray-open:before {
+#statusbar.active:before {
   transform: rotate(180deg);
 }
 
@@ -35,7 +36,8 @@
   background-color: var(--translucent, rgba(0,0,0,0.05));
 }
 
-#statusbar:active {
+#statusbar:active,
+#statusbar.active {
   background-color: var(--translucent-plus, rgba(0,0,0,0.1));
 }
 
@@ -110,6 +112,13 @@ html[dir="rtl"] #screen.lockscreen-camera > #statusbar { transform-origin: right
   background-color: transparent;
   display: block;
   transform: scaleY(1);
+}
+
+#statusbar-time {
+  font-size: 1.3rem !important;
+  font-weight: 500 !important;
+  text-align: end;
+  margin-inline-start: 0.4rem;
 }
 
 #screen.attention.locked #statusbar-time {

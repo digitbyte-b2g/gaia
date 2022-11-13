@@ -106,11 +106,11 @@ NODE_MODULES_SRC?=modules.tar
 NODE_MODULES_CACHEDIR=modules_tar_cachedir
 
 # GAIA_DEVICE_TYPE customization
-# phone - default
-# desktop
+# phone
+# desktop - default
 # tablet
 # tv
-GAIA_DEVICE_TYPE?=phone
+GAIA_DEVICE_TYPE?=desktop
 -include build/config/$(GAIA_DEVICE_TYPE)/device.mk
 
 TEST_AGENT_PORT?=8789

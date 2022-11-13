@@ -1,5 +1,4 @@
-/* global AlbumArt, MockFileStore, MockGetDeviceStorage, pass, fail,
-          suite, setup, teardown, test, assert */
+/* global AlbumArt, MockFileStore, MockGetDeviceStorage, pass, fail */
 'use strict';
 
 require('/test/unit/metadata/utils.js');

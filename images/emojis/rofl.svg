@@ -49,8 +49,8 @@
     <stop offset="0%" style="stop-color:#ffd080;stop-opacity:1" id="stop7" />
     <stop offset="100%" style="stop-color:#ffc000;stop-opacity:1" id="stop9" />
   </linearGradient>
-  <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" style="stop-color:#00a0e8;stop-opacity:1" id="stop7" />
+  <linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#00ddff;stop-opacity:1" id="stop7" />
     <stop offset="100%" style="stop-color:#0061e0;stop-opacity:1" id="stop9" />
   </linearGradient>
   <style id="style12">
@@ -74,5 +74,5 @@
   <path d="M8 15A1 1 0 018 1 1 1 0 018 15" class="ac-color1" id="path16" />
   <path d="M5 9 11 9A1 1 0 015 9M4 7 7 7 7 6 5 5 5 6 4 6 4 7M9 7 9 6 11 5 11 6 12 6 12 7 9 7" class="ac-color2"
     id="path18" />
-  <path d="M4 7Q2 7 2 8 2 9 3 9 4 9 4 7M12 7Q14 7 14 8 14 9 13 9 12 9 12 7" class="ac-color3" id="path18" />
+  <path d="M5 7Q2 7 2 8.5 2 10 3.5 10 5 10 5 7M11 7Q14 7 14 8.5 14 10 12.5 10 11 10 11 7" class="ac-color3" id="path18" />
 </svg>

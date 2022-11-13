@@ -50,7 +50,7 @@
     <stop offset="100%" style="stop-color:#ffc000;stop-opacity:1" id="stop9" />
   </linearGradient>
   <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
-    <stop offset="0%" style="stop-color:#00a0e8;stop-opacity:1" id="stop7" />
+    <stop offset="0%" style="stop-color:#00ddff;stop-opacity:1" id="stop7" />
     <stop offset="100%" style="stop-color:#0061e0;stop-opacity:1" id="stop9" />
   </linearGradient>
   <style id="style12">
@@ -74,5 +74,5 @@
   <path d="M8 15A1 1 0 018 1 1 1 0 018 15" class="ac-color1" id="path16" />
   <path d="M5 5A1 1 0 005 7 1 1 0 005 5M11 5A1 1 0 0011 7 1 1 0 0011 5M5 9 6 9A1 1 0 0010 9L11 9A1 1 0 015 9" class="ac-color2"
     id="path18" />
-  <path d="M4 7Q2 7 2 8 2 9 3 9 4 9 4 7" class="ac-color3" id="path18" />
+  <path d="M4 7Q1 7 1 8.5 1 10 2.5 10 4 10 4 7" class="ac-color3" id="path18" />
 </svg>

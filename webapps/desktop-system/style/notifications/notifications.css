@@ -169,6 +169,10 @@ html[dir="rtl"] #notification-bar .title-container {
 html[dir="ltr"] #notifications-container { text-align: left; }
 html[dir="rtl"] #notifications-container { text-align: right; }
 
+#notifications-container:empty {
+  margin: 0;
+}
+
 #notifications-container .notification {
   height: 6rem;
   padding: 0 1.5rem;

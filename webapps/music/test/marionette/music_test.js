@@ -1,6 +1,8 @@
 /* global require, marionette, setup, suite, test, __dirname */
 'use strict';
 
+var assert = require('assert');
+
 var Music = require('./lib/music.js');
 var FakeActivityCaller = require('./lib/fakeactivitycaller.js');
 
@@ -28,88 +30,75 @@ marionette('Music ui tests', function() {
     system.waitForFullyLoaded();
   });
 
-  suite('Test overlay', function() {
+  suite('Launch regular music with no audio files', function() {
     setup(function() {
       client.fileManager.removeAllFiles();
     });
 
-    test('Overlay visible when storage has no songs', function() {
+    test('Overlay should be shown when storage has no songs', function() {
       music.launch();
       music.waitFinishedScanning();
       music.waitForMessageOverlayShown(true);
     });
+  });
 
-    test('Overlay hidden when storage has some songs', function() {
+  suite('Launch regular music with one audio file', function() {
+    setup(function() {
       client.fileManager.add([
         { type: 'music', filePath: 'test_media/samples/Music/b2g.ogg' }
       ]);
+    });
+
+    test('Overlay should be hidden when storage has some songs', function() {
       music.launch();
       music.waitFinishedScanning();
-      music.waitForFirstTile();
       music.waitForMessageOverlayShown(false);
+      music.waitForFirstTile();
     });
   });
 
-  suite('Test picker activity', function() {
+  suite('Launch music picker with no audio files', function() {
     var activitycaller;
-
-    function performTest(shown) {
-      activitycaller.launch();
-      activitycaller.tapPickButton();
-      activitycaller.selectMusicApp();
-
-      music.switchToMe();
-      music.waitFinishedScanning();
-      music.waitForMessageOverlayShown(shown);
-    }
 
     setup(function() {
       activitycaller = new FakeActivityCaller(client);
       client.fileManager.removeAllFiles();
     });
 
-    test('Overlay visible with no songs', function() {
-      performTest(true);
-    });
+    test('Overlay should be shown when storage has no songs', function() {
+      try {
+        activitycaller.launch();
+        activitycaller.tapPickButton();
+        activitycaller.selectMusicApp();
 
-    test('Overlay hidden with some songs', function() {
-      client.fileManager.add([
-        { type: 'music', filePath: 'test_media/samples/Music/b2g.ogg' }
-      ]);
-      performTest(false);
+        music.switchToMe();
+        music.waitFinishedScanning();
+        music.waitForMessageOverlayShown(true);
+      } catch (e) { assert.ok(false, e.stack); }
     });
   });
 
-
-  suite('Test open activity', function() {
+  suite('Launch music picker with one audio file', function() {
     var activitycaller;
-
-    function performTest() {
-      activitycaller.launch();
-      activitycaller.tapOpenButton();
-      activitycaller.selectMusicApp();
-
-      music.switchToMe();
-      music.waitFinishedScanning();
-      music.waitForPlayerView();
-    }
 
     setup(function() {
       activitycaller = new FakeActivityCaller(client);
-      client.fileManager.removeAllFiles();
-    });
 
-    test('Player shows with no song in database.', function() {
-      performTest();
-    });
-
-    test('Player shows with one song in database.', function() {
       client.fileManager.add([
         { type: 'music', filePath: 'test_media/samples/Music/b2g.ogg' }
       ]);
+    });
 
-      performTest();
+    test('Overlay should be hidden when storage has some songs', function() {
+      try {
+        activitycaller.launch();
+        activitycaller.tapPickButton();
+        activitycaller.selectMusicApp();
+
+        music.switchToMe();
+        music.waitFinishedScanning();
+        music.waitForMessageOverlayShown(false);
+      } catch (e) { assert.ok(false, e.stack); }
     });
   });
-
 });

@@ -48,7 +48,7 @@ ol.link-list li:only-child a {
 #today .icon-calendar-today:before {
   position: absolute;
   font-size: 3rem;
-  line-height: 4.2rem;
+  line-height: 3rem;
   offset-inline-start: 50%;
   transform: translate(-50%, 0.75rem); /* BiDi-proof */
   font-weight: normal;
@@ -102,14 +102,23 @@ body[data-path="/day/"] #view-selector > .day > a:active {
 }
 
 #time-views > section {
-  display: none;
-  position: relative;
+  display: block;
+  position: absolute;
   height: calc(100% - 9.5rem);
   background: var(--background, #e7e7e7);
+
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+  transform: scale(0.9);
+  opacity: 0;
+  visibility: hidden;
 }
 
 #time-views > section.active {
-  display: block;
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.1, 1), opacity 0.5s cubic-bezier(0.2, 0.9, 0.1, 1), visibility 0.5s;
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
 }
 
 #time-header [type="toolbar"] {

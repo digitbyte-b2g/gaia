@@ -147,18 +147,18 @@ html[dir="rtl"] .appWindow:not(.bar) > .chrome { transform-origin: top right; }
   height: calc(var(--browser-navbar-height) - 0.8rem);
   line-height: calc(var(--browser-navbar-height) - 0.8rem);
   margin: 0 0 0.4rem;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   color: inherit;
   overflow: visible;
   background-color: transparent;
   position: absolute;
-  offset-inline-start: 12.4rem;
 }
 html[dir="ltr"] .chrome .controls .urlbar { text-align: left; }
 html[dir="rtl"] .chrome .controls .urlbar { text-align: right; }
 
 .maximized .controls .urlbar {
   background-color: rgba(204,204,204,0.2);
+  offset-inline-start: 12.4rem;
 }
 
 .appWindow.light.collapsible .controls .urlbar {
@@ -186,7 +186,7 @@ html[dir="rtl"] .chrome .controls .urlbar { text-align: right; }
   overflow: hidden;
   float: none;
   background-color: transparent;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   height: 100%;
 }
 .chrome-combined.private .chrome-title-container {
@@ -244,11 +244,11 @@ html[dir="rtl"] .chrome .controls .urlbar { text-align: right; }
 }
 html[dir="ltr"] .controls .urlbar {
   transform-origin: top left;
-  transform: scaleX(var(--rocketbar-scale)) translateY(0.1rem) translateX(-15rem);
+  transform: scaleX(var(--rocketbar-scale)) translateY(0.1rem);
 }
 html[dir="rtl"] .controls .urlbar {
   transform-origin: top right;
-  transform: scaleX(var(--rocketbar-scale)) translateY(0.1rem) translateX(15rem);
+  transform: scaleX(var(--rocketbar-scale)) translateY(0.1rem);
 }
 
 .appWindow.fullscreen-app .chrome.dragged,
@@ -592,7 +592,7 @@ html[dir="rtl"] .private > .chrome-combined.maximized .chrome-has-ssl-indicator 
   background-color: transparent;
   background-size: 2rem;
   opacity: 1;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   position: relative;
 }
 html[dir="ltr"] .controls button { float: left; }
@@ -852,6 +852,8 @@ gaia-overflow-menu button#share {
 .chrome .tab-list {
   margin: 0;
   padding: 0 0.8rem;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .chrome .tab-list .tab {
@@ -863,26 +865,44 @@ gaia-overflow-menu button#share {
   box-sizing: border-box;
   align-items: center;
   border-radius: 0.8rem 0.8rem 0 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  transition: background-color 0.2s;
 }
 
 .chrome .tab-list .tab:hover {
   background-color: var(--transparent, rgba(0,0,0,0.05));
-  transition: none;
 }
 
 .chrome .tab-list .tab:active {
   background-color: var(--transparent-plus, rgba(0,0,0,0.1));
-  transition: none;
 }
 
 .chrome .tab-list .tab[aria-selected="true"] {
   background-color: var(--background-plus, #fff);
-  transition: none;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2), 0 0.3rem 0.6rem rgba(0,0,0,0.3), 0 0.1rem 0.2rem rgba(0,0,0,0.2);
-  border-radius: 1rem 1rem 0 0;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.chrome .tab-list .tab[aria-selected="true"]:before {
+  content: '';
+  position: absolute;
+  left: -1.6rem;
+  bottom: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: transparent;
+  box-shadow: 0.8rem 0.8rem 0 var(--background-plus, #fff);
+  border-radius: 1.6rem;
+}
+
+.chrome .tab-list .tab[aria-selected="true"]:after {
+  content: '';
+  position: absolute;
+  right: -1.6rem;
+  bottom: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  background: transparent;
+  box-shadow: -0.8rem 0.8rem 0 var(--background-plus, #fff);
+  border-radius: 1.6rem;
 }
 
 .chrome .tab-list .tab .favicon {
@@ -906,7 +926,7 @@ gaia-overflow-menu button#share {
   height: 3.2rem;
   background: transparent no-repeat center / 1.6rem;
   border: none;
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
 }
 
 .chrome .tab-list .tab button:hover {

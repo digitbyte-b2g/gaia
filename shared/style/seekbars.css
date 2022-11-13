@@ -84,7 +84,16 @@ input[type="range"]::-moz-range-thumb {
   background: var(--accent-color, #0061e0) url(seekbars/images/ui/handler.png);
   border-radius: 1.5rem;
   border: none;
-  transition: box-shadow 0.15s ease;
+}
+
+[role="slider"] button:hover,
+input[type="range"]:hover::-moz-range-thumb {
+  background-image: url(seekbars/images/ui/handler_hover.png);
+}
+
+[role="slider"] button:active,
+input[type="range"]:active::-moz-range-thumb {
+  background-image: url(seekbars/images/ui/handler_active.png);
 }
 
 [data-accent-scheme="light"] [role="slider"] button,
@@ -102,11 +111,6 @@ input[type="range"]::-moz-range-thumb {
   margin: -1.15rem 0 0 -1.7rem;
   padding: 0;
   box-sizing: content-box;
-}
-
-[role="slider"] button:active,
-input[type=range]:active::-moz-range-thumb {
-  box-shadow: 0 0 0 0.5rem rgba(0, 97, 224, 0.5);
 }
 
 input[type=range]::-moz-focus-outer {

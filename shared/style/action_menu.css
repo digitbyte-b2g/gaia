@@ -391,19 +391,6 @@ html[dir="rtl"] [role="dialog"][data-type="action"] > header > a {
     bottom: 0;
     offset-inline-start: calc(50% - 20rem);
   }
-
-  [data-theme="dark"] [role="dialog"][data-type="action"] {
-    background-color: rgba(48, 48, 56, 0.75);
-  }
-
-  [data-theme="dark"] [role="dialog"][data-type="action"] > header {
-    border-bottom: 0.1rem solid rgba(255,255,255,0.0625);
-  }
-
-  /* Menu & buttons setup */
-  [data-theme="dark"] [role="dialog"][data-type="action"] menu > .last-button-container {
-    background: rgba(255,255,255,0.125);
-  }
 }
 
 /* ----------------------------------

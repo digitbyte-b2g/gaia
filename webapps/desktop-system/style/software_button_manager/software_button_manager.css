@@ -132,11 +132,11 @@ html[dir="rtl"] #software-buttons .container {
   right: 0;
 }
 
-html[dir="ltr"] #software-buttons.centered .container {
+html[dir="ltr"] #screen.centered-alignment #software-buttons .container {
   left: 50%;
   transform: translateX(-50%);
 }
-html[dir="rtl"] #software-buttons.centered .container {
+html[dir="rtl"] #screen.centered-alignment #software-buttons .container {
   right: 50%;
   transform: translateX(50%);
 }
@@ -329,7 +329,7 @@ html[dir="rtl"] #panel-tasks .task .task-preview header h1 {
   flex: 1;
 }
 
-#software-buttons .background {
+#software-buttons .gfx-background-mica {
   border-radius: var(--panel-border-radius);
 }
 
