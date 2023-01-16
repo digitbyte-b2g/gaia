@@ -1,0 +1,60 @@
+#footer {
+  min-height: 7.2rem;
+  width: calc(100% - 2rem);
+  position: absolute;
+  bottom: 1rem;
+  z-index: 10000;
+  overflow: visible;
+  margin: 0 1rem;
+  border-radius: 1.5rem;
+}
+
+#footer .dockWrapper {
+  width: 175%;
+  height: 100%;
+}
+
+#footer ol {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: block;
+  transform: none !important;
+}
+
+#footer li {
+  height: 100%;
+  position: relative;
+  width: calc(100% / 7);
+  float: left;
+  text-align: center;
+}
+
+#footer > div.scrollable li {
+	width: 7.2rem;
+}
+
+/* Container -> icon + label */
+#footer li > div {
+  width: 100%;
+  margin: 0.95rem 0;
+  pointer-events: none;
+}
+/* Collection "ring" alignment */
+#footer ol > li[data-is-collection = 'true'] > div::before {
+  margin-top: 0.8rem;
+}
+
+#footer li > div > *:not(img) {
+  display: none;
+}
+
+/* For tablet+ Device */
+@media (min-width: 768px) {
+  #footer {
+    width: 30rem;
+    left: calc(50% - 15rem);
+  }
+}

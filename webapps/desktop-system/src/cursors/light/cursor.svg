@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 32 32"
+   width="32"
+   height="32"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="cursor.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter24"
+       x="-0.15"
+       y="-0.092307692"
+       width="1.3625"
+       height="1.2230769">
+      <feFlood
+         flood-opacity="0.25098"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood14" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite16" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="1"
+         result="blur"
+         id="feGaussianBlur18" />
+      <feOffset
+         dx="1"
+         dy="1"
+         result="offset"
+         id="feOffset20" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite22" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#333fff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="19.6875"
+     inkscape:cx="15.974603"
+     inkscape:cy="15.974603"
+     inkscape:window-width="1600"
+     inkscape:window-height="826"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <style
+     id="style2">
+    .ac-color {
+      fill: #333;
+    }
+    .ac-color1 {
+      fill: #fff;
+    }
+  </style>
+  <path
+     d="M0 0 16 16 9 16 13 24 9 26 5 17.5 0 21 0 0"
+     class="ac-color"
+     id="path4"
+     style="filter:url(#filter24)" />
+  <path
+     d="M1 2.5 13.5 15 7.25 15 11.5 23.5 9.5 24.5 5.5 15.75 1 19 1 2.5"
+     class="ac-color1"
+     id="path6" />
+</svg>

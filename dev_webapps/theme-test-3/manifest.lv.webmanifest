@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "name": "Bojāta tēma 3",
+  "short_name": "Bojāta tēma 3",
+  "description": "Bojāta tēma 3",
+  "start_url": "/index.html",
+  "b2g_features": {
+    "core": true,
+    "role": "theme",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    }
+  }
+}

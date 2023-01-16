@@ -1,0 +1,78 @@
+{
+  "version": "2.0",
+  "name": "Тапет",
+  "short_name": "Тапет",
+  "description": "Тапет",
+  "lang": "en-US",
+  "orientation": "default",
+  "icons": [
+    {
+      "src": "/style/icons/wallpaper_84.png",
+      "type": "image/png",
+      "size": "84x84"
+    },
+    {
+      "src": "/style/icons/wallpaper_126.png",
+      "type": "image/png",
+      "size": "126x126"
+    },
+    {
+      "src": "/style/icons/wallpaper_142.png",
+      "type": "image/png",
+      "size": "142x142"
+    },
+    {
+      "src": "/style/icons/wallpaper_189.png",
+      "type": "image/png",
+      "size": "189x189"
+    },
+    {
+      "src": "/style/icons/wallpaper_284.png",
+      "type": "image/png",
+      "size": "284x284"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "system",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "themeable": {},
+      "settings": {
+        "access": "readwrite"
+      },
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    },
+    "activities": {
+      "pick": {
+        "filters": {
+          "type": "wallpaper"
+        },
+        "disposition": "inline",
+        "returnValue": true,
+        "href": "/pick.html"
+      },
+      "share": {
+        "filters": {
+          "type": "image/*",
+          "number": 1
+        },
+        "disposition": "inline",
+        "returnValue": true,
+        "href": "/share.html"
+      },
+      "setwallpaper": {
+        "filters": {
+          "type": "image/*",
+          "number": 1
+        },
+        "disposition": "inline",
+        "returnValue": true,
+        "href": "/share.html"
+      }
+    }
+  }
+}

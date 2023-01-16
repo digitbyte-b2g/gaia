@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "name": "유튜브",
+  "short_name": "유튜브",
+  "description": "유튜브",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/style/icons/youtube_16.png",
+      "type": "image/png",
+      "size": "16x16"
+    },
+    {
+      "src": "/style/icons/youtube_32.png",
+      "type": "image/png",
+      "size": "32x32"
+    },
+    {
+      "src": "/style/icons/youtube_48.png",
+      "type": "image/png",
+      "size": "48x48"
+    },
+    {
+      "src": "/style/icons/youtube_64.png",
+      "type": "image/png",
+      "size": "64x64"
+    },
+    {
+      "src": "/style/icons/youtube_128.png",
+      "type": "image/png",
+      "size": "128x128"
+    },
+    {
+      "src": "/style/icons/youtube_256.png",
+      "type": "image/png",
+      "size": "256x256"
+    }
+  ],
+  "b2g_features": {
+    "developer": {
+      "url": "https://www.google.com/",
+      "name": "Google LLC"
+    }
+  }
+}

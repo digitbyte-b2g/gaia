@@ -1,0 +1,25 @@
+/* --------------- dialog --------------- */
+#browser-dialog-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: 1080px;
+  z-index: 500;
+}
+
+#browser-dialog-base.hide {
+  display: none;
+}
+
+.browser-dialog-message {
+  font-family: Fira Sans;
+  font-style: italic;
+  font-size: 3.8rem;
+  font-weight: lighter;
+  line-height: 4.8rem;
+  color: #f9f9f9;
+}

@@ -1,0 +1,19 @@
+{
+  "version": "2.0",
+  "name": "Permisos de proba",
+  "short_name": "Permisos de proba",
+  "description": "Permisos de proba",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "start_url": "/index.html",
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "amac"
+    },
+    "permissions": {
+      "webapps-manage": {},
+      "permissions": {}
+    }
+  }
+}

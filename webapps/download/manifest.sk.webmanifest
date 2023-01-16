@@ -1,0 +1,79 @@
+{
+  "version": "2.0",
+  "name": "K stiahnutiu",
+  "short_name": "K stiahnutiu",
+  "description": "K stiahnutiu",
+  "lang": "en-US",
+  "orientation": "default",
+  "icons": [
+    {
+      "src": "/style/icons/download_16.png",
+      "type": "image/png",
+      "size": "16x16"
+    },
+    {
+      "src": "/style/icons/download_32.png",
+      "type": "image/png",
+      "size": "32x32"
+    },
+    {
+      "src": "/style/icons/download_48.png",
+      "type": "image/png",
+      "size": "48x48"
+    },
+    {
+      "src": "/style/icons/download_64.png",
+      "type": "image/png",
+      "size": "64x64"
+    },
+    {
+      "src": "/style/icons/download_128.png",
+      "type": "image/png",
+      "size": "128x128"
+    },
+    {
+      "src": "/style/icons/download_256.png",
+      "type": "image/png",
+      "size": "256x256"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "system",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "device-storage:pictures": {
+        "access": "readonly"
+      },
+      "device-storage:music": {
+        "access": "readonly"
+      },
+      "device-storage:videos": {
+        "access": "readonly"
+      },
+      "device-storage:sdcard": {
+        "access": "readonly"
+      },
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    },
+    "activities": {
+      "pick": {
+        "filters": {
+          "type": "application/*"
+        },
+        "disposition": "inline",
+        "returnValue": true,
+        "href": "/pick.html"
+      }
+    },
+    "datastores-access": {
+      "download_store": {
+        "readonly": true,
+        "description": "Stores download finished"
+      }
+    }
+  }
+}

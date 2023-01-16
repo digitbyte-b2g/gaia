@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 16 16" width="16" height="16" version="1.1" id="svg34" sodipodi:docname="clock.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+   <metadata id="metadata40">
+      <rdf:RDF>
+         <cc:Work rdf:about="">
+            <dc:format>image/svg+xml</dc:format>
+            <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+         </cc:Work>
+      </rdf:RDF>
+   </metadata>
+   <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10"
+      gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2"
+      inkscape:window-width="854" inkscape:window-height="480" id="namedview36" showgrid="false" inkscape:zoom="14.75"
+      inkscape:cx="7.9661017" inkscape:cy="8" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="0"
+      inkscape:current-layer="svg34" inkscape:pagecheckerboard="0" />
+   <style id="style22">
+      .ac-color {
+         fill: #404448;
+      }
+
+      .ac-color1 {
+         fill: #ff4060;
+      }
+
+      .ac-color2 {
+         fill: #a6a6a6;
+      }
+
+      .ac-color3 {
+         fill: #e7e9ec;
+      }
+
+      .ac-color4 {
+         fill: #00a0e8;
+      }
+
+      .ac-color5 {
+         fill: #fff;
+         opacity: 0.15;
+      }
+   </style>
+   <path d="M8 0Q16 0 16 8 16 16 8 16 0 16 0 8 0 0 8 0" class="ac-color" id="path24" />
+   <path
+      d="M7.5 1 8.5 1 8.5 3 7.5 3 7.5 1M15 7.5 15 8.5 13 8.5 13 7.5 15 7.5M8.5 15 7.5 15 7.5 13 8.5 13 8.5 15M1 8.5 1 7.5 3 7.5 3 8.5 1 8.5"
+      class="ac-color5" id="path28" />
+   <path d="M7.5 1 8.5 1 8.5 8.5 7.5 8.5 7.5 1" class="ac-color1" id="path26" />
+   <path d="M7.5 7.75 3 12.25 3.75 13 8.25 8.5 7.5 7.75" class="ac-color2" id="path51" />
+   <path d="M7.5 7.5 13 7.5 13 8.5 7.5 8.5 7.5 7.5" class="ac-color3" id="path30" />
+   <path d="M7 8A1 1 0 009 8 1 1 0 007 8" class="ac-color4" id="path32" />
+</svg>

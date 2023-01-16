@@ -1,0 +1,14 @@
+{
+  "avatar_default.svg": {"l10nID": "avatar_default"},
+  "avatar_brown.svg": {"l10nID": "avatar_brown"},
+  "avatar_crimson.svg": {"l10nID": "avatar_crimson"},
+  "avatar_green.svg": {"l10nID": "avatar_green"},
+  "avatar_orange.svg": {"l10nID": "avatar_orange"},
+  "avatar_yellow.svg": {"l10nID": "avatar_yellow"},
+  "avatar_cat.svg": {"l10nID": "avatar_cat"},
+  "avatar_dog.svg": {"l10nID": "avatar_dog"},
+  "avatar_fox.svg": {"l10nID": "avatar_fox"},
+  "avatar_fox_arctic.svg": {"l10nID": "avatar_foxArctic"},
+  "avatar_leaf.svg": {"l10nID": "avatar_leaf"}
+}
+

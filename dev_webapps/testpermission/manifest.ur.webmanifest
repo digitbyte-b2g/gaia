@@ -1,0 +1,19 @@
+{
+  "version": "2.0",
+  "name": "ٹیسٹ کی اجازتیں",
+  "short_name": "ٹیسٹ کی اجازتیں",
+  "description": "ٹیسٹ کی اجازتیں",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "start_url": "/index.html",
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "amac"
+    },
+    "permissions": {
+      "webapps-manage": {},
+      "permissions": {}
+    }
+  }
+}

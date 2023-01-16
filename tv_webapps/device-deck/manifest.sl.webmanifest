@@ -1,0 +1,33 @@
+{
+  "version": "2.0",
+  "name": "Naprave",
+  "short_name": "Naprave",
+  "description": "Naprave",
+  "lang": "en-US",
+  "orientation": "landscape",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/devices-deck_336.png",
+      "type": "image/png",
+      "size": "336x336"
+    },
+    {
+      "src": "/style/icons/devices-deck_672.png",
+      "type": "image/png",
+      "size": "672x672"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "deck",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "bluetooth": {},
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    }
+  }
+}

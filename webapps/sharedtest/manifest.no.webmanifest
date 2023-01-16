@@ -1,0 +1,24 @@
+{
+  "version": "2.0",
+  "name": "Delte tester",
+  "short_name": "Delte tester",
+  "description": "Delte tester",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/Blank.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "role": "system",
+    "developer": {
+      "url": "https://github.com/mozilla-b2g/gaia",
+      "name": "The Gaia Team"
+    },
+    "permissions": {}
+  }
+}

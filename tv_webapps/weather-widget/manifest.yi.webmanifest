@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "name": "וועטער ווידזשיט",
+  "short_name": "וועטער ווידזשיט",
+  "description": "וועטער ווידזשיט",
+  "start_url": "/widget.html",
+  "icons": [
+    {
+      "src": "/style/icons/Blank.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "widget"
+  }
+}

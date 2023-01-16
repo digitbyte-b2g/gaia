@@ -1,0 +1,39 @@
+{
+  "version": "1.5",
+  "name": "Kontakbestuurder",
+  "short_name": "Kontakbestuurder",
+  "description": "Kontakbestuurder",
+  "lang": "en-US",
+  "b2g_features": {
+    "core": true,
+    "role": "system",
+    "developer": {
+      "name": "Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "contacts": {
+        "access": "readwrite"
+      },
+      "alarms": {},
+      "systemXHR": {},
+      "phonenumberservice": {}
+    },
+    "messages": [
+      {
+        "alarm": "/periodic_sync.html"
+      }
+    ],
+    "connections": {
+      "contacts-sync": {
+        "description": "Contacts DataBase synchronization",
+        "rules": {
+          "manifestURLs": [
+            "*"
+          ]
+        },
+        "handler_path": "/on_demand_sync.html"
+      }
+    }
+  }
+}

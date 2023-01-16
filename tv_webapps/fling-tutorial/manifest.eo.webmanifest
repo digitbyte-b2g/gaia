@@ -1,0 +1,26 @@
+{
+  "version": "2.0",
+  "name": "Sendu al televido",
+  "short_name": "Sendu al televido",
+  "description": "Sendu al televido",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/fling-tutorial_336.png",
+      "type": "image/png",
+      "size": "336x336"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "browser": {},
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    }
+  }
+}

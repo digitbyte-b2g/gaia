@@ -1,0 +1,28 @@
+{
+  "version": "2.0",
+  "name": "Telebista FTU",
+  "short_name": "Telebista FTU",
+  "description": "Telebista FTU",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/Blank.png",
+      "type": "image/png",
+      "size": "336x336"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "settings": {
+        "access": "readwrite"
+      },
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    }
+  }
+}

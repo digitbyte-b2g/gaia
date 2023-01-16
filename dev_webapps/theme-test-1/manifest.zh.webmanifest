@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "name": "测试主题 1",
+  "short_name": "测试主题 1",
+  "description": "测试主题 1",
+  "start_url": "/index.html",
+  "b2g_features": {
+    "core": true,
+    "role": "theme",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    }
+  }
+}

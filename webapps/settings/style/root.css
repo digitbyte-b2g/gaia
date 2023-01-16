@@ -1,0 +1,116 @@
+section[role="region"]#root > div {
+  overflow: hidden;
+  top: 0;
+  height: 100%;
+}
+
+#main-list-title {
+  --scale: 3.2rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-weight: normal;
+  width: 100%;
+  max-width: 798px;
+  min-height: 5rem;
+  background: var(--background, #e7e7e7);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color: var(--text-color, #333);
+}
+
+#main-list-title > h1 {
+  margin: 0;
+  color: var(--text-color, #333);
+  padding: 1.5rem 2rem;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: var(--scale);
+  line-height: var(--scale);
+}
+
+/* Searchbox */
+#main-list-title > #searchbox {
+  width: calc(100% - 3rem);
+  max-width: 768px;
+  height: 4rem;
+  margin: 0 auto 1rem;
+  background: var(--background-eta, #d8d8d8);
+  border-radius: 2rem;
+  display: flex;
+}
+
+#main-list-title > #searchbox:focus-within {
+  outline: var(--focus-outline);
+}
+
+#main-list-title > #searchbox > input[type="text"] {
+  width: 100%;
+  height: 4rem;
+  line-height: 4rem;
+  flex: 1;
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: var(--text-color, #333);
+  font-size: 1.6rem;
+  font-weight: normal;
+  border-radius: 0;
+}
+
+#main-list-title > #searchbox > button {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  color: var(--text-color, #333);
+  font-size: 1.6rem;
+  font-weight: normal;
+  border-radius: 0;
+  display: none;
+}
+
+#main-list-title > #searchbox:focus-within > button {
+  display: inline-block;
+}
+
+#main-list-title > #searchbox > button[data-icon]:before {
+  font-size: 2rem;
+  position: static;
+}
+
+#main-list {
+  --scale: 3.2rem;
+  position: relative;
+  width: 100%;
+  height: calc(100% - 10rem);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+@supports (backdrop-filter: saturate(180%) blur(20px)) {
+  #main-list-title {
+    background: linear-gradient(to bottom, var(--backdrop-color, rgba(231, 231, 231, 0.5)), var(--background, #e7e7e7));
+    backdrop-filter: saturate(180%) blur(20px);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  #main-list-title > #searchbox {
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  #main-list {
+    height: 100%;
+    padding-top: calc(8rem + var(--scale));
+  }
+}

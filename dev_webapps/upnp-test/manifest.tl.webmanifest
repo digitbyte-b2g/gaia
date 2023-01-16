@@ -1,0 +1,22 @@
+{
+  "version": "2.0",
+  "name": "Pagsusulit sa uPnP",
+  "short_name": "Pagsusulit sa uPnP",
+  "description": "Pagsusulit sa uPnP",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/default_126.png",
+      "type": "image/png",
+      "size": "126x126"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "permissions": {
+      "systemXHR": {},
+      "udp-socket": {}
+    }
+  }
+}

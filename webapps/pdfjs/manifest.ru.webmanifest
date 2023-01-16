@@ -1,0 +1,50 @@
+{
+  "version": "2.0",
+  "name": "Просмотрщик PDF",
+  "short_name": "Просмотрщик PDF",
+  "description": "Просмотрщик PDF",
+  "lang": "en-US",
+  "orientation": "default",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "type": "image/png",
+      "size": "48x48"
+    },
+    {
+      "src": "/icon64.png",
+      "type": "image/png",
+      "size": "64x64"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "system",
+    "developer": {
+      "name": "The pdf.js Team",
+      "url": "https://github.com/mozilla/pdf.js"
+    },
+    "permissions": {
+      "systemXHR": {},
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    },
+    "activities": {
+      "open": {
+        "filters": {
+          "type": "application/pdf"
+        },
+        "disposition": "inline",
+        "href": "/content/web/viewer.html",
+        "returnValue": true
+      },
+      "view": {
+        "filters": {
+          "type": "application/pdf"
+        },
+        "disposition": "inline",
+        "href": "/content/web/viewer.html",
+        "returnValue": true
+      }
+    }
+  }
+}

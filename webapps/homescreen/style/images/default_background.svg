@@ -1,0 +1,12 @@
+<svg viewBox="0 0 16 16" width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+  <linearGradient id="g0" x1="0%" y1="0%" x2="00%" y2="100%">
+    <stop offset="0%" style="stop-color:#e7e9ec;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#b0d0ff;stop-opacity:1" />
+  </linearGradient>
+  <style>
+    .ac-color {
+      fill: url(#g0);
+    }
+  </style>
+  <path d="M4 0 12 0Q16 0 16 4L16 12Q16 16 12 16L4 16Q0 16 0 12L0 4Q0 0 4 0" class="ac-color"></path>
+</svg>

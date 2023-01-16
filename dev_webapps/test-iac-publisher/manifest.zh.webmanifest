@@ -1,0 +1,42 @@
+{
+  "version": "2.0",
+  "name": "测试 IAC 发布者",
+  "short_name": "测试 IAC 发布者",
+  "description": "测试 IAC 发布者",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/default_84.png",
+      "type": "image/png",
+      "size": "84x84"
+    },
+    {
+      "src": "/style/icons/default_126.png",
+      "type": "image/png",
+      "size": "126x126"
+    },
+    {
+      "src": "/style/icons/default_142.png",
+      "type": "image/png",
+      "size": "142x142"
+    },
+    {
+      "src": "/style/icons/default_189.png",
+      "type": "image/png",
+      "size": "189x189"
+    },
+    {
+      "src": "/style/icons/default_284.png",
+      "type": "image/png",
+      "size": "284x284"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The TW QA Team",
+      "url": "https://github.com/Mozilla-TWQA",
+      "e-mail": "tw-qa@mozilla.com"
+    }
+  }
+}

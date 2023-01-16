@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 16 16" width="16" height="16" version="1.1" id="svg25" sodipodi:docname="dialer.svg"
+  inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg"
+  xmlns:svg="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata id="metadata31">
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10"
+    gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="846"
+    inkscape:window-height="480" id="namedview27" showgrid="false" inkscape:zoom="14.75" inkscape:cx="5.6610169"
+    inkscape:cy="8" inkscape:window-x="0" inkscape:window-y="0" inkscape:window-maximized="0"
+    inkscape:current-layer="svg25" inkscape:pagecheckerboard="0" />
+  <style id="style17">
+    .ac-color {
+      fill: #40a060;
+    }
+
+    .ac-color1 {
+      fill: #50e070;
+    }
+
+    .ac-color2 {
+      fill: #408fa0;
+    }
+  </style>
+  <path
+    d="M1 2 5 2Q6 2 6 3L6 6Q6 7 5 7L3 7Q3 13 9 13L9 11Q9 10 10 10L13 10Q14 10 14 11L14 15Q14 16 13 16L9 16Q0 16 0 7L0 3Q0 2 1 2"
+    class="ac-color" id="path19" />
+  <path
+    d="M1 2 5 2Q6 2 6 3L6 6Q6 7 5 7L0 7Q0 16 9 16L9 11Q9 10 10 10L13 10Q14 10 14 11L14 15Q14 16 13 16L9 16Q0 16 0 7L0 3Q0 2 1 2"
+    class="ac-color1" id="path33" />
+  <path d="M9 5Q11 5 11 7L12 7Q12 4 9 4L9 5M9 2Q14 2 14 7L13 7Q13 3 9 3L9 2M9 0Q16 0 16 7L15 7Q15 1 9 1L9 0"
+    class="ac-color2" id="path33" />
+</svg>

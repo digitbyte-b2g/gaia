@@ -1,0 +1,20 @@
+{
+  "version": "2.0",
+  "name": "Test Sensors",
+  "short_name": "test-sensors",
+  "description": "Tests basic device sensors includes accelerometer and gyroscope",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/sensor.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "developer": {
+      "name": "dougt",
+      "url": "http://www.mozilla.org"
+    }
+  }
+}

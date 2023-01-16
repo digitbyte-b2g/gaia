@@ -1,0 +1,68 @@
+<element name="wifi" extends="section">
+  <template>
+
+    <header>
+      <a href="#" class="icon icon-back" action="back" data-href="#root"></a>
+      <h1 data-l10n-id="wifi-header"></h1>
+    </header>
+
+    <div class="gaia-list">
+      <ul>
+        <li class="wifi-enabled">
+          <label class="pack-switch">
+            <input type="checkbox" data-ignore>
+            <span data-l10n-id="wifi"></span>
+          </label>
+        </li>
+        <li hidden>
+          <gaia-checkbox name="wifi.notification">
+            <label data-l10n-id="networkNotification"></label>
+          </gaia-checkbox>
+          <small data-l10n-id="networkNotification-expl" class="explanation"></small>
+        </li>
+      </ul>
+
+      <header data-l10n-id="advancedSettings"></header>
+      <ul>
+        <li>
+          <label class="pack-switch">
+            <input type="checkbox" name="wifi.sleepMode">
+            <div>
+              <span data-l10n-id="wifi-sleep"></span>
+              <details data-l10n-id="wifi-sleep-description"></details>
+            </div>
+          </label>
+        </li>
+        <li>
+          <a class="menu-item" href="#wifi-manageNetworks">
+            <span data-l10n-id="manageNetworks"></span>
+          </a>
+        </li>
+        <li>
+          <a class="menu-item" href="#wifi-manageCertificates">
+            <span data-l10n-id="manageCertificates"></span>
+          </a>
+        </li>
+        <li class="wps-column">
+          <a class="menu-item" href="#">
+            <span data-l10n-id="wpsMessage"></span>
+            <small data-l10n-id="wpsDescription2"></small>
+          </a>
+        </li>
+      </ul>
+
+      <header data-l10n-id="availableNetworks"></header>
+      <ul class="wifi-availableNetworks" data-state="off">
+        <li class="explanation" data-state="off" data-l10n-id="wifi-disabled"></li>
+        <li data-state="on">
+          <progress></progress><span data-l10n-id="scanning"></span>
+        </li>
+        <li data-state="ready">
+          <button data-l10n-id="scanNetworks"></button>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/wifi/panel"></panel>
+  </template>
+</element>

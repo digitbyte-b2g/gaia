@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "name": "Віджет погоди",
+  "short_name": "Віджет погоди",
+  "description": "Віджет погоди",
+  "start_url": "/widget.html",
+  "icons": [
+    {
+      "src": "/style/icons/Blank.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "widget"
+  }
+}

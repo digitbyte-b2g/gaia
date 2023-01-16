@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Privileged app</title>
+    <meta name="description" content="A privileged app stub" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="var(--background, #e7e7e7)" />
+    <link rel="stylesheet" href="css/gaia-icons/gaia-icons.css">
+    <link rel="stylesheet" href="css/app.css" />
+    <script type="text/javascript" src="js/app.js" defer></script>
+    <script type="text/javascript" src="js/recorder.js" defer></script>
+
+    <link rel="prefetch" type="application/l10n" href="data/locales.ini" />
+    <script type="text/javascript" src="js/libs/l10n.js" defer></script>
+  </head>
+  <body>
+    <div class="content recorder">
+      <h1 id="timer">00:00:00</h1>
+      <audio id="microphone" autoplay></audio>
+      <canvas id="soundwaves"></canvas>
+      <menu class="options">
+        <button id="record-button"></button>
+        <button id="request-button" data-icon="download"></button>
+      </menu>
+    </div>
+  </body>
+</html>

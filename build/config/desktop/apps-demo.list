@@ -1,0 +1,6 @@
+shared
+webapps/*
+outoftree_apps/*
+hosted_apps/*
+dev_webapps/crystalskull
+dev_webapps/cubevid

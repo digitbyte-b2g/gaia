@@ -1,0 +1,30 @@
+<element name="call-cf-mobile-busy-settings" extends="section">
+  <template>
+
+    <header>
+      <button type="reset"><span data-icon="close" data-l10n-id="closeButton"></span></button>
+      <h1 data-l10n-id="callForwarding-header"></h1>
+      <menu type="toolbar">
+        <button type="submit"><span data-l10n-id="ok"></span></button>
+      </menu>
+    </header>
+
+    <div class="gaia-list">
+      <ul id="cf-mobilebusy-advanced">
+        <li>
+          <p data-l10n-id="cf-numberWhenBusy"></p>
+          <input type="tel" id="cf-mobilebusy-number" data-setting="ril.cf.mobilebusy.number"/>
+        </li>
+        <li>
+          <gaia-switch data-setting="ril.cf.mobilebusy.enabled">
+            <label data-l10n-id="callForwardingForward"></label>
+            <details data-l10n-id="callForwardingMobileBusyShort"></details>
+          </gaia-switch>
+        </li>
+      </ul>
+    </div>
+
+    <panel data-path="panels/call_forwarding_details/panel"></panel>
+
+  </template>
+</element>

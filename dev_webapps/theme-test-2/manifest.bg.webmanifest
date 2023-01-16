@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "name": "Тестова тема 2",
+  "short_name": "Тестова тема 2",
+  "description": "Тестова тема 2",
+  "start_url": "/index.html",
+  "b2g_features": {
+    "core": true,
+    "role": "theme",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    }
+  }
+}

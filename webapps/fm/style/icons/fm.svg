@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 16 16"
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg34"
+   sodipodi:docname="fm.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs23">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter35"
+       x="-0.24"
+       y="-0.028235295"
+       width="1.48"
+       height="1.08">
+      <feFlood
+         flood-opacity="0.501961"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood25" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite27" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.1"
+         result="blur"
+         id="feGaussianBlur29" />
+      <feOffset
+         dx="0"
+         dy="0.2"
+         result="offset"
+         id="feOffset31" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite33" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter65"
+       x="-0.040000001"
+       y="-0.24"
+       width="1.08"
+       height="1.68">
+      <feFlood
+         flood-opacity="0.501961"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood55" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite57" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.2"
+         result="blur"
+         id="feGaussianBlur59" />
+      <feOffset
+         dx="0"
+         dy="0.4"
+         result="offset"
+         id="feOffset61" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite63" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter95"
+       x="-0.015"
+       y="-0.073333334"
+       width="1.03"
+       height="1.1133333">
+      <feFlood
+         flood-opacity="0.501961"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood85" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite87" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.1"
+         result="blur"
+         id="feGaussianBlur89" />
+      <feOffset
+         dx="0"
+         dy="-0.2"
+         result="offset"
+         id="feOffset91" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite93" />
+    </filter>
+  </defs>
+  <metadata
+     id="metadata40">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="884"
+     inkscape:window-height="480"
+     id="namedview36"
+     showgrid="false"
+     inkscape:zoom="14.75"
+     inkscape:cx="8.0338983"
+     inkscape:cy="8"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg34"
+     inkscape:pagecheckerboard="0" />
+  <linearGradient
+     id="g0"
+     x1="0%"
+     y1="0%"
+     x2="0%"
+     y2="100%">
+    <stop
+       offset="0%"
+       style="stop-color:#556a74;stop-opacity:1"
+       id="stop2" />
+    <stop
+       offset="100%"
+       style="stop-color:#27373f;stop-opacity:1"
+       id="stop4" />
+  </linearGradient>
+  <linearGradient
+     id="g1"
+     x1="0%"
+     y1="0%"
+     x2="0%"
+     y2="100%">
+    <stop
+       offset="0%"
+       style="stop-color:#708d9b;stop-opacity:1"
+       id="stop7" />
+    <stop
+       offset="100%"
+       style="stop-color:#445e6a;stop-opacity:1"
+       id="stop9" />
+  </linearGradient>
+  <linearGradient
+     id="g2"
+     x1="0%"
+     y1="0%"
+     x2="0%"
+     y2="100%">
+    <stop
+       offset="0%"
+       style="stop-color:#a0b4be;stop-opacity:1"
+       id="stop12" />
+    <stop
+       offset="100%"
+       style="stop-color:#68808c;stop-opacity:1"
+       id="stop14" />
+  </linearGradient>
+  <linearGradient
+     id="g3"
+     x1="0%"
+     y1="0%"
+     x2="0%"
+     y2="100%">
+    <stop
+       offset="0%"
+       style="stop-color:#ff4040;stop-opacity:1"
+       id="stop17" />
+    <stop
+       offset="100%"
+       style="stop-color:#c02080;stop-opacity:1"
+       id="stop19" />
+  </linearGradient>
+  <style
+     id="style22">
+    .ac-color {
+      fill: url(#g0);
+    }
+    .ac-color1 {
+      fill: url(#g1);
+    }
+    .ac-color2 {
+      fill: url(#g2);
+    }
+    .ac-color3 {
+      fill: url(#g3);
+    }
+  </style>
+  <path
+     d="M4 0 12 0Q16 0 16 4L16 12Q16 16 12 16L4 16Q0 16 0 12L0 4Q0 0 4 0"
+     class="ac-color"
+     id="path24" />
+  <path
+     d="M1 4 2 4 2 7 1 7 1 4M3 3 4 3 4 8 3 8 3 3M5 4 6 4 6 7 5 7 5 4M7 3 8 3 8 8 7 8 7 3M9 4 10 4 10 7 9 7 9 4M11 3 12 3 12 8 11 8 11 3M13 4 14 4 14 7 13 7 13 4M15 3 16 3 16 8 15 8 15 3"
+     class="ac-color2"
+     id="path30" />
+  <path
+     d="M9 1.5 10 1.5 10 10 9 10 9 1.5"
+     class="ac-color3"
+     id="path32"
+     style="filter:url(#filter35)" />
+  <path
+     d="M0 10 16 10 16 12Q16 16 12 16L4 16Q0 16 0 12L0 10"
+     class="ac-color1"
+     id="path26"
+     style="filter:url(#filter95)" />
+  <path
+     d="M3 12A1 1 0 003 14 1 1 0 003 12M13 12A1 1 0 0013 14 1 1 0 0013 12"
+     class="ac-color2"
+     id="path28"
+     style="filter:url(#filter65)" />
+</svg>

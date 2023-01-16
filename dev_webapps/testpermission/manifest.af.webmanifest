@@ -1,0 +1,19 @@
+{
+  "version": "2.0",
+  "name": "Toets Toestemmings",
+  "short_name": "Toets Toestemmings",
+  "description": "Toets Toestemmings",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "start_url": "/index.html",
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "amac"
+    },
+    "permissions": {
+      "webapps-manage": {},
+      "permissions": {}
+    }
+  }
+}

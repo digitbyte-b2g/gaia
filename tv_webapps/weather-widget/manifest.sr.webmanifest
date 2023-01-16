@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "name": "Веатхер Видгет",
+  "short_name": "Веатхер Видгет",
+  "description": "Веатхер Видгет",
+  "start_url": "/widget.html",
+  "icons": [
+    {
+      "src": "/style/icons/Blank.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "widget"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "version": "2.0",
+  "name": "Тест Сенсорс",
+  "short_name": "Тест Сенсорс",
+  "description": "Тест Сенсорс",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/sensor.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "developer": {
+      "name": "dougt",
+      "url": "http://www.mozilla.org"
+    }
+  }
+}
