@@ -1,0 +1,29 @@
+{
+  "version": "2.0",
+  "name": "Pult",
+  "short_name": "Pult",
+  "description": "Pult",
+  "lang": "en-US",
+  "orientation": "landscape",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/remote_control.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "settings": {
+        "access": "readwrite"
+      },
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    }
+  }
+}

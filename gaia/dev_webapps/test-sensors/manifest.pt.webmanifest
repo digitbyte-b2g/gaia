@@ -1,0 +1,20 @@
+{
+  "version": "2.0",
+  "name": "Sensores de teste",
+  "short_name": "Sensores de teste",
+  "description": "Sensores de teste",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/sensor.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "developer": {
+      "name": "dougt",
+      "url": "http://www.mozilla.org"
+    }
+  }
+}

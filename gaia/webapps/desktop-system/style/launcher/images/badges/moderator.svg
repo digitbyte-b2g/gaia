@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 16 16"
+   width="16"
+   height="16"
+   fill-opacity="1"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="moderator.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter837"
+       x="-0.3"
+       y="-1.3666667"
+       width="1.6"
+       height="3.9">
+      <feFlood
+         flood-opacity="0.25098"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood827" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite829" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.5"
+         result="blur"
+         id="feGaussianBlur831" />
+      <feOffset
+         dx="0"
+         dy="0.5"
+         result="offset"
+         id="feOffset833" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="fbSourceGraphic"
+         id="feComposite835" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix857" />
+      <feFlood
+         id="feFlood859"
+         flood-opacity="0.25098"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         in="fbSourceGraphic" />
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite861"
+         in="flood"
+         operator="out"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur863"
+         in="composite1"
+         stdDeviation="0.5"
+         result="blur" />
+      <feOffset
+         id="feOffset865"
+         dx="0"
+         dy="0.5"
+         result="offset" />
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite867"
+         in="offset"
+         operator="atop"
+         result="fbSourceGraphic" />
+      <feColorMatrix
+         result="fbSourceGraphicAlpha"
+         in="fbSourceGraphic"
+         values="0 0 0 -1 0 0 0 0 -1 0 0 0 0 -1 0 0 0 0 1 0"
+         id="feColorMatrix887" />
+      <feFlood
+         id="feFlood889"
+         flood-opacity="0.25098"
+         flood-color="rgb(255,255,255)"
+         result="flood"
+         in="fbSourceGraphic" />
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite891"
+         in="flood"
+         operator="out"
+         result="composite1" />
+      <feGaussianBlur
+         id="feGaussianBlur893"
+         in="composite1"
+         stdDeviation="0.5"
+         result="blur" />
+      <feOffset
+         id="feOffset895"
+         dx="0"
+         dy="-0.5"
+         result="offset" />
+      <feComposite
+         in2="fbSourceGraphic"
+         id="feComposite897"
+         in="offset"
+         operator="atop"
+         result="composite2" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="21.322647"
+     inkscape:cx="16.672414"
+     inkscape:cy="8.9810615"
+     inkscape:window-width="1600"
+     inkscape:window-height="831"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <path
+     d="M1 3 4 6 7 3Q8 2 9 3L12 6 15 3Q16 2 16 3.25L16 12Q16 14 14 14L2 14Q0 14 0 12L0 3.25Q0 2 1 3"
+     fill="#e79000"
+     id="path2" />
+  <path
+     d="M8 8A1 1 0 008 11 1 1 0 008 8M3 9A1 1 0 003 11 1 1 0 003 9M13 9A1 1 0 0013 11 1 1 0 0013 9"
+     fill="#00a0e8"
+     id="path4"
+     style="filter:url(#filter837)" />
+</svg>

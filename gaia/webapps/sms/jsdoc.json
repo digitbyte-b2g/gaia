@@ -1,0 +1,24 @@
+{
+  "name": "sms",
+  "tags": {
+    "dictionaries": ["jsdoc"]
+  },
+  "source": {
+    "include": [
+      "webapps/sms/views/conversation/js/**/*.js",
+      "webapps/sms/views/inbox/js/**/*.js",
+      "webapps/sms/views/new_message/js/**/*.js",
+      "webapps/sms/views/shared/js/**/*.js",
+      "webapps/sms/services/js/**/*.js"
+    ]
+  },
+  "plugins": [
+    "plugins/markdown",
+    "plugins/summarize"
+  ],
+  "opts": {
+    "private": true,
+    "recurse": true,
+    "destination": "docs/sms"
+  }
+}

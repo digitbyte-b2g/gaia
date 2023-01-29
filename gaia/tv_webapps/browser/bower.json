@@ -1,0 +1,23 @@
+{
+  "name": "browser",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mozilla-b2g/gaia/tree/master/tv_apps/browser",
+  "description": "Smart Screen Browser App",
+  "main": "index.html",
+  "license": "MPL",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "evt": "fxos-components/evt#~0.4.0",
+    "fxos-tv-button": "fxos-components/fxos-tv-button",
+    "fxos-tv-icons": "fxos-components/fxos-tv-icons",
+    "fxos-tv-modal-dialog": "fxos-components/fxos-tv-modal-dialog",
+    "js-spatial-navigation": "luke-chang/js-spatial-navigation"
+  }
+}

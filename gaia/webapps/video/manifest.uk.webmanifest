@@ -1,0 +1,110 @@
+{
+  "version": "2.0",
+  "name": "відео",
+  "short_name": "відео",
+  "description": "відео",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/video_16.png",
+      "type": "image/png",
+      "size": "16x16"
+    },
+    {
+      "src": "/style/icons/video_32.png",
+      "type": "image/png",
+      "size": "32x32"
+    },
+    {
+      "src": "/style/icons/video_48.png",
+      "type": "image/png",
+      "size": "48x48"
+    },
+    {
+      "src": "/style/icons/video_64.png",
+      "type": "image/png",
+      "size": "64x64"
+    },
+    {
+      "src": "/style/icons/video_128.png",
+      "type": "image/png",
+      "size": "128x128"
+    },
+    {
+      "src": "/style/icons/video_256.png",
+      "type": "image/png",
+      "size": "256x256"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "themeable": {},
+      "device-storage:pictures": {
+        "access": "readwrite"
+      },
+      "device-storage:videos": {
+        "access": "readwrite"
+      },
+      "device-storage:sdcard": {
+        "access": "readonly"
+      },
+      "audio-channel-content": {},
+      "nfc-share": {},
+      "settings": {
+        "access": "readonly"
+      },
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    },
+    "activities": {
+      "pick": {
+        "filters": {
+          "type": [
+            "video/*",
+            "video/webm",
+            "video/mp4",
+            "video/3gpp",
+            "video/3gpp2",
+            "video/ogg"
+          ]
+        },
+        "disposition": "inline",
+        "returnValue": true,
+        "href": "/index.html#pick"
+      },
+      "view": {
+        "filters": {
+          "type": [
+            "video/webm",
+            "video/mp4",
+            "video/3gpp",
+            "video/3gpp2",
+            "video/ogg"
+          ]
+        },
+        "href": "view.html",
+        "disposition": "inline",
+        "returnValue": true
+      },
+      "open": {
+        "filters": {
+          "type": [
+            "video/webm",
+            "video/mp4",
+            "video/3gpp",
+            "video/3gpp2",
+            "video/ogg"
+          ]
+        },
+        "href": "view.html",
+        "disposition": "inline",
+        "returnValue": true
+      }
+    }
+  }
+}

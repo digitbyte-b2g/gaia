@@ -1,0 +1,167 @@
+/**
+ * BiDi note: because this stylesheet is 'scoped', instead of:
+ *     html[dir="rtl"] #volume { ... }
+ * we must use:
+ *     #volume:-moz-dir(rtl) { ... }
+ */
+
+#volume {
+  text-align: center;
+  position: absolute;
+  top: 4.5rem;
+  left: 1rem;
+  right: unset;
+  height: 18rem;
+  -moz-transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+  visibility: hidden;
+  background: var(--background-plus, #fff);
+  pointer-events: auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.3);
+  transform: translateX(calc(-100% - 2rem));
+  opacity: 0;
+  width: 4rem;
+}
+
+#volume.visible {
+  visibility: visible;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#volume > span {
+  height: 4rem;
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+}
+#volume:-moz-dir(ltr) > span { float: left; }
+#volume:-moz-dir(rtl) > span { float: right; }
+
+#volume section {
+  overflow: hidden;
+  margin: 0;
+  margin-inline-start: 0;
+  height: 15rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* Default shows 15 sound pieces */
+#volume section div {
+  width: 100%!important;
+  height: 6.6%;
+  background: var(--background, #e7e7e7);
+  box-sizing: border-box;
+  flex: 1;
+}
+#volume:-moz-dir(ltr) section div { float: left; }
+#volume:-moz-dir(rtl) section div { float: right; }
+
+#volume section div:first-child {
+  border: none;
+}
+
+/* Last visible bar */
+#volume section div:last-child {
+  display: none;
+}
+
+#volume section div.active {
+  background: var(--accent-color, #0061e0);
+}
+
+#volume.mute section div {
+  background: var(--background, #e7e7e7);
+}
+
+#volume span {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin: 0.5rem;
+}
+#volume:-moz-dir(ltr) span { float: left; }
+#volume:-moz-dir(rtl) span { float: right; }
+
+/* Icon states */
+#volume span.channel-type {
+  background-size: 2.4rem auto;
+  filter: var(--statusbar-filter, url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'invert\'><feColorMatrix in=\'SourceGraphic\' color-interpolation-filters=\'sRGB\' type=\'matrix\' values=\'1 -1 0.3019 0 0 0 0.3019 0 0 0 0 0 0.3019 0 0 0 0 0 1 0\'/></filter></svg>#invert"));
+}
+
+/* Telephony channel, just shows 6 progress pieces */
+#volume[data-channel="telephony"] section div {
+  width: 16.5%!important;
+}
+
+/* First always keep active */
+#volume[data-channel="telephony"] section div:first-child {
+  background: var(--accent-color, #0061e0);
+}
+
+/* Last visible bar */
+#volume[data-channel="telephony"] section div:nth-child(n+7) {
+  display: none;
+}
+
+#volume[data-channel="telephony"] span.channel-type {
+  background-image: url('images/telephony_normal.png');
+}
+
+/* bt_sco channel, shows 16 (all of them) progress pieces */
+#volume[data-channel="bt_sco"] section div {
+  width: 6.25%!important;
+}
+
+/* First always keep active */
+#volume[data-channel="bt_sco"] section div:first-child {
+  margin-inline-start: 0;
+  background: var(--accent-color, #0061e0);
+}
+
+#volume[data-channel="bt_sco"] section div:nth-last-child(2) {
+  border-radius: 0;
+}
+
+/* Last visible bar */
+#volume[data-channel="bt_sco"] section div:last-child {
+  display: block;
+}
+
+#volume[data-channel="bt_sco"] span.channel-type {
+  background-image: url('images/telephony_normal.png');
+}
+
+/* Notification channel */
+#volume[data-channel="notification"] span.channel-type {
+  background-image: url('images/ringer-notifications_normal.png');
+}
+
+#volume[data-channel="notification"].mute span.channel-type {
+  /* Use the same image as the content channel to sync with the status bar */
+  background-image: url('images/media_silent.png');
+}
+
+#volume[data-channel="notification"].mute.vibration span.channel-type {
+  background-image: url('images/ringer-notifications_vibrate.png');
+}
+
+/* Alarm channel */
+#volume[data-channel="alarm"] span.channel-type {
+  background-image: url('images/alarm_normal.png');
+}
+
+#volume[data-channel="alarm"].mute span.channel-type {
+  background-image: url('images/alarm_silent.png');
+}
+
+/* Content channel */
+#volume[data-channel="content"] span.channel-type {
+  background-image: url('images/media_normal.png');
+}
+
+#volume[data-channel="content"].mute span.channel-type {
+  background-image: url('images/media_silent.png');
+}

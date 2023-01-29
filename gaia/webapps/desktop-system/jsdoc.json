@@ -1,0 +1,30 @@
+{
+  "name": "system",
+  "tags": {
+    "dictionaries": ["jsdoc"]
+  },
+  "source": {
+    "include": [
+      "!webapps/system/js/c*.js",
+      "!webapps/system/js/t*.js",
+      "webapps/system/js/*.js",
+      "webapps/system/js/devtools/*.js",
+      "webapps/system/js/download/*.js",
+      "webapps/system/js/migrators/*.js",
+      "webapps/system/js/remote/*.js",
+      "webapps/system/js/value_selector/*.js",
+      "webapps/system/fxa/js/**/*.js",
+      "webapps/system/lockscreen/js/**/*.js",
+      "webapps/system/mobile_id/js/**/*.js"
+    ]
+  },
+  "plugins": [
+    "plugins/markdown",
+    "plugins/summarize"
+  ],
+  "opts": {
+    "private": true,
+    "recurse": true,
+    "destination": "docs/system"
+  }
+}

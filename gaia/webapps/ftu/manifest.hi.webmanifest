@@ -1,0 +1,84 @@
+{
+  "version": "2.0",
+  "name": "एफटीयू",
+  "short_name": "एफटीयू",
+  "description": "एफटीयू",
+  "lang": "en-US",
+  "orientation": "default",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/ftu_16.png",
+      "type": "image/png",
+      "size": "16x16"
+    },
+    {
+      "src": "/style/icons/ftu_32.png",
+      "type": "image/png",
+      "size": "32x32"
+    },
+    {
+      "src": "/style/icons/ftu_48.png",
+      "type": "image/png",
+      "size": "48x48"
+    },
+    {
+      "src": "/style/icons/ftu_64.png",
+      "type": "image/png",
+      "size": "64x64"
+    },
+    {
+      "src": "/style/icons/ftu_128.png",
+      "type": "image/png",
+      "size": "128x128"
+    },
+    {
+      "src": "/style/icons/ftu_256.png",
+      "type": "image/png",
+      "size": "256x256"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "system",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "themeable": {},
+      "telephony": {},
+      "contacts": {
+        "access": "readwrite"
+      },
+      "mobileconnection": {},
+      "settings": {
+        "access": "readwrite"
+      },
+      "systemXHR": {},
+      "wifi-manage": {},
+      "time": {},
+      "device-storage:sdcard": {
+        "access": "readcreate"
+      },
+      "phonenumberservice": {},
+      "webapps-manage": {},
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    },
+    "datastores-owned": {
+      "Basket_Newsletter": {
+        "description": "Email address for sending newsletter"
+      }
+    },
+    "datastores-access": {
+      "Import_Status_Data": {
+        "readonly": false,
+        "description": "Import status data shared between FTU and Contacts"
+      },
+      "icons": {
+        "readonly": true,
+        "description": "Retrieve cached website icons."
+      }
+    }
+  }
+}

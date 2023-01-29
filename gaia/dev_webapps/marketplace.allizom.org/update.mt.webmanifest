@@ -1,0 +1,40 @@
+{
+  "version": "2.0",
+  "name": "Stadju",
+  "short_name": "Stadju",
+  "description": "Stadju",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/60.png",
+      "type": "image/png",
+      "size": "60x60"
+    },
+    {
+      "src": "/90.png",
+      "type": "image/png",
+      "size": "90x90"
+    },
+    {
+      "src": "/120.png",
+      "type": "image/png",
+      "size": "120x120"
+    },
+    {
+      "src": "/128.png",
+      "type": "image/png",
+      "size": "128x128"
+    },
+    {
+      "src": "/256.png",
+      "type": "image/png",
+      "size": "256x256"
+    }
+  ],
+  "b2g_features": {
+    "developer": {
+      "name": "Mozilla",
+      "url": "http://mozilla.org"
+    }
+  }
+}

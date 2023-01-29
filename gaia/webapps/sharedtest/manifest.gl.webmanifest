@@ -1,0 +1,24 @@
+{
+  "version": "2.0",
+  "name": "Probas compartidas",
+  "short_name": "Probas compartidas",
+  "description": "Probas compartidas",
+  "lang": "en-US",
+  "orientation": "portrait-primary",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/Blank.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "role": "system",
+    "developer": {
+      "url": "https://github.com/mozilla-b2g/gaia",
+      "name": "The Gaia Team"
+    },
+    "permissions": {}
+  }
+}

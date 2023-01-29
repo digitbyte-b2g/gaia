@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "name": "உடைந்த தீம் 3",
+  "short_name": "உடைந்த தீம் 3",
+  "description": "உடைந்த தீம் 3",
+  "start_url": "/index.html",
+  "b2g_features": {
+    "core": true,
+    "role": "theme",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    }
+  }
+}

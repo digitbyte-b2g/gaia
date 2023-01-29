@@ -1,0 +1,79 @@
+html,
+body {
+  cursor: url(cursor.png) 0 0, default;
+}
+
+input,
+textarea {
+  cursor: url(text.png) 6 13, text;
+}
+
+a,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="date"],
+input[type="time"] {
+  cursor: url(pointer.png) 8 0, pointer;
+}
+
+/* System */
+.appWindow > .titlebar-grippy,
+.appWindow > .resize-bottomright {
+  cursor: url(move.png) 13 13, move;
+}
+
+.appWindow > .resize-right {
+  cursor: url(move-x.png) 13 13, col-resize;
+}
+
+.appWindow > .resize-bottom {
+  cursor: url(move-y.png) 13 13, row-resize;
+}
+
+.busy,
+.busy * {
+  cursor: url(busy.png) 13 13, progress;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  html,
+  body {
+    cursor: url(light/cursor.png) 0 0, default;
+  }
+
+  input,
+  textarea {
+    cursor: url(light/text.png) 6 13, text;
+  }
+
+  a,
+  button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  input[type="date"],
+  input[type="time"] {
+    cursor: url(light/pointer.png) 8 0, pointer;
+  }
+
+  /* System */
+  .appWindow > .titlebar-grippy,
+  .appWindow > .resize-bottomright {
+    cursor: url(light/move.png) 13 13, move;
+  }
+
+  .appWindow > .resize-right {
+    cursor: url(light/move-x.png) 13 13, col-resize;
+  }
+
+  .appWindow > .resize-bottom {
+    cursor: url(light/move-y.png) 13 13, row-resize;
+  }
+
+  .busy,
+  .busy * {
+    cursor: url(light/busy.png) 13 13, progress;
+  }
+}

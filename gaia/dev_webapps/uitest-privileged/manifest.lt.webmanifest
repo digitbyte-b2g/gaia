@@ -1,0 +1,70 @@
+{
+  "version": "2.0",
+  "name": "UI testai – privilegijuota programa",
+  "short_name": "UI testai – privilegijuota programa",
+  "description": "UI testai – privilegijuota programa",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/ui-test_84.png",
+      "type": "image/png",
+      "size": "84x84"
+    },
+    {
+      "src": "/style/icons/ui-test_126.png",
+      "type": "image/png",
+      "size": "126x126"
+    },
+    {
+      "src": "/style/icons/ui-test_142.png",
+      "type": "image/png",
+      "size": "142x142"
+    },
+    {
+      "src": "/style/icons/ui-test_189.png",
+      "type": "image/png",
+      "size": "189x189"
+    },
+    {
+      "src": "/style/icons/ui-test_284.png",
+      "type": "image/png",
+      "size": "284x284"
+    }
+  ],
+  "b2g_features": {
+    "developer": {
+      "name": "The TW QA Team",
+      "url": "https://github.com/Mozilla-TWQA",
+      "e-mail": "tw-qa@mozilla.com"
+    },
+    "permissions": {
+      "audio-capture": {},
+      "video-capture": {},
+      "contacts": {
+        "access": "readwrite"
+      },
+      "device-storage:music": {
+        "access": "readwrite"
+      },
+      "device-storage:pictures": {
+        "access": "readwrite"
+      },
+      "device-storage:sdcard": {
+        "access": "readwrite"
+      },
+      "device-storage:videos": {
+        "access": "readwrite"
+      },
+      "geolocation": {},
+      "mobileid": {},
+      "settings:wallpaper.image": {
+        "access": "readwrite"
+      }
+    },
+    "messages": [
+      {
+        "notification": "/index.html"
+      }
+    ]
+  }
+}

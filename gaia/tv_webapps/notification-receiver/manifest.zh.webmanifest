@@ -1,0 +1,33 @@
+{
+  "version": "2.0",
+  "name": "通知接收器",
+  "short_name": "通知接收器",
+  "description": "通知接收器",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/appic_iot_90.png",
+      "type": "image/png",
+      "size": "90x90"
+    },
+    {
+      "src": "/style/icons/appic_iot_135.png",
+      "type": "image/png",
+      "size": "135x135"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "system",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "systemXHR": {},
+      "desktop-notification": {},
+      "presentation": {}
+    }
+  }
+}

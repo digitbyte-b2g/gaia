@@ -1,0 +1,32 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/env": true,
+    "**/venv": true,
+    "**/shared/test/integration/node_modules": true,
+    "**/b2g": true,
+    "**/b2g_sdk": true,
+    "**/profile": true,
+    "**/profile*": true,
+    "**/outoftree_apps": true,
+    "**/toolkit/test-agent/node_modules": true,
+    "**/distribution": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/env/**": true,
+    "**/venv/**": true,
+    "env-*": true,
+    "**/shared/test/integration/node_modules/**": true,
+    "**/b2g/**": true,
+    "**/b2g_sdk/**": true,
+    "**/profile/**": true,
+    "**/profile*/**": true,
+    "**/outoftree_apps/**": true,
+    "**/toolkit/test-agent/node_modules/**": true,
+    "**/distribution/**": true
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "name": "Привилегировано приложение",
+  "short_name": "Привилегировано приложение",
+  "description": "Привилегировано приложение",
+  "lang": "en",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/img/icons/icon16x16.png",
+      "type": "image/png",
+      "size": "16x16"
+    },
+    {
+      "src": "/img/icons/icon48x48.png",
+      "type": "image/png",
+      "size": "48x48"
+    },
+    {
+      "src": "/img/icons/icon60x60.png",
+      "type": "image/png",
+      "size": "60x60"
+    },
+    {
+      "src": "/img/icons/icon128x128.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "developer": {
+      "name": "Your name",
+      "url": "http://example.com"
+    },
+    "permissions": {
+      "systemXHR": {
+        "description": "Required to load remote content"
+      }
+    }
+  }
+}

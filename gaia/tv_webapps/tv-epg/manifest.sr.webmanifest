@@ -1,0 +1,34 @@
+{
+  "version": "2.0",
+  "name": "ЕПГ",
+  "short_name": "ЕПГ",
+  "description": "ЕПГ",
+  "lang": "en-US",
+  "orientation": "landscape",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/ic_default_app.png",
+      "type": "image/png",
+      "size": "354x354"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "tv": {},
+      "webapps-manage": {},
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    },
+    "datastores-access": {
+      "home_cards": {
+        "access": "readonly",
+        "description": "Read card list"
+      }
+    }
+  }
+}

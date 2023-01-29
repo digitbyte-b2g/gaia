@@ -1,0 +1,298 @@
+/* ----------------------------------
+ * Value selector (Single & Multiple)
+ * ---------------------------------- */
+
+.value-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+/* Main dialog setup */
+[role="dialog"][data-type="value-selector"] {
+  background: var(--background-plus, #fff);
+  overflow: hidden;
+  position: absolute;
+  z-index: 100;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0 0 7rem;
+  color: var(--text-color, #333);
+  font-family: sans-serif;
+  border-radius: 1.5rem;
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.25), 0 0 0 calc(100vw + 100vh) var(--backdrop-color, rgba(0,0,0,0.5));
+  max-height: calc(100% - 12.5rem);
+}
+
+[role="dialog"][data-type="value-selector"] > section {
+  padding: 0 1.5rem;
+  box-sizing: padding-box;
+  width: 100%;
+  height: 100%;
+}
+
+[role="dialog"][data-type="value-selector"] h1 {
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 4.8rem;
+  color: var(--text-color, #333);
+  border-bottom: 0.1rem solid var(--background-theta, #e0e2e5);
+  background-color: var(--background, #e7e9ec);
+  margin: 0 -1.5rem;
+  padding: 0 3rem 1rem;
+  height: 4.8rem;
+  box-sizing: border-box;
+}
+
+/* Specific component code */
+[role="dialog"][data-type="value-selector"] [role="listbox"] {
+  position: relative;
+  padding: 0;
+  margin: 0 -1.5rem;
+  overflow: auto;
+  max-height: calc(100vh - 15.8rem);
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li {
+  margin: 0;
+  padding: 0 1.5rem;
+  height: auto;
+  list-style: none;
+  position: relative;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 3.9rem;
+  color: var(--text-color, #333);
+}
+
+html[dir="ltr"] [role="dialog"][data-type="value-selector"] [role="listbox"],
+html[dir="ltr"] [role="dialog"][data-type="value-selector"] [role="listbox"] li {
+  text-align: left;
+}
+html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"],
+html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li {
+  text-align: right;
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:first-child label {
+  border-top-color: transparent;
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li label {
+  outline: none;
+  display: block;
+  color: var(--text-color, #333);
+  border-top: 0.1rem solid #e7e9ec;
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li label span {
+  display: block;
+  padding: 1rem 1.5rem;
+  line-height: 2.8rem;
+  word-wrap: break-word;
+}
+
+/* Hovered status */
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:hover {
+  background-color: var(--translucent, rgba(0,0,0,0.05));
+}
+
+/* Pressed status */
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:active {
+  background-color: var(--translucent, rgba(0,0,0,0.1));
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:hover label,
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:active label,
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:hover + li label,
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:active + li label {
+  border-top-color: transparent;
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:hover label span,
+[role="dialog"][data-type="value-selector"] [role="listbox"] li:active label span {
+  background-image: none;
+}
+
+/* Subheaders */
+[role="dialog"][data-type="value-selector"] [role="listbox"] li[role="subheader"] {
+  border: none;
+  background-color: var(--background, #e7e9ec);
+  pointer-events: none;
+  -moz-user-select: none;
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li[role="subheader"] label {
+  color: #4d4d4d;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li[role="subheader"] label,
+[role="dialog"][data-type="value-selector"] [role="listbox"] li[role="subheader"] + li label {
+  border: none;
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li[role="subheader"] label span {
+  line-height: 2rem;
+}
+
+/* Checked status */
+[role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] label {
+  background-image: url(value_selector/images/icons/checked.png);
+  background-color: transparent;
+  background-size: 2.4rem;
+  background-repeat: no-repeat;
+}
+html[dir="ltr"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] label {
+  background-position: right 1.5rem top 50%;
+}
+html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] label {
+  background-position: left 1.5rem top 50%;
+}
+
+[role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] span {
+  color: var(--accent-color, #0061e0);
+}
+html[dir="ltr"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] span {
+  padding-right: 2.6rem;
+  margin-right: 1.5rem;
+}
+html[dir="rtl"] [role="dialog"][data-type="value-selector"] [role="listbox"] li[aria-selected="true"] span {
+  padding-left: 2.6rem;
+  margin-left: 1.5rem;
+}
+
+/* Menu & buttons setup */
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons {
+  white-space: nowrap;
+  margin: 0;
+  padding: 1.5rem;
+  background: var(--background, #e7e9ec);
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button {
+  width: calc((100% - 1rem) / 2);
+  font-family: sans-serif;
+  font-style: normal;
+  height: 4rem;
+  margin: 0 0 1rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  border-radius: 2rem;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  color: var(--text-color, #333);
+  text-align: center;
+  text-shadow: none;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Affirmative */
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.affirmative,
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.recommend {
+  background: var(--accent-color, #0061e0) linear-gradient(to bottom, transparent, rgba(0,0,0,0.125));
+  color: var(--accent-text-color, rgba(255,255,255,0.75));
+}
+
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.affirmative:hover,
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.recommend:hover {
+  background: var(--accent-color, #0061e0) linear-gradient(to bottom, rgba(255,255,255,0.125), transparent);
+}
+
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.affirmative:active,
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.recommend:active {
+  background: var(--accent-color, #0061e0) linear-gradient(to bottom, rgba(255,255,255,0.125), rgba(255,255,255,0.25));
+}
+
+[data-accent-scheme="light"] .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.affirmative:hover,
+[data-accent-scheme="light"] .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.recommend:hover {
+  background: var(--accent-color, #0061e0) linear-gradient(to bottom, rgba(0,0,0,0.125), transparent);
+}
+
+[data-accent-scheme="light"] .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.affirmative:active,
+[data-accent-scheme="light"] .value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.recommend:active {
+  background: var(--accent-color, #0061e0) linear-gradient(to bottom, rgba(0,0,0,0.125), rgba(0,0,0,0.25));
+}
+
+/* Hovered */
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button:hover {
+  background: var(--translucent, rgba(0,0,0,0.05));
+}
+
+/* Focused */
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button:focus-visible {
+  outline: var(--focus-outline);
+}
+
+/* Pressed */
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button:active {
+  background: var(--translucent, rgba(0,0,0,0.1));
+}
+
+/* Disabled */
+.value-selector > [role="dialog"][data-type="value-selector"] > menu.value-selector-buttons > button[disabled] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+button[disabled]::-moz-selection {
+  -moz-user-select: none;
+}
+
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button:last-child {
+  margin-inline-start: 1rem;
+}
+
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button,
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button:first-child {
+  margin: 0;
+}
+
+.value-selector > [role="dialog"][data-type="value-selector"] menu.value-selector-buttons button.full {
+  width: 100%;
+}
+
+@media screen and (min-width: 600px) and (min-height: 400px) {
+  /* Main dialog setup */
+  [role="dialog"][data-type="value-selector"] {
+    position: relative;
+    left: unset;
+    right: unset;
+    bottom: unset;
+    width: 40rem;
+    max-height: calc(100% - 16rem);
+  }
+
+  /* Specific component code */
+  [role="dialog"][data-type="value-selector"] [role="listbox"] {
+    max-height: calc(100vh - 19.3rem);
+  }
+}
+

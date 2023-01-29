@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 16 16"
+   width="16"
+   height="16"
+   fill="#00a0e8"
+   fill-opacity="1"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="verified.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs10">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter837"
+       x="-0.12"
+       y="-0.15"
+       width="1.24"
+       height="1.3625">
+      <feFlood
+         flood-opacity="0.25098"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood827" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite829" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0.5"
+         result="blur"
+         id="feGaussianBlur831" />
+      <feOffset
+         dx="0"
+         dy="0.5"
+         result="offset"
+         id="feOffset833" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite835" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="40.375"
+     inkscape:cx="7.9876161"
+     inkscape:cy="7.9876161"
+     inkscape:window-width="1600"
+     inkscape:window-height="831"
+     inkscape:window-x="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6" />
+  <path
+     d="M8 0A1 1 0 008 16 1 1 0 008 0"
+     fill="#00a0e8"
+     id="path2" />
+  <path
+     d="M3.75 8 6 10.5 12.26 4 13 4.75 6 12 3 8.75 3.75 8"
+     fill="#fff"
+     id="path4"
+     style="filter:url(#filter837)" />
+</svg>

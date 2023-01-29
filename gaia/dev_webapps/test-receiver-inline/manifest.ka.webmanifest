@@ -1,0 +1,49 @@
+{
+  "version": "2.0",
+  "name": "ტესტის მიმღები (შიდა)",
+  "short_name": "ტესტის მიმღები (შიდა)",
+  "description": "ტესტის მიმღები (შიდა)",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/test-receiver_84.png",
+      "type": "image/png",
+      "size": "84x84"
+    },
+    {
+      "src": "/style/icons/test-receiver_126.png",
+      "type": "image/png",
+      "size": "126x126"
+    },
+    {
+      "src": "/style/icons/test-receiver_142.png",
+      "type": "image/png",
+      "size": "142x142"
+    },
+    {
+      "src": "/style/icons/test-receiver_189.png",
+      "type": "image/png",
+      "size": "189x189"
+    },
+    {
+      "src": "/style/icons/test-receiver_284.png",
+      "type": "image/png",
+      "size": "284x284"
+    }
+  ],
+  "b2g_features": {
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "activities": {
+      "test": {
+        "filters": {
+          "type": "inline"
+        },
+        "disposition": "inline",
+        "returnValue": true
+      }
+    }
+  }
+}

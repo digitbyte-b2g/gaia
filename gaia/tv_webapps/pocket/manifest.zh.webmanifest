@@ -1,0 +1,18 @@
+{
+  "version": "2.0",
+  "name": "口袋",
+  "short_name": "口袋",
+  "description": "口袋",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/pocket_336.png",
+      "type": "image/png",
+      "size": "336x336"
+    }
+  ],
+  "b2g_features": {
+    "core": true
+  }
+}

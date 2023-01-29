@@ -1,0 +1,58 @@
+{
+  "version": "2.0",
+  "name": "Dar",
+  "short_name": "Dar",
+  "description": "Dar",
+  "lang": "en-US",
+  "orientation": "landscape",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/Blank.png",
+      "type": "image/png",
+      "size": "128x128"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "homescreen",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "webapps-manage": {},
+      "open-remote-window": {},
+      "systemXHR": {},
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    },
+    "activities": {
+      "pin": {
+        "filters": {
+          "manifestURL": {
+            "required": true
+          }
+        }
+      },
+      "unpin": {
+        "filters": {
+          "manifestURL": {
+            "required": true
+          }
+        }
+      }
+    },
+    "connections": {
+      "appdeck-channel": {
+        "description": "communications for app-deck to add/remove application cards",
+        "rules": {}
+      }
+    },
+    "datastores-owned": {
+      "home_cards": {
+        "access": "readwrite",
+        "description": "Stores all type of cards/decks/apps"
+      }
+    }
+  }
+}

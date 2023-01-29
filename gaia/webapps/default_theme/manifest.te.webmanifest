@@ -1,0 +1,15 @@
+{
+  "version": "2.0",
+  "name": "లైట్ థీమ్",
+  "short_name": "లైట్ థీమ్",
+  "description": "లైట్ థీమ్",
+  "start_url": "/index.html",
+  "b2g_features": {
+    "core": true,
+    "role": "theme",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    }
+  }
+}

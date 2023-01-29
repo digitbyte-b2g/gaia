@@ -1,0 +1,7 @@
+{
+  "origin": "https://www.youtube.com",
+  "manifestURL": "https://www.youtube.com/manifest.webapp",
+  "installOrigin": "https://marketplace.firefox.com",
+  "etag": "874c79c11395ca3477cf6c68b3f04820",
+  "external": true
+}

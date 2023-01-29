@@ -1,0 +1,101 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 10px;
+  background-color: var(--background-theta, #e0e0e0);
+  overflow: hidden;
+  -moz-user-select: none;
+}
+
+section[role="region"] {
+  width: 100%;
+  height: 100%;
+}
+
+article {
+  position: absolute;
+  top: 5rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  will-change: scroll-position;
+}
+
+ul[data-type="edit"] {
+  overflow: visible;
+}
+
+section[data-type="list"] li {
+  z-index: 1;
+  -moz-padding-start: 1.5rem;
+  margin: 0;
+  width: 100%;
+}
+
+li label {
+  background: none;
+}
+
+li:before {
+  /* This makes a highlight slightly *bigger* than the li so that it fills up
+     the whole list item. It causes a reflow, but that's not a big deal here. */
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+  width: calc(100% + 3rem);
+  height: 5.9rem; /* Subtract 0.1rem for the bottom border. */
+  z-index: -1;
+  border-radius: 0.9rem;
+  transition: background-color 0.2s;
+  content: '';
+}
+
+li:hover:before {
+  background-color: var(--translucent, rgba(0,0,0,0.05));
+  transition: none;
+}
+
+li:active:before {
+  background-color: var(--translucent-plus, rgba(0,0,0,0.1));
+  transition: none;
+}
+
+/*
+ * Overrides for shared lists.css styles.
+ * This will be removed with the transition to a gaia-list component in the future.
+ * These styles match the settings custom CSS list styles.
+ */
+section [data-type="list"] li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/**
+ * Override for shared lists.css style.
+ * This will be removed once we use the gaia-list component in the future.
+ */
+section [data-type="list"] li label bdi {
+  font-size: 1.8rem !important;
+}
+
+gaia-subheader {
+  background: none !important;
+  color: var(--text-color) !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0 4.2rem !important;
+  margin: 1rem 0 0;
+}
+
+@media screen and (min-width: 600px) {
+  gaia-subheader {
+    max-width: 788px;
+    margin: 1rem auto 0;
+    box-sizing: border-box;
+  }
+}

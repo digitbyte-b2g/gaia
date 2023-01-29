@@ -1,0 +1,45 @@
+{
+  "version": "2.0",
+  "name": "Apel de urgență",
+  "short_name": "Apel de urgență",
+  "description": "Apel de urgență",
+  "lang": "en-US",
+  "orientation": "default",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/dialer_126.png",
+      "type": "image/png",
+      "size": "126x126"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "role": "system",
+    "developer": {
+      "name": "The Gaia Team",
+      "url": "https://github.com/mozilla-b2g/gaia"
+    },
+    "permissions": {
+      "audio-channel-notification": {},
+      "audio-channel-system": {},
+      "themeable": {},
+      "telephony": {},
+      "mobileconnection": {},
+      "phonenumberservice": {},
+      "settings": {
+        "access": "readonly"
+      },
+      "contacts": {
+        "access": "readonly"
+      },
+      "moz-extremely-unstable-and-will-change-webcomponents": {}
+    },
+    "datastores-access": {
+      "ice_contacts": {
+        "readonly": true,
+        "description": "Contains references to in case of emergency contacts"
+      }
+    }
+  }
+}

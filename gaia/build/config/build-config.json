@@ -1,0 +1,6 @@
+{
+  "rebuildBlacklist": [
+    "webapps/calendar/js/presets.js",
+    "dev_webapps/test-agent/config.json"
+  ]
+}

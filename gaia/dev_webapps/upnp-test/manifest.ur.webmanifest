@@ -1,0 +1,22 @@
+{
+  "version": "2.0",
+  "name": "یو پی این پی ٹیسٹ",
+  "short_name": "یو پی این پی ٹیسٹ",
+  "description": "یو پی این پی ٹیسٹ",
+  "lang": "en-US",
+  "start_url": "/index.html",
+  "icons": [
+    {
+      "src": "/style/icons/default_126.png",
+      "type": "image/png",
+      "size": "126x126"
+    }
+  ],
+  "b2g_features": {
+    "core": true,
+    "permissions": {
+      "systemXHR": {},
+      "udp-socket": {}
+    }
+  }
+}

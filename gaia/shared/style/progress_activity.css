@@ -1,0 +1,141 @@
+/* ----------------------------------
+ * Progress + activities
+ * ---------------------------------- */
+
+/* Spinner */
+progress:not([value]) {
+  background: url(progress_activity/images/ui/default.png) no-repeat left center / cover;
+  animation: rotate 0.9s steps(30) infinite;
+  width: 2.9rem;
+  height: 2.9rem;
+  border: none;
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  border-radius: 50%;
+}
+
+progress:not([value]).light {
+  background-image: url(progress_activity/images/ui/light.png);
+}
+
+progress:not([value])::-moz-progress-bar {
+ background: none;
+}
+
+/* Progress bar */
+progress[value] {
+  width: 100%;
+  background: #333;
+  border: none;
+  border-radius: 0.3rem;
+  height: 0.6rem;
+  display: block;
+}
+
+progress[value]::-moz-progress-bar {
+  background: #40c040;
+  border-radius: 0.3rem;
+}
+
+section[role="region"]:not(.bb-steps) > progress[value],
+section[role="region"]:not(.bb-steps) > progress[value]::-moz-progress-bar,
+section[role="region"] :not(.bb-steps) progress[value],
+section[role="region"] :not(.bb-steps) progress[value]::-moz-progress-bar {
+  border-radius: 0;
+}
+
+/* Progress bar */
+progress[value].pack-activity {
+  background-color: var(--accent-color, #0061e0);
+  background-size: 50%;
+}
+html[dir="ltr"] progress[value].pack-activity {
+  animation: 1.5s move-right linear infinite;
+  background-image: repeating-linear-gradient( 90deg, rgba(0,0,0,0.2), rgba(255,255,255,0.5) calc(100% - 1rem), rgba(0,0,0,0.2));
+}
+html[dir="rtl"] progress[value].pack-activity {
+  animation: 1.5s move-left linear infinite;
+  background-image: repeating-linear-gradient( -90deg, rgba(0,0,0,0.2), rgba(255,255,255,0.5) calc(100% - 1rem), rgba(0,0,0,0.2));
+}
+
+/* Labels */
+p[role="status"] {
+  padding: 0.5rem;
+  font-weight: 300;
+  font-size: 2.25rem;
+  line-height: 1.4em;
+  color: var(--text-color, #333);
+}
+
+p[role="status"] progress:not([value]) {
+  margin-right: 0.5rem;
+}
+
+p[role="status"] progress:not([value]) + span {
+  margin-bottom: 0;
+}
+
+p[role="status"] span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.5rem;
+}
+
+/* Progress steps */
+.bb-steps {
+  position: relative;
+  height: 1rem;
+}
+html[dir="ltr"] .bb-steps { transform: scaleX(1); }
+html[dir="rtl"] .bb-steps { transform: scaleX(-1); }
+
+.bb-steps:before {
+  position: absolute;
+  content: "";
+  height: 0;
+  left: 0;
+  top: 0.4rem;
+  right: 0;
+  border-top: 0.1rem solid var(--background-theta, #e0e2e5);
+  border-bottom: 0.1rem solid var(--background-theta, #e0e2e5);
+}
+
+.bb-steps progress[value] {
+  position: absolute;
+  height: 1rem;
+  left: 0;
+  top: 0;
+  background: var(--accent-color, #0061e0);
+  transition: transform 0.35s cubic-bezier(1, 0, 0, 1);
+  border-radius: 0.5rem;
+}
+
+.bb-steps progress[value]::-moz-progress-bar {
+  background: none;
+}
+
+/* Animations */
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes move-right {
+  from { background-position: -100% 0; }
+  to   { background-position: 0 0; }
+}
+
+@keyframes move-left {
+  from { background-position: 0 0; }
+  to   { background-position: -100% 0; }
+}
+
+/* ----------------------------------
+* Dark mode
+* ---------------------------------- */
+
+/* Spinner */
+[data-theme="dark"] progress:not([value]) {
+  background-image: url(progress_activity/images/ui/dark.png);
+}

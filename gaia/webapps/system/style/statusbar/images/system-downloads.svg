@@ -1,0 +1,26 @@
+<svg viewBox="0 0 16 16" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .ac-color,
+    .ac-color1 {
+      fill: #fff;
+    }
+    .ac-color1 {
+      animation: move 1s ease infinite;
+    }
+    @keyframes move {
+      0% {
+        transform: translateY(-100%);
+        opacity: 1;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100%);
+        opacity: 0;
+      }
+    }
+  </style>
+  <path d="M1 12 1 14Q1 16 3 16L12 16Q14 16 14 14L14 12 13 12 13 14Q13 15 12 15L3 15Q2 15 2 14L2 12 1 12" class="ac-color"></path>
+  <path d="M7 0 7 10.5 2.75 6.25 2 7 7.5 12.5 13 7 12.25 6.25 8 10.5 8 0 7 0" class="ac-color1"></path>
+</svg>

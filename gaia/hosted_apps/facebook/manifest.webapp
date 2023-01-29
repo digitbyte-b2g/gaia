@@ -1,0 +1,32 @@
+{
+  "activities": {
+    "share": {
+      "href": "/home.php",
+      "filters": {
+        "type": "image/*"
+      },
+      "disposition": "window"
+    }
+  },
+  "name": "Facebook",
+  "default_locale": "en",
+  "icons": {
+    "16": "/style/icons/facebook_16.png",
+    "32": "/style/icons/facebook_32.png",
+    "48": "/style/icons/facebook_48.png",
+    "64": "/style/icons/facebook_64.png",
+    "128": "/style/icons/facebook_128.png",
+    "256": "/style/icons/facebook_256.png"
+  },
+  "description": "Facebook helps you connect and share with the people in your life.",
+  "launch_path": "/",
+  "permissions": {
+    "geolocation": {
+      "description": "Required for check-ins"
+    }
+  },
+  "developer": {
+    "url": "http://www.facebook.com",
+    "name": "Facebook"
+  }
+}
