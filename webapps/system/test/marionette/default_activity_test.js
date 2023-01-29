@@ -22,8 +22,8 @@
       profile: {
         apps: {
           'activitycaller.gaiamobile.org': __dirname +
-                                           '/../apps/activitycaller',
-          'activitycallee.gaiamobile.org': __dirname + '/../apps/activitycallee'
+                                           '/../webapps/activitycaller',
+          'activitycallee.gaiamobile.org': __dirname + '/../webapps/activitycallee'
         }
       },
       desiredCapabilities: { raisesAccessibilityExceptions: false }
@@ -36,7 +36,7 @@
     }
 
     suiteSetup(function(done) {
-      var appToInstall = __dirname + '/../apps/fakeinstalledapp/';
+      var appToInstall = __dirname + '/../webapps/fakeinstalledapp/';
       Server.create(appToInstall, function(err, _server) {
         server = _server;
         done();

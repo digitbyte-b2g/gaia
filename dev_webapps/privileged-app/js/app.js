@@ -48,7 +48,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // We will be using the 'hidden' attribute throughout the app rather than a
     // 'hidden' CSS class because it enhances accessibility.
-    // See: http://www.whatwg.org/specs/web-apps/current-work/multipage/editing.html#the-hidden-attribute
+    // See: http://www.whatwg.org/specs/web-webapps/current-work/multipage/editing.html#the-hidden-attribute
     results.hidden = false;
     errorMsg.hidden = true;
 

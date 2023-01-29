@@ -399,7 +399,7 @@ suite('preferences.js', function() {
         ]
       };
       preferences.config = {
-        SYSTEM: 'app://system',
+        SYSTEM: 'http://system',
         GAIA_PORT: '8000',
         GAIA_DOMAIN: 'domain',
         GAIA_ALLAPPDIRS: 'testAppDir1 testAppDir2'
@@ -409,9 +409,9 @@ suite('preferences.js', function() {
       preferences.userPrefs = {};
       preferences.preparePref();
       assert.deepEqual(preferences.userPrefs, {
-        'b2g.system_manifest_url': 'app://system/manifest.webmanifest',
-        'b2g.neterror.url': 'app://system/net_error.html',
-        'b2g.system_startup_url': 'app://system/index.html',
+        'b2g.system_manifest_url': 'http://system/manifest.webmanifest',
+        'b2g.neterror.url': 'http://system/net_error.html',
+        'b2g.system_startup_url': 'http://system/index.html',
         'network.http.max-connections-per-server': 15,
         'dom.mozInputMethod.enabled': true,
         'intl.uidirection.ar-x-psbidi': 'rtl',

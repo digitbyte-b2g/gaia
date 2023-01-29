@@ -266,7 +266,7 @@ suite('webapp-optimize.js', function() {
     var webappOptimize;
 
     setup(function() {
-      webappOptimize = new app.WebappOptimize();
+      webappOptimize = new app.webappOptimize();
     });
 
     test('execute, main function of webappOptimize', function() {
@@ -360,7 +360,7 @@ suite('webapp-optimize.js', function() {
       assert.equal(createdDOMs[2].query, 'document/script',
         'should modify document/script');
       assert.equal(createdDOMs[2].innerHTML,
-        'window.SYSTEM_MANIFEST="app://system.undefined/manifest.webmanifest";',
+        'window.SYSTEM_MANIFEST="http://system.undefined/manifest.webapp";',
         'should modify its innerHTML');
     });
 

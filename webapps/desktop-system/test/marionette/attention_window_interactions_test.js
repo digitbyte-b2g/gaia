@@ -5,7 +5,7 @@ var UtilityTray = require('./lib/utility_tray.js');
 
 marionette('AttentionWindow interactions', function() {
   var apps = {};
-  apps[FakeLoopApp.DEFAULT_ORIGIN] = __dirname + '/../apps/fakeloopapp';
+  apps[FakeLoopApp.DEFAULT_ORIGIN] = __dirname + '/../webapps/fakeloopapp';
 
   var client = marionette.client({
     profile: {

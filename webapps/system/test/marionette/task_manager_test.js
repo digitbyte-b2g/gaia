@@ -11,9 +11,9 @@ marionette('Task Manager', function() {
   var secondAppOrigin = 'fakegreenapp.gaiamobile.org';
   var slowAppOrigin   = 'fakecamera.gaiamobile.org';
   var apps = {};
-  apps[firstAppOrigin]  = __dirname + '/../apps/fakeapp';
-  apps[secondAppOrigin] = __dirname + '/../apps/fakegreenapp';
-  apps[slowAppOrigin]   = __dirname + '/../apps/fakecamera';
+  apps[firstAppOrigin]  = __dirname + '/../webapps/fakeapp';
+  apps[secondAppOrigin] = __dirname + '/../webapps/fakegreenapp';
+  apps[slowAppOrigin]   = __dirname + '/../webapps/fakecamera';
 
 
   var client = marionette.client({

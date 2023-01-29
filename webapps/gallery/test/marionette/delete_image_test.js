@@ -27,9 +27,9 @@ marionette('using the gallery menu', function() {
       client.fileManager.removeAllFiles();
       // Add file into the pictures directory
       client.fileManager.add([
-        {type: 'pictures',filePath: 'apps/gallery/test/images/01.jpg'},
-        {type: 'pictures',filePath: 'apps/gallery/test/images/02.png'},
-        {type: 'pictures',filePath: 'apps/gallery/test/images/03.gif'}
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/01.jpg'},
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/02.png'},
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/03.gif'}
       ]);
     });
 
@@ -69,9 +69,9 @@ marionette('using the gallery menu', function() {
       client.fileManager.removeAllFiles();
       // Add file into the pictures directory
       client.fileManager.add([
-        {type: 'pictures',filePath: 'apps/gallery/test/images/01.jpg'},
-        {type: 'pictures',filePath: 'apps/gallery/test/images/02.png'},
-        {type: 'pictures',filePath: 'apps/gallery/test/images/03.gif'}
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/01.jpg'},
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/02.png'},
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/03.gif'}
       ]);
     });
 

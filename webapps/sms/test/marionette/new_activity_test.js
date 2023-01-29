@@ -10,7 +10,7 @@ var Storage = require('./lib/storage.js');
 marionette('Messages as "new" activity target', function() {
   var apps = {};
 
-  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/apps/activitycaller';
+  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/webapps/activitycaller';
 
   var client = marionette.client({
     profile: {

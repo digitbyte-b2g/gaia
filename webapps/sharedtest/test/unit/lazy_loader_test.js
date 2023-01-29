@@ -44,7 +44,7 @@ suite('lazy loader', function() {
   });
 
   test('load json', function(done) {
-    LazyLoader.getJSON('/apps/sharedtest/test/unit/support/test.json')
+    LazyLoader.getJSON('/webapps/sharedtest/test/unit/support/test.json')
       .then(function(json) {
         done(function() {
           assert.notStrictEqual(json, null);
@@ -55,7 +55,7 @@ suite('lazy loader', function() {
   });
 
   test('load malformed json', function(done) {
-    LazyLoader.getJSON('/apps/sharedtest/test/unit/support/malformedJson')
+    LazyLoader.getJSON('/webapps/sharedtest/test/unit/support/malformedJson')
       .then(function(json) {
         done(new Error('A resolve promise was returned.' +
                        ' Expected Reject promise'));
@@ -69,7 +69,7 @@ suite('lazy loader', function() {
   });
 
   test('load inexisting json', function(done) {
-    LazyLoader.getJSON('/apps/sharedtest/test/unit/support/non_existant.json')
+    LazyLoader.getJSON('/webapps/sharedtest/test/unit/support/non_existant.json')
       .then(function(json) {
         done(new Error('Resolve promise was returned.' +
                        ' Expected Reject promise'));

@@ -1,7 +1,7 @@
 'use strict';
 
 var AppInstall =
-  require('../../../../apps/system/test/marionette/lib/app_install');
+  require('../../../../webapps/system/test/marionette/lib/app_install');
 var Rocketbar =
   require('../../../system/test/marionette/lib/rocketbar.js');
 var createAppServer =

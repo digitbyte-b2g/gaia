@@ -14,7 +14,7 @@ var MESSAGE_HANDLER_APP = 'app://' + MESSAGE_HANDLER_ORIGIN;
 
 marionette('Notification events', function() {
   var apps = {};
-  apps[MESSAGE_HANDLER_ORIGIN] = __dirname + '/../apps/messagehandlerapp';
+  apps[MESSAGE_HANDLER_ORIGIN] = __dirname + '/../webapps/messagehandlerapp';
   var client = marionette.client({
     profile: {
       apps: apps

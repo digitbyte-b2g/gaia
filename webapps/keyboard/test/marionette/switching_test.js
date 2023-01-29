@@ -16,10 +16,10 @@ marionette('Switch Keyboard App', function() {
   var system = null;
 
   // Pre-install keyboard testing app
-  apps[KeyboardTestApp.ORIGIN] = __dirname + '/apps/keyboardtestapp';
+  apps[KeyboardTestApp.ORIGIN] = __dirname + '/webapps/keyboardtestapp';
 
   // And a testing 3rd-party IME app
-  apps[ImeTestApp.ORIGIN] = __dirname + '/apps/imetestapp';
+  apps[ImeTestApp.ORIGIN] = __dirname + '/webapps/imetestapp';
 
   var keyboardSettings = {};
   keyboardSettings[Keyboard.MANIFEST_URL] = {

@@ -108,10 +108,10 @@ function psParser(psresult) {
 
 /**
  * Concat to Gaia URL original like:
- * 'app://system.gaiamobile.org'
+ * 'http://system.gaiamobile.org'
  *
  * @param name {string} - the app name
- * @param scheme {string} - the scheme, like 'app://' or 'http://'
+ * @param scheme {string} - the scheme, like 'http://' or 'http://'
  * @param domain {string} - the domain for Gaia, like 'gaiamobile.org'
  * @param port {string} - the port, but we don't use it
  * @return {string}
@@ -122,13 +122,13 @@ function gaiaOriginURL(name, scheme, domain, port) {
 
 /**
  * Give the default app manifest URL like:
- * 'app://system.gaiamobile.org:8080/manifest.webmanifest'
+ * 'http://system.gaiamobile.org:8080/manifest.webmanifest'
  *
  * In fact, what we do is only to append the '/manifest.webmanifest'
  * to the origin URL.
  *
  * @param name {string} - the app name
- * @param scheme {string} - the scheme, like 'app://' or 'http://'
+ * @param scheme {string} - the scheme, like 'http://' or 'http://'
  * @param domain {string} - the domain for Gaia, like 'gaiamobile.org'
  * @param port {string} - the port, like 8080 or '8080'
  * @return {string}

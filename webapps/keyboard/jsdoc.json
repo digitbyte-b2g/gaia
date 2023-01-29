@@ -5,9 +5,9 @@
   },
   "source": {
     "include": [
-      "!apps/keyboard/js/imes/jspinyin/libpinyin.js",
-      "!apps/keyboard/js/imes/handwriting/hwr/emscripten_zinnia.js",
-      "apps/keyboard/js/**/*.js"
+      "!webapps/keyboard/js/imes/jspinyin/libpinyin.js",
+      "!webapps/keyboard/js/imes/handwriting/hwr/emscripten_zinnia.js",
+      "webapps/keyboard/js/**/*.js"
     ]
   },
   "plugins": [

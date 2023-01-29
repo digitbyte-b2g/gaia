@@ -9,7 +9,7 @@ var assert = require('assert');
 marionette('Task Manager - Icons', function() {
   var iconAppOrigin = 'iconapp.gaiamobile.org';
   var apps = {};
-  apps[iconAppOrigin] = __dirname + '/../apps/icons-app';
+  apps[iconAppOrigin] = __dirname + '/../webapps/icons-app';
 
   var client = marionette.client({
     profile: {
@@ -22,7 +22,7 @@ marionette('Task Manager - Icons', function() {
   var firefoxApp;
 
   suiteSetup(function(done) {
-    Server.create(__dirname + '/../apps/icons-app/', function(err, _server) {
+    Server.create(__dirname + '/../webapps/icons-app/', function(err, _server) {
       server = _server;
       done();
     });

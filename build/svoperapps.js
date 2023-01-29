@@ -36,7 +36,7 @@ SvoperappsBuilder.prototype.getOrigin = function(url, defaultOrigin) {
 
 /*
  * check if the downloaded app folder contains the following files:
- * 1. metadata.json, 2. update.webmanifest, 3. application.zip, 4. manifest.webmanifest.
+ * 1. metadata.json, 2. update.webapp, 3. application.zip, 4. manifest.webapp.
  */
 SvoperappsBuilder.prototype.checkDownloadedApp = function(path) {
   var files = utils.listFiles(path, utils.FILE_TYPE_FILE, false);
@@ -66,7 +66,7 @@ SvoperappsBuilder.prototype.downloadPackageApp =
 function(manifest, metadata, appPath, cb, errCb) {
   utils.log('svoperapps.js',
             'download packaged app from: ' + manifest.package_path);
-  // write update.webmanifest
+  // write update.webapp
   utils.writeContent(utils.getFile(appPath, 'update.webmanifest'),
     JSON.stringify(manifest));
   // write metadata.json

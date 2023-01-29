@@ -22,7 +22,7 @@ marionette('Import from SDCARD', function() {
     client.fileManager.removeAllFiles();
     client.fileManager.add({
       type: 'text',
-      filePath: 'apps/communications/contacts/test/marionette/data/vcard_4.vcf'
+      filePath: 'webapps/communications/contacts/test/marionette/data/vcard_4.vcf'
     });
 
     contactsApp = new Contacts(client);

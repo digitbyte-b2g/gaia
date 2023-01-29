@@ -16,4 +16,4 @@ $ gulp jsdoc:bluetooth
 
 ## WARNING
 
-Any change under `js/modules` should be synced with Settings Bluetooth module (`apps/settings/js/modules/bluetooth`).
+Any change under `js/modules` should be synced with Settings Bluetooth module (`webapps/settings/js/modules/bluetooth`).

@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Updates webapps.json's manifest.webmanifest hash and package.json hash fields for
+ * Updates webapps.json's manifest.webapp hash and package.json hash fields for
  * checking FOTA update
  */
 

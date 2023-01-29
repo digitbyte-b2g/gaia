@@ -1,32 +1,24 @@
-!(async function(exports) {
+!(function (exports) {
   'use strict';
 
-  class SettingsObserver {
-    constructor () {
-      this.settingsObserver = window.apiDaemon.getSettings();
-    }
+  if (ApiDaemon) {
+    ApiDaemon.loadService('settings');
+  } else {
+    console.error('Session Error: AppManager dosen\'t exist or is malfunctioning...');
+  }
 
-    async getValue(name) {
-      let service = await this.settingsObserver;
-
-      try {
-        let setting = await service.get(name);
-        return setting.value;
-      } catch (e) {
-        console.error(e);
-      }
-    }
-
-    async setValue(name, value) {
-      let service = await this.settingsObserver;
-
-      try {
-        let setting = { name: name, value: value };
-        await service.set([setting]);
-      } catch (e) {
-        console.error(e);
-      }
-    }
+  var SettingsObserver = null;
+  try {
+    const session = new lib_session.Session();
+    const sessionState = {};
+    sessionState.onsessionconnected = () => {
+      lib_settings.SettingsManager.get(session).then((settingsManager) => {
+        SettingsObserver = settingsManager;
+      });
+    };
+    session.open("websocket", "localhost", "secrettoken", sessionState, true);
+  } catch (error) {
+    console.error("Error initializing SettingsManager: ", error);
   }
 
   exports.SettingsObserver = SettingsObserver;

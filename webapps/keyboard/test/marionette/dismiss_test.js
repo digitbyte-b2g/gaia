@@ -12,7 +12,7 @@ marionette('Dimiss the keyboard', function() {
   var system = null;
   var actions;
 
-  apps[KeyboardTestApp.ORIGIN] = __dirname + '/apps/keyboardtestapp';
+  apps[KeyboardTestApp.ORIGIN] = __dirname + '/webapps/keyboardtestapp';
 
   var client = marionette.client({
     profile: {

@@ -9,7 +9,7 @@ var MessagesActivityCaller = require('./lib/messages_activity_caller.js');
 marionette('Attachment picking and sending tests', function() {
   var apps = {};
 
-  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/apps/activitycaller';
+  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/webapps/activitycaller';
 
   var client = marionette.client({
     profile: {

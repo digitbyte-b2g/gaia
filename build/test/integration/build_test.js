@@ -144,7 +144,7 @@ suite('Integration tests', function() {
 
       assert.isNotNull(webapps['test.mozilla.com']);
       assert.equal(
-        webapps['test.mozilla.com'].origin, 'app://test.mozilla.com');
+        webapps['test.mozilla.com'].origin, 'http://test.mozilla.com');
 
       restoreFunc();
       done();

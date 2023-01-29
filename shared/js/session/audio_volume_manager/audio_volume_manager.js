@@ -1,1 +1,25 @@
-const AudioVolumeManager={_observersArray:[],connected:!1,initFlag:!1,AudioVolumeState:{},init(){this.initFlag||(this.initFlag=!0,window.addEventListener("session-disconnected",()=>{this.connected=!1}),window.addEventListener("services-load-complete",()=>{this.connected||(this.connected=!0,"undefined"!=typeof lib_audiovolume&&(this.AudioVolumeState=lib_audiovolume.AudioVolumeState),this.processPendingRequest())}))},requestVolumeDown(){return taskScheduler.request({serverName:taskScheduler.AUDIO_VOLUME,funcName:"requestVolumeDown"})},requestVolumeShow(){return taskScheduler.request({serverName:taskScheduler.AUDIO_VOLUME,funcName:"requestVolumeShow"})},requestVolumeUp(){return taskScheduler.request({serverName:taskScheduler.AUDIO_VOLUME,funcName:"requestVolumeUp"})},observeAudioVolumeChanged(e){this.connected&&window.api.audiovolumemanager.addEventListener(window.api.audiovolumemanager.AUDIO_VOLUME_CHANGED_EVENT,e),this._observersArray.push(e)},unobserveAudioVolumeChanged(r){if(this.connected){window.api.audiovolumemanager.removeEventListener(window.api.audiovolumemanager.AUDIO_VOLUME_CHANGED_EVENT,r);let i=!1;this._observersArray.forEach((e,o)=>{i||e!==r||(this._observersArray.splice(o,1),i=!0)})}},processPendingRequest(){this._observersArray.forEach(e=>{this.connected&&window.api.audiovolumemanager.addEventListener(window.api.audiovolumemanager.AUDIO_VOLUME_CHANGED_EVENT,e)})}};AudioVolumeManager.init(),window.AudioVolumeManager=AudioVolumeManager;
+!(function (exports) {
+  'use strict';
+
+  if (ApiDaemon) {
+    ApiDaemon.loadService('audiovolumemanager');
+  } else {
+    console.error('Session Error: AppManager dosen\'t exist or is malfunctioning...');
+  }
+
+  var AudioVolumeManager = null;
+  try {
+    const session = new lib_session.Session();
+    const sessionState = {};
+    sessionState.onsessionconnected = () => {
+      lib_audiovolume.AudioVolumeManager.get(session).then((powerManagerService) => {
+        AudioVolumeManager = powerManagerService;
+      });
+    };
+    session.open("websocket", "localhost", "secrettoken", sessionState, true);
+  } catch (error) {
+    console.error("Error initializing AudioVolumeManager: ", error);
+  }
+
+  exports.AudioVolumeManager = AudioVolumeManager;
+})(window);

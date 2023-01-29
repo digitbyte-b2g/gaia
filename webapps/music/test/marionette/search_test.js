@@ -35,39 +35,39 @@ marionette('Music player search', function() {
     client.fileManager.add([
       {
         type: 'music',
-        filePath: 'apps/music/test-data/playlists/01.ogg'
+        filePath: 'webapps/music/test-data/playlists/01.ogg'
       },
       {
         type: 'music',
-        filePath: 'apps/music/test-data/playlists/02.ogg'
+        filePath: 'webapps/music/test-data/playlists/02.ogg'
       },
       {
         type: 'music',
-        filePath: 'apps/music/test-data/playlists/03.ogg'
+        filePath: 'webapps/music/test-data/playlists/03.ogg'
       },
       {
         type: 'music',
-        filePath: 'apps/music/test-data/playlists/a.ogg'
+        filePath: 'webapps/music/test-data/playlists/a.ogg'
       },
       {
         type: 'music',
-        filePath: 'apps/music/test-data/playlists/b.ogg'
+        filePath: 'webapps/music/test-data/playlists/b.ogg'
       },
       {
         type: 'music',
-        filePath: 'apps/music/test-data/playlists/c.ogg'
+        filePath: 'webapps/music/test-data/playlists/c.ogg'
       },
       {
         type: 'music',
-        filePath: 'apps/music/test-data/playlists/w.ogg'
+        filePath: 'webapps/music/test-data/playlists/w.ogg'
       },
       {
         type: 'music',
-        filePath: 'apps/music/test-data/playlists/x.ogg'
+        filePath: 'webapps/music/test-data/playlists/x.ogg'
       },
       {
         type: 'music',
-        filePath: 'apps/music/test-data/playlists/y.ogg'
+        filePath: 'webapps/music/test-data/playlists/y.ogg'
       }
     ]);
   });

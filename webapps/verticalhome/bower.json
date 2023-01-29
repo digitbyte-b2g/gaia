@@ -1,7 +1,7 @@
 {
   "name": "Home screen",
   "version": "0.0.0",
-  "homepage": "https://github.com/mozilla-b2g/gaia/tree/master/apps/homescreen",
+  "homepage": "https://github.com/mozilla-b2g/gaia/tree/master/webapps/homescreen",
   "authors": [
     "Chris Lord <chrislord.net@gmail.com>",
     "Guillaume Marty <edo999@gmail.com>"

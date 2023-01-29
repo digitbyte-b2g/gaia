@@ -6,7 +6,7 @@ marionette('Browser - App /w Fullscreen Navigation Chrome', function() {
   var client = marionette.client({
     profile: {
       apps: {
-        'hosted_nav_app.gaiamobile.org': __dirname + '/../apps/hosted_nav_app',
+        'hosted_nav_app.gaiamobile.org': __dirname + '/../webapps/hosted_nav_app',
       }
     }
   });

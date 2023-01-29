@@ -10,10 +10,10 @@
   marionette('hierarchyManager and keyboard', function() {
     var apps = {};
     apps['activitycaller.gaiamobile.org'] =
-      __dirname + '/../apps/activitycaller';
+      __dirname + '/../webapps/activitycaller';
     apps['activitycallee.gaiamobile.org'] =
-      __dirname + '/../apps/activitycallee';
-    apps[FakeDialerApp.DEFAULT_ORIGIN] = __dirname + '/../apps/fakedialerapp';
+      __dirname + '/../webapps/activitycallee';
+    apps[FakeDialerApp.DEFAULT_ORIGIN] = __dirname + '/../webapps/fakedialerapp';
     var client = marionette.client({
       profile: {
         settings: {

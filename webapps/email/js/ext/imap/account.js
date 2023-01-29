@@ -530,7 +530,7 @@ var properties = {
       //   IANA registrations:
       //   http://www.iana.org/assignments/imap4-list-extended
       // - xlist:
-      //   https://developers.google.com/google-apps/gmail/imap_extensions
+      //   https://developers.google.com/google-webapps/gmail/imap_extensions
 
       // Process the attribs for goodness.
       for (var i = 0; i < attribs.length; i++) {

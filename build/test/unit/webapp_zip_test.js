@@ -97,7 +97,7 @@ suite('webapp-zip.js', function() {
         },
         targetDir: mockUtils.getFile('testTargetDir')
       };
-      webappZip = new app.WebappZip();
+      webappZip = new app.webappZip();
     });
 
     test('setOptions', function() {
@@ -180,7 +180,7 @@ suite('webapp-zip.js', function() {
     setup(function() {
       fileExists = true;
       isExcludedFromZip = false;
-      webappZip = new app.WebappZip();
+      webappZip = new app.webappZip();
       webappZip.options = {
         GAIA_DEFAULT_LOCALE: 'en-US-test',
         webapp: {

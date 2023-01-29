@@ -12,7 +12,7 @@ marionette('Gallery Activity Tests', function() {
   var fullscreenView, client, apps = {};
 
   apps[GalleryActivityTester.ORIGIN] =
-    __dirname + '/apps/galleryactivitytester';
+    __dirname + '/webapps/galleryactivitytester';
 
   client = marionette.client({
     profile: {

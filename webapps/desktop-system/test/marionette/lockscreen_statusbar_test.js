@@ -12,7 +12,7 @@ marionette('LockScreen status bar', function() {
   var firstApp;
   var firstAppOrigin = 'fakeapp.gaiamobile.org';
   var apps = {};
-  apps[firstAppOrigin] = __dirname + '/../apps/fakeapp';
+  apps[firstAppOrigin] = __dirname + '/../webapps/fakeapp';
   var client = marionette.client({
     profile: {
       settings: {

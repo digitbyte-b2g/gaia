@@ -4,7 +4,7 @@
     "dictionaries": ["jsdoc"]
   },
   "source": {
-    "include": ["!apps/email/js/ext/**/*.js", "apps/email/js/**/*.js"]
+    "include": ["!webapps/email/js/ext/**/*.js", "webapps/email/js/**/*.js"]
   },
   "plugins": [
     "plugins/markdown",

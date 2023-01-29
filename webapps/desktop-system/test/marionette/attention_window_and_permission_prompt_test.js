@@ -5,7 +5,7 @@ var FakeLoopApp = require('./lib/fakeloopapp.js');
 
 marionette('AttentionWindow - Permission Prompt', function() {
   var apps = {};
-  apps[FakeLoopApp.DEFAULT_ORIGIN] = __dirname + '/../apps/fakeloopapp';
+  apps[FakeLoopApp.DEFAULT_ORIGIN] = __dirname + '/../webapps/fakeloopapp';
 
   var client = marionette.client({
     profile: {

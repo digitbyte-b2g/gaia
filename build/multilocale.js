@@ -190,7 +190,7 @@ function L10nManager(gaiaDir,
    * @param {Object} webapp          - A webapp object for specific app
    */
   function localize(htmlFiles, webapp) {
-    // Localize webapp's manifest.webmanifest file.
+    // Localize webapp's manifest.webapp file.
     localizeManifest(webapp);
 
     htmlFiles.forEach(function(htmlFile) {
@@ -286,7 +286,7 @@ function L10nManager(gaiaDir,
   }
 
   /**
-   * Localize manifest.webmanifest file.
+   * Localize manifest.webapp file.
    * Propagate locale codes into manifest's
    * `locales` key and `entry_points[].locales`
    *
@@ -299,13 +299,13 @@ function L10nManager(gaiaDir,
     if (manifest.default_locale) {
       manifest.default_locale = self.defaultLocale;
     }
-    // If manifest.webmanifest does not have `locales` key, return early
+    // If manifest.webapp does not have `locales` key, return early
     if (!manifest.locales) {
       return;
     }
 
     // Build locale properties based on GAIA_SOURCE_LOCALE data
-    // from manifest.webmanifest
+    // from manifest.webapp
     var sourceLocaleProps = buildSourceLocaleProps(manifest, webapp);
 
     // Reset `locales` key

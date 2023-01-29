@@ -16,7 +16,7 @@ marionette('Keyboard Auto correction tests', function() {
   var client = null;
   var system = null;
 
-  apps[KeyboardTestApp.ORIGIN] = __dirname + '/apps/keyboardtestapp';
+  apps[KeyboardTestApp.ORIGIN] = __dirname + '/webapps/keyboardtestapp';
 
   client = marionette.client({
     profile: {

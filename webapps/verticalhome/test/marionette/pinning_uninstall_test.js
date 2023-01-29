@@ -4,8 +4,8 @@
 var assert = require('assert');
 
 var Pinning = require(
-  '../../../../apps/system/test/marionette/lib/pinning_the_web');
-var Bookmark = require('../../../../apps/system/test/marionette/lib/bookmark');
+  '../../../../webapps/system/test/marionette/lib/pinning_the_web');
+var Bookmark = require('../../../../webapps/system/test/marionette/lib/bookmark');
 var Server = require('../../../../shared/test/integration/server');
 
 marionette('Homescreen - Pinned Site Uninstall', function() {

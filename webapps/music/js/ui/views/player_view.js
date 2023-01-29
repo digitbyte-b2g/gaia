@@ -662,7 +662,7 @@ var PlayerView = {
         // This done as much as possible in a self-invoking function to make
         // it easier to remove the hack when we have a real bug fix.
         //
-        // See also the corresponding code in apps/ringtones/js/share.js
+        // See also the corresponding code in webapps/ringtones/js/share.js
         //
         // HACK HACK HACK
         (function() {

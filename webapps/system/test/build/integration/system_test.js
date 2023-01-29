@@ -26,8 +26,8 @@ suite('System tests', function() {
   });
 
   suite('System/FeatureDetector tests', function() {
-    // XXX: TV doesn't use apps/system. Test for tv should be enabled once
-    //      smart-system is merged back to apps/system.
+    // XXX: TV doesn't use webapps/system. Test for tv should be enabled once
+    //      smart-system is merged back to webapps/system.
     var devices = ['phone', 'tablet'];
 
     devices.forEach(function(device) {

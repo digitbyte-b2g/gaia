@@ -8,12 +8,12 @@ The input management (in system app) will launch keyboard app within input windo
 To test keyboard, run
 
 ```
-TEST_FILES=apps/keyboard/test/build/integration/keyboard_test.js make build-test-integration
+TEST_FILES=webapps/keyboard/test/build/integration/keyboard_test.js make build-test-integration
 ```
 
 for build test.
 
-If you change the IME files, the dictionary filesize will be changed as well. Remember to update the test config `dictFileSize` in `apps/keyboard/test/build/integration/resources/`.
+If you change the IME files, the dictionary filesize will be changed as well. Remember to update the test config `dictFileSize` in `webapps/keyboard/test/build/integration/resources/`.
 
 ## JSDOC
 

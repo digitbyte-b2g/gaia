@@ -396,7 +396,7 @@ function getWebapp(app, config) {
   let manifestJSON = getJSON(manifest);
 
   // Use the folder name as the the domain name
-  let appDomain = appDir.leafName;
+  let appDomain = appDir.leafName + '.' + config.GAIA_DOMAIN;
   if (manifestJSON.origin) {
     appDomain = utils.getNewURI(manifestJSON.origin).host;
   }
@@ -465,7 +465,7 @@ function getWebapp(app, config) {
     webappTargetDirName = webapp.domain;
   }
   webapp.profileDirectoryFilePath = joinPath(config.COREWEBAPPS_DIR, 'webapps',
-                                              webappTargetDirName);
+                                              appDir.leafName);
 
   return webapp;
 }
@@ -987,7 +987,7 @@ function getApp(parent, appname, gaiadir, distdir) {
   } else if (getFile(app.path, 'update.webmanifest').exists()) {
     filename = 'update.webmanifest';
   } else {
-    throw new Error('manifest or update.webmanifest deosn\'t exists: ' + appname);
+    throw new Error('manifest or update.webapp deosn\'t exists: ' + appname);
   }
   app.manifest = getJSON(getFile(app.path, filename));
 

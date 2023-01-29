@@ -10,7 +10,7 @@ const NewMessageView = require('./lib/views/new-message/view');
 marionette('Messages as share target', function() {
   var apps = {};
 
-  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/apps/activitycaller';
+  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/webapps/activitycaller';
 
   var client = marionette.client({
     profile: {

@@ -5,7 +5,7 @@ var assert = require('assert');
 var AppInstall = require('./lib/app_install');
 var NotificationList = require('./lib/notification.js').NotificationList;
 var createAppServer = require(
-  '../../../../apps/homescreen/test/marionette/server/parent');
+  '../../../../webapps/homescreen/test/marionette/server/parent');
 
 marionette('Update add-on', function() {
 

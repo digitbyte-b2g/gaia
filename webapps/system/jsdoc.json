@@ -5,17 +5,17 @@
   },
   "source": {
     "include": [
-      "!apps/system/js/c*.js",
-      "!apps/system/js/t*.js",
-      "apps/system/js/*.js",
-      "apps/system/js/devtools/*.js",
-      "apps/system/js/download/*.js",
-      "apps/system/js/migrators/*.js",
-      "apps/system/js/remote/*.js",
-      "apps/system/js/value_selector/*.js",
-      "apps/system/fxa/js/**/*.js",
-      "apps/system/lockscreen/js/**/*.js",
-      "apps/system/mobile_id/js/**/*.js"
+      "!webapps/system/js/c*.js",
+      "!webapps/system/js/t*.js",
+      "webapps/system/js/*.js",
+      "webapps/system/js/devtools/*.js",
+      "webapps/system/js/download/*.js",
+      "webapps/system/js/migrators/*.js",
+      "webapps/system/js/remote/*.js",
+      "webapps/system/js/value_selector/*.js",
+      "webapps/system/fxa/js/**/*.js",
+      "webapps/system/lockscreen/js/**/*.js",
+      "webapps/system/mobile_id/js/**/*.js"
     ]
   },
   "plugins": [

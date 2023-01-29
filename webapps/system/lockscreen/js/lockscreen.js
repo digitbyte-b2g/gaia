@@ -226,7 +226,7 @@
        * we need to know whether the media player widget is shown or not,
        * in order to decide notification container's height
        * we listen to the same events (iac-mediacomms & appterminated) as
-       * in media player widget's codes (/apps/system/js/media_playback.js)
+       * in media player widget's codes (/webapps/system/js/media_playback.js)
        */
       case 'iac-mediacomms':
         if (evt.detail.type === 'status') {
@@ -569,7 +569,7 @@
         document.mozCancelFullScreen();
       }
       // Any changes made to this,
-      // also need to be reflected in apps/system/js/storage.js
+      // also need to be reflected in webapps/system/js/storage.js
       this.dispatchEvent('secure-modeon');
 
       if(this._checkGenerateMaskedBackgroundColor()){

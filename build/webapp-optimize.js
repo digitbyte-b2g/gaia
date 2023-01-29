@@ -200,7 +200,7 @@ HTMLOptimizer.prototype.embededGlobals = function() {
   // add the system manifest url to our global object for net_error
   // see: https://bugzilla.mozilla.org/show_bug.cgi?id=959800#c8
   var globals = {
-    SYSTEM_MANIFEST: 'app://system.' + this.config.GAIA_DOMAIN +
+    SYSTEM_MANIFEST: 'http://system.' + this.config.GAIA_DOMAIN +
                      '/manifest.webmanifest'
   };
   var content = '';
@@ -666,5 +666,5 @@ function getL10nJSONFileName(htmlFile, buildDirectoryFilePath) {
 }
 
 exports.execute = execute;
-exports.WebappOptimize = WebappOptimize;
+exports.webappOptimize = WebappOptimize;
 exports.HTMLOptimizer = HTMLOptimizer;

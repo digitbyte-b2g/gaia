@@ -40,7 +40,7 @@ marionette('Music player playlist', function() {
         // Title: "dump 2>&1 < ~/® <b>&amp; Injection Vulnerablity</b>"
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/d.ogg'
+          filePath: 'webapps/music/test-data/playlists/d.ogg'
         }
       ]);
     });
@@ -64,15 +64,15 @@ marionette('Music player playlist', function() {
       client.fileManager.add([
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/01.ogg'
+          filePath: 'webapps/music/test-data/playlists/01.ogg'
         },
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/02.ogg'
+          filePath: 'webapps/music/test-data/playlists/02.ogg'
         },
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/03.ogg'
+          filePath: 'webapps/music/test-data/playlists/03.ogg'
         }
       ]);
     });
@@ -136,27 +136,27 @@ marionette('Music player playlist', function() {
       client.fileManager.add([
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/a.ogg'
+          filePath: 'webapps/music/test-data/playlists/a.ogg'
         },
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/b.ogg'
+          filePath: 'webapps/music/test-data/playlists/b.ogg'
         },
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/c.ogg'
+          filePath: 'webapps/music/test-data/playlists/c.ogg'
         },
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/w.ogg'
+          filePath: 'webapps/music/test-data/playlists/w.ogg'
         },
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/x.ogg'
+          filePath: 'webapps/music/test-data/playlists/x.ogg'
         },
         {
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/y.ogg'
+          filePath: 'webapps/music/test-data/playlists/y.ogg'
         },
       ]);
     });
@@ -194,32 +194,32 @@ marionette('Music player playlist', function() {
         {
           // Track 1.01 "Yield to Thread"
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/y.ogg'
+          filePath: 'webapps/music/test-data/playlists/y.ogg'
         },
         {
           // Track 1.02 "XOXO"
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/x.ogg'
+          filePath: 'webapps/music/test-data/playlists/x.ogg'
         },
         {
           // Track 1.03 "Windows BSOD"
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/w.ogg'
+          filePath: 'webapps/music/test-data/playlists/w.ogg'
         },
         {
           // Track 2.01 "Crash"
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/c.ogg'
+          filePath: 'webapps/music/test-data/playlists/c.ogg'
         },
         {
           // Track 2.02 "Break"
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/b.ogg'
+          filePath: 'webapps/music/test-data/playlists/b.ogg'
         },
         {
           // Track 2.03 "Abort"
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/a.ogg'
+          filePath: 'webapps/music/test-data/playlists/a.ogg'
         },
       ]);
     });
@@ -280,7 +280,7 @@ marionette('Music player playlist', function() {
           // This song has the title 'The Ecuadorian Embassy'
           // And the index '1'
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/01.ogg'
+          filePath: 'webapps/music/test-data/playlists/01.ogg'
         }
       ]);
 

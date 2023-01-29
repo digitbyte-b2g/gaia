@@ -6,7 +6,7 @@
  * This task will do three things.
  * 1. Copy manifest to profile: generally we got manifest from
  * webapp-manifest.js unless manifest is generated from Makefile of app.
- * so we will copy manifest.webmanifest if it's avaiable in build_stage/ .
+ * so we will copy manifest.webapp if it's avaiable in build_stage/ .
  * 2. Copy external app to profile dir.
  * 3. Generate webapps.json from webapps_stage.json and copy to profile dir.
  */
@@ -14,12 +14,12 @@
 var utils = require('./utils');
 
 function moveExternalApp(webapp, source, destination) {
-  // In case of packaged app, just copy `application.zip` and `update.webmanifest`
+  // In case of packaged app, just copy `application.zip` and `update.webapp`
   if (webapp.pckManifest) {
     let updateManifest = utils.getFile(source.path, 'update.webmanifest');
     if (!updateManifest.exists()) {
       throw 'External packaged webapp `' + webapp.domain + '  is ' +
-            'missing an `update.webmanifest` file. This JSON file ' +
+            'missing an `update.webapp` file. This JSON file ' +
             'contains a `package_path` attribute specifying where ' +
             'to download the application zip package from the origin ' +
             'specified in `metadata.json` file.';

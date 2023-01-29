@@ -1,4 +1,4 @@
-// COPIED FROM gaia/apps/emailjs/evt.js
+// COPIED FROM gaia/webapps/emailjs/evt.js
 /*global define, setTimeout */
 /*
  * Custom events lib. Notable features:

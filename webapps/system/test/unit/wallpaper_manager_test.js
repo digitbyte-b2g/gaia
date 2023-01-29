@@ -5,7 +5,7 @@
 
 require('/shared/test/unit/mocks/mock_navigator_moz_settings.js');
 require('/shared/js/image_utils.js');
-require('/apps/system/js/wallpaper_manager.js');
+require('/webapps/system/js/wallpaper_manager.js');
 require('/shared/test/unit/mocks/mock_service.js');
 requireApp('system/test/unit/mock_lazy_loader.js');
 

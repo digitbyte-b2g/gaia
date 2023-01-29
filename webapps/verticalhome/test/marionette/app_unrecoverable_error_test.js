@@ -3,7 +3,7 @@
 
 var assert = require('assert');
 var AppInstall =
-  require('../../../../apps/system/test/marionette/lib/app_install');
+  require('../../../../webapps/system/test/marionette/lib/app_install');
 var createAppServer = require('./server/parent');
 
 marionette('Homescreen - App unrecoverable error', function() {

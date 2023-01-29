@@ -3,7 +3,7 @@
 var assert = require('assert');
 var Rocketbar = require('./lib/rocketbar');
 var Server = require('../../../../shared/test/integration/server');
-var FULLSCREENNAVAPP = __dirname + '/../apps/fullscreennavapp';
+var FULLSCREENNAVAPP = __dirname + '/../webapps/fullscreennavapp';
 
 marionette('Browser - App /w Fullscreen Navigation Chrome', function() {
 

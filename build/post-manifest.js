@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Updates manifest.webmanifest
+ * Updates manifest.webapp
  */
 
 var utils = require('./utils');
@@ -19,7 +19,7 @@ function execute(options) {
   // the app, with the same origin.
   manifest.origin = webapp.url;
 
-  // Get the Gaia version and set it as an app version in manifest.webmanifest.
+  // Get the Gaia version and set it as an app version in manifest.webapp.
   // It's used by Langpack API
   var settingsFile = utils.getFile(options.GAIA_DIR, 'build', 'config',
       'common-settings.json');

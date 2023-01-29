@@ -58,7 +58,7 @@ configuration.
 ## Back-End Code Location ##
 
 The e-mail back-end is not developed in this repository.  All of the code in
-GAIA/apps/email/js/ext/* and its sub-directories comes from:
+GAIA/webapps/email/js/ext/* and its sub-directories comes from:
 https://github.com/mozilla-b2g/gaia-email-libs-and-more
 
 If you want to make fixes to the code, then please issue pull requests against

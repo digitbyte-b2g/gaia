@@ -2,7 +2,7 @@
   'use strict';
 
   // XXX: this module is copied and modified from
-  // apps/settings/js/modules/bluetooth/bluetooth_cod_mapper.js
+  // webapps/settings/js/modules/bluetooth/bluetooth_cod_mapper.js
   // because it is not exposed as shared library and is in AMD style.
   // We might need to consolidate them in the future.
   var MinorDeviceClasses = {

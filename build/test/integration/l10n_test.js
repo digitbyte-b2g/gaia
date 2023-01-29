@@ -92,7 +92,7 @@ suite('L10n logic tests', function() {
         assert.include(
           stdout,
           '[Error] L10nError: "entity0" not found in en-US ' +
-            '(app://test-l10n-missing.gaiamobile.org)');
+            '(http://test-l10n-missing.gaiamobile.org)');
         done();
       }
     );
@@ -104,7 +104,7 @@ suite('L10n logic tests', function() {
         assert.include(
           stdout,
           '[Error] L10nError: Duplicate string "entity1" found in en-US ' +
-            '(app://test-l10n-duplicates.gaiamobile.org)');
+            '(http://test-l10n-duplicates.gaiamobile.org)');
         done();
       }
     );

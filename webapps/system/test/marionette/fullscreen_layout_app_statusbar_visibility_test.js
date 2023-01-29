@@ -9,7 +9,7 @@ marionette('Fullscreen layout status bar visibility >', function() {
     profile: {
       apps: {
         'fullscreen_layout.gaiamobile.org':
-          __dirname + '/../apps/fullscreen_layout'
+          __dirname + '/../webapps/fullscreen_layout'
       }
     }
   });

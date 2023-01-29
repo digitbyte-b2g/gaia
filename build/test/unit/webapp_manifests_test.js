@@ -141,7 +141,7 @@ suite('webapp-manifest.js', function() {
       assert.deepEqual(webappManifest.stageManifests, {
         'sourceDirectoryName': {
           originalManifest: mockWebapp.manifest,
-          origin: 'app://' + test_uuid,
+          origin: 'http://' + test_uuid,
           manifestURL: mockWebapp.metaData.manifestURL,
           installOrigin: mockWebapp.metaData.installOrigin,
           receipt: null,

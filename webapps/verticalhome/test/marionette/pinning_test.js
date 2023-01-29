@@ -2,7 +2,7 @@
 /* global __dirname */
 
 var Pinning = require(
-  '../../../../apps/system/test/marionette/lib/pinning_the_web');
+  '../../../../webapps/system/test/marionette/lib/pinning_the_web');
 var Server = require('../../../../shared/test/integration/server');
 
 marionette('Homescreen - Pinned Sites', function() {

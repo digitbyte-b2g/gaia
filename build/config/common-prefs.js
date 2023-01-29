@@ -10,6 +10,6 @@
 // - set it within a user.js file in your profile.
 
 user_pref("b2g.neterror.url", "http://desktop-system.localhost:8081/net_error.html");
-user_pref("b2g.system_manifest_url", "http://desktop-system.localhost:8081/manifest.webmanifest");
+user_pref("b2g.system_manifest_url", "http://desktop-system.localhost:8081/manifest.webapp");
 user_pref("b2g.system_startup_url", "chrome://system/content/index.html");
 user_pref("b2g.system_sw_frame_url", "http://desktop-system.localhost:8081/proxy.html");

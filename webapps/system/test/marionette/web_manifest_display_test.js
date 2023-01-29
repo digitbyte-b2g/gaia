@@ -8,11 +8,11 @@ marionette('Web Manifest Display Modes >', function() {
     profile: {
       apps: {
         'web_app_minimal_ui.gaiamobile.org':
-          __dirname + '/../apps/web_app_minimal_ui',
+          __dirname + '/../webapps/web_app_minimal_ui',
         'web_app_standalone.gaiamobile.org':
-          __dirname + '/../apps/web_app_standalone',
+          __dirname + '/../webapps/web_app_standalone',
         'web_app_fullscreen.gaiamobile.org':
-          __dirname + '/../apps/web_app_fullscreen'
+          __dirname + '/../webapps/web_app_fullscreen'
       }
     }
   });

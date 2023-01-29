@@ -108,9 +108,9 @@ By restricting the constructor to simply managing arguments and setting up prope
 
 ## Build step
 
-The camera app has it's own [`Makefile`](Makefile). A Makefile is similar to Grunt, but written in bash, it is essentially a list of tasks that can be run (via `make <task-name>`). When a Gaia application has its own `apps/<app-name>/Makefile`, it will be automatically run when Gaia builds.
+The camera app has it's own [`Makefile`](Makefile). A Makefile is similar to Grunt, but written in bash, it is essentially a list of tasks that can be run (via `make <task-name>`). When a Gaia application has its own `webapps/<app-name>/Makefile`, it will be automatically run when Gaia builds.
 
-At the root we also have [`gaia_build.json`](gaia_build.json), which tells Gaia to fetch the built app from `build_stage/camera` instead of `apps/camera`, before zipping it up to `profile/webapps/camera/application.zip`.
+At the root we also have [`gaia_build.json`](gaia_build.json), which tells Gaia to fetch the built app from `build_stage/camera` instead of `webapps/camera`, before zipping it up to `profile/webapps/camera/application.zip`.
 
 Our `Makefile` has two tasks, one to **'build'** and one to **'clean'** (delete the build). The build steps are as follows:
 
@@ -228,7 +228,7 @@ To launch the tests you have to follow the steps below in your terminal and in t
 
 If you want to run only one of the test suits you can do:
 
-make test-integration-test APP=camera TEST_FILES=apps/camera/test/marionette/capture_test.js
+make test-integration-test APP=camera TEST_FILES=webapps/camera/test/marionette/capture_test.js
 
 ## JSDOC
 

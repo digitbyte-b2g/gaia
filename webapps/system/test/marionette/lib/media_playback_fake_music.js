@@ -12,7 +12,7 @@
     };
     this.domain = 'fakemusic.gaiamobile.org';
     this.origin = appScheme + this.domain;
-    this.path = __dirname + '/../../apps/fakemusic';
+    this.path = __dirname + '/../../webapps/fakemusic';
   };
 
   module.exports = FakeMusic;

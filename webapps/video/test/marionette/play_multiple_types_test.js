@@ -34,7 +34,7 @@ marionette('play various types of videos', function() {
 
       client.fileManager.add({
         type: 'videos',
-        filePath: 'apps/video/test/videos/' + filename
+        filePath: 'webapps/video/test/videos/' + filename
       });
     });
 

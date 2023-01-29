@@ -13,10 +13,10 @@ require('/shared/test/unit/mocks/mock_notification.js');
 require('/shared/test/unit/mocks/mock_dump.js');
 require('/shared/test/unit/mocks/dialer/mock_call.js');
 require('/shared/test/unit/mocks/dialer/mock_handled_call.js');
-require('/apps/system/test/unit/mock_system_icc.js');
-require('/apps/system/test/unit/mock_app_window_manager.js');
-require('/apps/system/test/unit/mock_applications.js');
-require('/apps/system/js/icc_events.js');
+require('/webapps/system/test/unit/mock_system_icc.js');
+require('/webapps/system/test/unit/mock_app_window_manager.js');
+require('/webapps/system/test/unit/mock_applications.js');
+require('/webapps/system/js/icc_events.js');
 
 var mocksForIcc = new MocksHelper([
   'HandledCall'

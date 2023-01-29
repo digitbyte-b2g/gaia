@@ -22,15 +22,15 @@ marionette('loading images', function() {
     client.fileManager.removeAllFiles();
     // Add invalid files into the pictures directory
     client.fileManager.add([
-      {type: 'pictures', filePath: 'apps/gallery/test/images/x01.png'},
-      {type: 'pictures', filePath: 'apps/gallery/test/images/x02.gif'},
-      {type: 'pictures', filePath: 'apps/gallery/test/images/x03.jpg'},
-      {type: 'pictures', filePath: 'apps/gallery/test/images/x05.png'},
-      {type: 'pictures', filePath: 'apps/gallery/test/images/x06.jpg'},
-      {type: 'pictures', filePath: 'apps/gallery/test/images/x08.jpg'},
-      {type: 'pictures', filePath: 'apps/gallery/test/images/x09.png'},
-      {type: 'pictures', filePath: 'apps/gallery/test/images/x10.gif'},
-      {type: 'pictures', filePath: 'apps/gallery/test/images/x11.bmp'}
+      {type: 'pictures', filePath: 'webapps/gallery/test/images/x01.png'},
+      {type: 'pictures', filePath: 'webapps/gallery/test/images/x02.gif'},
+      {type: 'pictures', filePath: 'webapps/gallery/test/images/x03.jpg'},
+      {type: 'pictures', filePath: 'webapps/gallery/test/images/x05.png'},
+      {type: 'pictures', filePath: 'webapps/gallery/test/images/x06.jpg'},
+      {type: 'pictures', filePath: 'webapps/gallery/test/images/x08.jpg'},
+      {type: 'pictures', filePath: 'webapps/gallery/test/images/x09.png'},
+      {type: 'pictures', filePath: 'webapps/gallery/test/images/x10.gif'},
+      {type: 'pictures', filePath: 'webapps/gallery/test/images/x11.bmp'}
     ]);
     app = new Gallery(client);
     app.launch(true);

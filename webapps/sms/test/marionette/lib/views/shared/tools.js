@@ -3,7 +3,7 @@
 
 var assert = require('chai').assert;
 
-var ASSETS_DIR = './apps/sms/test/marionette/assets/';
+var ASSETS_DIR = './webapps/sms/test/marionette/assets/';
 
 module.exports = {
   assertElementFocused: function(element, message) {

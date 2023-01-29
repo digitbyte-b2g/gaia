@@ -3,7 +3,7 @@
 var FakeApp = require('./lib/fakeapp');
 
 var PERMISSION_APP = 'permissionprompts.gaiamobile.org';
-var PERMISSION_APP_DIR =  __dirname + '/../apps/permissionprompts';
+var PERMISSION_APP_DIR =  __dirname + '/../webapps/permissionprompts';
 
 function getAppsObject() {
   var apps = {};

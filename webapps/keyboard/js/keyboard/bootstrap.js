@@ -13,7 +13,7 @@ app.start();
 // we still need to allow incorrect access of Gaia UI tests
 // for getting our states.
 //
-// See tests/python/gaia-ui-tests/gaiatest/apps/keyboard/app.py.
+// See tests/python/gaia-ui-tests/gaiatest/webapps/keyboard/app.py.
 //
 // JS Console is probably the only valid use case to access this.
 exports.app = app;

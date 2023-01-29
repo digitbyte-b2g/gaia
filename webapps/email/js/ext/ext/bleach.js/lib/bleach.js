@@ -330,8 +330,8 @@ HTMLSanitizer.prototype = {
 
 var HTMLParser = (function(){
   // Important syntax notes from the WHATWG HTML spec and observations.
-  // http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html
-  // http://www.whatwg.org/specs/web-apps/current-work/multipage/common-microsyntaxes.html#common-parser-idioms
+  // http://www.whatwg.org/specs/web-webapps/current-work/multipage/syntax.html
+  // http://www.whatwg.org/specs/web-webapps/current-work/multipage/common-microsyntaxes.html#common-parser-idioms
   //
   // The spec says _html_ tag names are [A-Za-z0-9]; we also include '-' and '_'
   // because that's what the code already did, but also since Gecko seems to be
@@ -350,7 +350,7 @@ var HTMLParser = (function(){
   //
   // CDATA *is not a thing* in the HTML namespace.  <![CDATA[ just gets treated
   // as a "bogus comment".  See:
-  // http://www.whatwg.org/specs/web-apps/current-work/multipage/tokenization.html#markup-declaration-open-state
+  // http://www.whatwg.org/specs/web-webapps/current-work/multipage/tokenization.html#markup-declaration-open-state
 
   // NOTE: tag and attr regexps changed to ignore name spaces prefixes!
   //
@@ -958,7 +958,7 @@ var entities = {
 var reverseEntities;
 // Match on named entities as well as numeric/hex entities as well,
 // covering range from &something; &Another; &#1234; &#x22; &#X2F;
-// http://www.whatwg.org/specs/web-apps/current-work/multipage/syntax.html#character-references
+// http://www.whatwg.org/specs/web-webapps/current-work/multipage/syntax.html#character-references
 var entityRegExp = /\&([#a-zA-Z0-9]+);/g;
 
 function makeReverseEntities () {

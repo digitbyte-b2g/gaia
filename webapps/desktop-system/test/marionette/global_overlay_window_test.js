@@ -8,9 +8,9 @@ var FakeGlobalOverlayAppNoPerms =
 marionette('GlobalOverlayWindow', function() {
   var apps = {};
   apps[FakeGlobalOverlayApp.DEFAULT_ORIGIN] =
-    __dirname + '/../apps/fakeglobaloverlayapp';
+    __dirname + '/../webapps/fakeglobaloverlayapp';
   apps[FakeGlobalOverlayAppNoPerms.DEFAULT_ORIGIN] =
-    __dirname + '/../apps/fakeglobaloverlayapp_nopermissions';
+    __dirname + '/../webapps/fakeglobaloverlayapp_nopermissions';
 
   var client = marionette.client({
     profile: {

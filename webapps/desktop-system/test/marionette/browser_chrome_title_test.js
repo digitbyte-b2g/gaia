@@ -12,7 +12,7 @@ marionette('Browser Chrome - Title content', function() {
     profile: {
       apps: {
         'fakechromenavapp.gaiamobile.org':
-          __dirname + '/../apps/fakechromenavapp',
+          __dirname + '/../webapps/fakechromenavapp',
       }
     },
     desiredCapabilities: { raisesAccessibilityExceptions: false }

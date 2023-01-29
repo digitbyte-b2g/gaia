@@ -12,11 +12,11 @@
       profile: {
         apps: {
           'activitycaller.gaiamobile.org': __dirname +
-                                           '/../apps/activitycaller',
+                                           '/../webapps/activitycaller',
           'activitycallee.gaiamobile.org': __dirname +
-                                           '/../apps/activitycallee',
+                                           '/../webapps/activitycallee',
           'activitycalleewindow.gaiamobile.org':
-            __dirname + '/../apps/activitycalleewindow'
+            __dirname + '/../webapps/activitycalleewindow'
         }
       }
     });

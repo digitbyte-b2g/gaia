@@ -4,7 +4,7 @@
     "dictionaries": ["jsdoc"]
   },
   "source": {
-    "include": ["!apps/sync/js/ext/*.js", "apps/sync/js/**/*.js"]
+    "include": ["!webapps/sync/js/ext/*.js", "webapps/sync/js/**/*.js"]
   },
   "plugins": [
     "plugins/markdown",

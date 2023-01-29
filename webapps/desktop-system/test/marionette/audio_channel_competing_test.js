@@ -11,9 +11,9 @@ marionette('Audio channel competing', function() {
     profile: {
       apps: {
         'audiochanneltestapp1.gaiamobile.org': __dirname +
-          '/../apps/audio_channel_test_app',
+          '/../webapps/audio_channel_test_app',
         'audiochanneltestapp2.gaiamobile.org': __dirname +
-          '/../apps/audio_channel_test_app'
+          '/../webapps/audio_channel_test_app'
       }
     }
   });

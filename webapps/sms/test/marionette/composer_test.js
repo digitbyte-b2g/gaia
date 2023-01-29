@@ -12,7 +12,7 @@ var Tools = require('./lib/views/shared/tools.js');
 marionette('Messages Composer', function() {
   var apps = {};
 
-  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/apps/activitycaller';
+  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/webapps/activitycaller';
 
   var client = marionette.client({
     profile: {

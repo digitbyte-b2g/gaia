@@ -46,12 +46,12 @@ marionette('Music player metadata', function() {
         {
           // blue art.
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/a.ogg'
+          filePath: 'webapps/music/test-data/playlists/a.ogg'
         },
         {
           // red art
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/01.ogg'
+          filePath: 'webapps/music/test-data/playlists/01.ogg'
         },
         {
           // no art

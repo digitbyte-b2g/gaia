@@ -108,7 +108,7 @@ suite('Open VCards Boot', function() {
           allowSave: true,
           blob: null,
           filename:
-            '/apps/communications/contacts/test/unit/vcards/vcard_21.vcf',
+            '/webapps/communications/contacts/test/unit/vcards/vcard_21.vcf',
           type:'text/x-vcard'
         }
       }

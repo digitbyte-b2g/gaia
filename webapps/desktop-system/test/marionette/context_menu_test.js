@@ -19,7 +19,7 @@ marionette('Test Context Menu Events', function() {
     apps: {}
   };
 
-  opts.apps[APP_HOST] = __dirname + '/../apps/' + APP_NAME;
+  opts.apps[APP_HOST] = __dirname + '/../webapps/' + APP_NAME;
 
   var client = marionette.client({
     profile: opts

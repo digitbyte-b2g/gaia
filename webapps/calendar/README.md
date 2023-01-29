@@ -40,13 +40,13 @@ The external libraries versioned in js/ext are populated by [volo](http://volojs
 
 We have a test suite that checks whether or not we're interoperable with a particular calendar server. In order to run the test suite against your favorite server:
 
-1. Add a file named `config.json` at `apps/calendar/test/interop/<provider>/config.json`. The json configuration file needs to have
+1. Add a file named `config.json` at `webapps/calendar/test/interop/<provider>/config.json`. The json configuration file needs to have
   + user (username)
   + password (user password)
   + fullUrl (url for caldav server)
   + calendars (array of caldav calendar display names)
-2. Make sure that your provider is in the list of providers located at `apps/calendar/test/interop/basic.js`.
-3. Execute `TEST_FILES=apps/calendar/test/interop/basic.js ./bin/gaia-marionette`
+2. Make sure that your provider is in the list of providers located at `webapps/calendar/test/interop/basic.js`.
+3. Execute `TEST_FILES=webapps/calendar/test/interop/basic.js ./bin/gaia-marionette`
 
 ### Related material
 

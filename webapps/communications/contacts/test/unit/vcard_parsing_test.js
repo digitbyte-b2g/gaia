@@ -42,7 +42,7 @@ if (!window.Rest) {
 function initializeVCFReader(filename, cb) {
   var oReq = new XMLHttpRequest();
   oReq.open(
-    'get', '/apps/communications/contacts/test/unit/vcards/' + filename, true);
+    'get', '/webapps/communications/contacts/test/unit/vcards/' + filename, true);
   oReq.send();
   oReq.onload = function() {
     var vcf = this.responseText;

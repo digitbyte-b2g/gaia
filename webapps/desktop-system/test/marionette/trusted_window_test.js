@@ -10,7 +10,7 @@ marionette('trusted window tests', function() {
   var client = marionette.client({
     profile: {
       apps: {
-        'fakeapp.gaiamobile.org': __dirname + '/../apps/fakeapp'
+        'fakeapp.gaiamobile.org': __dirname + '/../webapps/fakeapp'
       }
     },
     desiredCapabilities: { raisesAccessibilityExceptions: false }

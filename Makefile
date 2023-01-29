@@ -548,6 +548,7 @@ define BUILD_CONFIG
   "GAIA_DIR" : "$(GAIA_DIR)", \
   "PROFILE_DIR" : "$(PROFILE_DIR)", \
   "PROFILE_FOLDER" : "$(PROFILE_FOLDER)", \
+  "PROFILE_WEBAPPS_DIR" : "$(PROFILE_DIR)$(SEP)webapps", \
   "COREWEBAPPS_DIR" : "$(COREWEBAPPS_DIR)", \
   "GAIA_SCHEME" : "$(SCHEME)", \
   "GAIA_DOMAIN" : "$(GAIA_DOMAIN)", \
@@ -997,7 +998,7 @@ ifndef LINTED_FILES
 ifdef APP
   JSHINTED_PATH = webapps/$(APP)
 else
-  JSHINTED_PATH = apps shared build tests tv_apps
+  JSHINTED_PATH = webapps shared build tests tv_apps
 endif
 endif
 
@@ -1151,11 +1152,11 @@ docs: $(NPM_INSTALLED_PROGRAMS)
 	gulp docs
 
 dev:
-	# cd profile/webapps
-	# for i in $(ls); do
-	# 	cd $i
-	# 	unzip -o application.zip
-	# 	cd ..
-	# done
-	# cd ../..
-	./b2g_bin/system
+	cd $(PROFILE_WEBAPPS_DIR)
+	for i in $(ls); do
+		cd $i
+		unzip -o application.zip
+		cd ..
+	done
+	cd ../..
+	./b2g_bin/b2g --profile ./profile

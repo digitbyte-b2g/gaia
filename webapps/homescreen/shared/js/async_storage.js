@@ -37,7 +37,7 @@
  * values into a single object. The properties of this object may not include
  * DOM elements, but they may include things like Blobs and typed arrays.
  *
- * Unit tests are in apps/gallery/test/unit/asyncStorage_test.js
+ * Unit tests are in webapps/gallery/test/unit/asyncStorage_test.js
  */
 
 this.asyncStorage = (function() {

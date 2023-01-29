@@ -4,7 +4,7 @@
     "dictionaries": ["jsdoc"]
   },
   "source": {
-    "include": ["apps/clock/js/**/*.js"]
+    "include": ["webapps/clock/js/**/*.js"]
   },
   "plugins": [
     "plugins/markdown",

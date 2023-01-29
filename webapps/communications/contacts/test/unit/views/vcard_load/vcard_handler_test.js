@@ -6,11 +6,11 @@ requireApp('communications/contacts/views/vcard_load/js/vcard_handler.js');
 requireApp('communications/contacts/test/unit/mock_vcard_reader.js');
 
 suite('VCardHandler', function() {
-  const VCARD_PATH = '/apps/communications/contacts/test/unit/vcards/';
+  const VCARD_PATH = '/webapps/communications/contacts/test/unit/vcards/';
   const VCARD_FILE =
-    '/apps/communications/contacts/test/unit/vcards/vcard_21.vcf';
+    '/webapps/communications/contacts/test/unit/vcards/vcard_21.vcf';
   const VCARD_FILE_MULTIPLE =
-    '/apps/communications/contacts/test/unit/vcards/vcard_21_multiple.vcf';
+    '/webapps/communications/contacts/test/unit/vcards/vcard_21_multiple.vcf';
   var realVCardReader;
   var fakeActivity = {
     source: {

@@ -4,7 +4,7 @@
 'use strict';
 
 require('/shared/test/unit/mocks/mock_navigator_datastore.js');
-require('/apps/system/test/unit/mock_xmlhttprequest.js');
+require('/webapps/system/test/unit/mock_xmlhttprequest.js');
 
 require('/shared/js/web_manifest_helper.js');
 require('/shared/js/icons_helper.js');

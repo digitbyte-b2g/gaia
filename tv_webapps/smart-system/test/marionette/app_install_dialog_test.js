@@ -33,7 +33,7 @@ marionette('app install manager tests', function() {
   var serverIMEURL;
 
   suiteSetup(function(done) {
-    Server.create(__dirname + '/../apps/hosted-app', function(err, _server) {
+    Server.create(__dirname + '/../webapps/hosted-app', function(err, _server) {
       server = _server;
       serverManifestURL = server.url('manifest.webapp');
       serverIMEURL = server.url('ime_manifest.webapp');

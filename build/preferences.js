@@ -127,7 +127,7 @@ PreferencesBuilder.prototype.preparePref = function() {
   this.userPrefs['b2g.system_manifest_url'] = this.system + '/manifest.webmanifest';
 
   this.userPrefs['b2g.neterror.url'] = this.system + '/net_error.html';
-  if (this.system.substring(0, 6) == 'app://') { // B2G bug 773884
+  if (this.system.substring(0, 6) == 'http://') { // B2G bug 773884
       this.system += '/index.html';
   }
 
@@ -244,7 +244,7 @@ PreferencesBuilder.prototype.setDebugPref = function() {
   this.userPrefs['extensions.autoDisableScopes'] = 0;
   this.userPrefs['xpinstall.signatures.required'] = false;
 
-  // electrolysis breaks the app:// protocol as registered by httpd.js
+  // electrolysis breaks the http:// protocol as registered by httpd.js
   // see Bug 1097912
   this.userPrefs['browser.tabs.remote.autostart'] = false;
   this.userPrefs['browser.tabs.remote.autostart.1'] = false;

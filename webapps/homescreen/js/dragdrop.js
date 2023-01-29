@@ -355,7 +355,7 @@ var DragDropManager = (function() {
   /*
    * This method is executed when an app/bookmark is over a collection. It sets
    * a method that when a specific threshold is reached, the collection will be
-   * re-arranged like apps/bookmarks do. If the user releases the icon before
+   * re-arranged like webapps/bookmarks do. If the user releases the icon before
    * the threshold, the app/bookmark will be copied into the collection by a
    * method called stop.
    *

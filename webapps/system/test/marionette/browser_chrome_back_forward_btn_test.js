@@ -10,7 +10,7 @@ marionette('Browser Chrome - Back/Forward button', function() {
     profile: {
       apps: {
         'fakechromenavapp.gaiamobile.org':
-          __dirname + '/../apps/fakechromenavapp',
+          __dirname + '/../webapps/fakechromenavapp',
       }
     },
     desiredCapabilities: { raisesAccessibilityExceptions: false }

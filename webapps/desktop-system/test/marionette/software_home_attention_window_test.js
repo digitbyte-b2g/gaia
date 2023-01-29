@@ -6,7 +6,7 @@ var FakeDialerApp = require('./lib/fakedialerapp');
 
 marionette('Software Home Button - Attention window', function() {
   var apps = {};
-  apps[FakeDialerApp.DEFAULT_ORIGIN] = __dirname + '/../apps/fakedialerapp';
+  apps[FakeDialerApp.DEFAULT_ORIGIN] = __dirname + '/../webapps/fakedialerapp';
 
   var client = marionette.client({
     profile: {

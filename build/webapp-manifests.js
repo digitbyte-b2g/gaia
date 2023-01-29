@@ -51,10 +51,10 @@ ManifestBuilder.prototype.fillExternalAppManifest = function(webapp) {
   var profileDirectoryFile = utils.getFile(webapp.profileDirectoryFilePath);
   var webappTargetDirName = profileDirectoryFile.leafName;
 
-  var origin = isPackaged ? 'app://' + webappTargetDirName :
+  var origin = isPackaged ? 'http://' + webappTargetDirName :
                webapp.metaData.origin;
   if (!origin) {
-    origin = 'app://' + webappTargetDirName;
+    origin = 'http://' + webappTargetDirName;
   }
 
   if (!this.checkOrigin(origin)) {
@@ -93,7 +93,7 @@ ManifestBuilder.prototype.fillExternalAppManifest = function(webapp) {
   if (manifestURI.scheme === 'app') {
     utils.log('Warning: external webapp `' + webapp.domain +
               '` has a manifestURL ' +
-              'with an app:// scheme, which makes it non-updatable.\n');
+              'with an http:// scheme, which makes it non-updatable.\n');
   }
 
   var removable = ('removable' in webapp.metaData) ?

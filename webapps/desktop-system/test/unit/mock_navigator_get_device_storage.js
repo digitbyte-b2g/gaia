@@ -9,7 +9,7 @@
    * sinon.spy on the method and retrive the MockDOMRequest instance with
    * 'spy.getCall(0).returnValue'.
    *
-   * Check out 'apps/system/test/unit/screenshot_test.js' for example.
+   * Check out 'webapps/system/test/unit/screenshot_test.js' for example.
    *
    * @type {Object}
    */

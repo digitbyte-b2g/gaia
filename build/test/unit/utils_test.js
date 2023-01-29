@@ -30,7 +30,7 @@ suite('utils.js', function() {
 
     var config = {
       GAIA_DOMAIN: 'gaiamobile.org',
-      GAIA_SCHEME: 'app://',
+      GAIA_SCHEME: 'http://',
       STAGE_DIR: 'stage_dir',
       COREWEBAPPS_DIR: '/system'
     };

@@ -3,7 +3,7 @@ Settings app is a single place that
 - Allows the user to configure device settings
 - Responds to **incoming activities** ('configure'), which allows the user to navigate to a specific panel to configure from another app (eg. show the wifi settings panel if no data connection is available).
 
-For new settings key that will be used in system, please do the key migration in `apps/system/js/migrators/settings_migrator.js`.
+For new settings key that will be used in system, please do the key migration in `webapps/system/js/migrators/settings_migrator.js`.
 
 To change the default settings value, edit `build/config/common-settings.json` in gaia folder.
 
@@ -179,7 +179,7 @@ $ make test-integration APP=settings
 ```
 
 ## Build Steps
-Settings app has it's own [`Makefile`](Makefile). A Makefile is similar to Grunt, but written in bash. It is essentially a list of tasks that can be run (via `make <task-name>`). When a Gaia application has its own `apps/<app-name>/Makefile`, it will be automatically run when Gaia builds.
+Settings app has it's own [`Makefile`](Makefile). A Makefile is similar to Grunt, but written in bash. It is essentially a list of tasks that can be run (via `make <task-name>`). When a Gaia application has its own `webapps/<app-name>/Makefile`, it will be automatically run when Gaia builds.
 
 Our `Makefile` has two tasks, one to **'build'** and one to **'clean'** (delete the build). The build steps are as follows:
 

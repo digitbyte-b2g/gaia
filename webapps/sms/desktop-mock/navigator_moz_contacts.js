@@ -10,7 +10,7 @@
 
   https://mxr.mozilla.org/mozilla-b2g18/source/dom/contacts/fallback/ContactDB.jsm
   https://mxr.mozilla.org/mozilla-b2g18/source/dom/contacts/ContactManager.js
-  apps/sms/js/contacts.js
+  webapps/sms/js/contacts.js
 
 
 *********************************************************** */

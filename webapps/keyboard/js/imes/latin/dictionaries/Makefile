@@ -1,5 +1,5 @@
 # After building a dictionary here, move the resulting .dict file to
-# apps/keyboard/js/imes/latin/dictionaries/ and check it in.
+# webapps/keyboard/js/imes/latin/dictionaries/ and check it in.
 #
 # Available:
 # af.dict, bg.dict, bs.dict, ca.dict, cs.dict, da.dict, de.dict, el.dict, en.dict, en_gb.dict, en_us.dict, es.dict, eu.dict, ff.dict,

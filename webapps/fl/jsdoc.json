@@ -4,7 +4,7 @@
     "dictionaries": ["jsdoc"]
   },
   "source": {
-    "include": ["apps/fl/js/**/*.js"]
+    "include": ["webapps/fl/js/**/*.js"]
   },
   "plugins": [
     "plugins/markdown",

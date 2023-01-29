@@ -78,14 +78,14 @@ suite('m3u playlist', function() {
   });
 
   test('parse', function(done) {
-    Playlist.parse('apps/music/test-data/playlists/my_playlist.m3u')
+    Playlist.parse('webapps/music/test-data/playlists/my_playlist.m3u')
       .then(function(pl) {
         done(function() {
           var songs = pl.songs;
           assert.strictEqual(songs.length, 3);
 
           assert.strictEqual(songs[0],
-                             'apps/music/test-data/playlists/Supertramp/' +
+                             'webapps/music/test-data/playlists/Supertramp/' +
                              '_..Famous Last Words/03 It\'s Raining Again.mp3');
 
           assert.strictEqual(songs[1],

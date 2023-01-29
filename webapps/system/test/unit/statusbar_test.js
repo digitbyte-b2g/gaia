@@ -2,9 +2,9 @@
            UtilityTray, MockAppWindow */
 'use strict';
 
-require('/apps/system/js/base_ui.js');
-require('/apps/system/js/base_icon.js');
-require('/apps/system/js/service.js');
+require('/webapps/system/js/base_ui.js');
+require('/webapps/system/js/base_icon.js');
+require('/webapps/system/js/service.js');
 require('/shared/test/unit/mocks/mock_settings_listener.js');
 require(
   '/shared/test/unit/mocks/mock_navigator_moz_mobile_connections.js');
@@ -772,9 +772,9 @@ suite('system/Statusbar', function() {
 
     setup(function(done) {
       window.Service = realService;
-      require('/apps/system/js/wifi_icon.js', function() {
+      require('/webapps/system/js/wifi_icon.js', function() {
         wifiIcon = new window.WifiIcon();
-        requireApp('/apps/system/js/statusbar.js');
+        requireApp('/webapps/system/js/statusbar.js');
         done();
       });
     });

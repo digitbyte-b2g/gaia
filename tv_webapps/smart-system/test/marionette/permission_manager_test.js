@@ -26,7 +26,7 @@ marionette('Test Permission Manager', function() {
     }
   };
   opts.apps[PermissionManager.APP_HOST] =
-    __dirname + '/../apps/' + PermissionManager.APP_NAME;
+    __dirname + '/../webapps/' + PermissionManager.APP_NAME;
 
   var client = marionette.client({
     profile: opts,

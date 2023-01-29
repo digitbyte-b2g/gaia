@@ -76,7 +76,7 @@ suite('Keyboard layouts building tests', function() {
                        'zh-Hans-Pinyin'];
       var zipPath = path.join(process.cwd(), 'profile',
         'webapps', 'keyboard.gaiamobile.org', 'application.zip');
-      var appDirPath = config.GAIA_DIR + '/apps/keyboard';
+      var appDirPath = config.GAIA_DIR + '/webapps/keyboard';
 
       var layouts = layoutIds.map(function(layout) {
         return 'js/layouts/' + layout + '.js';
@@ -140,7 +140,7 @@ suite('Keyboard layouts building tests', function() {
       var config = JSON.parse(process.env.BUILD_CONFIG);
       var zipPath = path.join(process.cwd(), 'profile',
         'webapps', 'keyboard.gaiamobile.org', 'application.zip');
-      var appDirPath = config.GAIA_DIR + '/apps/keyboard';
+      var appDirPath = config.GAIA_DIR + '/webapps/keyboard';
       var layoutIds =
         fs.readdirSync(appDirPath + '/js/layouts').filter(function(filename) {
           return (path.extname(filename) === '.js');
@@ -247,7 +247,7 @@ suite('Keyboard layouts building tests', function() {
       var config = JSON.parse(process.env.BUILD_CONFIG);
       var zipPath = path.join(process.cwd(), 'profile',
         'webapps', 'keyboard.gaiamobile.org', 'application.zip');
-      var appDirPath = config.GAIA_DIR + '/apps/keyboard';
+      var appDirPath = config.GAIA_DIR + '/webapps/keyboard';
 
       // For this test, we verify there isn't any dictionary
       // in the zip.
@@ -292,7 +292,7 @@ suite('Keyboard layouts building tests', function() {
       var config = JSON.parse(process.env.BUILD_CONFIG);
       var zipPath = path.join(process.cwd(), 'profile',
         'webapps', 'keyboard.gaiamobile.org', 'application.zip');
-      var appDirPath = config.GAIA_DIR + '/apps/keyboard';
+      var appDirPath = config.GAIA_DIR + '/webapps/keyboard';
       var layoutIds = config.GAIA_KEYBOARD_LAYOUTS.split(',').sort()
         .filter(function(layoutId) {
           // Exclude noIncludeInExpandLayoutIdSet layouts

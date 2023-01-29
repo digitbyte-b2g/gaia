@@ -24,8 +24,8 @@ suite('Make with DEBUG=1', function() {
         'downloaded.json');
       var expectedSettings = {
         'homescreen.manifestURL':
-          'app://homescreen.gaiamobile.org/manifest.webmanifest',
-        'rocketbar.searchAppURL': 'app://search.gaiamobile.org/index.html'
+          'http://homescreen.gaiamobile.org/manifest.webmanifest',
+        'rocketbar.searchAppURL': 'http://search.gaiamobile.org/index.html'
       };
       var expectedUserPrefs = {
         'image.mozsamplesize.enabled': true,

@@ -2,7 +2,7 @@
 /* global __dirname, require, marionette, suiteSetup, suiteTeardown */
 /* global   setup, test */
 
-var Bookmark = require('../../../../apps/system/test/marionette/lib/bookmark');
+var Bookmark = require('../../../../webapps/system/test/marionette/lib/bookmark');
 var Server = require('../../../../shared/test/integration/server');
 
 marionette('Bookmark -', function() {

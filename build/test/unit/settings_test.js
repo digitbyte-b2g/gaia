@@ -204,7 +204,7 @@ suite('settings.js', function() {
     });
 
     test('setHomescreenURL with default homescreen', function() {
-      config.GAIA_SCHEME = 'app://';
+      config.GAIA_SCHEME = 'http://';
       config.GAIA_DOMAIN = 'gaiamobile.com';
       config.GAIA_PORT = ':8080';
       var settings = {};
@@ -216,7 +216,7 @@ suite('settings.js', function() {
 
     test('setHomescreenURL with customizable', function() {
       config.GAIA_APPDIRS = 'homescreen system sms';
-      config.GAIA_SCHEME = 'app://';
+      config.GAIA_SCHEME = 'http://';
       config.GAIA_DOMAIN = 'gaiamobile.com';
       config.GAIA_PORT = ':8080';
       var settings = { 'homescreen.appName': 'homescreen' };

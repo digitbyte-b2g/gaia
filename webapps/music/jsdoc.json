@@ -4,7 +4,7 @@
     "dictionaries": ["jsdoc"]
   },
   "source": {
-    "include": ["apps/music/js"]
+    "include": ["webapps/music/js"]
   },
   "plugins": [
     "plugins/markdown",

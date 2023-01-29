@@ -13,8 +13,8 @@
       profile: {
         apps: {
           'activitycaller.gaiamobile.org': __dirname +
-                                           '/../apps/activitycaller',
-          'activitycallee.gaiamobile.org': __dirname + '/../apps/activitycallee'
+                                           '/../webapps/activitycaller',
+          'activitycallee.gaiamobile.org': __dirname + '/../webapps/activitycallee'
         }
       }
     });

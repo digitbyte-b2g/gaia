@@ -71,8 +71,8 @@ function installOneApp(targetFolder, buildAppName,
   // can't clear the zip cache, will still have updated app launched next time.
   return Promise.resolve()
     .then(function() {
-      // "adb push /gaia/profile/webapps/SOME_APP.gaiamobile.org/manifest.webmanifest
-      // /data/local/tmp/pushgaia/SOME_APP.gaiamobile.org/manifest.webmanifest"
+      // "adb push /gaia/profile/webapps/SOME_APP.gaiamobile.org/manifest.webapp
+      // /data/local/tmp/pushgaia/SOME_APP.gaiamobile.org/manifest.webapp"
       return sh.run(['-c',
         adb + ' push "' + utils.joinPath(targetFolder, 'manifest.webmanifest') +
         '" //data/local/tmp/pushgaia/' + buildAppName + '.' + gaiaDomain +
@@ -88,11 +88,11 @@ function installOneApp(targetFolder, buildAppName,
     })
     .then(function() {
       // "adb shell cat /data/local/tmp/pushgaia/SOME_APP.gaiamobile.org/manifes
-      // t.webapp > /system/b2g/webapps/SOME_APP.gaiamobile.org/manifest.webmanifest"
+      // t.webapp > /system/b2g/webapps/SOME_APP.gaiamobile.org/manifest.webapp"
       return sh.run(['-c',
         adb + ' shell "cat /data/local/tmp/pushgaia/' + buildAppName +
-        '.' + gaiaDomain + '/manifest.webmanifest > ' + remotePath + '/webapps/' +
-        buildAppName + '.' + gaiaDomain + '/manifest.webmanifest"']);
+        '.' + gaiaDomain + '/manifest.webapp > ' + remotePath + '/webapps/' +
+        buildAppName + '.' + gaiaDomain + '/manifest.webapp"']);
     })
     .then(function() {
       // "adb shell cat /data/local/tmp/pushgaia/SOME_APP.gaiamobile.org/applica

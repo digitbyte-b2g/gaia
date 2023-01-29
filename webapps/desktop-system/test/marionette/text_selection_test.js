@@ -9,7 +9,7 @@ marionette('Text selection >', function() {
   var system;
 
   apps[FakeTextSelectionApp.ORIGIN] =
-    __dirname + '/../apps/faketextselectionapp';
+    __dirname + '/../webapps/faketextselectionapp';
 
   suite('without lockscreen', function() {
     var fakeTextselectionApp;

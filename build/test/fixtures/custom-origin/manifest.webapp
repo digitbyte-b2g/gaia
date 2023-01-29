@@ -8,5 +8,5 @@
   },
   "default_locale": "en-US",
   "orientation": "default",
-  "origin": "app://test.mozilla.com"
+  "origin": "http://test.mozilla.com"
 }

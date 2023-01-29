@@ -14,7 +14,7 @@ marionette('Secure app (camera from lockscreen) statusbar icons', function() {
       },
       apps: {
         'fullscreen_request.gaiamobile.org':
-          __dirname + '/../apps/fullscreen_request'
+          __dirname + '/../webapps/fullscreen_request'
       }
     }
   });

@@ -191,4 +191,4 @@ function execute(options) {
 }
 
 exports.execute = execute;
-exports.WebappZip = WebappZip;
+exports.webappZip = WebappZip;

@@ -20,7 +20,7 @@ function toDataUri(photo, cb) {
 
 function initializeVCardReader(filename, cb) {
   var req = new XMLHttpRequest();
-  var vCardUrl = '/apps/communications/contacts/test/unit/vcards/' + filename;
+  var vCardUrl = '/webapps/communications/contacts/test/unit/vcards/' + filename;
   req.open('get', vCardUrl, true);
   req.send();
   req.onload = function() {

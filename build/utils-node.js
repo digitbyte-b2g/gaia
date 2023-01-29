@@ -424,7 +424,7 @@ module.exports = {
     let manifestJSON = this.getJSON(this.getFile(manifest));
 
     // Use the folder name as the the domain name
-    let appDomain = appDir.leafName;
+    let appDomain = appDir.leafName + '.' + config.GAIA_DOMAIN;
     if (manifestJSON.origin) {
       appDomain = this.getNewURI(manifestJSON.origin).host;
     }
@@ -489,8 +489,7 @@ module.exports = {
         mapping[webapp.sourceDirectoryName] = webappTargetDirName = uuid;
       }
     } else {
-      webappTargetDirName = webapp.sourceDirectoryName;
-      console.log(webapp);
+      webappTargetDirName = appDir.leafName;
     }
     webapp.profileDirectoryFilePath = this.joinPath(config.COREWEBAPPS_DIR,
                                                     'webapps',
@@ -609,7 +608,6 @@ module.exports = {
   copyToStage: function(options) {
     var appDir = this.getFile(options.APP_DIR);
     this.copyDirTo(appDir, options.STAGE_DIR, appDir.leafName);
-    this.copyDirTo(appDir, options.PROFILE_WEBAPPS_DIR, appDir.leafName);
   },
 
   scriptLoader: {

@@ -96,7 +96,7 @@ suite('webapp-shared.js', function() {
     function() {
     var webappShared;
     setup(function() {
-      webappShared = new app.WebappShared();
+      webappShared = new app.webappShared();
 
       mockUtils.resolve = function(file, baseLink) {
         var fileExist = true;
@@ -238,7 +238,7 @@ suite('webapp-shared.js', function() {
     function() {
     var webappShared;
     setup(function() {
-      webappShared = new app.WebappShared();
+      webappShared = new app.webappShared();
     });
 
     test('customizeShared', function() {
@@ -329,7 +329,7 @@ suite('webapp-shared.js', function() {
     var lsFiles;
     var sharedFilePath;
     setup(function() {
-      webappShared = new app.WebappShared();
+      webappShared = new app.webappShared();
       sharedFilePath = 'testshared';
       webappShared.config = {
         GAIA_DIR: 'GAIA_DIR'

@@ -11,7 +11,7 @@ marionette('Audio channel played in foreground and background', function() {
     profile: {
       apps: {
         'audiochanneltestapp.gaiamobile.org': __dirname +
-          '/../apps/audio_channel_test_app'
+          '/../webapps/audio_channel_test_app'
       }
     },
     desiredCapabilities: { raisesAccessibilityExceptions: false }

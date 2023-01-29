@@ -50,16 +50,16 @@ FxA.Selectors = {
     requestButton: '#request',
     // dev_apps/test-fxa-client
     tabOpenFlow: '#openFlow',
-    // apps/settings
+    // webapps/settings
     menuItemFxa: '#menuItem-fxa',
     menuItemFmd: '#menuItem-findmydevice',
     fxaLogin: '#fxa-login',
     fmdLogin: '#findmydevice-login',
     fxaCancelAccountConfirmation: '#fxa-cancel-confirmation',
-    // apps/ftu
+    // webapps/ftu
     forward: '#forward',
     createAccountOrLogin: '#fxa-create-account',
-    // apps/findmydevice
+    // webapps/findmydevice
     emailInput: '#fxa-email-input',
     fxaForgotPassword: 'fxa-forgot-password',
     pwInput: '#fxa-pw-input',

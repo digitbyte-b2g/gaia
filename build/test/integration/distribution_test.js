@@ -36,7 +36,7 @@ suite('Distribution mechanism', function() {
     // Change manifestURL from
     // https://mobile.twitter.com/cache/twitter.webapp
     // to
-    // http://localhost:9999/manifest.webmanifest
+    // http://localhost:9999/manifest.webapp
     cusDir = path.join(process.cwd(), 'customize');
     variantPath = path.join(cusDir, 'variant.json');
     var port = 9999;

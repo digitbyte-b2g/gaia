@@ -12,7 +12,7 @@ var InboxView = require('./lib/views/inbox/view');
 marionette('Messages Drafts', function() {
   var apps = {};
 
-  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/apps/activitycaller';
+  apps[MessagesActivityCaller.ORIGIN] = __dirname + '/webapps/activitycaller';
 
   var client = marionette.client({
     profile: {

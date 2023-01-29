@@ -140,7 +140,7 @@ function handleShare(data, callback) {
         // data is the name of the property in the settings database
         // that it is listening to.
         //
-        // See also the corresponding code in apps/music/js/Player.js
+        // See also the corresponding code in webapps/music/js/Player.js
         //
         // This hack is implemented as a single self-invoking function so it is
         // easy to remove when we have a proper bug fix.

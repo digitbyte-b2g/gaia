@@ -4,7 +4,7 @@
     "dictionaries": ["jsdoc"]
   },
   "source": {
-    "include": ["apps/findmydevice/js/**/*.js"]
+    "include": ["webapps/findmydevice/js/**/*.js"]
   },
   "plugins": [
     "plugins/markdown",

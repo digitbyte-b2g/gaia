@@ -226,10 +226,10 @@ CSSLint.prototype.execute = function csslint_execute(options) {
   let gaia = utils.gaia.getInstance(options);
   let files = [];
 
-  // Starts by parsing the CSS files from apps/
+  // Starts by parsing the CSS files from webapps/
   gaia.webapps.forEach((webapp) => {
     if (utils.getFile(webapp.sourceDirectoryFilePath, '..')
-        .leafName !=='apps' ||
+        .leafName !=='webapps' ||
         (options.BUILD_APP_NAME !== '*' &&
         webapp.sourceDirectoryName !== options.BUILD_APP_NAME)) {
       return;

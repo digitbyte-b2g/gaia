@@ -5,7 +5,7 @@ const BASE_ICON_SIZE = 60;
 
 function isAbsoluteURL(url) {
   return url.indexOf('data:') === 0 ||
-         url.indexOf('app://') === 0 ||
+         url.indexOf('http://') === 0 ||
          url.indexOf('http://') === 0 ||
          url.indexOf('https://') === 0;
 }
@@ -104,7 +104,7 @@ function customizeHomescreen(config, homescreen) {
 
 function loadHomescreen(config, homescreen) {
   homescreen = homescreen || 'verticalhome';
-  var defaultConfig = utils.getFile(config.GAIA_DIR, 'apps', homescreen,
+  var defaultConfig = utils.getFile(config.GAIA_DIR, 'webapps', homescreen,
     'build', 'default-homescreens.json');
   var customize = utils.getJSON(defaultConfig);
 

@@ -24,18 +24,18 @@ marionette('loading images', function() {
     client.fileManager.removeAllFiles();
     // Add file into the pictures directory
     client.fileManager.add([
-    	{type: 'pictures',filePath: 'apps/gallery/test/images/01.jpg'},
-    	{type: 'pictures',filePath: 'apps/gallery/test/images/02.png'},
-    	{type: 'pictures',filePath: 'apps/gallery/test/images/03.gif'},
-    	{type: 'pictures',filePath: 'apps/gallery/test/images/04.bmp'},
+    	{type: 'pictures',filePath: 'webapps/gallery/test/images/01.jpg'},
+    	{type: 'pictures',filePath: 'webapps/gallery/test/images/02.png'},
+    	{type: 'pictures',filePath: 'webapps/gallery/test/images/03.gif'},
+    	{type: 'pictures',filePath: 'webapps/gallery/test/images/04.bmp'},
     	// Progressive JPG
-        {type: 'pictures',filePath: 'apps/gallery/test/images/05.jpg'},
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/05.jpg'},
     	// Transparent background PNG
-        {type: 'pictures',filePath: 'apps/gallery/test/images/06.png'},
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/06.png'},
     	// Animated GIF
-        {type: 'pictures',filePath: 'apps/gallery/test/images/07.gif'},
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/07.gif'},
     	// Animaged PNG
-        {type: 'pictures',filePath: 'apps/gallery/test/images/08.png'}
+        {type: 'pictures',filePath: 'webapps/gallery/test/images/08.png'}
     ]);
     app = new Gallery(client);
     fullscreen_view = new Fullscreen_View(client);

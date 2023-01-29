@@ -5,11 +5,11 @@
   },
   "source": {
     "include": [
-      "apps/sms/views/conversation/js/**/*.js",
-      "apps/sms/views/inbox/js/**/*.js",
-      "apps/sms/views/new_message/js/**/*.js",
-      "apps/sms/views/shared/js/**/*.js",
-      "apps/sms/services/js/**/*.js"
+      "webapps/sms/views/conversation/js/**/*.js",
+      "webapps/sms/views/inbox/js/**/*.js",
+      "webapps/sms/views/new_message/js/**/*.js",
+      "webapps/sms/views/shared/js/**/*.js",
+      "webapps/sms/services/js/**/*.js"
     ]
   },
   "plugins": [

@@ -188,14 +188,14 @@ suite('push-to-device.js', function() {
             '-c adb shell rm -r //cache/*',
             '-c adb remount',
             '-c adb push "' + options.PROFILE_DIR + '/webapps/' +
-                options.BUILD_APP_NAME + '/manifest.webmanifest" //data/local/tmp/pushgaia/' +
+                options.BUILD_APP_NAME + '/manifest.webapp" //data/local/tmp/pushgaia/' +
                 options.BUILD_APP_NAME + '/manifest.webmanifest',
             '-c adb push "' + options.PROFILE_DIR + '/webapps/' +
                 options.BUILD_APP_NAME + '/application.zip" //data/local/tmp/pushgaia/' +
                 options.BUILD_APP_NAME + '/application.zip',
             '-c adb shell "cat /data/local/tmp/pushgaia/' +
-                options.BUILD_APP_NAME + '/manifest.webmanifest > ' + options.GAIA_INSTALL_PARENT +
-                '/webapps/' + options.BUILD_APP_NAME + '/manifest.webmanifest"',
+                options.BUILD_APP_NAME + '/manifest.webapp > ' + options.GAIA_INSTALL_PARENT +
+                '/webapps/' + options.BUILD_APP_NAME + '/manifest.webapp"',
             '-c adb shell "cat /data/local/tmp/pushgaia/' +
                 options.BUILD_APP_NAME + '/application.zip > ' + options.GAIA_INSTALL_PARENT +
                 '/webapps/' + options.BUILD_APP_NAME + '/application.zip"',

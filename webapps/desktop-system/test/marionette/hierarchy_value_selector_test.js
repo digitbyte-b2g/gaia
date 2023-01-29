@@ -7,9 +7,9 @@
   marionette('hierarchyManager and value sectors', function() {
     var apps = {};
     apps['activitycaller.gaiamobile.org'] =
-      __dirname + '/../apps/activitycaller';
+      __dirname + '/../webapps/activitycaller';
     apps['activitycallee.gaiamobile.org'] =
-      __dirname + '/../apps/activitycallee';
+      __dirname + '/../webapps/activitycallee';
 
     var client = marionette.client({
       profile: {

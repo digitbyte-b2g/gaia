@@ -38,12 +38,12 @@ marionette('Music files loading', function() {
         {
           // Regular Ogg Vorbis.
           type: 'music',
-          filePath: 'apps/music/test-data/playlists/a.ogg'
+          filePath: 'webapps/music/test-data/playlists/a.ogg'
         },
         {
           // AAC file.
           type: 'music',
-          filePath: 'apps/music/test-data/aac-tags.mp4'
+          filePath: 'webapps/music/test-data/aac-tags.mp4'
         },
         {
           // MPEG4 video file. Shouldn't load.
