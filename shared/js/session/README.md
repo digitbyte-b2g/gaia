@@ -1,19 +1,19 @@
 ## HTML:
 
 ```html
-    <script defer src="%SHARED_APP_ORIGIN%/js/utils/common/lazy_loader.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/task_scheduler.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/lib_session.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/settings/settings_observer.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/device_capability/device_capability.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/power_manager/power_manager.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/telephony_manager/telephony_manager.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/account_manager/account_manager.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/apps_manager/apps_manager.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/contacts_manager/contacts_manager.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/audio_volume_manager/audio_volume_manager.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/process_manager/process_manager.js"></script>
-    <script defer src="%SHARED_APP_ORIGIN%/js/session/time_service/time_service.js"></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/api-daemon.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/settings/settings_observer.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/device_capability/device_capability.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/power_manager/power_manager.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/telephony_manager/telephony_manager.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/account_manager/account_manager.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/apps_manager/apps_manager.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/contacts_manager/contacts_manager.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/audio_volume_manager/audio_volume_manager.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/process_manager/process_manager.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/time_service/time_service.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/child_process/child_process.js'></script>
+    <script defer src='%SHARED_APP_ORIGIN%/js/session/content_manager/content_manager.js'></script>
 ```
 
 ## SessionInit
@@ -133,10 +133,10 @@ TelephonyManager.unobserveCallStateChange(callback);
 
 First, please add the according permissions as you need into manifest.webapp/manifest.webmanifest.
 ``` json
-"permissions": {
-  "account-observer-activesync": { },
-  "account-observer-google": { },
-  "account-observer-kaiaccount": { }
+'permissions': {
+  'account-observer-activesync': { },
+  'account-observer-google': { },
+  'account-observer-kaiaccount': { }
 }
 ```
 
@@ -282,9 +282,9 @@ AppsManager.cancelDownload(updateUrl).then((appsObject, appsServiceError) => {
 });
 
 //Event
-"update": Report the app object which is updated successfully
-"install": Report the app object which is installed successfully
-"uninstall": Report the manifest URL which is uninstalled successfully.
+'update': Report the app object which is updated successfully
+'install': Report the app object which is installed successfully
+'uninstall': Report the manifest URL which is uninstalled successfully.
 
 const callback = (value) => {
   console.log('value:' + value);
@@ -545,7 +545,7 @@ ContactsManager.getAll(options, 1, false).then(cursor => {
    *    sortBy：// ContactsManager.SortOption
    *    sortOrder// ContactsManager.Order
    *    sortLanguage: eg: navigator.language || 'de'
-   *    filterValue: // e.g. "Tom" "123456"
+   *    filterValue: // e.g. 'Tom' '123456'
    *    filterOption: // [ContactsManager.FilterOption.xxx, ...]
    *    filterBy: // ContactsManager.FilterByOption.xxx
    *    onlyMainData: {bool} Only return the main data of a contact or not.
@@ -582,24 +582,24 @@ ContactsManager.getContactByID(id, onlyMainData).then((contact) => {
 
 ## ProcManager sample code
 ```javascript
-ProcManager.begin("test").then(ok => {
-  console.log("begin");
+ProcManager.begin('test').then(ok => {
+  console.log('begin');
   return ProcManager.add(123, lib_procmanager.GroupType.FOREGROUND);
 }).then(ok => {
-  console.log("add");
+  console.log('add');
   return ProcManager.commit();
 }).then(ok => {
-  console.log("commit");
+  console.log('commit');
 });
 
-ProcManager.begin("test").then(ok => {
-  console.log("begin");
+ProcManager.begin('test').then(ok => {
+  console.log('begin');
   return ProcManager.reset();
 }).then(ok => {
-  console.log("reset");
+  console.log('reset');
   return ProcManager.commit();
 }).then(ok => {
-  console.log("commit");
+  console.log('commit');
 });
 ```
 

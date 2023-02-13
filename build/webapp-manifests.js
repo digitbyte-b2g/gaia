@@ -18,7 +18,7 @@ ManifestBuilder.prototype.setConfig = function(config) {
   this.config = config;
   this.errors = [];
   this.gaia = utils.gaia.getInstance(this.config);
-  this.stageManifests = {};
+  this.stageManifests = [];
   this.manifests = {};
   this.webapps = {};
   this.stageDir = this.gaia.stageDir;
@@ -101,21 +101,22 @@ ManifestBuilder.prototype.fillExternalAppManifest = function(webapp) {
 
   var etag = webapp.metaData.etag || null;
   var packageEtag = webapp.metaData.packageEtag || null;
-  this.stageManifests[webapp.sourceDirectoryName] = {
-    originalManifest: webapp.manifest,
+  this.stageManifests.push({
+    original_manifest: webapp.manifest,
     origin: origin,
-    manifestURL: manifestURL,
-    installOrigin: installOrigin,
+    manifest_url: manifestURL,
+    install_origin: installOrigin,
     receipt: null,
-    installTime: this.INSTALL_TIME,
-    updateTime: this.UPDATE_TIME,
+    install_time: this.INSTALL_TIME,
+    update_time: this.UPDATE_TIME,
     removable: removable,
-    localId: this.id++,
+    local_id: this.id++,
     etag: etag,
-    packageEtag: packageEtag,
-    appStatus: webapp.appStatus,
-    webappTargetDirName: webappTargetDirName
-  };
+    package_etag: packageEtag,
+    app_status: webapp.appStatus,
+    webapp_target_dir_name: webappTargetDirName,
+    name: webapp.leafName
+  });
 };
 
 ManifestBuilder.prototype.checkOrigin = function(origin) {
@@ -134,18 +135,19 @@ ManifestBuilder.prototype.fillAppManifest = function(webapp) {
     installOrigin = webapp.metadata.installOrigin;
   }
 
-  this.stageManifests[webapp.sourceDirectoryName] = {
-    originalManifest: webapp.manifest,
+  this.stageManifests.push({
+    original_manifest: webapp.manifest,
     origin: origin,
-    manifestURL: origin + '/manifest.webmanifest',
-    installOrigin: installOrigin,
+    manifest_url: origin + '/manifest.webmanifest',
+    install_origin: installOrigin,
     receipt: null,
-    installTime: this.INSTALL_TIME,
-    updateTime: this.UPDATE_TIME,
-    localId: this.id++,
-    appStatus: webapp.appStatus,
-    webappTargetDirName: webapp.domain
-  };
+    install_time: this.INSTALL_TIME,
+    update_time: this.UPDATE_TIME,
+    local_id: this.id++,
+    app_status: webapp.appStatus,
+    webapp_target_dir_name: webapp.domain,
+    name: webapp.leafName
+  });
 };
 
 ManifestBuilder.prototype.genManifest = function(webapp) {

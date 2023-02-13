@@ -57,7 +57,7 @@ window.addEventListener('load', function () {
   }
 
   var root = document.querySelector(':root');
-  var settings = new window.SettingsObserver();
+  var settings = window.SettingsObserver;
   const SCREEN_DARK_MODE_ENABLED = 'ui.dark-mode.enabled';
   const ACCENT_COLOR = 'theme.accent-color';
   var darkModeEnabled;

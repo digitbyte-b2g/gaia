@@ -681,6 +681,7 @@ function copyToStage(options) {
   var appDir = getFile(options.APP_DIR);
   copyDirTo(appDir, options.STAGE_DIR, appDir.leafName);
   copyDirTo(appDir, options.PROFILE_WEBAPPS_DIR, appDir.leafName);
+  copyDirTo(appDir, options.INSTALLED_DIR, appDir.leafName);
 }
 
 /**

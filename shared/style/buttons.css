@@ -24,7 +24,7 @@ button,
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  background: var(--button-background, linear-gradient(to bottom, #fff, #f4f4f4));
+  background: var(--button-background, #fff);
   border: none;
   border-radius: 2rem;
   font-weight: normal;
@@ -84,7 +84,7 @@ button.danger:active,
 button:hover,
 .bb-button:hover,
 .button:hover {
-  background: var(--button-background-plus, linear-gradient(to bottom, #d8dadd, #ccced2));
+  background: var(--button-background-plus, #d8dadd);
 }
 
 /* Focused */
@@ -98,7 +98,7 @@ button:focus-visible,
 button:active,
 .bb-button:active,
 .button:active {
-  background: var(--button-background-minus, linear-gradient(to bottom, #bcbec2, #c8cacd));
+  background: var(--button-background-minus, #c8cacd);
 }
 
 /* Icons */
@@ -111,12 +111,12 @@ button[data-icon],
 html[dir="ltr"] button[data-icon]:not([data-icon="expand"]),
 html[dir="ltr"] .bb-button[data-icon]:not([data-icon="expand"]),
 html[dir="ltr"] .button[data-icon]:not([data-icon="expand"]) {
-  padding-left: 4rem;
+  padding-left: 4.5rem;
 }
 html[dir="rtl"] button[data-icon]:not([data-icon="expand"]),
 html[dir="rtl"] .bb-button[data-icon]:not([data-icon="expand"]),
 html[dir="rtl"] .button[data-icon]:not([data-icon="expand"]) {
-  padding-right: 4rem;
+  padding-right: 4.5rem;
 }
 
 button[data-icon]:before,
@@ -133,12 +133,12 @@ button[data-icon]:before,
 html[dir="ltr"] button[data-icon]:before,
 html[dir="ltr"] .bb-button[data-icon]:before,
 html[dir="ltr"] .button[data-icon]:before {
-  left: 0.5rem;
+  left: 1rem;
 }
 html[dir="rtl"] button[data-icon]:before,
 html[dir="rtl"] .bb-button[data-icon]:before,
 html[dir="rtl"] .button[data-icon]:before {
-  right: 0.5rem;
+  right: 1rem;
 }
 
 /* Disabled */
@@ -168,7 +168,7 @@ li .button {
   white-space: normal;
   line-height: 2rem;
   padding: 1rem 1.5rem;
-  background: var(--button-background-list, linear-gradient(to bottom, #e7e9ec, #dbddf0));
+  background: var(--button-background-list, #e7e9ec);
 }
 html[dir="ltr"] li button,
 html[dir="ltr"] li .bb-button,
@@ -348,7 +348,7 @@ select {
   overflow: hidden;
   height: 4rem;
   border: none;
-  background: var(--button-background-list, linear-gradient(to bottom, #e7e9ec, #dbddf0));
+  background: var(--button-background-list, #e7e9ec);
   border-radius: 0.8rem;
 }
 

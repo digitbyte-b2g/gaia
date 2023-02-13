@@ -70,10 +70,10 @@ Gaia theme variables
   /** Button
    ---------------------------------------------------------*/
 
-  --button-background: linear-gradient(to bottom, #fff, #f4f4f4);
-  --button-background-plus: linear-gradient(to bottom, #d8dadd, #ccced2);
-  --button-background-minus: linear-gradient(to bottom, #bcbec2, #c8cacd);
-  --button-background-list: linear-gradient(to bottom, #e7e9ec, #dbddf0);
+  --button-background: #fff;
+  --button-background-plus: #d8dadd;
+  --button-background-minus: #c8cacd;
+  --button-background-list: #e7e9ec;
 
   /** Links
    ---------------------------------------------------------*/
@@ -209,10 +209,10 @@ Gaia theme variables
   /** Button
    ---------------------------------------------------------*/
 
-  --button-background: linear-gradient(to bottom, #303234, #2c2e30);
-  --button-background-plus: linear-gradient(to bottom, #383a3c, #343638);
-  --button-background-minus: linear-gradient(to bottom, #3c3e40, #404244);
-  --button-background-list: linear-gradient(to bottom, #181a1c, #101214);
+  --button-background: #303234;
+  --button-background-plus: #383a3c;
+  --button-background-minus: #404244;
+  --button-background-list: #181a1c;
 
   /** Links
    ---------------------------------------------------------*/

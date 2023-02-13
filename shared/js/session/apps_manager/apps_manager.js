@@ -1,25 +1,13 @@
-!(function (exports) {
+!(async function (exports) {
   'use strict';
 
-  if (ApiDaemon) {
-    ApiDaemon.loadService('apps');
-  } else {
-    console.error('Session Error: AppManager dosen\'t exist or is malfunctioning...');
-  }
-
-  var AppsManager = null;
   try {
-    const session = new lib_session.Session();
-    const sessionState = {};
-    sessionState.onsessionconnected = () => {
-      lib_apps.AppsManager.get(session).then((appsManager) => {
-        AppsManager = appsManager;
-      });
-    };
-    session.open("websocket", "localhost", "secrettoken", sessionState, true);
-  } catch (error) {
-    console.error("Error initializing AppManager: ", error);
-  }
+    let service = await window.apiDaemon.getAppsManager();
+    exports.AppsManager = service;
 
-  exports.AppsManager = AppsManager;
+    let apps = await service.getAll();
+    console.log(apps);
+  } catch (e) {
+    console.error(`AppsManager error: ${e}`);
+  }
 })(window);

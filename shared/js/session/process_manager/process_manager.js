@@ -1,48 +1,10 @@
-const ProcManager = {
-  abort() {
-    return taskScheduler.request({
-      serverName: taskScheduler.PROCESS,
-      funcName: "abort",
-    });
-  },
-  add(...e) {
-    return taskScheduler.request({
-      serverName: taskScheduler.PROCESS,
-      funcName: "add",
-      args: e,
-    });
-  },
-  begin(...e) {
-    return taskScheduler.request({
-      serverName: taskScheduler.PROCESS,
-      funcName: "begin",
-      args: e,
-    });
-  },
-  commit() {
-    return taskScheduler.request({
-      serverName: taskScheduler.PROCESS,
-      funcName: "commit",
-    });
-  },
-  pending() {
-    return taskScheduler.request({
-      serverName: taskScheduler.PROCESS,
-      funcName: "pending",
-    });
-  },
-  remove(...e) {
-    return taskScheduler.request({
-      serverName: taskScheduler.PROCESS,
-      funcName: "remove",
-      args: e,
-    });
-  },
-  reset() {
-    return taskScheduler.request({
-      serverName: taskScheduler.PROCESS,
-      funcName: "reset",
-    });
-  },
-};
-window.ProcManager = ProcManager;
+!(async function (exports) {
+  'use strict';
+
+  try {
+    let service = await window.apiDaemon.getProcManager();
+    exports.ProcManager = service;
+  } catch (e) {
+    console.error(`ProcManager error: ${e}`);
+  }
+})(window);

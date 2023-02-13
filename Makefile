@@ -608,6 +608,7 @@ define BUILD_CONFIG
   "NGA_SERVICE_WORKERS" : "$(NGA_SERVICE_WORKERS)", \
   "FIREFOX_SYNC" : "$(FIREFOX_SYNC)", \
   "RUN_ON_NODE" : "$(RUN_ON_NODE)" \
+  "INSTALLED_DIR" : "$(PROFILE_DIR)$(SEP)webapps$(SEP)installed", \
 }
 endef
 

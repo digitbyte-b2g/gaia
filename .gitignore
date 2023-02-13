@@ -6,6 +6,9 @@
 *.swp
 *.swn
 *.swo
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
 .svn
 *~
 manifest.appcache
@@ -38,6 +41,7 @@ manifest.appcache
 /shared/js/search_providers.json
 
 /b2g
+/b2g_bin
 /firefox
 /profile/
 /profile-debug/

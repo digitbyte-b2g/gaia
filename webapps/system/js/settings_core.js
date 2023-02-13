@@ -4,7 +4,7 @@
 
 (function(exports) {
   var SettingsCore = function() {
-    this.settings = new window.SettingsObserver();
+    this.settings = window.SettingsObserver;
   };
   SettingsCore.SERVICES = [
     'get',

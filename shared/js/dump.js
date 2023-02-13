@@ -22,7 +22,7 @@
   window.DUMP = dump_off;   // no traces by default
 
   // enable/disable DUMP according to the related setting
-  var settings = new window.SettingsObserver();
+  var settings = window.SettingsObserver;
   var reqGaiaDebug = settings.getValue('debug.gaia.enabled');
   reqGaiaDebug.onsuccess = function gaiaDebug() {
     window.DUMP =
