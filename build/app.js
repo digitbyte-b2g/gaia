@@ -26,11 +26,12 @@ function buildApps(options) {
     let appOptions = utils.cloneJSON(options);
     let stageAppDir = utils.getFile(options.STAGE_DIR, appDirFile.leafName);
     let profileAppDir = utils.getFile(options.PROFILE_WEBAPPS_DIR, appDirFile.leafName);
-    let profileAppDir = utils.getFile(options.INSTALLED_DIR, appDirFile.leafName);
+    let installedAppDir = utils.getFile(options.INSTALLED_DIR, appDirFile.leafName);
 
     appOptions.APP_DIR = appDirFile.path;
     appOptions.STAGE_APP_DIR = stageAppDir.path;
     appOptions.PROFILE_APP_DIR = profileAppDir.path;
+    appOptions.INSTALLED_APP_DIR = installedAppDir.path;
 
     let buildFile = utils.getFile(appDir, 'build', 'build.js');
     if (buildFile.exists()) {
